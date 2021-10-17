@@ -42,6 +42,8 @@ class Save extends Component {
         let saves = st.read_saves_in_store();
         const s = update(saves, {[save.id]: {$set: save}});
         global.localStorage.setItem(st.store_name, JSON.stringify(s));
+        // both needed
+        this.props.set_game(save);
         this.props.update_store();
     };
 

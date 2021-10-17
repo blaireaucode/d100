@@ -13,11 +13,13 @@ import * as st from 'helpers/store'
 import L from 'helpers/L.js'
 import Save from 'components/Save'
 import default_game from "../helpers/default_game";
+import {v4 as uuidv4} from "uuid";
+import {create_new_game} from "../helpers/character_helpers";
 
 class ScreenSystem extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.clearStore = this.clearStore.bind(this);
         this.reset = this.reset.bind(this);
         this.update_store = this.update_store.bind(this);
@@ -34,7 +36,8 @@ class ScreenSystem extends Component {
     }
 
     reset() {
-        this.props.set_game(default_game);
+        const new_game = create_new_game();
+        this.props.set_game(new_game);
         this.update_store();
     }
 
@@ -42,7 +45,6 @@ class ScreenSystem extends Component {
         const saves = this.state.store;
         let list = [];
         for (let save in saves) {
-            if (save === 'default') continue;
             if (save === 'current') continue;
             let s = saves[save];
             list.push(<Save key={s.id} current={saves.current} update_store={this.update_store} save={s}/>);

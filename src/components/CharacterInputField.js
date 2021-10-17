@@ -9,6 +9,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import Input from '@material-ui/core/Input'
+import Checkbox from '@material-ui/core/Checkbox'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import * as up from 'helpers/update_helpers'
 
@@ -40,6 +41,16 @@ class CharacterInputField extends Component {
 
         // special case
         // if (fn === 'life') a = '💙'; //❤️ 🤍♡
+        if (this.props.type === 'bool') {
+            return (
+                <Checkbox
+                    className={cn}
+                    name={this.props.field_name}
+                    value={value}
+                    onChange={this.handleChange}
+                />
+            )
+        }
 
         return (
             <Input className={cn}

@@ -8,13 +8,13 @@
 
 import React, {Component} from 'react'
 import {Provider} from 'react-redux'
-import {createMuiTheme, MuiThemeProvider} from '@material-ui/core/styles'
+import {createTheme, MuiThemeProvider} from '@material-ui/core/styles'
 import 'App.css'
 import Theme from 'theme.json'
 import store from 'helpers/store'
 import Routes from 'Routes'
 
-const theme = createMuiTheme(Theme);
+const theme = createTheme(Theme);
 
 class App extends Component {
 

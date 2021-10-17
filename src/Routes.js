@@ -67,8 +67,11 @@ class Routes extends Component {
     render() {
         // console.log('Public url', process.env.PUBLIC_URL);
         //console.log('this', this.props.game)
-        //const dice_flag = this.props.game.options.dice_ui.open;
-        const dice_flag = false;
+        let dice_flag = false;
+        if ('options' in this.props.game)
+            if ('dice_ui' in this.props.game.options.dice_ui)
+                dice_flag = this.props.game.options.dice_ui.open;
+        //const dice_flag = false;
         return (
             <Router basename={process.env.PUBLIC_URL}>
                 <div>

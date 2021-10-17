@@ -9,6 +9,7 @@
 const default_game = {
 
     id: 'default',
+    date: 'None',
     name: 'default',
 
     options: {
@@ -29,9 +30,12 @@ const default_game = {
         life: 1,
         gold_pieces: 0,
         encounter_modifier: 0,
-        strength: 10,
-        dexterity: 10,
-        intelligence: 10,
+        str: 10,
+        dex: 10,
+        int: 10,
+        str_adj: 10,
+        dex_adj: 10,
+        int_adj: 10,
         str_exp: 0,
         dex_exp: 0,
         int_exp: 0,

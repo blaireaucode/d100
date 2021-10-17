@@ -19,14 +19,16 @@ class ScreenRoom extends Component {
     render() {
         return (
             <div>
-                Room ...
-                <p/>
-                <F>Monster:</F> <RollEncounter/>
+                Encounter selector
+
+                Encounter
+
+                {/*<F>Monster:</F> <RollEncounter/>
                 <p/>
                 <Encounter encounter={this.props.game.room.encounter}/>
                 <p/>
                 <hr/>
-                <Fight/>
+                <Fight/>*/}
             </div>
         );
     }

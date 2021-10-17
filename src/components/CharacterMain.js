@@ -10,96 +10,63 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import CharacterInputField from "components/CharacterInputField"
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {capitalize, classes_list} from "helpers/character_helpers"
 import {Paper} from "@material-ui/core"
-import Select from '@material-ui/core/Select'
-
-// import HelpAttackModifier from "./HelpAttackModifier";
 
 class CharacterMain extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {open: false};
-        this.handle_change = this.handle_change.bind(this);
-        this.toggle_traits = this.toggle_traits.bind(this);
     }
 
-    const
-    classes_options = classes_list.map((k) => {
-        return (
-            <option value={k.toLowerCase()} key={k}>{capitalize(k)}</option>
-        );
-    });
-
-    handle_change(event) {
-        /*const id = this.props.character;
-        const v = event.target.value.toLowerCase();
-        const g = update_g_characteristic(this.props.game, id, "class", v);
-        this.props.set_game(g);
-        */
-    }
-
-    toggle_traits(/*event*/) {
-        const v = !this.state.open;
-        this.setState({open: v});
-    }
-
-    class_selector(character) {
-        return (
-            <Select value={character.class.toLowerCase()}
-                    onChange={this.handle_change}>
-                {this.classes_options}
-            </Select>
-        )
-    }
 
     render() {
-
-        /*const c = this.props.game.team[this.props.character];
-        const cl = classes_table[c.class.toLowerCase()];
-
-        // list of traits (may be put elsewhere
-        let clt = [];
-        for (let key in cl) {
-            if (key.includes('traits')) clt.push(key);
-        }
-        const ct = clt.map((k) => {
-            return (<CollapsibleTraits key={k} cclass={cl} traits={k}/>);
-        });*/
-
-        // dead ? FIXME 
-        //const c = this.props.characteristics;
-
         return (
-            <span>
-                <Paper elevation={5} className={'character'}>
+            <Paper elevation={5} className={'character'}>
 
-                    Name: <CharacterInputField field_name={'name'}/>
+                {/* Name etc */}
+                Name <CharacterInputField field_name={'name'}/>
+                Hero Path <CharacterInputField field_name={'hero_path'}/>
+                Race <CharacterInputField field_name={'race'}/>
 
-                    Hero Path: <CharacterInputField field_name={'hero_path'}/>
+                <p/>
+                {/* health etc */}
+                Health Points <CharacterInputField type={'number'} field_name={'health_points_primary'}/>
+                Health Points (adjusted) <CharacterInputField type={'number'}
+                                                              field_name={'health_points_adjusted'}/>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                Rep <CharacterInputField type={'number'} field_name={'rep'}/>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                Fate <CharacterInputField type={'number'} field_name={'fate'}/>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                Life <CharacterInputField type={'number'} field_name={'life'}/>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                Encounter modifier <CharacterInputField type={'number'} field_name={'encounter_modifier'}/>
 
-                    Race: <CharacterInputField field_name={'race'}/>
+                <p/>
+                {/* Main attributes */}
+                Str <CharacterInputField type={'number'} field_name={'str'}/>
+                <CharacterInputField type={'number'} field_name={'str_adj'}/>
+                xp <CharacterInputField type={'number'} field_name={'str_exp'}/>
+                Mighty Blow <CharacterInputField type={'bool'} field_name={'mighty_blow'}/>
+                &nbsp; &nbsp; &nbsp; (During combat Dmg rolls of 6 roll again and add to the roll)
 
+                <p/>
+                Dex <CharacterInputField type={'number'} field_name={'dex'}/>
+                <CharacterInputField type={'number'} field_name={'dex_adj'}/>
+                xp <CharacterInputField type={'number'} field_name={'dex_exp'}/>
+                Perfect Aim <CharacterInputField type={'bool'} field_name={'perfect_aim'}/>
+                &nbsp; &nbsp; &nbsp; (Roll again for hit location and choose either result)
 
-                    {/*<CharacterInputField character={c} field_name={'name'}/>
-                    {this.class_selector(c)}
-                    <br/>
-                Level: <CharacterInputField character={c} type={'number'} field_name={'level'}/>
-                <br/>
-                Life: <CharacterInputField character={c} type={'number'} field_name={'life'}/>
-                <br/>
-                Attack modifier: <CharacterInputField character={c} type={'number'} field_name={'attack_mod'}/>
-                <br/>
-                Defense modifier: <CharacterInputField character={c} type={'number'} field_name={'def_mod'}/>
-                <br/>
-                    {ct}*/}
-                </Paper>
-                <br/>
-                {/*<ItemsList character={c}/>*/}
-            </span>
-        )
-            ;
+                <p/>
+                Int <CharacterInputField type={'number'} field_name={'int'}/>
+                <CharacterInputField type={'number'} field_name={'int_adj'}/>
+                xp <CharacterInputField type={'number'} field_name={'int_exp'}/>
+                Spell Caster <CharacterInputField type={'bool'} field_name={'spell_caster'}/>
+                &nbsp; &nbsp; &nbsp; (Can now use spells from the spell book)
+
+                <p/>
+
+            </Paper>);
     }
 }
 
