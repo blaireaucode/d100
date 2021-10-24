@@ -14,9 +14,11 @@ export function set_game(state, value) {
     return value;
 }
 
+/*
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+*/
 
 async function save_to_store(game) {
     //await sleep(2000);

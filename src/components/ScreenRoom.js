@@ -10,10 +10,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import Encounter from 'components/Encounter'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import RollEncounter from "components/EncounterRoll"
-import Fight from "components/Fight"
-import F from 'helpers/F'
-import EncounterRoll from "components/EncounterRoll";
+import EncounterRoll from "components/EncounterRoll"
 
 class ScreenRoom extends Component {
 
@@ -24,9 +21,10 @@ class ScreenRoom extends Component {
                 <EncounterRoll/>
 
                 <p/>
-                Help fight ...
-                <p/>
                 <Encounter/>
+
+                <p/>
+                Put Help fight here ...
 
                 {/*<F>Monster:</F> <RollEncounter/>
                 <p/>

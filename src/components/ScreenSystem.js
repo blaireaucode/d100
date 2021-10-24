@@ -12,8 +12,6 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import * as st from 'helpers/store'
 import L from 'helpers/L.js'
 import Save from 'components/Save'
-import default_game from "../helpers/default_game";
-import {v4 as uuidv4} from "uuid";
 import {create_new_game} from "../helpers/character_helpers";
 
 class ScreenSystem extends Component {

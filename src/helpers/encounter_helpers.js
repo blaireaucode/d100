@@ -12,6 +12,14 @@ import {D6} from "helpers/dice_helpers"
 import update from "immutability-helper"
 
 export function parse_d100_interval(d100, id) {
+    const mm = d100_interval_min_max(d100);
+    const min = mm[0];
+    const max = mm[1];
+    if (id >= min && id <= max) return true;
+    return false;
+}
+
+export function d100_interval_min_max(d100) {
     let min = 1;
     let max = 1;
     const index = d100.indexOf('-');
@@ -22,8 +30,7 @@ export function parse_d100_interval(d100, id) {
         min = parseInt(d100);
         max = min;
     }
-    if (id >= min && id <= max) return true;
-    return false;
+    return [min, max];
 }
 
 export function new_encounter(id) {

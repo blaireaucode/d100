@@ -89,6 +89,16 @@
     /*font-size: calc(8px + 0.7vmin) !important;*/
 }
 
+.select {
+    /* color: #18b26f!important; */
+    /* color: #3e84f2!important; */
+    font-size: calc(8px + 0.7vmin) !important;
+    color: #2982d2 !important;
+    padding: 0 !important;
+    /* text-align:left; */
+    /*font-size: calc(8px + 0.7vmin) !important;*/
+}
+
 .dead {
     color: #8a0303;
     font-weight: bold;

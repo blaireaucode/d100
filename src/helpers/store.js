@@ -26,7 +26,7 @@ export function defaultSaves() {
 
 export function read_saves_in_store() {
     let saves = {};
-    const st = global.localStorage.getItem('d100_save');
+    //const st = global.localStorage.getItem('d100_save');
     if (global.localStorage.getItem('d100_save') !== null) {
         saves = JSON.parse(global.localStorage.getItem('d100_save'));
     } else {

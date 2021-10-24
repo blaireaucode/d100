@@ -22,7 +22,7 @@ import {withStyles} from '@material-ui/core/styles'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import L from 'helpers/L'
-import {close_dice_ui, open_dice_ui} from 'helpers/dice_helpers'
+import {close_dice_ui, create_D100_rolling_dices, getRandomInt, open_dice_ui} from 'helpers/dice_helpers'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 
 const drawerWidth = 170
@@ -61,8 +61,10 @@ class LayoutLeftBar extends React.Component {
             const g = close_dice_ui(this.props.game);
             this.props.set_game(g);
         } else {
-            //const g = open_dice_ui(this.props.game, D6());
-            //this.props.set_game(g);
+            let total = getRandomInt(1, 100);
+            const dices = create_D100_rolling_dices(total);
+            const g = open_dice_ui(this.props.game, total, dices);
+            this.props.set_game(g);
         }
     }
 
@@ -120,7 +122,7 @@ class LayoutLeftBar extends React.Component {
                     </ListItem>*/}
 
                     <ListItem>
-                        <L onClick={this.roll}>🎲 D6</L> {/*&#127922;*/}
+                        <L onClick={this.roll}>🎲 D100</L> {/*&#127922;*/}
                     </ListItem>
 
                     <ListItem button component={Link} to='/system'>

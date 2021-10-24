@@ -10,7 +10,6 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import {update_g_encounter} from 'helpers/update_helpers'
-import {D6, open_dice_ui} from 'helpers/dice_helpers'
 import F from 'helpers/F'
 import {Paper} from "@material-ui/core"
 import EncounterInputField from "./EncounterInputField";
@@ -100,7 +99,7 @@ class Encounter extends Component {
         return (
             <Paper elevation={5} className={'encounter'}>
                 <EncounterInputField field_name={'name'}/>
-                <EncounterInputField field_name={'id'} type={'number'} read_only={true}/>
+                n°<EncounterInputField field_name={'id'} type={'number'} read_only={true}/>
                 <EncounterInputField field_name={'d100'} read_only={true}/>
                 <br/>
                 <F>Attack Value</F> <EncounterInputField field_name={'av'} type={'number'}/>
@@ -108,9 +107,8 @@ class Encounter extends Component {
                 <F>Damage Modifier</F> <EncounterInputField field_name={'dmg'} type={'number'}/>
                 <F>Health Points</F> <EncounterInputField field_name={'hp'}/>
                 <br/>
-                <F>Ability</F> <EncounterInputField field_name={'ability'}/>
                 <F>Reward</F> <EncounterInputField field_name={'k'}/>
-
+                <F>Ability</F> <EncounterInputField field_name={'ability'}/>
             </Paper>
         );
     }

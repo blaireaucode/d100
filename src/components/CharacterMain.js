@@ -10,14 +10,14 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import CharacterInputField from "components/CharacterInputField"
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {Paper} from "@material-ui/core"
+//import {Paper} from "@material-ui/core"
 import F from 'helpers/F'
 
 class CharacterMain extends Component {
 
-    constructor(props) {
+    /*constructor(props) {
         super(props);
-    }
+    }*/
 
 
     render() {

@@ -16,7 +16,7 @@ class EncounterInputField extends Component {
 
     static defaultProps = {
         type: "txt",
-        read_only : false
+        read_only: false
     }
 
     handleChange = ({target}) => {

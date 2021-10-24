@@ -48,11 +48,9 @@ export function update_g_options(game, options) {
 }
 
 export function update_g_encounter_field(game, field_name, value) {
-    /*const enc = game.room.encounter;
+    const enc = game.encounter;
     const c = update_dic(enc, field_name, value)
-    const t = update_encounter(game.room, c)
-    return update_g_room(game, t);
-    */
+    return update_g_encounter(game, c)
 }
 
 export function update_g_item_field(game, char_id, item_id, field_name, value) {
