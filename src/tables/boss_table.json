@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "type": "boss",
+    "name": "Mummy",
+    "level": 5,
+    "life": 4,
+    "treasure": 0,
+    "attribute": "undead",
+    "attack": 2,
+    "reaction": "always fight",
+    "description": "Any character killed by a mummy 1 becomes another mummy and must be fought by the party. Mummies are attacked at +2 by theFireball spell. Mummies never test morale."
+  },
+  {
+    "id": 2,
+    "type": "boss",
+    "name": "Orc Brute",
+    "level": 5,
+    "life": 5,
+    "treasure": "1 but may not have any magic items, treat as 2d6 x d6 gold pieces instead",
+    "attack": 2,
+    "reaction": "(d6): 1 bribe (50 gp), 2–5 fight, 6 fight to the death.",
+    "description": ""
+  },
+  {
+    "id": 3,
+    "type": "boss",
+    "name": "Ogre",
+    "level": 5,
+    "life": 6,
+    "treasure": 0,
+    "reaction": "(d6): 1 bribe (30 gp), 2–3 fight, 4–6 fight to the death.",
+    "description": "Each hit from an ogre inflicts 2 life points of damage."
+  },
+  {
+    "id": 4,
+    "type": "boss",
+    "name": "Medusa",
+    "level": 4,
+    "life": 4,
+    "treasure": 1,
+    "reaction": "d6): 1 bribe (6d6 gp), 2 quest, 3–5 fight, 6 fight to the death.",
+    "description": "All characters at the beginning of the battle must save versus a level 4 gaze attack or be turned to stone. Petrified characters are out of the game until a Blessing spell is cast on them. Rogues add half their level to this save. "
+  },
+  {
+    "id": 5,
+    "type": "boss",
+    "name": "Chaos Lord",
+    "level": 6,
+    "life": 4,
+    "attack": 3,
+    "treasure": "2 treasure rolls at +1",
+    "reaction": "(d6): 1 flee if outnumbered, 2 fight, 3–6 fight to the death.",
+    "description": "Before the fight begins, roll d6 to determine if the Chaos Lord has any special powers: 1–3 no powers, 4 evil eye (characters must roll 4+ or be at -1 on all defense rolls until the chaos lord is slain), 5 energy drain (any character taking a wound from the chaos lord must roll 4+ or lose 1 level), 6 hellfire blast (before combat, all character must roll 6+ or lose 2 life points; Clerics add 1⁄2 level to this roll). When you kill a chaos lord, roll a die; on a 5 or 6 a character of your choice finds a Clue."
+  },
+  {
+    "id": 6,
+    "type": "boss",
+    "name": "Small Dragon",
+    "level": 6,
+    "life": 5,
+    "attack": 2,
+    "treasure": "3 treasure rolls at +1",
+    "reaction": "1 Sleeping (all characters can attack at +2 on their first attack), 2–3 bribe (all the gold of the party, with a minimum of 100 gold or one magic item), 4–5 fight, 6 quest.",
+    "description": "On each turn of the dragon, roll d6, on a 1 or 2 the dragon breathes fire, inflicting 1 life to all characters who fail to save versus level 6 dragon breath (each character adds 1⁄2 level, rounded down). If the dragon does not breathe, he bites 2 random characters. Small dragons are never met as random monsters. "
+  }
+]

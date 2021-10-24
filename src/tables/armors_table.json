@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "type": "armor",
+    "name": "Heavy armor",
+    "cost": 30,
+    "description": "A suit of heavy armor adds +2 to the wearer’s Defense rolls. Certain attacks from monsters will ignore this bonus. Heavy armor makes the wearer slow, so in certain cases, the character will have a negative modifier on his Save rolls. Heavy armor is designed to fit one wearer, so you may not reassign it to another character if the original wearer dies."
+  },
+  {
+    "id": 2,
+    "type": "armor",
+    "name": "Light armor",
+    "cost": 10,
+    "description": "Light armor adds +1 to the wearer’s Defense rolls. Certain attacks from monsters ignore this bonus. When the original wearer dies, you may reassign light armor to another wearer of the same species (a dwarf’s light armor will fit another dwarf but not an elf, halfling, or human). "
+  },
+  {
+    "id": 3,
+    "type": "armor",
+    "name": "Shield",
+    "cost": 5,
+    "description": "This gives a +1 to the user’s Defense rolls. This bonus does not apply when the character is fleeing from a combat or when he is surprised by wandering monsters. Certain attacks from monsters will ignore the shield bonus."
+  }
+]

@@ -1,0 +1,144 @@
+[
+  {
+    "id": 1,
+    "description": "The four of you are in a cell room. Avril has just used her lock pick to silently unlock the cell door...",
+    "content": "Empty",
+    "search": "You find nothing and manage to make enough noise to attract a group of 10 Goblin Swarmlings! Wandering Monsters! (4AD, vermin table, #3)! Loot 20 gp."
+  },
+  {
+    "id": 2,
+    "description": "You enter a snake-shaped room. A band of goblinoids ready their spears when they see you. 10 Goblin Swarmlings! (4AD, vermin table, #3) Loot 1 gp and a iron key engraved with the number 3."
+  },
+  {
+    "id": 3,
+    "description": "A small room with a poorly lit corner. In it, two dog-faced creatures wearing furs from rare animals stir into motion! 2 Jackal men! (WA, Minion table, #5) Loot A Surge of Strength scroll."
+  },
+  {
+    "id": 4,
+    "description": "A wide room with bad odor. 3 Orcs! (4AD, Minion table, #4), these are highly trained prison guards and will automatically pass any morale roll. Loot A small gem worth 20 gp."
+  },
+  {
+    "id": 5,
+    "description": "A dead end room with several cracks along the western wall. Empty You find nothing"
+  },
+  {
+    "id": 6,
+    "description": "A well ornamented room. A band of Kobolds are guarding a iron gate with the number 3 marked above it. The gate is a dungeon exit, but its magically locked and will only open with the correct key. 6 Kobold scouts! (WA, Minion table, #4) Loot A gemstone worth 55 gp and a parchment with the list of the prison wardens. This parchment can be sold at the end of the adventure by a rogue for 60 gp."
+  },
+  {
+    "id": 7,
+    "description": "A wide circular room with water dripping all over the western wall. Empty You find nothing"
+  },
+  {
+    "id": 8,
+    "description": "A winding room with a bunch of creatures eating. They drop their meals, ready their spears and charge at you! 6 Goblins! (4AD, Minion table, #2) Loot A big ruby worth 110 gp and a copper key engraved with the number 2. They also carry a lantern, one rope, five food rations and six daggers (light weapon)."
+  },
+  {
+    "id": 9,
+    "description": "You enter a room with a small table with a box on top. Inside the box you find 8 gp."
+  },
+  {
+    "id": 10,
+    "description": "A narrow corridor junction with a large bulky creature blocking your way! One Ogre! (4AD, Boss table, #3) Loot A large necklace worth 100 gp and a steel key engraved with the number 4. The Ogre also carries six of the scrolls stolen from Igae. Two Lightning Bolt scrolls, one Escape scroll, one Illusionary Bridge scroll, one Distant Communication scroll, and one Protect scroll. (From Wayfarers and Adventurers, page 47)."
+  },
+  {
+    "id": 11,
+    "description": "A rarely used corridor, judging by the vines on the walls and dry leaves creeping under a steel gate with the number 4 written above it. The gate is a dungeon exit, but its magically locked and will only open with the correct key. Empty Rustling loudly trough the leaves, you don't even notice the Orc Brute behind you! Wandering Monster! (4AD, Boss table, #2)"
+  },
+  {
+    "id": 12,
+    "description": "A low corridor with a seemingly derelict wooden gate. The number 1 was carved hastily on the wood. The gate is a dungeon exit, but its magically locked and will only open with the correct key. Empty You find nothing"
+  },
+  {
+    "id": 13,
+    "description": "A huge and cavernous room, with curtains hanging and a crude bed on one corner. A tall lady with moving hair turns to you. Behind her, a bronze gate stands with the number 6 mark on the right. The gate is a dungeon exit, but its magically locked and will only open with the correct key. One Medusa! (4AD, Boss table, #4) Loot A large ring worth 110 gp. Underneath the Medusa's bed, you find a Secret Door leading outside. You've found a safe exit from the prison!"
+  },
+  {
+    "id": 14,
+    "description": "A large and empty room, save for the lone statue in the center. Do you touch it? (search) Statue (4AD, Special Feature table, #5) The statue awakens and attacks you! Loot A small bag with 70 gp."
+  },
+  {
+    "id": 15,
+    "description": "A well lit room with several torches on the walls, and a gang of green midgets leaning on a copper gate. The number 2 is written above it. The gate is a dungeon exit, but its magically locked and will only open with the correct key. 5 Goblin Swarmlings! (4AD, vermin table, #3) Loot A wooden key engraved with the number 1."
+  },
+  {
+    "id": 16,
+    "description": "Even the tiniest room feels cramped when its full of goblinoids guarding a box with their lives! 3 Goblin Swarmlings! (4AD, vermin table, #3) Loot Inside the box, you find the Holy Gem of Healing (4AD, Epic Reward table, #6)"
+  },
+  {
+    "id": 17,
+    "description": "One of the guards' room. Two dog-faced creatures push to one side the chairs where they sat and charge! 6 Jackal men (WA, minion table, #5). Their fighting tactics prevent you from using any ranged weapons. Spells work as usual. Loot 1 Potion of Healing."
+  },
+  {
+    "id": 18,
+    "description": "You enter a narrow corridor where a group of green folk guard a large lead gate at one end. The number 5 is crudely written above it. The gate is a dungeon exit, but its magically locked and will only open with the correct key. 9 Goblin Swarmlings! (4AD, vermin table, #3) Loot A small necklace worth 40 gp."
+  },
+  {
+    "id": 19,
+    "description": "You enter a dead end corridor with a cabinet at the far side. Empty Inside the cabinet you find a Wall of Ice scroll (From Wayfarers and Adventurers, page 47.)"
+  },
+  {
+    "id": 20,
+    "description": "You enter a quiet corridor junction lit with torches. Behind the door to the north you can hear creature's barking. The south door hints no sounds, and you see a tribal drawing of a round shield with a battle axe neatly carved on its surface. You step on a lost coin. 1 gp."
+  },
+  {
+    "id": 21,
+    "description": "A large circular room with a dirty table on one side, filled with crumbled papers all over. Among the papers you find a scroll of Escape."
+  },
+  {
+    "id": 22,
+    "description": "One of the guards' room. The orcs had listen to your footsteps outside and were ready for you! 6 Orcs (4AD, minion table, #4), and they act first. Loot A ring of teleportation (4AD, magic treasure table, #2) and a lead key engraved with the number 5."
+  },
+  {
+    "id": 23,
+    "description": "You enter a nearly dark room. The door to the north makes creaking sounds as if some bulging darkness is about to burst it open! Transfixed by that strange sight, you don't even realize were you stepping... Bear trap (4AD, trap table, #4) and a small pile of coins. 7 gp."
+  },
+  {
+    "id": 24,
+    "description": "You stumble on a room, with the walls covered in weapons of all Spells and shapes. Armory (4AD, Special Feature table, #3). All characters may equip themselves with their usual starting equipment ONLY, as written in 4AD and WA. If any ranged weapons are taken, there's a limit of ten arrows or sling bullets per character. Do you Search? You find nothing"
+  },
+  {
+    "id": 25,
+    "description": "A square room, with bunk-beds. The creatures sleeping are startled by your entry, and quickly reach for their weapons! 6 Goblin Swarmlings! (4AD, vermin table, #3) Loot Two rusty coins. 2 gp."
+  },
+  {
+    "id": 26,
+    "description": "A corridor junction well lit by torches along the east-west passageway. The door to the North is almost too narrow for Ruld. While you wonder were to head next, a few goblins rush in to meet you. 6 Goblin Swarmlings! (4AD, vermin table, #3) Loot A small gem worth 20 gp."
+  },
+  {
+    "id": 27,
+    "description": "A long room decorated with torture devices of all Spells. All around the room, there's a line of orcish tribal runes you can't decipher. 7 Jackal men (WA, minion table, #5) and the room is imbued with a shamanic magical protection. All spells are cast at -1. Loot A golden ring worth 70 gp and a bronze key engraved with the number 6."
+  },
+  {
+    "id": 28,
+    "description": "A narrow corridor with too many doors... Empty. Do you Search? You find nothing"
+  },
+  {
+    "id": 29,
+    "description": "You unlock the cell door. The small dragon slowly rises to meet you.Thank you fellow prisoners,the dragon begins. My name is Igae, The Kind and I heard the guards bring in you last night. I have no idea how you managed to escape your cell so quickly, but I congratulate you. I hope you've found your belongings already. I know the guards keep the prisoner's stuff in a room to the west, not very far from the cells. As for myself, I've been captured to destroy a holy gem of some kind, but I have no idea where they are keeping it. Will you help me? Will you help Igae, The Kind or engage the dragon in a mortal combat to further your fighting reputation? Let's help a dragon! The green folk who captured me, also raided my lair for scrolls, so they could destroy them. Will you find the mand bring them back to me? In return I 'll share with you the location of an ancient dwarven treasure... If and when you return to this room with twelve scrolls, then continue reading: Igae gives you the location of the Gold of Kerrak Dar (4AD, Epic Reward table, #2). You take note of the location and vow to go there, if you manage to escape this prison alive that is... To Be Continued. "
+  },
+  {
+    "id": 30,
+    "description": "A small room. Around a dark corner, you spot a group of goblinoids hunkered down around a piece of paper. 7 Goblin Swarmlings! (4AD, vermin table, #3) Loot A scroll of Destroy Aberration (WA, page 47)"
+  },
+  {
+    "id": 31,
+    "description": "A small corridor. You find a group of Goblins carrying one of their kin on a stretcher. But as soon as they see you, they toss stretcher along with their injured companion to the side and unsheathe their swords! 6 Goblins! (4AD, Minion table, #2) Loot A few dirty coins (4 gp) and two remarkably clean and still usable bandages."
+  },
+  {
+    "id": 32,
+    "description": "A well lit corridor junction. A large band of Kobolds is guarding the door to the north and as soon as they see you, one begins to sound the alarm! 9 Kobold scouts! (WA, Minion table, #4) and unless you defeat all of them on the first turn, they will call for reinforcements! At the end of their second turn, 12 more Kobold scouts arrive to join the others! Loot A bracelet worth 40 gp. Counts as two minion encounters if you faced both groups. Did you defeat all Kobolds? If so keep reading: The door the Kobolds were guarding has a small peephole. Inside the cell, there's a small dragon. He's not much bigger than Ruld, curled at the farthest corner of the room."
+  },
+  {
+    "id": 33,
+    "description": "You open the weird door to find a flight of stairs that disappears in the darkness below... Otherwise, close the door again and try to find another way out! If you have access to Four Against the Abyss, roll five random rooms and populate each by rolling on the Abyss Minion table. If you survive, you find an unlocked wooden gate, leading to the outside. The gate is a dungeon exit."
+  },
+  {
+    "id": 34,
+    "description": "A room with water dripping from the west wall. The floor is covered in water and its very slippery! 3 Hobgoblins (4AD, Minion table, #3). All characters who roll a 1 on Attack or Defense, fall to the ground and skip their next attack trying to stand up. The Hobgoblins are immune to this effect. Loot One Lightning Bolt scroll."
+  },
+  {
+    "id": 35,
+    "description": "An extremely narrow corridor, worsen by the fact that is crowed with angry prison guards! 8 Goblin Swarmlings! (4AD, vermin table, #3) Loot A Fireball scroll."
+  }
+]

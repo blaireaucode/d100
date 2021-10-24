@@ -1,0 +1,64 @@
+[
+  {
+    "id": 1,
+    "type": "minion",
+    "name": "skeletons / zombies",
+    "number_roll": "1d6+2",
+    "attribute": "undead",
+    "level": 3,
+    "treasure": "no",
+    "reaction": "always fight to the death.",
+    "description": "Crushing 1 weapons attack Skeletons at +1. Arrows are at -1 against both skeletons and zombies. Skeletons and zombies never test morale."
+  },
+  {
+    "id": 2,
+    "type": "minion",
+    "name": "goblins",
+    "number_roll": "1d6+3",
+    "level": 3,
+    "treasure": -1,
+    "reaction": "(d6): 1 flee if outnumbered, 2-3 bribe (5 gp per goblin), 4–6 fight.",
+    "description": "Goblins have a 1 in 6 chance of gaining surprise, thus acting before the party. If they do act before the party, roll d6 on their reactions table."
+  },
+  {
+    "id": 3,
+    "type": "minion",
+    "name": "hobgoblins",
+    "number_roll": "1d6",
+    "level": 4,
+    "treasure": 1,
+    "morale": -1,
+    "reaction": "(d6): 1 flee if outnumbered, 2–3 bribe (10 gp per hobgoblin), 4–5 fight, 6 fight to the death.",
+    "description": ""
+  },
+  {
+    "id": 4,
+    "type": "minion",
+    "name": "orcs",
+    "number_roll": "1d6+1",
+    "level": 4,
+    "treasure": 0,
+    "reaction": "(d6): 1-2 bribe (10 gp per orc), 3–5 fight, 6 fight to the death.",
+    "description": "Orcs are afraid of magic and must test morale each time one or more is killed by a spell. If a spell caused their number to drop below 50%, they will test morale at -1. They never have magic items in their treasure: treat any rolled magic as d6 x d6 gold pieces instead."
+  },
+  {
+    "id": 5,
+    "type": "minion",
+    "name": "trolls",
+    "number_roll": "1d3",
+    "level": 5,
+    "treasure": 0,
+    "reaction": " (d6): 1–2 fight, 3–6 fight to the death. If a dwarf is present in the party, trolls will automatically fight to the death.",
+    "description": "Trolls regenerate, unless killed by a spell, or unless a character uses one attack to chop an already killed troll to bits. If this does not happen, roll a die or every killed troll on its next turn. On a 5 or 6, the troll will come back to life and continue to fight. "
+  },
+  {
+    "id": 6,
+    "type": "minion",
+    "name": "Fungi Folk",
+    "number_roll": "2d6",
+    "level": 3,
+    "treasure": 0,
+    "reaction": "(d6): 1-2 ask for bribe (d6 gp per fungus), 3–6 fight.",
+    "description": "Any character taking damage from the fungi folk must 6 save versus level 3 poison or lose 1 life. Halflings add their level on this save."
+  }
+]

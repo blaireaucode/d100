@@ -1,0 +1,158 @@
+{
+  "warrior": {
+    "armor_allowed": [
+      "shield",
+      "light armor",
+      "heavy armor"
+    ],
+    "weapons_allowed": [
+      "any"
+    ],
+    "starting_equipment": "A warrior begins the game with light armor, shield and a hand weapon. He may trade in his shield and hand weapon for a two-handed weapon or a bow if he wants.",
+    "starting_wealth": "2d6 gold pieces",
+    "life": "6 + level",
+    "traits": "A warrior always adds his level to his Attack rolls."
+  },
+  "cleric": {
+    "armor_allowed": [
+      "shield",
+      "light armor",
+      "heavy armor"
+    ],
+    "weapons_allowed": [
+      "hand weapon",
+      "two-handed weapon",
+      "sling"
+    ],
+    "starting_equipment": "Light armor, shield, hand weapon. The cleric may trade in his shield and hand weapon for a two-handed weapon. Clerics usually prefer crushing weapons because the chances of meeting skeletons and skeletal rats in dungeons are pretty high.",
+    "starting_wealth": "1d6 gold pieces",
+    "spells": "A cleric may cast the Blessing spell up to three times per adventure. A cleric may use the Healing power three times per game. This power allows the cleric to heal a number of life points equal to d6 plus his level. The cleric may use healing at any moment, even during a fight, but he may not attack on the same turn In which he heals someone. A cleric may use healing on himself or on a friend. When clerics cast spells from scrolls, they add their level only if the spell being cast is Blessing. In all other cases, the spell from the scroll is cast as if the clerics were level 1.",
+    "life": "4 + level",
+    "traits": "A cleric adds half of his level (rounded down) to his Attack rolls. A cleric adds his full level when he attacks undead creatures. For example, a 4th level cleric attacks at +2 or +4 vs. undead."
+  },
+  "rogue": {
+    "armor_allowed": [
+      "light armor"
+    ],
+    "weapons_allowed": [
+      "light weapon",
+      "sling"
+    ],
+    "starting_equipment": "Rope, lock picks, light armor, and a light hand weapon.",
+    "starting_wealth": "3d6 gold pieces",
+    "spells": "A cleric may cast the Blessing spell up to three times per adventure. A cleric may use the Healing power three times per game. This power allows the cleric to heal a number of life points equal to d6 plus his level. The cleric may use healing at any moment, even during a fight, but he may not attack on the same turn In which he heals someone. A cleric may use healing on himself or on a friend. When clerics cast spells from scrolls, they add their level only if the spell being cast is Blessing. In all other cases, the spell from the scroll is cast as if the clerics were level 1.",
+    "life": "3 + level",
+    "traits": "A rogue adds his level on rolls to disarm traps and to his Defense rolls. A rogue adds his level to his Attack rolls only when attacking an outnumbered minion, i.e. if the party is more numerous than a group of minions."
+  },
+  "wizard": {
+    "armor_allowed": [
+      "none"
+    ],
+    "weapons_allowed": [
+      "light weapon",
+      "sling"
+    ],
+    "starting_equipment": "Light hand weapon, spell-book, writing implements.",
+    "starting_wealth": "4d6 gold pieces",
+    "spells": "A wizard begins the game with two spells, plus one spell per level, so a first level wizard has 3 spells. The wizard must decide which spells he has prepared before starting the adventure. He may prepare multiple copies of the same spell, or any combination of the six spells allowed in the game. A wizard may find additional spells in adventures, and add them to the repertoire of spells that he can prepare. Spells acquired when Four Against Darkness leveling up may be used immediately.",
+    "life": "2 + level",
+    "traits": "A wizard adds his level only when attacking with spells, including spells cast from scrolls, or on rolls to solve puzzles or riddles."
+  },
+  "barbarian": {
+    "armor_allowed": [
+      "shield",
+      "light armor"
+    ],
+    "weapons_allowed": [
+      "any"
+    ],
+    "starting_equipment": "Light armor, shield, and a hand weapon. You may trade in his shield and hand weapon for a two-handed weapon or for a bow.",
+    "starting_wealth": "1d6 gold pieces",
+    "life": "7 + level",
+    "traits": "A barbarian adds his level to his Attack rolls. A barbarian may not use magic items, scrolls, or potions. He may grudgingly accept the healing from a cleric, since that’s technically not magic but divine favor, and may use holy water. Once per game, a barbarian may perform a rage attack. During a rage attack, roll the Attack die three times, and choose the best result. If the rage attack hits a boss monster, it inflicts two wounds. Barbarians cannot read and therefore cannot use scrolls or gain any benefit from a book or other written material. "
+  },
+  "elf": {
+    "armor_allowed": [
+      "shield",
+      "light armor",
+      "heavy armor"
+    ],
+    "weapons_allowed": [
+      "any"
+    ],
+    "starting_equipment": "light armor, hand weapon, bow.",
+    "starting_wealth": "2d6 gold pieces",
+    "life": "4 + level",
+    "spells": "An elf may cast a single spell per level per adventure, but only if he is wearing light armor and NOT using a shield. An Elf may carry a shield strapped to his back and waste one attack to ready the shield. A 2nd level elf may prepare two spells, and a third level elf may prepare three spells. Elves may find additional spells in adventures, and add them to the repertoire of spells that they can prepare. Spells added when leveling up may be used immediately.",
+    "traits": "An elf adds his level to Attack rolls, except when using two-handed weapons. An elf has +1 to his Attack or spell roll when fighting orcs, including orclings and orc brutes and any other monster with the word “orc” in its name. The elf adds + L to spell-casting rolls, like a wizard, including to spells cast from a scroll."
+  },
+  "dwarf": {
+    "armor_allowed": [
+      "shield",
+      "light armor",
+      "heavy armor"
+    ],
+    "weapons_allowed": [
+      "any"
+    ],
+    "starting_equipment": "light armor, shield, hand weapon, OR heavy armor and two-handed weapon.",
+    "starting_wealth": "3d6 gold pieces",
+    "life": "5 + level",
+    "traits": "A dwarf adds his level to Attack rolls, except when using ranged weapons like bows or slings. Dwarves have +1 to their Defense rolls against trolls, ogres, and giants, and +1 to their Attack rolls against goblins. Dwarves can smell gold and jewels. When you meet a monster, if you have a dwarf in the party, roll a die and add the dwarf’s level. If the total is 6 or better, you may determine the monster’s treasure BEFORE deciding to attack the monster. Dwarves are extremely attached to their gold: a party with 2 or more dwarves may not bribe monsters! When you find treasure that can be split (such as coins), you must always assign at least one coin to every dwarf in the party, if possible. Dwarves are natural goldsmith and gem experts. When you sell a gem or jewelry item, if you have a dwarf in the party, you are paid 20% more for the gem (round fractions down)."
+  },
+  "halfling": {
+    "armor_allowed": [
+      "light armor"
+    ],
+    "weapons_allowed": [
+      "light hand weapon",
+      "sling"
+    ],
+    "starting_equipment": "Lots of snacks, sling, light hand weapon.",
+    "starting_wealth": "2d6 gold pieces",
+    "life": "3 + level",
+    "traits": "Halflings add their level to their Defense rolls against giants, trolls, and ogres. Halflings have a number of Luck points equal to their level +1. A halfling may spend a Luck point to to run away from a combat without receiving an attack (see running away from combats in the Encounters section), or to reroll one of the following rolls: an Attack roll, a Defense roll, a Search roll, or a roll on the Treasure or Magical Treasure tables. You may not reroll a reroll, and the result of a reroll stands, even if it worse than the original roll. All Luck points spent are recovered at the end of the adventure. If a halfling gains or loses a level during an adventure, he also gains or loses a Luck point."
+  },
+  "martial mystic": {
+    "armor_allowed": [
+      "none"
+    ],
+    "weapons_allowed": [
+      "Light weapons",
+      "sling",
+      "two-handed light weapon (quarter-staff: counts as a 10’ pole, and has a -1 for being a light crushing weapon and a +1 for being a two-handed weapon, for a net bonus of 0)."
+    ],
+    "starting_equipment": "Light hand weapon or sling, meditation beads, one short rope (used to tie incapacitated opponents).",
+    "starting_wealth": "1d6 gold pieces",
+    "life": "5 + level",
+    "traits": "A martial mystic is a student of the martial arts. Learning to focus on inner life-force and to control bodily functions and abilities to the fullest, mystics can produce seemingly magical effects, awaken their internal energies, transfer their life force onto others, and access the telepathic storage of universal knowledge known as akasha.",
+    "traits Attack and Defense": "The mystic adds +1/2 L to attack rolls (both melee and ranged) and +L to defense rolls. ",
+    "traits Unarmed fighting": "The martial mystic is trained to use his hands and feet as weapons, and does not suffer the customary -2 modifier for unarmed fighting. The -1 for using light weapons still applies. In addition, the mystic may attack with a kick. A kick hits at +1 but if the mystic rolls a 1 on the attack roll, the mystic loses his balance and will not attack next turn.",
+    "traits Resistance": "The martial mystic adds +L to save rolls vs. poison, stone-turning, gas, stunning, and mind control/hypnosis.",
+    "traits Athletic": "The martial mystic adds +L to save rolls to climb or leap or obstacles or to jump down safely, including when falling through a trapdoor or any similar trap that inflicts falling damage.",
+    "traits Chi powers": "Chi powers: The martial mystic receives a number of Chi points at the beginning of every adventure equal to his level +2. The martial mystic may spend one Chi point per turn to do one of the following: 1) Create an energy fist attack that counts as a magic attack and can hit any creature, including those who are insubstantial or are hit only by magic weapons. Add +L (not just 1/2L as usual) to this unarmed melee attack. If the martial mystic possesses a magic item or an advanced skill that lets him perform multiple attacks or attack more than one target, such as Flurry of Blows or Double Attack, the +L bonus is applied to all attacks per-formed during the current turn. The energy fist disappears at the end of the turn; 2) Destroy one door, treasure chest, shield, pole, tree or other item made of wood with a thickness up to the mystic’s arm length. The power can be used to break free from a wooden house or even damage a ship to the point it will sink or disable a siege engine. This happens automatically, but requires the expenditure of an action. This may also be used to automatically inflict up to 3 damage against creatures made of wood (wood golems, wood automatons, wood elementals, treemen, living wood statues); 3) Break free of chains, ropes, shackles, handcuffs or other restraints, including magical ones. This happens automatically, but requires the expenditure of an action; 4) Evade from a melee without suffering an attack; 5) Automatically pass a defense roll (you spend the Chi point INSTEAD OF rolling you cannot roll and then, on a failure, decide to use the Chi); 6) Project his lifeforce to heal others. The mystic spends 1 Chi and loses 1 Life but heals 2 life to a friend. This ability may also be used to remove the effects of poisoning from a friend’s body, but it will not bring back to life someone who died of poisoning. The mystic may also remove temporary blindness or 1 point of Madness. The mystic may heal another mystic but not himself; 7) Parry a ranged attack and immediately reflect it back against the attacker (use the mystic’s normal chance to hit with a ranged attack, adding +1/2 the mystic’s L); 8) Upon a successful defense roll, spend 1 Chi to immediately perform a melee attack at -1 that will incapacitate the attacker, as long as the mystic spends his following action to tie the attacker with a rope or the like; this ability may be used only against minion or vermin, or against a boss whose level is half the mystic or less (for example, an 8th level mystic may immobilize a level 4 Boss). This ability may not be used against weird monsters, hordes, shapeless creatures, insubstantial creatures, elementals or swarms (use your common sense: if it is something that cannot be tied with a rope, incapacitation will not work); 9) Focus on non-lethal combat, so that the mystic may perform non-lethal (subduing) attacks for the duration of an encounter. Any victim “killed” by the mystic during this combat is considered knocked out instead, and may be revived later for interrogation, bound, etc. Weird monsters and creatures with no nervous system (undead, insubstantial creatures, oozes, jelly cubes, molds, elementals, automata and robots, spirits) may not be knocked out; 10) Use pressure points to force a prisoner to tell the truth. This allows the mystic to perform a search roll, once per adventure, that will yield 2 clues, if he has a prisoner to interrogate. The prisoner must be able to communicate (i.e., not an animal). Weird monsters and creatures with no nervous system (undead, insubstantial creatures, oozes, jelly cubes, molds, elementals, automata and robots, spirits) may not be interrogated with pressure points; 11) Put a number of Chi points towards self discovery and introspection. The points must be allotted before the beginning of the adventure and may not be used for anything else. Once the mystic has allotted 6 Chi points towards self discovery, he may access akashic knowledge or wake up his kundalini energy. Accessing akhasic knowledge: this lets the mystic use a single skill he does not know once per adventure (any expert skill from any book such as those found in Four Against the Abyss may be used) or cast a single spell per adventure from any list of spells from any book. The spell is not memorized or chosen, it is just drawn into the mystic mind’s from akasha (a collective, telepathic library of all the knowledge in the universe). The spell or skill will disappear from the mystic’s mind as soon as its game effect is caused. Awakening kundalini: This will give the mystic a permanent +1 to all rolls performed during an encounter (attack, defense, saves, or any other rolls). Spent Chi points are recovered during the mystic’s morning meditation, a process that requires sitting in an undisturbed place for at least one hour. ",
+    "spells": "Scroll use: Mystics can cast spells from scrolls and magic items, always counting as first level casters (they just add +1 to the spell casting roll).",
+    "traits Skills": "Expert skills: The martial mystic may learn the following skills from Four Against the Abyss: Acute Hearing, Combat Acrobatics, Deadly Strike (used with bare hands only), Double Attack, Impervious, Poison Resistance, Quick Footed, Spot Weakness (only with bare hands), Withstand Pain. From Concise Collection of Classes, the mystic may learn the following skills: Catch Projectiles, Flurry of Blows, Quivering Palm. Saves: Unless specified otherwise in the description of a save, a martial mystic saves a rogue."
+  },
+  "green troll": {
+    "armor_allowed": [
+      "none"
+    ],
+    "weapons_allowed": [
+      "any melee",
+      "thrown rocks"
+    ],
+    "starting_equipment": "one two-handed crushing weapon, one large rock.",
+    "starting_wealth": "1d6 gold pieces",
+    "life": "! + level",
+    "traits": "A few green skinned, regenerating trolls are civilized enough to be accepted in adventuring parties in the role of brutes.Traits: Trolls add +L to melee attacks and a flat +1 to ranged attacks with thrown weapons (typ-ically axes or even large stones) and their projectile vomit attack. Green trolls’ thick skin is equivalent to heavy armor and gives +2 to defense rolls.",
+    "traits Projectile Vomiting": "Once per adventure per level, a troll may spew its acid gastric juices upon a target. This counts as a ranged attack that inflicts 2 wounds if it hits. However, if the target is wearing any clothes, fur or other expensive clothes or decorative objects are part of its treasure, they will be ruined and lose all monetary value. Likewise, a creature that has been killed by troll acid may not be harvested for body parts for alchemical use.",
+    "traits Stupidity": "Trolls are immensely stupid and unpredictable. They may not learn any advanced skills and may not use equipment of any kind except weapons. Likewise, they may not be sent alone toinspect a room or check for traps, listen for sounds, or any action that involves searching or generating/using Clues. If at any moment only trolls remain in a party, the party is considered disbanded and the adventure ends.At the beginning of any combat encounter, once the combat starts, they must roll d20 on the stupidity table to see what they will do in the current encounter. If a character with the Troll Trainer expert skill is in the party, roll d20 twice and pick your favorite result. (TODO need table)",
+    "traits Regeneration": "At the end of any combat encounter in which the troll was not damaged by fire, magic or other energy form, the troll recovers all Life lost.",
+    "traits Immense Strength": "Trolls have no limits on weight carried. They can carry characters who have been turned to stone and use two-handed weapons one handed. Anyway, they are very clumsy and any heavy object carried by them (including petrified characters) has a 1 in 6 of breaking beyond any chance of repair (roll at the end of the adventure). Petrified characters may be returned to normality, but if the troll broke them they will also need a Resurrection ritual to come back to life!",
+    "traits Not a Fussy Eater": "A green troll may eat anything organic, and does not gain any Madness points if it eats other sentients. As long as the party defeats creatures that are not spirits, undead or artificial/elemental creatures, the green troll will not take damage from starvation.",
+    "traits Big and Lumbering": "A troll occupies a full square in a dungeon corridor and blocks line of sight. This means that an ally may not fire missile weapons from behind the troll. Trolls have -1 on stealth rolls.",
+    "traits Save": "As barbarians. They always add +L on strength related saves for lifting, bashing down doors, bending metal bars and the like.",
+    "traits Magic Items": "Trolls may use magic weapons but no equipment that casts spells. They cannot read and therefore cannot use scrolls."
+  }
+}

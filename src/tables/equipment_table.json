@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "type": "equipment",
+    "name": "Bandage",
+    "cost": 5,
+    "description": "Each character can apply bandages once per adventure, healing one lost life. The effect of bandages is cumulative with magical healing from potions or spells. Bandages may not be applied during combat."
+  },
+  {
+    "id": 2,
+    "type": "equipment",
+    "name": "Blessing spell",
+    "cost": 100,
+    "description": "The characters pay the local church to cast a Blessing spell, to remove a game condition such as a curse or being turned to stone from a party member."
+  },
+  {
+    "id": 3,
+    "type": "equipment",
+    "name": "Holy water vial",
+    "cost": 30,
+    "description": "Holy water is purified water created by high-level lerics through a lengthy procedure of chanting and purification in a silver basin. A vial of holy water, if thrown as an attack against a creature susceptible to it (vampires, demons), automatically inflicts 1 wound upon the creature. The church restricts the use of holy water, so a party may buy a maximum of one vial per character."
+  },
+  {
+    "id": 4,
+    "type": "equipment",
+    "name": "Lantern",
+    "cost": 4,
+    "description": "A party must have at least one lantern, and assign it to a character. That character must use one hand to carry the lantern and may not use a bow, a shield, or a two-handed weapon. If the lantern- bearer is killed, another character must pick the lantern up at the end of the current combat. You may also decide to carry more than one lantern, just in case."
+  },
+  {
+    "id": 5,
+    "type": "equipment",
+    "name": "Potion of healing",
+    "cost": 100,
+    "description": "Drinking the content of this vial, even in the middle of an encounter, will restore a character’s Life to its initial level. No character may drink more than one potion of healing per adventure."
+  },
+  {
+    "id": 6,
+    "type": "equipment",
+    "name": "Resurrection ritual",
+    "cost": 1000,
+    "description": "This is bought between games to have a chance to resurrect a dead party member."
+  },
+  {
+    "id": 7,
+    "type": "equipment",
+    "name": "Rope",
+    "cost": 4,
+    "description": "This may be necessary to tie up a defeated monster."
+  }
+]

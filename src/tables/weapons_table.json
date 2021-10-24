@@ -1,0 +1,381 @@
+[
+  {
+    "id": 1,
+    "type": "weapon",
+    "name": "Axe",
+    "weapon_type": "hand weapon",
+    "damage_type": "slash",
+    "roll_modifier": 0,
+    "cost": 6,
+    "description": "-"
+  },
+  {
+    "id": 2,
+    "type": "weapon",
+    "name": "Rapier",
+    "weapon_type": "hand weapon",
+    "damage_type": "slash",
+    "roll_modifier": 0,
+    "cost": 6,
+    "description": "-"
+  },
+  {
+    "id": 3,
+    "type": "weapon",
+    "name": "Sabre",
+    "weapon_type": "hand weapon",
+    "damage_type": "slash",
+    "roll_modifier": 0,
+    "cost": 6,
+    "description": "-"
+  },
+  {
+    "id": 4,
+    "type": "weapon",
+    "name": "Spear",
+    "weapon_type": "hand weapon",
+    "damage_type": "slash",
+    "roll_modifier": 0,
+    "cost": 6,
+    "description": "-"
+  },
+  {
+    "id": 5,
+    "type": "weapon",
+    "name": "Sword",
+    "weapon_type": "hand weapon",
+    "damage_type": "slash",
+    "roll_modifier": 0,
+    "cost": 6,
+    "description": "-"
+  },
+  {
+    "id": 6,
+    "type": "weapon",
+    "name": "Hammer",
+    "weapon_type": "hand weapon",
+    "damage_type": "slash",
+    "roll_modifier": 0,
+    "cost": 6,
+    "description": "-"
+  },
+  {
+    "id": 7,
+    "type": "weapon",
+    "name": "Mace",
+    "weapon_type": "hand weapon",
+    "damage_type": "slash",
+    "roll_modifier": 0,
+    "cost": 6,
+    "description": "-"
+  },
+  {
+    "id": 8,
+    "type": "weapon",
+    "name": "Flail",
+    "weapon_type": "hand weapon",
+    "damage_type": "slash",
+    "roll_modifier": 0,
+    "cost": 6,
+    "description": "-"
+  },
+  {
+    "id": 9,
+    "type": "weapon",
+    "name": "Metal rod",
+    "weapon_type": "hand weapon",
+    "damage_type": "slash",
+    "roll_modifier": 0,
+    "cost": 6,
+    "description": "-"
+  },
+  {
+    "id": 10,
+    "type": "weapon",
+    "name": "Dagger",
+    "weapon_type": "light hand weapon",
+    "damage_type": "slash",
+    "roll_modifier": -1,
+    "cost": 5,
+    "description": "-"
+  },
+  {
+    "id": 11,
+    "type": "weapon",
+    "name": "Knife",
+    "weapon_type": "light hand weapon",
+    "damage_type": "slash",
+    "roll_modifier": -1,
+    "cost": 5,
+    "description": "-"
+  },
+  {
+    "id": 12,
+    "type": "weapon",
+    "name": "Short sword",
+    "weapon_type": "light hand weapon",
+    "damage_type": "slash",
+    "roll_modifier": -1,
+    "cost": 5,
+    "description": "-"
+  },
+  {
+    "id": 13,
+    "type": "weapon",
+    "name": "Club",
+    "weapon_type": "light hand weapon",
+    "damage_type": "crush",
+    "roll_modifier": -1,
+    "cost": 5,
+    "description": "-"
+  },
+  {
+    "id": 14,
+    "type": "weapon",
+    "name": "Cudgel",
+    "weapon_type": "light hand weapon",
+    "damage_type": "crush",
+    "roll_modifier": -1,
+    "cost": 5,
+    "description": "-"
+  },
+  {
+    "id": 15,
+    "type": "weapon",
+    "name": "Jo stock",
+    "weapon_type": "light hand weapon",
+    "damage_type": "crush",
+    "roll_modifier": -1,
+    "cost": 5,
+    "description": "-"
+  },
+  {
+    "id": 16,
+    "type": "weapon",
+    "name": "Nunchaku",
+    "weapon_type": "light hand weapon",
+    "damage_type": "crush",
+    "roll_modifier": -1,
+    "cost": 5,
+    "description": "-"
+  },
+  {
+    "id": 17,
+    "type": "weapon",
+    "name": "Shillelagh",
+    "weapon_type": "light hand weapon",
+    "damage_type": "crush",
+    "roll_modifier": -1,
+    "cost": 5,
+    "description": "-"
+  },
+  {
+    "id": 18,
+    "type": "weapon",
+    "name": "Staff",
+    "weapon_type": "light hand weapon",
+    "damage_type": "crush",
+    "roll_modifier": -1,
+    "cost": 5,
+    "description": "-"
+  },
+  {
+    "id": 19,
+    "type": "weapon",
+    "name": "Walking Stick",
+    "weapon_type": "light hand weapon",
+    "damage_type": "crush",
+    "roll_modifier": -1,
+    "cost": 5,
+    "description": "-"
+  },
+  {
+    "id": 20,
+    "type": "weapon",
+    "name": "Wizard's Staff",
+    "weapon_type": "light hand weapon",
+    "damage_type": "crush",
+    "roll_modifier": -1,
+    "cost": 5,
+    "description": "-"
+  },
+  {
+    "id": 21,
+    "type": "weapon",
+    "name": "Halberd",
+    "weapon_type": "Heavy weapon (two hands)",
+    "damage_type": "slash",
+    "roll_modifier": 1,
+    "cost": 15,
+    "description": "-"
+  },
+  {
+    "id": 22,
+    "type": "weapon",
+    "name": "Long Spear",
+    "weapon_type": "Heavy weapon (two hands)",
+    "damage_type": "slash",
+    "roll_modifier": 1,
+    "cost": 15,
+    "description": "May be used by a character in the rear to attack over a friend's shoulder at -1 UNLESS the friend is taller (humans and elves are taller than dwarves, halflings and gnomes)"
+  },
+  {
+    "id": 23,
+    "type": "weapon",
+    "name": "Naginata",
+    "weapon_type": "Heavy weapon (two hands)",
+    "damage_type": "slash",
+    "roll_modifier": 1,
+    "cost": 15,
+    "description": "-"
+  },
+  {
+    "id": 24,
+    "type": "weapon",
+    "name": "Pike",
+    "weapon_type": "Heavy weapon (two hands)",
+    "damage_type": "slash",
+    "roll_modifier": 1,
+    "cost": 15,
+    "description": "May be used by a character in the rear to attack over a friend's shoulder at -1 UNLESS the friend is taller (humans and elves are taller than dwarves, halflings and gnomes)"
+  },
+  {
+    "id": 25,
+    "type": "weapon",
+    "name": "Two Handed Sword",
+    "weapon_type": "Heavy weapon (two hands)",
+    "damage_type": "slash",
+    "roll_modifier": 1,
+    "cost": 15,
+    "description": "-"
+  },
+  {
+    "id": 26,
+    "type": "weapon",
+    "name": "Huge Warclub",
+    "weapon_type": "Heavy weapon (two hands)",
+    "damage_type": "crush",
+    "roll_modifier": 1,
+    "cost": 15,
+    "description": "-"
+  },
+  {
+    "id": 27,
+    "type": "weapon",
+    "name": "Maul",
+    "weapon_type": "Heavy weapon (two hands)",
+    "damage_type": "crush",
+    "roll_modifier": 1,
+    "cost": 15,
+    "description": "-"
+  },
+  {
+    "id": 28,
+    "type": "weapon",
+    "name": "Quarterstaff",
+    "weapon_type": "Heavy weapon (two hands)",
+    "damage_type": "crush",
+    "roll_modifier": 1,
+    "cost": 15,
+    "description": "-"
+  },
+  {
+    "id": 29,
+    "type": "weapon",
+    "name": "War Hammer",
+    "weapon_type": "Heavy weapon (two hands)",
+    "damage_type": "crush",
+    "roll_modifier": 1,
+    "cost": 15,
+    "description": "-"
+  },
+  {
+    "id": 30,
+    "type": "weapon",
+    "name": "Bow",
+    "weapon_type": "Ranged weapon",
+    "damage_type": "slash",
+    "roll_modifier": 0,
+    "cost": 15,
+    "description": "This lets a character perform a single attack before the monsters can act EVEN when the monsters act before the party. Then the bow may no longer be used as the monsters and the characters are assumed to be in close combat. The bow user will need to spend a turn to put away the bow and draw another weapon."
+  },
+  {
+    "id": 31,
+    "type": "equipment",
+    "name": "Arrow",
+    "weapon_type": "Ranged weapon",
+    "cost": 6,
+    "number": 12,
+    "description": "Arrows are considered slashing weapons. You may assume that a character carries all arrows that he will need, and that his quiver gets replenished between games. If you do not mind the additional book- keeping, you may keep track of how many arrows the character uses. The character begins the game with a quiver of 12 arrows. All the arrows used in the game are lost or damaged. A character can buy more arrows, at the cost of 6 gp per dozen. The maximum a character can carry is 48 arrows."
+  },
+  {
+    "id": 32,
+    "type": "weapon",
+    "name": "Crossbow",
+    "weapon_type": "Ranged weapon",
+    "damage_type": "slash",
+    "roll_modifier": 1,
+    "cost": 20,
+    "description": "After each shot, it takes one action (forfeit one attack) to reload a crossbow"
+  },
+  {
+    "id": 33,
+    "type": "weapon",
+    "name": "Javelin",
+    "weapon_type": "Ranged weapon",
+    "damage_type": "slash",
+    "roll_modifier": 0,
+    "cost": 6,
+    "description": "You may swap to a hand weapon as a free action after weapon is thrown. The weapon is lost if the party runs from combat. A thrown Javelin breaks on an attack roll of 1 or 2, EVEN IF the attack is successful"
+  },
+  {
+    "id": 34,
+    "type": "weapon",
+    "name": "Sling",
+    "weapon_type": "Ranged weapon",
+    "damage_type": "crush",
+    "roll_modifier": -1,
+    "cost": 4,
+    "description": "This weapon works like a bow, but at -1. Bullets from a sling are treated as crushing weapons."
+  },
+  {
+    "id": 35,
+    "type": "weapon",
+    "name": "Throwing Axe",
+    "weapon_type": "Ranged weapon",
+    "damage_type": "slash",
+    "roll_modifier": 0,
+    "cost": 8,
+    "description": "You may swap to a hand weapon as a free action after weapon is thrown. The weapon is lost if the party runs from combat. This weapon is one handed and can be used with a shield."
+  },
+  {
+    "id": 36,
+    "type": "weapon",
+    "name": "Throwing Stick",
+    "weapon_type": "Ranged weapon",
+    "damage_type": "crush",
+    "roll_modifier": -1,
+    "cost": 4,
+    "description": "-"
+  },
+  {
+    "id": 37,
+    "type": "weapon",
+    "name": "Arquebus",
+    "weapon_type": "Ranged weapon",
+    "damage_type": "slash",
+    "roll_modifier": 3,
+    "cost": 100,
+    "description": "May be fired only once per encounter. Usable only by swashbucklers, dwarves, and warriors. On a roll of 1, the gun explodes inflicting d3 damage upon the user. may be used as a club (crush, -1) in melee. Weapon is loud. For every shot roll for wandering monsters (1 or 2 on d6) whenever used in a dungeon. Monsters will arrive after combat. User can reload before monsters arrive."
+  },
+  {
+    "id": 38,
+    "type": "weapon",
+    "name": "Handgun",
+    "weapon_type": "Ranged weapon",
+    "damage_type": "slash",
+    "roll_modifier": 2,
+    "cost": 50,
+    "description": "May be fired only once per encounter. Usable only by dwarves and warriors. Must use both hands to fire. On a roll of 1, the gun explodes inflicting d3 damage upon the user. Weapon is loud. For every shot roll for wandering monsters (1 or 2 on d6) whenever used in a dungeon. Monsters will arrive after combat. User can reload before monsters arrive."
+  }
+]

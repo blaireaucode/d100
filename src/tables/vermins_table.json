@@ -1,0 +1,64 @@
+[
+  {
+    "id": 1,
+    "type": "vermin",
+    "name": "rats",
+    "number_roll": "3d6",
+    "level": 1,
+    "treasure": "no",
+    "reaction": "(d6): 1–3 flee, 4–6 fight",
+    "description": "Any character wounded has a 1 in 6 chance of losing 1 additional life due to an infected wound. "
+  },
+  {
+    "id": 2,
+    "type": "vermin",
+    "name": "vampire bats",
+    "number_roll": "3d6",
+    "level": 1,
+    "treasure": "no",
+    "reaction": "(d6): 1–3 flee, 4–6 fight",
+    "description": "Spells are cast at -1 due to their distracting shrieking."
+  },
+  {
+    "id": 3,
+    "type": "vermin",
+    "name": "goblin swarmlings",
+    "number_roll": "2d6",
+    "level": 3,
+    "treasure": -1,
+    "morale": -1,
+    "reaction": "(d6): 1 flee, 2-3 flee if outnumbered, 4 bribe (5 gp x goblin), 5–6 fight.",
+    "description": ""
+  },
+  {
+    "id": 4,
+    "type": "vermin",
+    "name": "giant centipedes",
+    "number_roll": "1d6",
+    "level": 3,
+    "treasure": "no",
+    "reaction": "(d6): 1 flee, 2-3 flee if outnumbered, 4-6 fight.",
+    "description": "Any character wounded by a giant centipede must save versus level 2 poison or lose 1 additional life."
+  },
+  {
+    "id": 5,
+    "type": "vermin",
+    "name": "vampire frogs",
+    "number_roll": "1d6",
+    "level": 4,
+    "treasure": -1,
+    "reaction": "(d6): 1 flee, 2-4 fight, 5-6 fight to the death",
+    "description": ""
+  },
+  {
+    "id": 6,
+    "type": "vermin",
+    "name": "skeletal rats",
+    "number_roll": "2d6",
+    "attribute": "undead",
+    "level": 3,
+    "treasure": "no",
+    "reaction": "(d6): 1-2 flee, 3-6 fight",
+    "description": "Crushing weapon attacks are at +1 against skeletal rats, but they cannot be attacked by bows and slings."
+  }
+]

@@ -1,0 +1,162 @@
+
+.App {
+    text-align: left;
+    background-color: #282c34;
+    /* background-color: #141517!important; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1rem;
+    color: #eee;
+}
+
+.field_name {
+    color: #aaa;
+}
+
+.item {
+    color: #aaa;
+}
+
+.item:hover {
+    color: #eee;
+}
+
+.encounter {
+    border: 0;
+    border-style: solid;
+    border-color: #777;
+    margin-left: 0px;
+    padding-left: 10px;
+    max-width:800px;
+}
+
+.App a:link {
+    color: #18b26f;
+    text-decoration: none; /* remove underline */
+}
+
+.App a:visited {
+    color: #18b26f;
+}
+
+.App a:hover {
+    color: #0de587;
+}
+
+.Book {
+    min-height: 100vh;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /*align-items: left;*/
+    justify-content: left;
+    max-width: 800px;
+    font-family: Verdana;
+    font-weight: 300;
+    line-height: 1.6em;
+    font-size: calc(7px + 0.9vmin);
+    color: #eee;
+}
+
+.Book-topbar {
+    max-width: 800px;
+    text-align: right;
+    margin-top: 1.5%;
+}
+
+.Book-topbar-l {
+    text-align: left
+}
+
+.Book-topbar-c {
+    text-align: center
+}
+
+.Book-topbar-r {
+    text-align: right
+}
+
+.help {
+    font-size: calc(0.8em);
+}
+
+.field_input {
+    /* color: #18b26f!important; */
+    /* color: #3e84f2!important; */
+    color: #2982d2 !important;
+    padding: 0 !important;
+    /* text-align:left; */
+    /*font-size: calc(8px + 0.7vmin) !important;*/
+}
+
+.dead {
+    color: #8a0303;
+    font-weight: bold;
+}
+
+.clear {
+    color: #000000 !important;
+}
+
+.field_input_nb {
+    max-width: 5ch;
+}
+
+.fieldLabel {
+    font-size: calc(8px + 0.7vmin) !important;
+}
+
+.character {
+    #max-width: 18em;
+    #min-height: 45em;
+    #max-height: 45em;
+    margin-right: 2em;
+    display: block;
+    overflow-x: auto;
+}
+
+.collapse-css-transition {
+    transition: height 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.table_cell {
+    word-wrap: break-word;
+    background-color: #282c34;
+    border-bottom: #777777;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    color: #aaa;
+    display: block;
+    overflow-y: auto;
+    font-size: calc(8px + 0.7vmin);
+}
+
+.character_traits {
+    max-width: 17em;
+    /*min-height: 15em;*/
+    max-height: 15em;
+    word-wrap: break-word;
+    display: block;
+    overflow-y: auto;
+    font-size: calc(8px + 0.7vmin);
+}
+
+.blinking {
+    animation: blinkingText 2s 1;
+    /*animation-duration: 4s;*/
+}
+
+@keyframes blinkingText {
+    0% {
+        color: #8a0303;
+    }
+    49% {
+        color: #8a0303;
+    }
+    90% {
+        color: transparent;
+    }
+    100% {
+        color: -moz-default-color;
+    }
+}
