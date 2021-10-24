@@ -1,0 +1,43 @@
+[
+  {
+    "d10": 10,
+    "reaction": "Monster will attempt to escape"
+  },
+  {
+    "d10": 9,
+    "reaction": "Monster damaged last round it will attempt to escape"
+  },
+  {
+    "d10": 8,
+    "reaction": "Monster has less than half HP it will attempt to escape"
+  },
+  {
+    "d10": 7,
+    "reaction": "Monster will attack"
+  },
+  {
+    "d10": 6,
+    "reaction": "Monster will attack"
+  },
+  {
+    "d10": 5,
+    "reaction": "Monster will attack"
+  },
+  {
+    "d10": 4,
+    "reaction": "Monster will attack"
+  },
+  {
+    "d10": 3,
+    "reaction": "Monster will attack"
+  },
+  {
+    "d10": 2,
+    "reaction": "Monster has less than ½ its HP gains AV+5"
+  },
+  {
+    "d10": 1,
+    "reaction": "Monster has less than ½ its HP gains AV+10"
+  }
+]
+
