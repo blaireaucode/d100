@@ -7,6 +7,7 @@
  */
 
 import encounters_table from 'tables/table_e_encounter.json'
+import reactions_table from 'tables/table_monster_reaction.json'
 import {update_character, update_dic, update_g_encounter, update_g_room, update_g_team} from "./update_helpers"
 import {D6} from "helpers/dice_helpers"
 import update from "immutability-helper"
@@ -51,6 +52,27 @@ export function new_encounter(id) {
     }
     let e = JSON.parse(JSON.stringify(table[i]));
     e["id"] = id;
+    e["reaction"] = {};
+    return e;
+}
+
+export function new_reaction(id) {
+    const table = reactions_table;
+    // get the reaction
+    let found = false;
+    let i;
+    for (i in table) {
+        const d10 = table[i].d10;
+        if (id === d10) {
+            found = true;
+            break;
+        }
+    }
+    if (!found) {
+        console.log('ERROR : cannot find id ', id);
+        i = 1;
+    }
+    let e = JSON.parse(JSON.stringify(table[i]));
     return e;
 }
 

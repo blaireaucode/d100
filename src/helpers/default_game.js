@@ -47,17 +47,7 @@ const default_game = {
     items: {},
     skills: {},
     room: {},
-    encounter: { // to remove
-        id:0,
-        d100:"11-20",
-        name: 'Giant Bats',
-        av: 25,
-        def: 0,
-        dmg: -3,
-        hp: '2/3/3',
-        k: 'Table P4',
-        abilities: 'Fly, Surprise, Pack'
-    }
+    encounter: {}
 }
 
 export default default_game

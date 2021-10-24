@@ -93,6 +93,17 @@ export function create_D100_rolling_dices(value) {
     return dices;
 }
 
+export function create_D10_rolling_dice(value) {
+    let dices = [];
+    dices.push({
+        type: DICE_TYPES.D10_1,
+        backColor: "black",
+        fontColor: "green",
+        value: value-1
+    })
+    return dices;
+}
+
 export function open_dice_ui(game, total, dices) {
     const dice = {
         open: true,

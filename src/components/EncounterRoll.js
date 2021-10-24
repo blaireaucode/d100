@@ -18,7 +18,7 @@ import Clear from "./Clear";
 import encounters_table from 'tables/table_e_encounter.json'
 import {Select} from "@material-ui/core";
 
-class Room extends Component {
+class EncounterRoll extends Component {
 
     options = [];
 
@@ -96,4 +96,4 @@ class Room extends Component {
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Room)
+export default connect(mapStateToProps, mapDispatchToProps)(EncounterRoll)

@@ -11,13 +11,14 @@ import * as THREE from "three";
 import * as CANNON from "cannon";
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
 
-import {DiceD10, DiceD10_100, DiceD12, DiceD20, DiceD4, DiceD6, DiceD8, DiceManager} from 'helpers/DiceManager2';
+import {DiceD10, DiceD10_100, DiceD10_1, DiceD12, DiceD20, DiceD4, DiceD6, DiceD8, DiceManager} from 'helpers/DiceManager2';
 
 export const DICE_TYPES = {
     D4: "D4",
     D6: "D6",
     D8: "D8",
     D10: "D10",
+    D10_1: "D10_1",
     D10_100: "D10_100",
     D12: "D12",
     D20: "D20"
@@ -139,6 +140,9 @@ class DicesAnimation extends Component {
             }
             if (type === DICE_TYPES.D10) {
                 return new DiceD10({size: diceSize, ...dice});
+            }
+            if (type === DICE_TYPES.D10_1) {
+                return new DiceD10_1({size: diceSize, ...dice});
             }
             if (type === DICE_TYPES.D10_100) {
                 return new DiceD10_100({size: diceSize, ...dice});
