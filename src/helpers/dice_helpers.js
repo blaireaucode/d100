@@ -8,7 +8,6 @@
 
 import update from "immutability-helper"
 import {update_g_options} from 'helpers/update_helpers'
-//import {DICE_TYPES} from "./DicesAnimation";
 import {DICE_TYPES} from "helpers/DicesAnimation2";
 
 export function getRandomInt(min, max) {
@@ -49,14 +48,7 @@ export function D6(explosive = true, nb = 1, mod = 0, max = 6) {
     return {total: t, dices: v, nb: nb, mod: mod, explosive: explosive, max: max};
 }
 
-/*
-    game.options = {
-        dice_ui: {
-            open:true/false,
-            value:
-    }
 
- */
 export function get_dice_ui(game) {
     if ('options' in game)
         if ('dice_ui' in game.options)
@@ -85,8 +77,6 @@ export function create_D100_rolling_dices(value) {
         d1 = 0;
         d2 = 0;
     }
-    console.log("value ", value);
-    console.log("d1 d2", d1, d2);
     let dices = [];
     dices.push({
         type: DICE_TYPES.D10_100,

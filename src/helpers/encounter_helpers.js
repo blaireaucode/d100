@@ -7,9 +7,9 @@
  */
 
 import encounters_table from 'tables/table_e_encounter.json'
-import {update_character, update_dic, update_g_encounter, update_g_room, update_g_team} from "./update_helpers";
+import {update_character, update_dic, update_g_encounter, update_g_room, update_g_team} from "./update_helpers"
 import {D6} from "helpers/dice_helpers"
-import update from "immutability-helper";
+import update from "immutability-helper"
 
 export function parse_d100_interval(d100, id) {
     let min = 1;

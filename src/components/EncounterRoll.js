@@ -54,20 +54,17 @@ class Room extends Component {
 
     roll_encounter() {
         let total = getRandomInt(1, 100);
-        //total = 100;
 
         // encounter
         //let g = clear_action(this.props.game);
         const e = new_encounter(total);
         let g = up.update_g_encounter(this.props.game, e);
-        console.log('enc', e);
 
         // rolling dice
         const dices = create_D100_rolling_dices(total);
         g = open_dice_ui(g, total, dices);
-        console.log('g dice ', g.options.dice_ui)
         this.props.set_game(g);
-        this.setState({value: this.state.value});
+        //this.setState({value: this.state.value});
     }
 
     handle_change(event) {
@@ -76,13 +73,6 @@ class Room extends Component {
     }
 
     render() {
-        /*let id = 0
-        if ('encounter' in this.props.game.room)
-            if ('id' in this.props.game.room.encounter)
-                id = this.props.game.room.encounter.id
-                *
-                /
-         */
         return (
             <span>
 

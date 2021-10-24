@@ -9,24 +9,9 @@
 import React, {Component} from "react";
 import * as THREE from "three";
 import * as CANNON from "cannon";
-//import OrbitControls from "orbit-controls-es6";
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
 
-
-import {
-    DiceD10,
-    DiceD10_100,
-    DiceD12,
-    DiceD20,
-    DiceD4,
-    DiceD6,
-    DiceD8,
-    DiceManager,
-    DiceObject
-}
-//from "threejs-dice"
-from 'helpers/DiceManager2';
-//import {DiceObject} from "./DiceManager";
+import {DiceD10, DiceD10_100, DiceD12, DiceD20, DiceD4, DiceD6, DiceD8, DiceManager} from 'helpers/DiceManager2';
 
 export const DICE_TYPES = {
     D4: "D4",
@@ -39,16 +24,13 @@ export const DICE_TYPES = {
 };
 const DEFAULT_DICE_SIZE = 4;
 
-
 class DicesAnimation extends Component {
 
     componentDidMount() {
-        console.log('componentDidMount, call go');
         this.go();
     }
 
     go() {
-        console.log('starting go, create scene');
         if (!Array.isArray(this.props.dices)) {
             throw new Error(
                 "Required argument 'dices' is missing. It has to be an array of dice configs like [{ type: 'D6', backColor: 'red', value: 4 }]"
@@ -61,6 +43,7 @@ class DicesAnimation extends Component {
         //this.scene.background = color;//"#282c34";//"white";
         //this.scene.background = null;
         //this.scene.background = new THREE.Color( 0xff0000 );
+
         // CAMERA
         const width = this.mount.clientWidth;
         const height = this.mount.clientHeight;
@@ -127,22 +110,16 @@ class DicesAnimation extends Component {
         // Dice
         this.diceModels = this.generateDiceModels(this.props.dices);
         this.diceModels.forEach(dice => this.scene.add(dice.getObject()));
-
-        // FIXME
-        console.log('dice models', this.diceModels);
         this.prepareDicesValues(this.props.dices.map(dice => dice.value));
-        console.log('prepareDicesValues', this.props.dices)
 
         this.start();
     }
 
     shouldComponentUpdate() {
-        //console.log('shouldComponentUpdate');
         return true;
     }
 
     componentWillUnmount() {
-        // console.log('componentWillUnmount');
         this.stop();
         this.mount.removeChild(this.renderer.domElement);
     }
@@ -151,7 +128,6 @@ class DicesAnimation extends Component {
         return dices.map(dice => {
             const {type, size} = dice;
             const diceSize = size || DEFAULT_DICE_SIZE;
-            //console.log('dices', diceSize, dice);
             if (type === DICE_TYPES.D4) {
                 return new DiceD4({size: diceSize, ...dice});
             }
@@ -182,31 +158,23 @@ class DicesAnimation extends Component {
     prepareDicesValues = values => {
         const diceValues = this.diceModels.map((diceModel, index) => {
             const {size} = diceModel;
-            // console.log('d', diceModel);
             // diceModel.scaleFactor = 0.2;
             const diceObject = diceModel.getObject();
             diceObject.position.x = -15 - (index % 3) * size;
             diceObject.position.y = this.props.posY + Math.floor(index / 3) * size; // Was 2 -> 5
             diceObject.position.z = -15 + (index % 3) * size;
-            //console.log('pos',  diceObject.position);
             diceObject.quaternion.x = ((Math.random() * 90 - 45) * Math.PI) / 180;
             diceObject.quaternion.z = ((Math.random() * 90 - 45) * Math.PI) / 180;
             diceModel.updateBodyFromMesh();
-            // const yRand = Math.random() * 20; // default
             const yRand = Math.random() * 20;
             const rand = Math.random() * 5;
             diceObject.body.velocity.set(25 + rand, 40 + yRand, 15 + rand);
-            console.log('values', values, index, values[index]);
-            console.log('diceModel', diceModel);
             return {dice: diceModel, value: values[index]};
         });
-
-        console.log('dvalues', diceValues);
         DiceManager.prepareValues(diceValues);
     };
 
     start = () => {
-        console.log('start', this, this.frameId);
         if (!this.frameId) {
             this.frameId = requestAnimationFrame(this.animate);
         }
@@ -218,15 +186,13 @@ class DicesAnimation extends Component {
     };
 
     animate = () => {
-        //console.log('animate', this);
         this.updatePhysics();
         this.renderScene();
-        // FIXME this.controls.update();
+        this.controls.update();
         this.frameId = window.requestAnimationFrame(this.animate);
     };
 
     updatePhysics = () => {
-        //console.log('updatePhysics', this);
         this.world.step(1.0 / 60.0);
         this.diceModels.forEach(diceModel => diceModel.updateMeshFromBody());
     };
@@ -236,7 +202,6 @@ class DicesAnimation extends Component {
     };
 
     render() {
-        //console.log('render DICE', this.props);
         return (
             <div
                 //className={this.props.className}

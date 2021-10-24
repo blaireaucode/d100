@@ -22,7 +22,7 @@ import {withStyles} from '@material-ui/core/styles'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import L from 'helpers/L'
-import {close_dice_ui, D6, open_dice_ui} from 'helpers/dice_helpers'
+import {close_dice_ui, open_dice_ui} from 'helpers/dice_helpers'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 
 const drawerWidth = 170
@@ -61,8 +61,8 @@ class LayoutLeftBar extends React.Component {
             const g = close_dice_ui(this.props.game);
             this.props.set_game(g);
         } else {
-            const g = open_dice_ui(this.props.game, D6());
-            this.props.set_game(g);
+            //const g = open_dice_ui(this.props.game, D6());
+            //this.props.set_game(g);
         }
     }
 

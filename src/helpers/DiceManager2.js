@@ -594,7 +594,7 @@ export class DiceD10 extends DiceObject {
         this.scaleFactor = 0.9;
         this.values = 10;
         this.faceTexts = [' ', '0', '1', '2', '3', '4', '5', '6', '7', '8',
-            '9', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+            '⒐', '0', '1', '2', '3', '4', '5', '6', '7', '8', '⒐', '0'];
         this.textMargin = 1.0;
         this.mass = 350;
         this.inertia = 9;

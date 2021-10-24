@@ -29,9 +29,9 @@ class Encounter extends Component {
     }
 
     roll_reaction() {
-        const dice = D6(false);
-        const g = open_dice_ui(this.props.game, dice);
-        this.props.set_game(g);
+        //const dice = D6(false);
+        //const g = open_dice_ui(this.props.game, dice);
+        //this.props.set_game(g);
     }
 
 
@@ -108,7 +108,7 @@ class Encounter extends Component {
                 <F>Damage Modifier</F> <EncounterInputField field_name={'dmg'} type={'number'}/>
                 <F>Health Points</F> <EncounterInputField field_name={'hp'}/>
                 <br/>
-                <F>Ability</F> <EncounterInputField field_name={'abilities'}/>
+                <F>Ability</F> <EncounterInputField field_name={'ability'}/>
                 <F>Reward</F> <EncounterInputField field_name={'k'}/>
 
             </Paper>
