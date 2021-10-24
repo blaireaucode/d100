@@ -15,7 +15,7 @@ const default_game = {
     options: {
         dice_ui: {
             open: false,
-            value: -1
+            dices: []
         }
     },
 
@@ -45,8 +45,19 @@ const default_game = {
     },
 
     items: {},
-    skills: {}
-
+    skills: {},
+    room: {},
+    encounter: { // to remove
+        id:0,
+        d100:"11-20",
+        name: 'Giant Bats',
+        av: 25,
+        def: 0,
+        dmg: -3,
+        hp: '2/3/3',
+        k: 'Table P4',
+        abilities: 'Fly, Surprise, Pack'
+    }
 }
 
 export default default_game

@@ -11,13 +11,25 @@ import * as THREE from "three";
 import * as CANNON from "cannon";
 import OrbitControls from "orbit-controls-es6";
 //import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import {DiceD10, DiceD12, DiceD20, DiceD4, DiceD6, DiceD8, DiceManager, DiceObject} from 'helpers/DiceManager';
+
+import {
+    DiceD10,
+    //DiceD10_100,
+    DiceD12,
+    DiceD20,
+    DiceD4,
+    DiceD6,
+    DiceD8,
+    DiceManager,
+    DiceObject
+} from './DiceManager';
 
 export const DICE_TYPES = {
     D4: "D4",
     D6: "D6",
     D8: "D8",
     D10: "D10",
+    D10_100: "D10_100",
     D12: "D12",
     D20: "D20"
 };
@@ -92,7 +104,7 @@ class DicesAnimation extends Component {
         this.world = new CANNON.World();
         this.world.gravity.set(0, -9.82 * 20, 0);
         this.world.broadphase = new CANNON.NaiveBroadphase();
-        this.world.solver.iterations = 16;
+        this.world.solver.iterations = 16;// default = 16;
         DiceManager.setWorld(this.world);
 
         // Floor
@@ -112,6 +124,7 @@ class DicesAnimation extends Component {
         this.diceModels.forEach(dice => this.scene.add(dice.getObject()));
 
         this.prepareDicesValues(this.props.dices.map(dice => dice.value));
+        //console.log('prepareDicesValues', this.props.dices)
 
         this.start();
     }
@@ -144,6 +157,9 @@ class DicesAnimation extends Component {
             if (type === DICE_TYPES.D10) {
                 return new DiceD10({size: diceSize, ...dice});
             }
+            if (type === DICE_TYPES.D10_100) {
+                return new DiceD10_100({size: diceSize, ...dice});
+            }
             if (type === DICE_TYPES.D12) {
                 var d = new DiceD12({size: diceSize, scaleFactor: this.props.scaleFactor, ...dice});
                 return d;
@@ -168,10 +184,11 @@ class DicesAnimation extends Component {
             diceObject.quaternion.x = ((Math.random() * 90 - 45) * Math.PI) / 180;
             diceObject.quaternion.z = ((Math.random() * 90 - 45) * Math.PI) / 180;
             diceModel.updateBodyFromMesh();
+            // const yRand = Math.random() * 20; // default
             const yRand = Math.random() * 20;
             const rand = Math.random() * 5;
             diceObject.body.velocity.set(25 + rand, 40 + yRand, 15 + rand);
-            // console.log('values', values, index);
+            console.log('values', values, index, values[index]);
             return {dice: diceModel, value: values[index]};
         });
 

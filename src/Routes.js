@@ -20,7 +20,7 @@ import ReactModal from "react-modal"
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import {connect} from "react-redux"
 import DiceRoller from 'components/DiceRoller'
-import {close_dice_ui} from 'helpers/dice_helpers'
+import {close_dice_ui, get_dice_ui} from 'helpers/dice_helpers'
 
 ReactModal.setAppElement('#root')
 
@@ -66,12 +66,8 @@ class Routes extends Component {
 
     render() {
         // console.log('Public url', process.env.PUBLIC_URL);
-        //console.log('this', this.props.game)
-        let dice_flag = false;
-        if ('options' in this.props.game)
-            if ('dice_ui' in this.props.game.options.dice_ui)
-                dice_flag = this.props.game.options.dice_ui.open;
-        //const dice_flag = false;
+        const dice_ui = get_dice_ui(this.props.game);
+        const dice_flag = dice_ui.open;
         return (
             <Router basename={process.env.PUBLIC_URL}>
                 <div>

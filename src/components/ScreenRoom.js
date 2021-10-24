@@ -13,15 +13,20 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import RollEncounter from "components/EncounterRoll"
 import Fight from "components/Fight"
 import F from 'helpers/F'
+import EncounterRoll from "components/EncounterRoll";
 
 class ScreenRoom extends Component {
 
     render() {
         return (
             <div>
-                Encounter selector
 
-                Encounter
+                <EncounterRoll/>
+
+                <p/>
+                Help fight ...
+                <p/>
+                <Encounter/>
 
                 {/*<F>Monster:</F> <RollEncounter/>
                 <p/>

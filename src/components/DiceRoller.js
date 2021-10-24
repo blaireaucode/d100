@@ -10,7 +10,8 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import {close_dice_ui} from 'helpers/dice_helpers'
-import DicesAnimation, {DICE_TYPES} from 'components/DicesAnimation'
+//import DicesAnimation from 'helpers/DicesAnimation'
+import DicesAnimation from 'helpers/DicesAnimation2'
 
 class DiceRoller extends Component {
 
@@ -27,6 +28,8 @@ class DiceRoller extends Component {
 
     render() {
         const dui = this.props.game.options.dice_ui;
+        const dices = dui.dices;
+        /*
         let dices = [];
         let dice_type = DICE_TYPES.D6
         if (dui.max === 3)
@@ -41,13 +44,15 @@ class DiceRoller extends Component {
             dices.push({
                 type: dice_type,
                 backColor: "black",
-                fontColor: (dui.dices[d] === 6 && dui.explosive) ? "yellow" : "green",
+                //fontColor: (dui.dices[d] === 6 && dui.explosive) ? "yellow" : "green",
+                fontColor: dui.colors[d],
                 value: dui.dices[d]
             })
         }
         if (dices.length === 1) {
             dices[0].fontColor = "green"; // not explosive
         }
+         */
         return (
             <div>
                 <DicesAnimation

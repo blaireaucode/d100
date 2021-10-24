@@ -15,11 +15,7 @@ export const mapDispatchToProps = (dispatch) => ({
 });
 
 export const mapStateToProps = store => {
-    // console.log('mapStateToProps', store);
     return {
         game: store,
-        //team: store.team,      // shortcut, allow to set props instead of game
-        //room: store.room,      // shortcut, allow to set props instead of game
-        //options: store.options // shortcut, allow to set props instead of game
     };
 };

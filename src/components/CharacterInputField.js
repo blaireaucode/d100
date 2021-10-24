@@ -16,7 +16,8 @@ import * as up from 'helpers/update_helpers'
 class CharacterInputField extends Component {
 
     static defaultProps = {
-        type: "txt"
+        type: "txt",
+        read_only : false
     }
 
     handleChange = ({target}) => {
@@ -58,6 +59,7 @@ class CharacterInputField extends Component {
                    type={this.props.type}
                    name={this.props.field_name}
                    value={value}
+                   readOnly={this.props.read_only}
                    onChange={this.handleChange}
                    startAdornment={a}
             />

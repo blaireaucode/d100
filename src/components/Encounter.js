@@ -9,12 +9,11 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import EncounterFieldInput from 'components/EncounterInputField'
-import L from 'helpers/L'
 import {update_g_encounter} from 'helpers/update_helpers'
-import EncounterNumber from 'components/EncounterNumber'
 import {D6, open_dice_ui} from 'helpers/dice_helpers'
 import F from 'helpers/F'
+import {Paper} from "@material-ui/core"
+import EncounterInputField from "./EncounterInputField";
 
 class Encounter extends Component {
 
@@ -37,11 +36,11 @@ class Encounter extends Component {
 
 
     render() {
-        const e = this.props.encounter;
+        const e = this.props.game.encounter;
         if (!('id' in e)) return '';
-        if (e.id < 0) return '';
 
         // dead ?
+        /*
         let m = 'life';
         let dead = ''
         if ('number' in e) m = 'number';
@@ -54,7 +53,9 @@ class Encounter extends Component {
                     <L onClick={this.clear_action}>  ✗  </L>
                     </span>
         }
+         */
 
+        /*
         // number
         let nb = '';
         if ('number' in e)
@@ -83,18 +84,34 @@ class Encounter extends Component {
                 <br/>
             </span>)
 
-        return (
-            <div className={'monster'}>
-                <F> Name: </F> {e.name} ({e.type})<br/>
-                {nb}
+         */
+
+        /*
+        {nb}
                 <F> Level: </F><EncounterFieldInput encounter={e} type={'number'} field_name={'level'}/><br/>
                 {life}
-                <F> Treasure: </F>{e.treasure}<br/> {/*FIXME roll for treasure*/}
+                <F> Treasure: </F>{e.treasure}<br/>
                 {morale}
                 {attribute}
                 <L onClick={this.roll_reaction}> &#127922; </L> <F>Reaction: </F>{e.reaction}<br/>
                 {e.description}<br/>
-            </div>
+         */
+
+        return (
+            <Paper elevation={5} className={'encounter'}>
+                <EncounterInputField field_name={'name'}/>
+                <EncounterInputField field_name={'id'} type={'number'} read_only={true}/>
+                <EncounterInputField field_name={'d100'} read_only={true}/>
+                <br/>
+                <F>Attack Value</F> <EncounterInputField field_name={'av'} type={'number'}/>
+                <F>Defence</F> <EncounterInputField field_name={'def'} type={'number'}/>
+                <F>Damage Modifier</F> <EncounterInputField field_name={'dmg'} type={'number'}/>
+                <F>Health Points</F> <EncounterInputField field_name={'hp'}/>
+                <br/>
+                <F>Ability</F> <EncounterInputField field_name={'abilities'}/>
+                <F>Reward</F> <EncounterInputField field_name={'k'}/>
+
+            </Paper>
         );
     }
 }

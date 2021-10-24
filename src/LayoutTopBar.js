@@ -20,6 +20,7 @@ import Grid from '@material-ui/core/Grid'
 //import Cached from '@material-ui/icons/Cached'
 // import Button from '@material-ui/core/Button'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
+import {get_dice_ui} from "./helpers/dice_helpers";
 
 const styles = theme => ({
     menuButton: {
@@ -64,14 +65,11 @@ class LayoutTopBar extends React.Component {
          */
         //if (!en) hen = '';
 
-            /*
-        const dui = this.props.game.options.dice_ui;
+        const dice_ui = get_dice_ui(this.props.game);
         let left = '';
-        if (dui.value > 0) {
-            left = 'Dice: ' + dui.value;
-        }*/
-
-        const left = 'debug';
+        if (dice_ui.open) {
+            left = 'Dice: ' + dice_ui.total;
+        }
 
         return (
             <Toolbar>

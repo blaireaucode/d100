@@ -10,9 +10,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "cannon": "^0.6.2",
     "immutability-helper": "^3.1.1",
-    "orbit-controls-es6": "^2.0.1",
     "react": "^17.0.2",
     "react-data-table-component": "^6.11.7",
     "react-dom": "^17.0.2",
@@ -24,7 +22,10 @@
     "redux": "^4.0.5",
     "rpg-awesome": "^0.2.0",
     "styled-components": "^5.3.0",
-    "three": "0.124.0",
+    "@types/cannon": "^0.1.2",
+    "@types/three": "^0.131.0",
+    "cannon": "^0.6.2",
+    "three": "^0.131.0",
     "uuid": "^8.3.2",
     "web-vitals": "^1.0.1"
   },
@@ -51,5 +52,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "^2.4.1"
   }
 }

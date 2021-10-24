@@ -127,9 +127,9 @@ class LayoutLeftBar extends React.Component {
                         <ListItemText>Games</ListItemText> {/*📜📃📋📎🔧*/}
                     </ListItem>
 
-                    <ListItem button component={Link} to='/debug'>
+                    {/*<ListItem button component={Link} to='/debug'>
                         <ListItemText primary={'Debug'}/>
-                    </ListItem>
+                    </ListItem>*/}
 
                 </List>
                 <Divider/>

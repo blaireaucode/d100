@@ -6,54 +6,49 @@
  * https://opensource.org/licenses/MIT.
  */
 
-import vermins_table from 'tables/vermins_table.json'
-import minions_table from 'tables/minions_table.json'
-import boss_table from 'tables/boss_table.json'
+import encounters_table from 'tables/table_e_encounter.json'
 import {update_character, update_dic, update_g_encounter, update_g_room, update_g_team} from "./update_helpers";
-import {D6, get_dices} from "helpers/dice_helpers"
+import {D6} from "helpers/dice_helpers"
 import update from "immutability-helper";
 
-const encounters_tables = {
-    "vermin": vermins_table,
-    "minion": minions_table,
-    "boss": boss_table,
+export function parse_d100_interval(d100, id) {
+    let min = 1;
+    let max = 1;
+    const index = d100.indexOf('-');
+    if (index >= 0) {
+        min = parseInt(d100.substr(0, index + 1));
+        max = parseInt(d100.substr(index + 1, d100.length));
+    } else {
+        min = parseInt(d100);
+        max = min;
+    }
+    if (id >= min && id <= max) return true;
+    return false;
 }
 
-export function new_encounter(game, type, id) {
-    // check for error (should not happen)
-    if (!(type in encounters_tables))
-        type = 'vermin';
-    const table = encounters_tables[type];
+export function new_encounter(id) {
+    const table = encounters_table;
     // get the encounter
     let found = false;
     let i;
     for (i in table) {
-        if (table[i].id === id) {
+        const d100 = table[i].d100;
+        if (parse_d100_interval(d100, id)) {
             found = true;
             break;
         }
     }
     if (!found) {
-        console.log('ERROR : cannot find id', id);
-        i = 0;
+        console.log('ERROR : cannot find id ', id);
+        i = 1;
     }
-    const e = JSON.parse(JSON.stringify(table[i]));
-    // roll number
-    if ('number_roll' in e) {
-        let d = get_dices(e['number_roll']);
-        let t = D6(false, d.nb, d.mod);
-        e.number = t.total;
-        e.initial_number = t.total;
-    }
-    // life ?
-    //if (!('life' in e)) e.life = 1;
-    // update the encounter in the game
-
-    // clear action and previous action
-    let g = clear_action(game);
-    g = update(g, {room: {$unset: ['previous_action']}});
-    return update_g_encounter(g, e);
+    let e = JSON.parse(JSON.stringify(table[i]));
+    e["id"] = id;
+    return e;
 }
+
+
+// OLD -------------------------------------------------------
 
 export function update_encounter_number(game, dice) {
     const t = dice.total;

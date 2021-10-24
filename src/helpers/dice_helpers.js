@@ -8,6 +8,8 @@
 
 import update from "immutability-helper"
 import {update_g_options} from 'helpers/update_helpers'
+//import {DICE_TYPES} from "./DicesAnimation";
+import {DICE_TYPES} from "helpers/DicesAnimation2";
 
 export function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -44,7 +46,7 @@ export function D6(explosive = true, nb = 1, mod = 0, max = 6) {
     }
     let t = v.reduce((a, b) => a + b, 0)
     t = t + parseInt(mod); // modifier (like +2 in "1D6+2")
-    return {total: t, dices: v, nb: nb, mod: mod, explosive: explosive, max:max};
+    return {total: t, dices: v, nb: nb, mod: mod, explosive: explosive, max: max};
 }
 
 /*
@@ -55,6 +57,12 @@ export function D6(explosive = true, nb = 1, mod = 0, max = 6) {
     }
 
  */
+export function get_dice_ui(game) {
+    if ('options' in game)
+        if ('dice_ui' in game.options)
+            return game.options.dice_ui;
+    return {open: false};
+}
 
 export function update_g_dice_ui(game, dice) {
     const options = update(game.options,
@@ -70,13 +78,36 @@ export function close_dice_ui(game) {
     return update_g_dice_ui(game, dice);
 }
 
-export function open_dice_ui(game, dice_value = -1) {
+export function create_D100_rolling_dices(value) {
+    let d1 = parseInt(Math.floor(value / 10));
+    let d2 = parseInt(Math.floor(value - d1 * 10));
+    if (value === 100) {
+        d1 = 0;
+        d2 = 0;
+    }
+    console.log("value ", value);
+    console.log("d1 d2", d1, d2);
+    let dices = [];
+    dices.push({
+        type: DICE_TYPES.D10_100,
+        backColor: "black",
+        fontColor: "green",
+        value: d1
+    })
+    dices.push({
+        type: DICE_TYPES.D10,
+        backColor: "black",
+        fontColor: "green",
+        value: d2
+    })
+    return dices;
+}
+
+export function open_dice_ui(game, total, dices) {
     const dice = {
         open: true,
-        value: dice_value.total,
-        dices: dice_value.dices,
-        max: dice_value.max,
-        explosive: dice_value.explosive
+        total: total,
+        dices: dices,
     };
     return update_g_dice_ui(game, dice);
 }

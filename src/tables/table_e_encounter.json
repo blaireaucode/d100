@@ -1,0 +1,531 @@
+[
+  {
+    "d100": "1-10",
+    "name": "Giant Rats",
+    "av": 25,
+    "def": 0,
+    "dmg": -2,
+    "hp": "3/2/2",
+    "k": "Table P2",
+    "ability": "Disease, Pack"
+  },
+  {
+    "d100": "11-20",
+    "name": "Giant Bats",
+    "av": 25,
+    "def": 0,
+    "dmg": -3,
+    "hp": "2/3/3",
+    "k": "Table P4",
+    "ability": "Fly, Surprise, Pack"
+  },
+  {
+    "d100": "21-25",
+    "name": "Giant Ants",
+    "av": 20,
+    "def": 2,
+    "dmg": -2,
+    "hp": "3/2/3/3",
+    "k": "Table P1",
+    "ability": "Pack"
+  },
+  {
+    "d100": "26-30",
+    "name": "Giant Spider",
+    "av": 30,
+    "def": 2,
+    "dmg": -1,
+    "hp": "6",
+    "k": "Table P1",
+    "ability": "Web"
+  },
+  {
+    "d100": "31-33",
+    "name": "Goblinoids",
+    "av": 25,
+    "def": 0,
+    "dmg": -2,
+    "hp": "3/3/2",
+    "k": "Table I/W",
+    "ability": "Pack"
+  },
+  {
+    "d100": "34-37",
+    "name": "Goblins",
+    "av": 25,
+    "def": 1,
+    "dmg": -1,
+    "hp": "2/3/3",
+    "k": "Table A/I/W",
+    "ability": "Pack"
+  },
+  {
+    "d100": "38-41",
+    "name": "Goblin Archers",
+    "av": 25,
+    "def": 1,
+    "dmg": -1,
+    "hp": "2/3/3",
+    "k": "Table A/I/W",
+    "ability": "Pack, Surprise"
+  },
+  {
+    "d100": "42",
+    "name": "Goblin Warlock",
+    "av": 30,
+    "def": 1,
+    "dmg": -1,
+    "hp": 7,
+    "k": "Table I/TA",
+    "ability": "Dark Magic"
+  },
+  {
+    "d100": "43-44",
+    "name": "Bear",
+    "av": 40,
+    "def": 2,
+    "dmg": 0,
+    "hp": "10",
+    "k": "Table P2",
+    "ability": ""
+  },
+  {
+    "d100": "45-46",
+    "name": "Ratmen",
+    "av": 30,
+    "def": 2,
+    "dmg": 0,
+    "hp": "3/3/4",
+    "k": "Table A/I/W",
+    "ability": "Pack, Disease"
+  },
+  {
+    "d100": "47",
+    "name": "Ratman Champion",
+    "av": 40,
+    "def": 2,
+    "dmg": 0,
+    "hp": "9",
+    "k": "Table A/I/W",
+    "ability": "Disease"
+  },
+  {
+    "d100": "48-49",
+    "name": "Goatman",
+    "av": 40,
+    "def": 3,
+    "dmg": 1,
+    "hp": "11",
+    "k": "Table A/I/W",
+    "ability": ""
+  },
+  {
+    "d100": "50-51",
+    "name": "Goatman Archer",
+    "av": 40,
+    "def": 2,
+    "dmg": 1,
+    "hp": "9",
+    "k": "Table A/I/W",
+    "ability": "Surprise"
+  },
+  {
+    "d100": "52",
+    "name": "Goatman Priest",
+    "av": 40,
+    "def": 1,
+    "dmg": 1,
+    "hp": "15",
+    "k": "Table I/TA",
+    "ability": "Dark Magic"
+  },
+  {
+    "d100": "53-55",
+    "name": "Zombies",
+    "av": 35,
+    "def": 0,
+    "dmg": 0,
+    "hp": "4/4/4/5",
+    "k": "Nothing",
+    "ability": "Disease, Pack"
+  },
+  {
+    "d100": "56-57",
+    "name": "Tricksters",
+    "av": 35,
+    "def": 1,
+    "dmg": 0,
+    "hp": "3/4/4",
+    "k": "Table I/W+5",
+    "ability": "Pack, Surprise, Dark Magic"
+  },
+  {
+    "d100": "58-59",
+    "name": "Imps",
+    "av": 35,
+    "def": 1,
+    "dmg": 1,
+    "hp": "4/4/5/5",
+    "k": "Table P2/I/W+5",
+    "ability": "Fire, Pack"
+  },
+  {
+    "d100": "60-61",
+    "name": "Orc",
+    "av": 45,
+    "def": 3,
+    "dmg": 1,
+    "hp": "10",
+    "k": "Table I/A+10/W+10",
+    "ability": ""
+  },
+  {
+    "d100": "62-65",
+    "name": "Orc Archer",
+    "av": 45,
+    "def": 2,
+    "dmg": 1,
+    "hp": "9",
+    "k": "Table I/A+10/W+10",
+    "ability": "Surprise"
+  },
+  {
+    "d100": "66",
+    "name": "Spider Queen",
+    "av": 40,
+    "def": 3,
+    "dmg": 2,
+    "hp": "14",
+    "k": "Table P1",
+    "ability": "Web, Surprise, Poison"
+  },
+  {
+    "d100": "67",
+    "name": "Skeleton Spider",
+    "av": 45,
+    "def": 4,
+    "dmg": 2,
+    "hp": "15",
+    "k": "Table P1",
+    "ability": "Regenerate, Resurrection, Web, Surprise"
+  },
+  {
+    "d100": "68",
+    "name:": "Giant VampireBat",
+    "av": 45,
+    "def": 3,
+    "dmg": 1,
+    "hp": "10",
+    "k": "Table P4",
+    "ability": "Fly, Surprise, Phase, Resurrection"
+  },
+  {
+    "d100": "69-70",
+    "name": "Giant Apes",
+    "av": 40,
+    "def": 2,
+    "dmg": 2,
+    "hp": "8/8/9",
+    "k": "Table P2",
+    "ability": "Pack"
+  },
+  {
+    "d100": "71",
+    "name": "Zombie Master",
+    "av": 50,
+    "def": 1,
+    "dmg": 1,
+    "hp": "16",
+    "k": "Table TA+10",
+    "ability": "Disease"
+  },
+  {
+    "d100": "72",
+    "name": "Skeleton",
+    "av": 50,
+    "def": 4,
+    "dmg": 1,
+    "hp": "13",
+    "k": "Table A+15/W+15",
+    "ability": "Fear, Regenerate, Resurrection"
+  },
+  {
+    "d100": "73",
+    "name": "Giant Snake",
+    "av": 55,
+    "def": 3,
+    "dmg": 2,
+    "hp": "16",
+    "k": "1d100 GP",
+    "ability": "Poison"
+  },
+  {
+    "d100": "74",
+    "name": "Orc Champion",
+    "av": 55,
+    "def": 5,
+    "dmg": 2,
+    "hp": "16",
+    "k": "Table I/A+15/W+15"
+  },
+  {
+    "d100": "75",
+    "name": "Ghoul",
+    "av": 50,
+    "def": 3,
+    "dmg": 3,
+    "hp": "18",
+    "k": "Table P2",
+    "ability": "Phase, Fear"
+  },
+  {
+    "d100": "76",
+    "name": "Wight",
+    "av": 55,
+    "def": 4,
+    "dmg": 3,
+    "hp": "20",
+    "k": "Table I/TA+15",
+    "ability": "Fly, Fear, Resurrection"
+  },
+  {
+    "d100": "77",
+    "name": "Orc Warlock",
+    "av": 50,
+    "def": 4,
+    "dmg": 2,
+    "hp": "22",
+    "k": "Table I/TA+15",
+    "ability": "Dark, Magic"
+  },
+  {
+    "d100": "78",
+    "name": "Demon",
+    "av": 55,
+    "def": 4,
+    "dmg": 2,
+    "hp": "20",
+    "k": "Table P2/I/W+15",
+    "ability": "Fire"
+  },
+  {
+    "d100": "79",
+    "name": "Ghost",
+    "av": 60,
+    "def": 4,
+    "dmg": 2,
+    "hp": "24",
+    "k": "Table TA+15",
+    "ability": "Death, Touch, Ethereal, Fear"
+  },
+  {
+    "d100": "80",
+    "name": "Vampire",
+    "av": 65,
+    "def": 5,
+    "dmg": 3,
+    "hp": "25",
+    "k": "Table I/W+15/TA+15",
+    "ability": "Dark, Magic, Fly, Phase, Resurrection"
+  },
+  {
+    "d100": "81",
+    "name": "Wraith",
+    "av": 60,
+    "def": 4,
+    "dmg": 3,
+    "hp": "28",
+    "k": "Table TB",
+    "ability": "Death, Touch, Ethereal, Fear"
+  },
+  {
+    "d100": "82",
+    "name": "Necromancer",
+    "av": 60,
+    "def": 5,
+    "dmg": 2,
+    "hp": "25",
+    "k": "Table I/W + 20/TB",
+    "ability": "Dark, Magic, Regenerate, Resurrection"
+  },
+  {
+    "d100": "83",
+    "name": "Demon Lord",
+    "av": 55,
+    "def": 4,
+    "dmg": 2,
+    "hp": "29",
+    "k": "Table P2/I/W + 20/TB",
+    "ability": "Fire, Large, Fear, Fly"
+  },
+  {
+    "d100": "84",
+    "name": "Ogre",
+    "av": 60,
+    "def": 5,
+    "dmg": 3,
+    "hp": "30",
+    "k": "Table P2/TB + 5",
+    "ability": "Fear, Large"
+  },
+  {
+    "d100": "85",
+    "name": "Minotaur",
+    "av": 65,
+    "def": 6,
+    "dmg": 3,
+    "hp": "33",
+    "k": "Table P2/TB + 5",
+    "ability": "Fear, Large"
+  },
+  {
+    "d100": "86",
+    "name": "Giant",
+    "av": 65,
+    "def": 6,
+    "dmg": 4,
+    "hp": "35",
+    "k": "Table P2/TB + 10",
+    "ability": "Fear, Large, Stun"
+  },
+  {
+    "d100": "87",
+    "name": "Troll",
+    "av": 60,
+    "def": 5,
+    "dmg": 3,
+    "hp": "36",
+    "k": "Table P2/TB + 10",
+    "ability": "Large, Fear, Regenerate"
+  },
+  {
+    "d100": "88",
+    "name": "EvilWarlock",
+    "av": 65,
+    "def": 6,
+    "dmg": 3,
+    "hp": "34",
+    "k": "Table TB + 15",
+    "ability": "Dark Magic"
+  },
+  {
+    "d100": "89",
+    "name": "Lich Lord",
+    "av": 70,
+    "def": 7,
+    "dmg": 3,
+    "hp": "35",
+    "k": "Table I/W + 20/TB + 15",
+    "ability": "Dark Magic, Regenerate, Resurrection"
+  },
+  {
+    "d100": "90",
+    "name": "Gargoyle",
+    "av": 65,
+    "def": 7,
+    "dmg": 3,
+    "hp": "38",
+    "k": "Table P2/TB + 20",
+    "ability": "Fear,Stun"
+  },
+  {
+    "d100": "91",
+    "name": "Wyrm",
+    "av": 70,
+    "def": 6,
+    "dmg": 4,
+    "hp": "40",
+    "k": "Table P3/TC",
+    "ability": "Fear, Attacks 2, Large"
+  },
+  {
+    "d100": "92",
+    "name": "Fire Wyrm",
+    "av": 75,
+    "def": 7,
+    "dmg": 4,
+    "hp": "42",
+    "k": "Table P3/TC",
+    "ability": "Fire, Fear, Attacks 2, Large"
+  },
+  {
+    "d100": "93",
+    "name": "Frost Wyrm ",
+    "av": 75,
+    "def": 7,
+    "dmg": 4,
+    "hp": "45",
+    "k": "Table P3/TC",
+    "ability": "Freeze, Fear, Attacks 2, Large"
+  },
+  {
+    "d100": "94",
+    "name": "White Dragon",
+    "av": 80,
+    "def": 7,
+    "dmg": 5,
+    "hp": "47",
+    "k": "Table P4/TC + 5",
+    "ability": "Fly, Fear, Attacks 2, Large"
+  },
+  {
+    "d100": "95",
+    "name": "Green Dragon ",
+    "av": 80,
+    "def": 8,
+    "dmg": 5,
+    "hp": "49",
+    "k": "Table P4/TC + 5",
+    "ability": "Poison, Fly, Fear, Attacks 2, Large"
+  },
+  {
+    "d100": "96",
+    "name": "Red Dragon",
+    "av": 85,
+    "def": 8,
+    "dmg": 5,
+    "hp": "44",
+    "k": "Table P4/TC + 10",
+    "ability": "Fire, Fly, Fear, Attacks 2, Large"
+  },
+  {
+    "d100": "97",
+    "name": "Blue Dragon",
+    "av": 80,
+    "def": 7,
+    "dmg": 5,
+    "hp": "45",
+    "k": "Table P4/TC + 10",
+    "ability": "Freeze, Fly, Fear, Attacks 2, Large"
+  },
+  {
+    "d100": "98",
+    "name": "Black Dragon",
+    "av": 85,
+    "def": 8,
+    "dmg": 5,
+    "hp": "47",
+    "k": "Table P4/TC + 15",
+    "ability": "Dark Magic, Fly, Fear, Attack 2, Large"
+  },
+  {
+    "d100": "99",
+    "name": "Skeleton Dragon",
+    "av": 90,
+    "def": 9,
+    "dmg": 6,
+    "hp": "48",
+    "k": "Table P4/TC + 15",
+    "ability": "Ethereal, Fly, Fear, Attacks 2, Large"
+  },
+  {
+    "d100": "100",
+    "name": "Golden Dragon",
+    "av": 90,
+    "def": 9,
+    "dmg": 6,
+    "hp": "50",
+    "k": "Table P4/TC + 20",
+    "ability": "Fire, Fly, Fear, Attacks 2, Large, Stun"
+  }
+]

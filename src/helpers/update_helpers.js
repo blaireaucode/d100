@@ -27,8 +27,8 @@ export function update_character(team, character) {
         {[character.id]: {$set: character}});
 }
 
-export function update_encounter(room, encounter) {
-    return update(room,
+export function update_g_encounter(game, encounter) {
+    return update(game,
         {encounter: {$set: encounter}});
 }
 
@@ -47,16 +47,12 @@ export function update_g_options(game, options) {
         {options: {$set: options}});
 }
 
-export function update_g_encounter(game, encounter) {
-    const r = update_encounter(game.room, encounter);
-    return update_g_room(game, r);
-}
-
 export function update_g_encounter_field(game, field_name, value) {
-    const enc = game.room.encounter;
+    /*const enc = game.room.encounter;
     const c = update_dic(enc, field_name, value)
     const t = update_encounter(game.room, c)
     return update_g_room(game, t);
+    */
 }
 
 export function update_g_item_field(game, char_id, item_id, field_name, value) {
