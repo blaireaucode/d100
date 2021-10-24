@@ -23,9 +23,7 @@
 }
 
 .encounter {
-    border: 0;
-    border-style: solid;
-    border-color: #777;
+    border: 0 solid #777;
     margin-left: 0px;
     padding-left: 10px;
     max-width:800px;

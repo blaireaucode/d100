@@ -13,6 +13,7 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import EncounterRoll from "components/EncounterRoll"
 import {Paper} from "@material-ui/core";
 import MonsterReactionRoll from "./MonsterReactionRoll";
+import Attack from "./Attack";
 
 class ScreenRoom extends Component {
 
@@ -26,6 +27,8 @@ class ScreenRoom extends Component {
                 <Encounter/>
                 <p/>
                 <MonsterReactionRoll/>
+                <p/>
+                <Attack/>
 
                 <p/>
                 <Paper className={'help'}>

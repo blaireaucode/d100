@@ -29,7 +29,7 @@ class EncounterRoll extends Component {
         this.clear = this.clear.bind(this);
         // list of encounters
         const table = encounters_table;
-        const op = <option key={''} value={''}>{'- none - '}</option>;
+        const op = <option key={'none'} value={'none'}>{'- none - '}</option>;
         this.options.push(op);
         for (let i in table) {
             const e = table[i];
@@ -37,22 +37,37 @@ class EncounterRoll extends Component {
             const op = <option key={e.name} value={min}>{e.d100} - {e.name}</option>;
             this.options.push(op);
         }
+        // state (needed)
+        let id = 'none';
+        const g = this.props.game;
+        if ('encounter' in g)
+            if ('name' in g.encounter) {
+                id = d100_interval_min_max(g.encounter.d100)[0];
+            }
+        this.state = {current: id};
     }
 
     clear() {
         const g = update_g_encounter(this.props.game, {})
         this.props.set_game(g);
+        this.setState({current: 'none'});
     }
 
     set_encounter(e) {
+        const selected_value = e.target.value;
+        if (selected_value === 'none') {
+            this.clear();
+            return;
+        }
         let i;
         for (i in encounters_table) {
             const enc = encounters_table[i];
             const emin = d100_interval_min_max(enc.d100)[0];
-            if (emin === e.target.value) {
+            if (emin === selected_value) {
                 const encounter = new_encounter(emin);
                 const g = up.update_g_encounter(this.props.game, encounter);
                 this.props.set_game(g);
+                this.setState({current: emin});
                 return;
             }
         }
@@ -69,26 +84,22 @@ class EncounterRoll extends Component {
         const dices = create_D100_rolling_dices(total);
         g = open_dice_ui(g, total, dices);
         this.props.set_game(g);
+        this.setState({current: total});
     }
 
     render() {
-        const g = this.props.game;
-        let id = '';
-        if ('encounter' in g)
-            if ('name' in g.encounter) {
-                id = d100_interval_min_max(g.encounter.d100)[0];
-            }
         return (
             <span>
-
-                <L onClick={this.roll_encounter}>&#127922;</L>
-                &nbsp; &nbsp; &nbsp;
-                <Select value={id}
-                        onChange={this.set_encounter}
-                        className={'select'}>
+                Monster : &nbsp;
+                <L onClick={this.roll_encounter}>D100 &#127922;</L>
+                &nbsp; → &nbsp;
+                <Select value={this.state.current}
+                        defaultValue={'none'}
+                        className={'select'}
+                        onChange={this.set_encounter}>
                     {this.options}
                 </Select>
-                &nbsp; &nbsp; &nbsp;
+                &nbsp;
                 <Clear onClick={this.clear}/>
             < /span>
         );
