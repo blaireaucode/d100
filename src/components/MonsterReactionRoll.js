@@ -52,14 +52,14 @@ class MonsterReactionRoll extends Component {
 
     set_reaction(e) {
         let i;
-        if ('none' === e.target.value) {
+        if ('none' === e.target.value.toString()) {
             this.clear();
             return;
         }
         for (i in reaction_table) {
             const enc = reaction_table[i];
             const id = enc.d10
-            if (id === e.target.value) {
+            if (id.toString() === e.target.value.toString()) {
                 const e = new_reaction(id);
                 let g = up.update_g_encounter_field(this.props.game, 'reaction', e);
                 this.props.set_game(g);

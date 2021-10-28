@@ -26,6 +26,8 @@ class ScreenRoom extends Component {
                 <p/>
                 <Encounter/>
                 <p/>
+                <br/>
+                <br/>
                 <MonsterReactionRoll/>
                 <p/>
                 <Attack/>

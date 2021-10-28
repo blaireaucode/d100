@@ -63,7 +63,8 @@ class EncounterRoll extends Component {
         for (i in encounters_table) {
             const enc = encounters_table[i];
             const emin = d100_interval_min_max(enc.d100)[0];
-            if (emin === selected_value) {
+            const emax = d100_interval_min_max(enc.d100)[1];
+            if (selected_value >= emin && selected_value <= emax) {
                 const encounter = new_encounter(emin);
                 const g = up.update_g_encounter(this.props.game, encounter);
                 this.props.set_game(g);
@@ -84,7 +85,8 @@ class EncounterRoll extends Component {
         const dices = create_D100_rolling_dices(total);
         g = open_dice_ui(g, total, dices);
         this.props.set_game(g);
-        this.setState({current: total});
+        const emin = d100_interval_min_max(e.d100)[0];
+        this.setState({current: emin});
     }
 
     render() {
