@@ -8,6 +8,7 @@
 
 import encounters_table from 'tables/table_e_encounter.json'
 import reactions_table from 'tables/table_monster_reaction.json'
+import locations_table from 'tables/table_hit_location.json'
 import {update_character, update_dic, update_g_encounter, update_g_room, update_g_team} from "./update_helpers"
 import {D6} from "helpers/dice_helpers"
 import update from "immutability-helper"
@@ -16,11 +17,12 @@ export function parse_d100_interval(d100, id) {
     const mm = d100_interval_min_max(d100);
     const min = mm[0];
     const max = mm[1];
-    if (id >= min && id <= max) return true;
-    return false;
+    return id >= min && id <= max;
+
 }
 
 export function d100_interval_min_max(d100) {
+    if (d100 === 'none') return ['none', 'none'];
     let min = 1;
     let max = 1;
     const index = d100.indexOf('-');
@@ -34,14 +36,14 @@ export function d100_interval_min_max(d100) {
     return [min, max];
 }
 
-export function new_encounter(id) {
+export function new_encounter(id='none') {
     const table = encounters_table;
     // get the encounter
     let found = false;
     let i;
     for (i in table) {
         const d100 = table[i].d100;
-        if (parse_d100_interval(d100, id)) {
+        if (d100 === id || parse_d100_interval(d100, id)) {
             found = true;
             break;
         }
@@ -52,11 +54,14 @@ export function new_encounter(id) {
     }
     let e = JSON.parse(JSON.stringify(table[i]));
     e["id"] = id;
-    e["reaction"] = {};
+    e["dmin"] = d100_interval_min_max(e.d100)[0];
+    e["reaction"] = new_reaction();
+    e["attack"] = new_attack();
+    e["location"] = new_location();
     return e;
 }
 
-export function new_reaction(id) {
+export function new_reaction(id = 'none') {
     const table = reactions_table;
     // get the reaction
     let found = false;
@@ -72,10 +77,31 @@ export function new_reaction(id) {
         console.log('ERROR : cannot find id ', id);
         i = 1;
     }
-    let e = JSON.parse(JSON.stringify(table[i]));
-    return e;
+    return JSON.parse(JSON.stringify(table[i]));
 }
 
+export function new_attack(id = 'none') {
+    return {d100: id};
+}
+
+export function new_location(id = 'none') {
+    const table = locations_table;
+    // get the reaction
+    let found = false;
+    let i;
+    for (i in table) {
+        const d10 = table[i].d10;
+        if (id.toString() === d10.toString()) {
+            found = true;
+            break;
+        }
+    }
+    if (!found) {
+        console.log('ERROR : cannot find id ', id);
+        i = 1;
+    }
+    return JSON.parse(JSON.stringify(table[i]));
+}
 
 // OLD -------------------------------------------------------
 

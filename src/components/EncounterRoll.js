@@ -29,42 +29,32 @@ class EncounterRoll extends Component {
         this.clear = this.clear.bind(this);
         // list of encounters
         const table = encounters_table;
-        const op = <option key={'none'} value={'none'}>{'- none - '}</option>;
-        this.options.push(op);
         for (let i in table) {
             const e = table[i];
             const min = d100_interval_min_max(e.d100)[0];
-            const op = <option key={e.name} value={min}>{e.d100} - {e.name}</option>;
+            const op = <option key={e.name} value={min}>{e.d100} {e.name}</option>;
             this.options.push(op);
         }
         // state (needed)
-        let id = 'none';
-        const g = this.props.game;
-        if ('encounter' in g)
-            if ('name' in g.encounter) {
-                id = d100_interval_min_max(g.encounter.d100)[0];
-            }
+        const id = d100_interval_min_max(this.props.game.encounter.d100)[0];
         this.state = {current: id};
     }
 
     clear() {
-        const g = update_g_encounter(this.props.game, {})
+        const e = new_encounter();
+        const g = update_g_encounter(this.props.game, e);
         this.props.set_game(g);
-        this.setState({current: 'none'});
+        this.setState({current: e.dmin});
     }
 
     set_encounter(e) {
         const selected_value = e.target.value;
-        if (selected_value === 'none') {
-            this.clear();
-            return;
-        }
         let i;
         for (i in encounters_table) {
             const enc = encounters_table[i];
             const emin = d100_interval_min_max(enc.d100)[0];
             const emax = d100_interval_min_max(enc.d100)[1];
-            if (selected_value >= emin && selected_value <= emax) {
+            if (selected_value === emin || (selected_value >= emin && selected_value <= emax)) {
                 const encounter = new_encounter(emin);
                 const g = up.update_g_encounter(this.props.game, encounter);
                 this.props.set_game(g);
@@ -90,11 +80,13 @@ class EncounterRoll extends Component {
     }
 
     render() {
+        const e = this.props.game.encounter;
+        const clear = e.d100 === 'none' ? '' : <Clear onClick={this.clear}/>;
         return (
             <span>
                 Monster : &nbsp;
                 <L onClick={this.roll_encounter}>D100 &#127922;</L>
-                &nbsp; → &nbsp;
+                &nbsp; &nbsp;
                 <Select value={this.state.current}
                         defaultValue={'none'}
                         className={'select'}
@@ -102,7 +94,7 @@ class EncounterRoll extends Component {
                     {this.options}
                 </Select>
                 &nbsp;
-                <Clear onClick={this.clear}/>
+                {clear}
             < /span>
         );
     }

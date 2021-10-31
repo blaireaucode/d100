@@ -9,7 +9,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import Attack from "components/Attack"
+import Attack from "components/AttackRoll"
 import {clear_action} from "helpers/encounter_helpers"
 
 class Fight extends Component {

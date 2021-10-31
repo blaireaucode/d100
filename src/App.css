@@ -102,6 +102,15 @@
     font-weight: bold;
 }
 
+.attack_hit {
+    color: #2bb905;
+    font-weight: bold;
+}
+
+.attack_miss {
+    color: #c28585;
+}
+
 .clear {
     color: #000000 !important;
 }

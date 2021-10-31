@@ -38,6 +38,10 @@
   {
     "d10": 1,
     "reaction": "Monster has less than ½ its HP gains AV+10"
+  },
+  {
+    "d10": "none",
+    "reaction": ""
   }
 ]
 

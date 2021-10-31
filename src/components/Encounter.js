@@ -36,7 +36,7 @@ class Encounter extends Component {
 
     render() {
         const e = this.props.game.encounter;
-        if (!('id' in e)) return '';
+        if (e.id === 'none') return '';
 
         // dead ?
         /*

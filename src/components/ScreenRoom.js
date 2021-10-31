@@ -13,16 +13,15 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import EncounterRoll from "components/EncounterRoll"
 import {Paper} from "@material-ui/core";
 import MonsterReactionRoll from "./MonsterReactionRoll";
-import Attack from "./Attack";
+import AttackRoll from "./AttackRoll";
+import AttackHitLocationRoll from "./AttackHitLocationRoll";
 
 class ScreenRoom extends Component {
 
     render() {
         return (
             <div>
-
                 <EncounterRoll/>
-
                 <p/>
                 <Encounter/>
                 <p/>
@@ -30,9 +29,15 @@ class ScreenRoom extends Component {
                 <br/>
                 <MonsterReactionRoll/>
                 <p/>
-                <Attack/>
+                <AttackRoll/>
+                <p/>
+                <AttackHitLocationRoll/>
+                <br/>
 
                 <p/>
+                <br/>
+                <br/>
+                <br/>
                 <Paper className={'help'}>
                     1. Roll 1d10 on the “Monster Reaction” table to determine its action in the forthcoming round, then
                     continue to step 2.

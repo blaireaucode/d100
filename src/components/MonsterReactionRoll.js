@@ -26,47 +26,29 @@ class MonsterReactionRoll extends Component {
         this.set_reaction = this.set_reaction.bind(this);
         this.roll_reaction = this.roll_reaction.bind(this);
         this.clear = this.clear.bind(this);
-        // list of encounters
+        // list of reactions
         const table = reaction_table;
-        const op = <option key={'none'} value={'none'}>{'- none - '}</option>;
-        this.options.push(op);
+        const id = this.props.game.encounter.reaction.d10;
         for (let i in table) {
             const e = table[i];
-            const op = <option key={e.d10} value={e.d10}>{e.d10} - {e.reaction}</option>;
+            const op = <option key={e.d10} value={e.d10}>{e.d10} {e.reaction}</option>;
             this.options.push(op);
         }
-        let id = '0';
-        const g = this.props.game;
-        if ('encounter' in g)
-            if ('reaction' in g.encounter) {
-                id = g.encounter.reaction.d10;
-            }
         this.state = {current: id};
     }
 
     clear() {
-        const g = up.update_g_encounter_field(this.props.game, 'reaction', {});
+        const r = new_reaction();
+        const g = up.update_g_encounter_field(this.props.game, 'reaction', r);
         this.props.set_game(g);
-        this.setState({current: 'none'});
+        this.setState({current: r.d10});
     }
 
     set_reaction(e) {
-        let i;
-        if ('none' === e.target.value.toString()) {
-            this.clear();
-            return;
-        }
-        for (i in reaction_table) {
-            const enc = reaction_table[i];
-            const id = enc.d10
-            if (id.toString() === e.target.value.toString()) {
-                const e = new_reaction(id);
-                let g = up.update_g_encounter_field(this.props.game, 'reaction', e);
-                this.props.set_game(g);
-                this.setState({current: id});
-                return;
-            }
-        }
+        const r = new_reaction(e.target.value);
+        let g = up.update_g_encounter_field(this.props.game, 'reaction', r);
+        this.props.set_game(g);
+        this.setState({current: r.d10});
     }
 
     roll_reaction() {
@@ -84,19 +66,21 @@ class MonsterReactionRoll extends Component {
     }
 
     render() {
+        const r = this.props.game.encounter.reaction;
+        const clear = r.d10 === 'none' ? '' : <Clear onClick={this.clear}/>;
         return (
             <span>
                 Reaction :&nbsp;
                 <L onClick={this.roll_reaction}>D6 &#127922;</L>
-                &nbsp; → &nbsp;
-                <Select value={this.state.current}
+                &nbsp; &nbsp;
+                <Select value={r.d10/*this.state.current*/}
                         defaultValue={'none'}
                         onChange={this.set_reaction}
                         className={'select'}>
                     {this.options}
                 </Select>
                 &nbsp;
-                <Clear onClick={this.clear}/>
+                {clear}
             < /span>
         );
     }

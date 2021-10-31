@@ -47,7 +47,7 @@ const default_game = {
     items: {},
     skills: {},
     room: {},
-    encounter: {}
+    encounter: {} // new_encounter('none')
 }
 
 export default default_game
