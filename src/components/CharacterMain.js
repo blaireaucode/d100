@@ -66,6 +66,9 @@ class CharacterMain extends Component {
                 &nbsp; &nbsp; &nbsp; (Can now use spells from the spell book)
 
                 <p/>
+                <F>Dmg (LATER) </F> <CharacterInputField type={'number'} field_name={'dmg'}/>
+                <F>Armour (LATER) </F> <CharacterInputField type={'number'} field_name={'armour'}/>
+                <p/>
 
             </div>);
     }

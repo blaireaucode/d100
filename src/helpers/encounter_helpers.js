@@ -80,8 +80,8 @@ export function new_reaction(id = 'none') {
     return JSON.parse(JSON.stringify(table[i]));
 }
 
-export function new_attack(id = 'none') {
-    return {d100: id};
+export function new_attack(id = 'none', dmg='none', who='character') {
+    return {d100: id, dmg:dmg, who_attack:who};
 }
 
 export function new_location(id = 'none') {

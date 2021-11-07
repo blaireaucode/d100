@@ -80,7 +80,7 @@ class AttackHitLocationRoll extends Component {
         const dmg = l.d10 === 'none' ? '' : <F>Damage modifier: {l.dmg_mod}</F>
         return (
             <span>
-                Hit Location :&nbsp;
+                Hit Location &nbsp;
                 <L onClick={this.roll_location}>D6 &#127922;</L>
                 &nbsp; &nbsp;
                 <Select value={this.state.current}

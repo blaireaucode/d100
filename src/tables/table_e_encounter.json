@@ -2,12 +2,12 @@
   {
     "d100": "none",
     "name": "",
-    "av": "",
-    "def": "",
-    "dmg": "",
-    "hp": "",
-    "k": "",
-    "ability": ""
+    "av": "none",
+    "def": "none",
+    "dmg": "none",
+    "hp": "none",
+    "k": "none",
+    "ability": "none"
   },
   {
     "d100": "1-10",

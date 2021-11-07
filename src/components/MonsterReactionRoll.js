@@ -70,7 +70,7 @@ class MonsterReactionRoll extends Component {
         const clear = r.d10 === 'none' ? '' : <Clear onClick={this.clear}/>;
         return (
             <span>
-                Reaction :&nbsp;
+                Reaction &nbsp;
                 <L onClick={this.roll_reaction}>D6 &#127922;</L>
                 &nbsp; &nbsp;
                 <Select value={r.d10/*this.state.current*/}

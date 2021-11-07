@@ -99,7 +99,18 @@ export function create_D10_rolling_dice(value) {
         type: DICE_TYPES.D10_1,
         backColor: "black",
         fontColor: "green",
-        value: value-1
+        value: value - 1
+    })
+    return dices;
+}
+
+export function create_D6_rolling_dice(value) {
+    let dices = [];
+    dices.push({
+        type: DICE_TYPES.D6,
+        backColor: "black",
+        fontColor: "green",
+        value: value
     })
     return dices;
 }

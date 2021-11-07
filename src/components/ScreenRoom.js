@@ -15,6 +15,9 @@ import {Paper} from "@material-ui/core";
 import MonsterReactionRoll from "./MonsterReactionRoll";
 import AttackRoll from "./AttackRoll";
 import AttackHitLocationRoll from "./AttackHitLocationRoll";
+import AttackDamageRoll from "./AttackDamageRoll";
+import AttackToggle from "./AttackToggle";
+
 
 class ScreenRoom extends Component {
 
@@ -32,6 +35,8 @@ class ScreenRoom extends Component {
                 <AttackRoll/>
                 <p/>
                 <AttackHitLocationRoll/>
+                <p/>
+                <AttackDamageRoll/>
                 <br/>
 
                 <p/>
