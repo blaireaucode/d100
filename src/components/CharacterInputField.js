@@ -17,12 +17,13 @@ class CharacterInputField extends Component {
 
     static defaultProps = {
         type: "txt",
-        read_only : false
+        read_only: false
     }
 
     handleChange = ({target}) => {
         const fn = this.props.field_name;
-        const g = up.update_g_characteristic(this.props.game, fn, target.value);
+        const v = this.props.type === 'bool' ? target.checked : target.value;
+        const g = up.update_g_characteristic(this.props.game, fn, v);
         this.props.set_game(g)
     };
 
@@ -46,8 +47,8 @@ class CharacterInputField extends Component {
             return (
                 <Checkbox
                     className={cn}
-                    name={this.props.field_name}
-                    value={value}
+                    name={fn}
+                    checked={value}
                     onChange={this.handleChange}
                 />
             )
@@ -57,7 +58,7 @@ class CharacterInputField extends Component {
             <Input className={cn}
                    disableUnderline={true}
                    type={this.props.type}
-                   name={this.props.field_name}
+                   name={fn}
                    value={value}
                    readOnly={this.props.read_only}
                    onChange={this.handleChange}

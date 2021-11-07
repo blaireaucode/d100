@@ -1,0 +1,97 @@
+[
+  {
+    "id": 0,
+    "name": "none",
+    "help": ""
+  },
+  {
+    "id": 1,
+    "name": "Attacks",
+    "help": "The monster is able to attack more than once in a single round of combat. The number of times it gets to make an attack roll is equal to its Attacks rating. For each attack that scores a hit, roll a damage die and add them together for a total damage score, then roll for a hit location and apply its modifier (if any), finally apply the monster’s Dmg modifier (if any). "
+  },
+  {
+    "id": 2,
+    "name": "Dark Magic",
+    "help": "Spell Casters found in the dungeons have attuned themselves with Dark Magic. At the start of each combat round before step 1, roll 1d10 to see which magic spell they will use for the round. See table 'Dark Magic'"
+  },
+  {
+    "id": 3,
+    "name": "Death Touch",
+    "help": "Whilst encountering a monster with Death Touch , the adventurer suffers -2 DEF and all equipped armour that it hits has a rating of A0. Damage may still be deflected as normal."
+  },
+  {
+    "id": 4,
+    "name": "Disease",
+    "help": "When a monster scores a natural 1 on their damage dice, they infect the adventurer with disease and the player shades in one pip on the disease track on the adventurer sheet, even if the monster does not deal any damage during the combat round. When the time track is refreshed, the player must roll 1d10. If the result is equal to, or less than the number of disease pips shaded the adventurer suffers HP equal to the number of shaded pips."
+  },
+  {
+    "id": 5,
+    "name": "Ethereal",
+    "help": "The monster has no substance, and normal weapons will simply pass through them. All attacks made against an ethereal monster must be with a legendary weapon or a form of spell (or scroll) in order to inflict any kind of damage."
+  },
+  {
+    "id": 6,
+    "name": "Fear",
+    "help": "The monster may strike fear in any adventurer that it comes face to face with. At the start of each combat round the adventurer must make a fear test. FEAR – Test: Int -10 [S: Attack as normal] [F: Forfeit next attack, combat action] ( Bravery )."
+  },
+  {
+    "id": 7,
+    "name": "Fire",
+    "help": "The monster, in addition to its normal attack, has some sort of fire attack that may strike an adventurer. Each time a natural 1 is rolled for its damage the adventurer may be set on fire by its attack and must make an avoid fire test. AVOID FIRE – Test: Dex -5 [S: No effect] [F:-2HP] ( Dodge )."
+  },
+  {
+    "id": 8,
+    "name": "Fly",
+    "help": "An adventurer fighting a flying monster suffers -10 STR when making an attack roll. If using a ranged weapon (Dex) it has no effect."
+  },
+  {
+    "id": 9,
+    "name": "Freeze",
+    "help": "The monster, in addition to its normal attack, has some sort of freeze attack that may strike an adventurer. Each time a natural 1 is rolled for its damage the adventurer may be frozen and must make an avoid freeze test. AVOID FREEZE – Test: Dex [S: No effect] [F: -1HP, -2 DEF in next combat round] ( Dodge )."
+  },
+  {
+    "id": 10,
+    "name": "Large",
+    "help": "The monster is exceptionally large and will often deal more damage when it hits an adventurer than smaller monsters. Therefore, damage die results of 1 or 2 gain +2 dmg."
+  },
+  {
+    "id": 11,
+    "name": "Pack",
+    "help": "At the start of each combat round each monster still alive beyond the first adds +5 to its AV. For instance, if an encounter has 4 monsters still alive they get AV+15 when they attack. When an adventurer deals a pack damage, its HP is depleted in the order from left to right and any surplus damage spills over to the next and so on. For instance, if an adventurer faces a pack with HP 3/2/2 and has just dealt 4 damage, the left most pack monster is defeated and the second receives 1 point of damage and will have the following HP remaining 0/1/2 ."
+  },
+  {
+    "id": 12,
+    "name": "Phase",
+    "help": "The monster can phase in and out of reality making it a hard target to strike. The adventurer suffers -10 to their Str or Dex whilst attacking a monster with the Phase ability."
+  },
+  {
+    "id": 13,
+    "name": "Poison",
+    "help": "When a monster scores a natural 1 on their damage die, they infect the adventurer with poison and the player shades in one pip on the poison track on the adventure sheet, even if the monster does not deal any damage during the combat round. When the time track is refreshed the player must roll 1d10. If the result is equal to or less than the number of poison pips shaded, the adventurer suffers HP equal to, the number of shaded pips and the player then removes 1 pip from their poison track."
+  },
+  {
+    "id": 14,
+    "name": "Regenerate",
+    "help": "The monster has the ability to restore lost HP. Each time it roll a natural 1 on the damage die it will restore 2 lost HP."
+  },
+  {
+    "id": 15,
+    "name": "Resurrection",
+    "help": "When the monster is killed it may resurrect and come back to life. After killing a monster with Resurrection and before it has been looted, roll 1d10. If a 1 is rolled it immediately returns to life with full HP and the adventurer must once again attempt to kill it."
+  },
+  {
+    "id": 16,
+    "name": "Stun",
+    "help": "The monster’s attack may cause an adventurer to be stunned. Each time the monster deals damage to the adventurer, they must make a dazed test. DAZED – Test: STR-15 [S: No effect] [F: Forfeit next attack, combat action, escape] ( Dodge )"
+  },
+  {
+    "id": 17,
+    "name": "Surprise",
+    "help": "The monster may surprise the adventurer when it first appears. Before the first round of combat begins make a surprise test. If the test fails, the monster makes an immediate attack roll against the adventurer. SURPRISE – Test Int-10 [S: No effect] [F: Monster gains a free attack] ( Aware )."
+  },
+  {
+    "id": 18,
+    "name": "Web",
+    "help": "At the end of each combat round in which the monster is still alive, the adventurer makes an avoid web test to determine if they will get an attack, or make a combat action in the next combat round. AVOID WEB – Test: Dex +20 [S: Attack as normal] [F: Forfeit attack, combat action, escape] ( Dodge )."
+  }
+]

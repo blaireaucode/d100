@@ -13,7 +13,6 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import CharacterInputField from "./CharacterInputField"
 import {create_D100_rolling_dices, getRandomInt, open_dice_ui} from "../helpers/dice_helpers";
 import {update_g_encounter_field} from "../helpers/update_helpers";
-import Clear from "./Clear";
 import {new_attack} from "../helpers/encounter_helpers";
 import F from 'helpers/F';
 import AttackToggle from "./AttackToggle";

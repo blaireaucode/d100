@@ -6,13 +6,13 @@
  * https://opensource.org/licenses/MIT.
  */
 
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import Clear from 'components/Clear'
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props';
+import Clear from 'components/Clear';
 import {character_rm_item} from "../helpers/character_helpers";
 import {update_character, update_g_team} from "../helpers/update_helpers";
-import Collapse from "@kunukn/react-collapse"
+import Collapse from "@kunukn/react-collapse";
 import L from "../helpers/L";
 import ItemFieldInput from "./ItemInputField";
 

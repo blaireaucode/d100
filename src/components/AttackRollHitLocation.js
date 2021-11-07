@@ -12,7 +12,6 @@ import L from 'helpers/L'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import {create_D10_rolling_dice, getRandomInt, open_dice_ui} from "../helpers/dice_helpers";
 import * as up from "../helpers/update_helpers";
-import Clear from "./Clear";
 import location_table from "../tables/table_hit_location.json";
 import {Select} from "@material-ui/core";
 import {new_location} from "../helpers/encounter_helpers";

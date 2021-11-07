@@ -13,6 +13,8 @@ import {update_g_encounter} from 'helpers/update_helpers'
 import F from 'helpers/F'
 import {Paper} from "@material-ui/core"
 import EncounterInputField from "./EncounterInputField";
+import EncounterAbility from "./EncounterAbility";
+import ability_table from 'tables/table_encounter_ability.json';
 
 class Encounter extends Component {
 
@@ -96,6 +98,7 @@ class Encounter extends Component {
                 {e.description}<br/>
          */
 
+
         return (
             <Paper elevation={5} className={'encounter'}>
                 <EncounterInputField field_name={'name'}/>
@@ -109,6 +112,7 @@ class Encounter extends Component {
                 <br/>
                 <F>Reward</F> <EncounterInputField field_name={'k'}/>
                 <F>Ability</F> <EncounterInputField field_name={'ability'}/>
+                <EncounterAbility/>
             </Paper>
         );
     }

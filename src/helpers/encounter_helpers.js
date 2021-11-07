@@ -9,6 +9,7 @@
 import encounters_table from 'tables/table_e_encounter.json'
 import reactions_table from 'tables/table_monster_reaction.json'
 import locations_table from 'tables/table_hit_location.json'
+import ability_table from 'tables/table_encounter_ability.json'
 import {update_character, update_dic, update_g_encounter, update_g_room, update_g_team} from "./update_helpers"
 import {D6} from "helpers/dice_helpers"
 import update from "immutability-helper"
@@ -101,6 +102,14 @@ export function new_location(id = 'none') {
         i = 1;
     }
     return JSON.parse(JSON.stringify(table[i]));
+}
+
+export function get_ability(name) {
+    const t = ability_table;
+    for(let ab of t) {
+        if (ab.name === name) return ab;
+    }
+    return t[0];
 }
 
 // OLD -------------------------------------------------------
