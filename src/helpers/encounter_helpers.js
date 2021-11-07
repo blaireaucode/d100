@@ -36,7 +36,7 @@ export function d100_interval_min_max(d100) {
     return [min, max];
 }
 
-export function new_encounter(id='none') {
+export function new_encounter(id = 'none') {
     const table = encounters_table;
     // get the encounter
     let found = false;
@@ -80,8 +80,8 @@ export function new_reaction(id = 'none') {
     return JSON.parse(JSON.stringify(table[i]));
 }
 
-export function new_attack(id = 'none', dmg='none', who='character') {
-    return {d100: id, dmg:dmg, who_attack:who};
+export function new_attack(id = 'none', dmg = 'none', who = 'character') {
+    return {d100: id, dmg: dmg, who_attack: who};
 }
 
 export function new_location(id = 'none') {

@@ -17,6 +17,7 @@ import Clear from "./Clear";
 import {new_attack} from "../helpers/encounter_helpers";
 import F from 'helpers/F';
 import AttackToggle from "./AttackToggle";
+import {clear_if_not_none} from "../helpers/ui_helpers";
 
 class AttackRollPlayer extends Component {
 
@@ -38,7 +39,8 @@ class AttackRollPlayer extends Component {
     }
 
     clear() {
-        const a = new_attack('none');
+        const att = this.props.game.encounter.attack;
+        const a = new_attack('none', att.dmg, att.who_attack);
         const g = update_g_encounter_field(this.props.game, 'attack', a);
         this.props.set_game(g);
     }
@@ -59,15 +61,12 @@ class AttackRollPlayer extends Component {
             else dex_res = <span className={'attack_miss'}>miss</span>
         }
         // clear
-        const clear = e.attack.d100 === 'none' ? '' : <Clear onClick={this.clear}/>;
+        const clear = clear_if_not_none(this, e.attack.d100);
         return (
             <span>
-                Attack &nbsp; <AttackToggle/>  &nbsp; <L onClick={this.roll_attack}>D100 &#127922;</L>
+                {clear} Attack &nbsp; <AttackToggle/>  &nbsp; <L onClick={this.roll_attack}>D100 &#127922;</L>
                 &nbsp;&nbsp;&nbsp;
                 {att}
-                &nbsp;&nbsp;&nbsp;
-                {clear}
-
                 &nbsp;&nbsp;&nbsp;
                 <F>
                     Current (adjusted) str: <CharacterInputField type={'number'} field_name={'str_adj'}/>

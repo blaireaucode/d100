@@ -14,8 +14,9 @@ import {create_D6_rolling_dice, getRandomInt, open_dice_ui} from "../helpers/dic
 import {update_g_encounter_field} from "../helpers/update_helpers";
 import Clear from "./Clear";
 import {new_attack} from "../helpers/encounter_helpers";
+import {clear_if_not_none} from "../helpers/ui_helpers";
 
-class AttackDamageRoll extends Component {
+class AttackRollDamage extends Component {
 
     constructor(props) {
         super(props);
@@ -65,17 +66,15 @@ class AttackDamageRoll extends Component {
                 dmg = dmg + ' + ' + dm + ' (location) + ' + c.dmg + ' (your dmg) - ' + edef + ' (monster def) = ' + total;
             }
         }
-        const clear = att.dmg === 'none' ? '' : <Clear onClick={this.clear}/>;
+        const clear = clear_if_not_none(this, att.dmg);
         return (
             <span>
-                Damage <L onClick={this.roll_damage}>D6 🎲</L>
+                {clear} Damage <L onClick={this.roll_damage}>D6 🎲</L>
                 &nbsp;&nbsp;&nbsp;
                 {dmg}
-                &nbsp;&nbsp;&nbsp;
-                {clear}
             </span>
         );
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AttackDamageRoll)
+export default connect(mapStateToProps, mapDispatchToProps)(AttackRollDamage)

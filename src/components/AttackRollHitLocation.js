@@ -17,8 +17,9 @@ import location_table from "../tables/table_hit_location.json";
 import {Select} from "@material-ui/core";
 import {new_location} from "../helpers/encounter_helpers";
 import F from 'helpers/F'
+import {clear_if_not_none} from "../helpers/ui_helpers";
 
-class AttackHitLocationRoll extends Component {
+class AttackRollHitLocation extends Component {
 
     options = [];
 
@@ -76,11 +77,11 @@ class AttackHitLocationRoll extends Component {
 
     render() {
         const l = this.props.game.encounter.location;
-        const clear = l.d10 === 'none' ? '' : <Clear onClick={this.clear}/>;
+        const clear = clear_if_not_none(this, l.d10);
         const dmg = l.d10 === 'none' ? '' : <F>Damage modifier: {l.dmg_mod}</F>
         return (
             <span>
-                Hit Location &nbsp;
+                {clear} Hit Location &nbsp;
                 <L onClick={this.roll_location}>D6 &#127922;</L>
                 &nbsp; &nbsp;
                 <Select value={this.state.current}
@@ -92,13 +93,10 @@ class AttackHitLocationRoll extends Component {
                 &nbsp;
                 &nbsp;
                 {dmg}
-                &nbsp;
-                &nbsp;
-                {clear}
             < /span>
         );
     }
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AttackHitLocationRoll)
+export default connect(mapStateToProps, mapDispatchToProps)(AttackRollHitLocation)

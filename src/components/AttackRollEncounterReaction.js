@@ -15,9 +15,9 @@ import {create_D10_rolling_dice, getRandomInt, open_dice_ui} from "../helpers/di
 import * as up from "../helpers/update_helpers";
 import reaction_table from 'tables/table_monster_reaction.json'
 import {Select} from "@material-ui/core";
-import Clear from "./Clear";
+import {clear_if_not_none} from "../helpers/ui_helpers";
 
-class MonsterReactionRoll extends Component {
+class AttackRollEncounter extends Component {
 
     options = [];
 
@@ -67,10 +67,10 @@ class MonsterReactionRoll extends Component {
 
     render() {
         const r = this.props.game.encounter.reaction;
-        const clear = r.d10 === 'none' ? '' : <Clear onClick={this.clear}/>;
+        const clear = clear_if_not_none(this, r.d10);
         return (
             <span>
-                Reaction &nbsp;
+                {clear} Reaction &nbsp;
                 <L onClick={this.roll_reaction}>D6 &#127922;</L>
                 &nbsp; &nbsp;
                 <Select value={r.d10/*this.state.current*/}
@@ -79,12 +79,10 @@ class MonsterReactionRoll extends Component {
                         className={'select'}>
                     {this.options}
                 </Select>
-                &nbsp;
-                {clear}
             < /span>
         );
     }
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MonsterReactionRoll)
+export default connect(mapStateToProps, mapDispatchToProps)(AttackRollEncounter)

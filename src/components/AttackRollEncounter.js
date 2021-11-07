@@ -10,13 +10,13 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import L from 'helpers/L'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import Clear from "./Clear";
 import {create_D100_rolling_dices, getRandomInt, open_dice_ui} from "../helpers/dice_helpers";
 import {update_g_encounter_field} from "../helpers/update_helpers";
 import F from 'helpers/F';
 import {new_attack} from "../helpers/encounter_helpers";
 import EncounterInputField from "./EncounterInputField";
 import AttackToggle from "./AttackToggle";
+import {clear_if_not_none} from "../helpers/ui_helpers";
 
 class AttackRollEncounter extends Component {
 
@@ -38,7 +38,8 @@ class AttackRollEncounter extends Component {
     }
 
     clear() {
-        const a = new_attack('none', 'none', 'encounter');
+        const att = this.props.game.encounter.attack;
+        const a = new_attack('none', att.dmg, att.who_attack);
         const g = update_g_encounter_field(this.props.game, 'attack', a);
         this.props.set_game(g);
     }
@@ -55,20 +56,18 @@ class AttackRollEncounter extends Component {
             else str_res = <span className={'attack_miss'}>miss</span>
         }
         // clear
-        const clear = e.attack.d100 === 'none' ? '' : <Clear onClick={this.clear}/>;
+        const clear = clear_if_not_none(this, e.attack.d100);
         return (
             <span>
+                {clear}
                 Monster is attacking &nbsp; <AttackToggle/>  &nbsp; <L onClick={this.roll_attack}>D100 &#127922;</L>
                 &nbsp;&nbsp;&nbsp;
                 {att}
-                &nbsp;&nbsp;&nbsp;
-                {clear}
                 &nbsp;&nbsp;&nbsp;
                 <F>
                     Monster Attack Value (AV): <EncounterInputField type={'number'} field_name={'av'}/>
                     {str_res}
                 </F>
-
             </span>
         );
     }

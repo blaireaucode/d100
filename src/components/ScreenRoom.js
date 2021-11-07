@@ -12,11 +12,10 @@ import Encounter from 'components/Encounter'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import EncounterRoll from "components/EncounterRoll"
 import {Paper} from "@material-ui/core";
-import MonsterReactionRoll from "./MonsterReactionRoll";
+import AttackRollEncounterReaction from "./AttackRollEncounterReaction";
 import AttackRoll from "./AttackRoll";
-import AttackHitLocationRoll from "./AttackHitLocationRoll";
-import AttackDamageRoll from "./AttackDamageRoll";
-import AttackToggle from "./AttackToggle";
+import AttackRollHitLocation from "./AttackRollHitLocation";
+import AttackRollDamage from "./AttackRollDamage";
 
 
 class ScreenRoom extends Component {
@@ -30,13 +29,13 @@ class ScreenRoom extends Component {
                 <p/>
                 <br/>
                 <br/>
-                <MonsterReactionRoll/>
+                <AttackRollEncounterReaction/>
                 <p/>
                 <AttackRoll/>
                 <p/>
-                <AttackHitLocationRoll/>
+                <AttackRollHitLocation/>
                 <p/>
-                <AttackDamageRoll/>
+                <AttackRollDamage/>
                 <br/>
 
                 <p/>
