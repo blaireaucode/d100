@@ -14,7 +14,7 @@ import {create_D100_rolling_dices, getRandomInt, open_dice_ui} from "../helpers/
 import {update_g_encounter_field} from "../helpers/update_helpers";
 import F from 'helpers/F';
 import {new_attack} from "../helpers/encounter_helpers";
-import EncounterInputField from "./EncounterInputField";
+import InputFieldEncounter from "./InputFieldEncounter";
 import AttackToggle from "./AttackToggle";
 import {clear_if_not_none} from "../helpers/ui_helpers";
 
@@ -65,7 +65,7 @@ class AttackRollEncounter extends Component {
                 {att}
                 &nbsp;&nbsp;&nbsp;
                 <F>
-                    Monster Attack Value (AV): <EncounterInputField type={'number'} field_name={'av'}/>
+                    Monster Attack Value (AV): <InputFieldEncounter type={'number'} field_name={'av'}/>
                     {str_res}
                 </F>
             </span>

@@ -12,7 +12,7 @@ import Input from '@material-ui/core/Input'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import * as up from 'helpers/update_helpers'
 
-class CharacterInputField extends Component {
+class InputFieldCharacter extends Component {
 
     handleChange = ({target}) => {
         const g = up.update_g_character_field(this.props.game, this.props.character.id, this.props.field_name, target.value)
@@ -39,4 +39,4 @@ class CharacterInputField extends Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CharacterInputField);
+export default connect(mapStateToProps, mapDispatchToProps)(InputFieldCharacter);

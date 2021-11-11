@@ -63,13 +63,15 @@ class Save extends Component {
             <span>
                 {d.toLocaleString()}
                 &nbsp;&nbsp;
+                <span className={'field_name'}>{save.characteristics.name}</span>
+                &nbsp;&nbsp;
                 <Input className={'field_input'}
                        disableUnderline={true}
                        name={'name'}
                        value={save.name}
                        onChange={this.rename}
                 />
-
+                &nbsp;&nbsp;
                 {ll} <br/>
             </span>
         );

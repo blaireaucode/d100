@@ -13,6 +13,7 @@ import ability_table from 'tables/table_encounter_ability.json'
 import {update_character, update_dic, update_g_encounter, update_g_room, update_g_team} from "./update_helpers"
 import {D6} from "helpers/dice_helpers"
 import update from "immutability-helper"
+import {v4 as uuidv4} from "uuid";
 
 export function parse_d100_interval(d100, id) {
     const mm = d100_interval_min_max(d100);
@@ -54,11 +55,14 @@ export function new_encounter(id = 'none') {
         i = 1;
     }
     let e = JSON.parse(JSON.stringify(table[i]));
-    e["id"] = id;
+    if (id !== "none") e["id"] = uuidv4();
+    else e["id"] = id;
     e["dmin"] = d100_interval_min_max(e.d100)[0];
+    e["dmax"] = d100_interval_min_max(e.d100)[1];
     e["reaction"] = new_reaction();
     e["attack"] = new_attack();
     e["location"] = new_location();
+    console.log('e',e);
     return e;
 }
 

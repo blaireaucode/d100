@@ -42,7 +42,7 @@ class ScreenRoom extends Component {
                 <br/>
                 <br/>
                 <br/>
-                <Paper className={'help'}>
+                {/*<Paper className={'help'}>
                     1. Roll 1d10 on the “Monster Reaction” table to determine its action in the forthcoming round, then
                     continue to step 2.
                     <br/>
@@ -81,7 +81,7 @@ class ScreenRoom extends Component {
                     adventurer's off hand (see Damage Deflection). If the Adventurer has a Defence (Def) bonus they may
                     also be able to shrug off some more damage (See Defence Bonus). If the monster survived start a new
                     combat round from step 1.
-                </Paper>
+                </Paper>*/}
             </div>
         );
     }

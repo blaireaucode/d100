@@ -42,6 +42,8 @@ export function setupStore() {
     const saves = read_saves_in_store();
     const initialState = saves[saves['current']];
 
+    //console.log('load save', initialState);
+
     // list of action
     const rootReducer = (state = initialState, action) => {
         switch (action.type) {

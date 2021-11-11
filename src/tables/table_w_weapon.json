@@ -1,0 +1,461 @@
+[
+  {
+    "d100": "none",
+    "hands": "none",
+    "type": "none",
+    "name": "none",
+    "dmg": "none",
+    "gp": "none",
+    "cost": "none"
+  },
+  {
+    "d100": "1-2",
+    "hands": 1,
+    "type": "R",
+    "name": "Sling",
+    "dmg": -2,
+    "gp": 12,
+    "cost": 3
+  },
+  {
+    "d100": "5-6",
+    "hands": 1,
+    "type": "H",
+    "name": "Baton",
+    "dmg": -2,
+    "gp": 23,
+    "cost": 5
+  },
+  {
+    "d100": "7-8",
+    "hands": 2,
+    "type": "H",
+    "name": "Stave",
+    "dmg": -2,
+    "gp": 32,
+    "cost": 7
+  },
+  {
+    "d100": "9-10",
+    "hands": 1,
+    "type": "H",
+    "name": "Knife",
+    "dmg": -2,
+    "gp": 44,
+    "cost": 9
+  },
+  {
+    "d100": "11-12",
+    "hands": 1,
+    "type": "H",
+    "name": "Club",
+    "dmg": -1,
+    "gp": 50,
+    "cost": 10
+  },
+  {
+    "d100": "13-14",
+    "hands": 2,
+    "type": "H",
+    "name": "Quarterstaff",
+    "dmg": -1,
+    "gp": 51,
+    "cost": 11
+  },
+  {
+    "d100": "15-16",
+    "hands": 1,
+    "type": "H,R",
+    "name": "Throwing Knife",
+    "dmg": -1,
+    "gp": 54,
+    "cost": 11
+  },
+  {
+    "d100": "17-18",
+    "hands": 1,
+    "type": "H",
+    "name": "Dagger",
+    "dmg": -1,
+    "gp": 54,
+    "cost": 11
+  },
+  {
+    "d100": "19-20",
+    "hands": 1,
+    "type": "H",
+    "name": "Spiked Club",
+    "dmg": 0,
+    "gp": 57,
+    "cost": 12
+  },
+  {
+    "d100": "21-22",
+    "hands": 1,
+    "type": "H",
+    "name": "Hammer",
+    "dmg": 0,
+    "gp": 60,
+    "cost": 12
+  },
+  {
+    "d100": "23-24",
+    "hands": 1,
+    "type": "H,R",
+    "name": "Throwing Spear",
+    "dmg": 0,
+    "gp": 66,
+    "cost": 14
+  },
+  {
+    "d100": "25-26",
+    "hands": 2,
+    "type": "Short Bow",
+    "name": "R",
+    "dmg": 0,
+    "gp": 67,
+    "cost": 14
+  },
+  {
+    "d100": "27-28",
+    "hands": 1,
+    "type": "H",
+    "name": "War Pick",
+    "dmg": 0,
+    "gp": 68,
+    "cost": 14
+  },
+  {
+    "d100": "29-30",
+    "hands": 1,
+    "type": "H",
+    "name": "Short Sword",
+    "dmg": 0,
+    "gp": 70,
+    "cost": 14
+  },
+  {
+    "d100": "31-32",
+    "hands": 1,
+    "type": "H",
+    "name": "Scimitar",
+    "dmg": 0,
+    "gp": 73,
+    "cost": 15
+  },
+  {
+    "d100": "33-34",
+    "hands": 1,
+    "type": "H",
+    "name": "Rapier",
+    "dmg": 0,
+    "gp": 75,
+    "cost": 15
+  },
+  {
+    "d100": "35-36",
+    "hands": 1,
+    "type": "H",
+    "name": "Scythe",
+    "dmg": 0,
+    "gp": 75,
+    "cost": 15
+  },
+  {
+    "d100": "37-38",
+    "hands": 1,
+    "type": "H",
+    "name": "Mace",
+    "dmg": 0,
+    "gp": 78,
+    "cost": 16
+  },
+  {
+    "d100": "39-40",
+    "hands": 1,
+    "type": "H,R",
+    "name": "Throwing Axe",
+    "dmg": 0,
+    "gp": 87,
+    "cost": 18
+  },
+  {
+    "d100": "41-42",
+    "hands": 1,
+    "type": "H,R",
+    "name": "Chakram",
+    "dmg": 0,
+    "gp": 89,
+    "cost": 18
+  },
+  {
+    "d100": "43-44",
+    "hands": 1,
+    "type": "R",
+    "name": "Repeating Crossbow",
+    "dmg": 0,
+    "gp": 94,
+    "cost": 19
+  },
+  {
+    "d100": "45-46",
+    "hands": 2,
+    "type": "H",
+    "name": "Lance",
+    "dmg": 1,
+    "gp": 123,
+    "cost": 25
+  },
+  {
+    "d100": "47-48",
+    "hands": 2,
+    "type": "H,R",
+    "name": "Spear",
+    "dmg": 1,
+    "gp": 132,
+    "cost": 27
+  },
+  {
+    "d100": "49-50",
+    "hands": 2,
+    "type": "H",
+    "name": "Half Maul",
+    "dmg": 1,
+    "gp": 134,
+    "cost": 27
+  },
+  {
+    "d100": "51-52",
+    "hands": 1,
+    "type": "H",
+    "name": "Falchion",
+    "dmg": 1,
+    "gp": 143,
+    "cost": 29
+  },
+  {
+    "d100": "53-54",
+    "hands": 2,
+    "type": "H",
+    "name": "Bow",
+    "dmg": 1,
+    "gp": 146,
+    "cost": 30
+  },
+  {
+    "d100": "55-56",
+    "hands": 1,
+    "type": "H",
+    "name": "Axe",
+    "dmg": 1,
+    "gp": 165,
+    "cost": 33
+  },
+  {
+    "d100": "57-58",
+    "hands": 1,
+    "type": "H",
+    "name": "Morning Star",
+    "dmg": 1,
+    "gp": 167,
+    "cost": 34
+  },
+  {
+    "d100": "59-60",
+    "hands": 1,
+    "type": "H",
+    "name": "Broadsword",
+    "dmg": 1,
+    "gp": 178,
+    "cost": 36
+  },
+  {
+    "d100": "61-62",
+    "hands": 1,
+    "type": "H",
+    "name": "Pernach",
+    "dmg": 1,
+    "gp": 178,
+    "cost": 36
+  },
+  {
+    "d100": "63-64",
+    "hands": 2,
+    "type": "H",
+    "name": "Military Fork",
+    "dmg": 1,
+    "gp": 187,
+    "cost": 38
+  },
+  {
+    "d100": "65-66",
+    "hands": 2,
+    "type": "H",
+    "name": "Partisan",
+    "dmg": 1,
+    "gp": 189,
+    "cost": 38
+  },
+  {
+    "d100": "67-68",
+    "hands": 2,
+    "type": "H",
+    "name": "Glaive",
+    "dmg": 1,
+    "gp": 190,
+    "cost": 38
+  },
+  {
+    "d100": "69-70",
+    "hands": 2,
+    "type": "H",
+    "name": "Halberd",
+    "dmg": 2,
+    "gp": 234,
+    "cost": 47
+  },
+  {
+    "d100": "71-72",
+    "hands": 2,
+    "type": "H",
+    "name": "Bill",
+    "dmg": 2,
+    "gp": 236,
+    "cost": 48
+  },
+  {
+    "d100": "73-74",
+    "hands": 2,
+    "type": "H",
+    "name": "Two Handed Flail",
+    "dmg": 1,
+    "gp": 243,
+    "cost": 49
+  },
+  {
+    "d100": "75-76",
+    "hands": 2,
+    "type": "R",
+    "name": "Recurve Bow",
+    "dmg": 2,
+    "gp": 243,
+    "cost": 49
+  },
+  {
+    "d100": "77-78",
+    "hands": 1,
+    "type": "H",
+    "name": "Maul",
+    "dmg": 2,
+    "gp": 265,
+    "cost": 53
+  },
+  {
+    "d100": "79-80",
+    "hands": 2,
+    "type": "H",
+    "name": "War Scythe",
+    "dmg": 2,
+    "gp": 266,
+    "cost": 54
+  },
+  {
+    "d100": "81-82",
+    "hands": 2,
+    "type": "H",
+    "name": "Bardiche",
+    "dmg": 2,
+    "gp": 267,
+    "cost": 54
+  },
+  {
+    "d100": "83-84",
+    "hands": 1,
+    "type": "H",
+    "name": "Long Sword",
+    "dmg": 2,
+    "gp": 278,
+    "cost": 56
+  },
+  {
+    "d100": "85-86",
+    "hands": 2,
+    "type": "H",
+    "name": "Battle Axe",
+    "dmg": 2,
+    "gp": 287,
+    "cost": 58
+  },
+  {
+    "d100": "87-88",
+    "hands": 1,
+    "type": "H",
+    "name": "Claymore",
+    "dmg": 2,
+    "gp": 290,
+    "cost": 58
+  },
+  {
+    "d100": "89-90",
+    "hands": 2,
+    "type": "R",
+    "name": "Crossbow",
+    "dmg": 2,
+    "gp": 298,
+    "cost": 60
+  },
+  {
+    "d100": "91-92",
+    "hands": 2,
+    "type": "H",
+    "name": "War Hammer",
+    "dmg": 3,
+    "gp": 367,
+    "cost": 74
+  },
+  {
+    "d100": "93-94",
+    "hands": 2,
+    "type": "R",
+    "name": "Arbalest",
+    "dmg": 3,
+    "gp": 367,
+    "cost": 74
+  },
+  {
+    "d100": "95-96",
+    "hands": 2,
+    "type": "R",
+    "name": "Long Bow",
+    "dmg": 3,
+    "gp": 378,
+    "cost": 76
+  },
+  {
+    "d100": "97-98",
+    "hands": 2,
+    "type": "H",
+    "name": "Bastard Sword",
+    "dmg": 3,
+    "gp": 378,
+    "cost": 76
+  },
+  {
+    "d100": "99",
+    "hands": 2,
+    "type": "H",
+    "name": "Great Sword",
+    "dmg": 4,
+    "gp": 420,
+    "cost": 84
+  },
+  {
+    "d100": "100",
+    "hands": 2,
+    "type": "H",
+    "name": "Mighty Claymore",
+    "dmg": 4,
+    "gp": 467,
+    "cost": 94
+  }
+]

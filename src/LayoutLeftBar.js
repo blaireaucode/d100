@@ -117,9 +117,11 @@ class LayoutLeftBar extends React.Component {
                         <ListItemText primary={'Map'}/> // 🌏
                     </ListItem>
 
+                    */}
+
                     <ListItem button component={Link} to='/town'>
-                        <ListItemText primary={'Town'}/> // 🏔🗻
-                    </ListItem>*/}
+                        <ListItemText primary={'Town'}/> {/* 🏔🗻*/}
+                    </ListItem>
 
                     <ListItem>
                         <L onClick={this.roll}>🎲 D100</L> {/*&#127922;*/}

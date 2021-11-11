@@ -8,9 +8,9 @@
 
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import Character from "components/Character_old"
+import Character from "./Character_old"
 import Grid from '@material-ui/core/Grid'
-import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
+import {mapDispatchToProps, mapStateToProps} from '../src/helpers/default_props'
 
 class ScreenTeam extends Component {
 

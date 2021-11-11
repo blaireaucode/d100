@@ -10,7 +10,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import L from 'helpers/L'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import CharacterInputField from "./CharacterInputField"
+import InputFieldCharacter from "./InputFieldCharacter"
 import {create_D100_rolling_dices, getRandomInt, open_dice_ui} from "../helpers/dice_helpers";
 import {update_g_encounter_field} from "../helpers/update_helpers";
 import {new_attack} from "../helpers/encounter_helpers";
@@ -68,11 +68,11 @@ class AttackRollPlayer extends Component {
                 {att}
                 &nbsp;&nbsp;&nbsp;
                 <F>
-                    Current (adjusted) str: <CharacterInputField type={'number'} field_name={'str_adj'}/>
+                    Current (adjusted) str: <InputFieldCharacter type={'number'} field_name={'str_adj'}/>
                     {str_res} &nbsp;&nbsp;&nbsp;&nbsp;
                 </F>
                 <F>
-                    Current (adjusted) dex: <CharacterInputField type={'number'} field_name={'dex_adj'}/>
+                    Current (adjusted) dex: <InputFieldCharacter type={'number'} field_name={'dex_adj'}/>
                     {dex_res}
                 </F>
             </span>

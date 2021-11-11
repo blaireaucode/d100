@@ -8,13 +8,13 @@
 
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import CharacterInputField from "components/CharacterInputField"
-import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {capitalize, classes_list} from "helpers/character_helpers"
-import {update_g_character_field} from "../helpers/update_helpers"
-import classes_table from 'tables/classes_table.json'
+import CharacterInputField from "../src/components/CharacterInputField"
+import {mapDispatchToProps, mapStateToProps} from '../src/helpers/default_props'
+import {capitalize, classes_list} from "../src/helpers/character_helpers"
+import {update_g_character_field} from "../src/helpers/update_helpers"
+import classes_table from '../src/tables/classes_table.json'
 import {Paper} from "@material-ui/core"
-import CollapsibleTraits from "./CollapsibleTraits"
+import CollapsibleTraits from "../src/components/CollapsibleTraits"
 import Select from '@material-ui/core/Select'
 import ItemsList from "./ItemsList";
 

@@ -17,7 +17,6 @@ export function create_new_game() {
     new_game.encounter = new_encounter('none');
     new_game.id = uuidv4();
     new_game = update(new_game, {date: {$set: new Date()}});
-    console.log('new game', new_game);
     return new_game;
 }
 

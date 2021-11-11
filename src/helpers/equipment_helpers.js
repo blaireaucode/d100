@@ -6,41 +6,39 @@
  * https://opensource.org/licenses/MIT.
  */
 
-import equipment_table from 'tables/equipment_table.json'
-import armors_table from 'tables/armors_table.json'
-import weapons_table from 'tables/weapons_table.json'
-import {renderCellExpand} from "../components/renderTableCell";
+import weapon_table from 'tables/table_w_weapon.json';
+import {parse_d100_interval} from "./encounter_helpers";
+import update from "immutability-helper"
+import {v4 as uuidv4} from "uuid";
 
-export const equipment_tables = {
-    "equipment": equipment_table,
-    "armors": armors_table,
-    "weapons": weapons_table,
+
+export function get_weapon_in_table(id, copy=true) {
+    const table = weapon_table;
+    let found = false;
+    let i;
+    for (i in table) {
+        const d100 = table[i].d100;
+        if (d100 === id || parse_d100_interval(d100, id)) {
+            found = true;
+            break;
+        }
+    }
+    if (!found) {
+        console.log('ERROR : cannot find id ', id);
+        i = 1;
+    }
+    if (copy) {
+        let item = JSON.parse(JSON.stringify(table[i]));
+        item["id"] = uuidv4();
+        return item;
+    }
+    return table[i];
 }
 
-export const columns_tables = {
-    "equipment_old": [
-        {field: 'id', headerName: 'ID', width: 20},
-        {field: 'name', headerName: 'Name', flex: 0.2},
-        {field: 'cost', headerName: 'Cost', width: 120},
-        {field: 'description', headerName: 'Description', flex: 1, renderCell: renderCellExpand}],
-    "equipment": [
-        //{selector: 'id', name: 'ID', grow: 0, sortable: true},
-        {selector: 'name', name: 'Name', grow: 5, sortable: true},
-        {selector: 'cost', name: 'Cost', grow: 1, sortable: true},
-        {selector: 'description', name: 'Description', wrap: true, sortable: true, grow: 30}],
-    "armors": [
-        //{selector: 'id', name: 'ID', grow: 0, sortable: true},
-        {selector: 'name', name: 'Name', grow: 5, sortable: true},
-        {selector: 'cost', name: 'Cost', grow: 1, sortable: true},
-        {selector: 'description', name: 'Description', wrap: true, sortable: true, grow: 30}],
-    "weapons": [
-        //{button: true, cell: ''},
-        //{selector: 'id', name: 'ID', grow: 0, sortable: true},
-        {selector: 'name', name: 'Name', grow: 2, sortable: true},
-        {selector: 'weapon_type', name: 'Type', grow: 2, sortable: true, wrap: true},
-        {selector: 'damage_type', name: 'Damage', grow: 1, sortable: true},
-        {selector: 'roll_modifier', name: 'Mod', grow: 1, sortable: true},
-        {selector: 'cost', name: 'Cost', grow: 1, sortable: true},
-        {selector: 'description', name: 'Description', wrap: true, sortable: true, grow: 6}
-    ]
+export function update_g_add_item(game, item) {
+    return update(game, {items: {[item.id]: {$set: item}}});
+}
+
+export function update_g_item(game, id, fn, v) {
+    return update(game, {items: {[id]: {[fn]: {$set: v}}}});
 }

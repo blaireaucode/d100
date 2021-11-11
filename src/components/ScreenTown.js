@@ -16,11 +16,9 @@ class ScreenTown extends Component {
     render() {
         return (
             <div>
-                Town.<br/>
-                Equipment may be bought before the game, or between games.
-                Here is a list of items a character can buy, and their price in gold pieces (gp).
-                <p/>
-                <ItemsTable/>
+
+            <ItemsTable/>
+
             </div>
         );
     }

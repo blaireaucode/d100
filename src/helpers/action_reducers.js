@@ -27,6 +27,8 @@ async function save_to_store(game) {
     let gg = game;
     gg = update(gg, {date: {$set: new Date()}});
 
+    //console.log('save',gg)
+
     // replace current save
     let saves = st.read_saves_in_store();
     const id = gg.id;

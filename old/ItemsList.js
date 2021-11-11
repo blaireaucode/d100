@@ -8,12 +8,12 @@
 
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
+import {mapDispatchToProps, mapStateToProps} from '../src/helpers/default_props'
 import {Paper} from "@material-ui/core"
-import L from 'helpers/L'
-import {update_character, update_g_team} from 'helpers/update_helpers'
-import {character_add_item} from 'helpers/character_helpers'
-import Item from 'components/Item'
+import L from '../src/helpers/L'
+import {update_character, update_g_team} from '../src/helpers/update_helpers'
+import {character_add_item} from '../src/helpers/character_helpers'
+import Item from './Item'
 import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
 import { v4 as uuidv4 } from 'uuid';
