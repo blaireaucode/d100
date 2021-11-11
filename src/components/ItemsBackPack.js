@@ -14,18 +14,14 @@ import ItemBackPackWeapon from "./ItemBackPackWeapon";
 
 class ItemsBackPack extends Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         let items = [];
-        items.push(<span>
-                    <ItemBackPackWeapon key={'header'} id={'header'}/><br/>
+        items.push(<span key={'header'} >
+                    <ItemBackPackWeapon id={'header'}/><br/>
                     </span>);
-        for (const [key, item] of Object.entries(this.props.game.items)) {
-            items.push(<span>
-                        <ItemBackPackWeapon key={key} id={key}/><br/>
+        for (const key in this.props.game.items) {
+            items.push(<span key={key}>
+                        <ItemBackPackWeapon id={key}/><br/>
                         </span>);
         }
         return (

@@ -47,7 +47,6 @@ class AttackRollEncounter extends Component {
     render() {
         const e = this.props.game.encounter;
         let str_res = '';
-        let dex_res = '';
         let att = '';
         if (e.attack.d100 !== 'none') { // attack exist
             att = e.attack.d100;

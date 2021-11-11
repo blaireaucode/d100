@@ -14,7 +14,6 @@ import F from 'helpers/F'
 import {Paper} from "@material-ui/core"
 import InputFieldEncounter from "./InputFieldEncounter";
 import EncounterAbility from "./EncounterAbility";
-import ability_table from 'tables/table_encounter_ability.json';
 
 class Encounter extends Component {
 

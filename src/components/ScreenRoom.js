@@ -11,7 +11,6 @@ import {connect} from 'react-redux'
 import Encounter from 'components/Encounter'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import EncounterRoll from "components/EncounterRoll"
-import {Paper} from "@material-ui/core";
 import AttackRollEncounterReaction from "./AttackRollEncounterReaction";
 import AttackRoll from "./AttackRoll";
 import AttackRollHitLocation from "./AttackRollHitLocation";

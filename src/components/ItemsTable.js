@@ -25,7 +25,7 @@ class ItemsTable extends Component {
         for (let item of table) {
             const v = item.d100;
             if (v === 'none') continue;
-            const op = <span>
+            const op = <span key={v}>
                         <ItemWeapon id={v}/><br/>
                        </span>;
             this.items.push(op);

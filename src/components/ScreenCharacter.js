@@ -11,7 +11,6 @@ import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import CharacterMain from "./CharacterMain";
 import ItemsBackPack from "./ItemsBackPack";
-import ItemAdd from "./ItemAdd";
 
 class ScreenCharacter extends Component {
 
@@ -20,8 +19,6 @@ class ScreenCharacter extends Component {
             <div>
                 <CharacterMain/>
                 <p/>
-                {/*<ItemAdd/>
-                <br/>*/}
                 <ItemsBackPack/>
             </div>
         );
