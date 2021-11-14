@@ -111,6 +111,7 @@ class Encounter extends Component {
                 <br/>
                 <F>Reward</F> <InputFieldEncounter field_name={'k'}/>
                 <F>Ability</F> <InputFieldEncounter field_name={'ability'}/>
+                &nbsp; &nbsp;
                 <EncounterAbility/>
             </Paper>
         );

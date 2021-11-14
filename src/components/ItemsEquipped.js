@@ -26,9 +26,7 @@ class ItemsEquipped extends Component {
                         </span>);
         }
         return (
-            <Paper elevation={5} className={'character'}>
-                - Equipped -
-                <p/>
+            <Paper elevation={5} className={'character_panel'}>
                 {items}
             </Paper>
         );

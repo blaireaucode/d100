@@ -40,17 +40,19 @@ class ItemBackPack extends Component {
     render() {
         if (this.props.id === 'header') return this.render_header();
         const item = this.props.game.items[this.props.id];
+        const p = {class_name: 'field_input_small', id:item.id};
         return (
             <span>
-                <InputFieldItem id={item.id} field_name={'d100'} read_only={true} width={60}/>
-                <InputFieldItem id={item.id} field_name={'item_type'} width={80}/>
-                <InputFieldItem id={item.id} field_name={'type'} width={60}/>
-                <InputFieldItem id={item.id} field_name={'hands'} read_only={true}/>
-                <InputFieldItem id={item.id} field_name={'dmg'} type={'number'}/>
-                <InputFieldItem id={item.id} field_name={'AS'}/>
-                <InputFieldItem id={item.id} field_name={'gp'} type={'number'}/>
-                <InputFieldItem id={item.id} field_name={'fix_cost'} type={'number'}/>
-                <InputFieldItem id={item.id} field_name={'name'} width={200}/>
+                <InputFieldItem {...p} field_name={'d100'} read_only={true} width={60}/>
+                <InputFieldItem {...p} field_name={'item_type'} width={80}/>
+                <InputFieldItem {...p} field_name={'type'} width={60}/>
+                <InputFieldItem {...p} field_name={'slot'} width={60}/>
+                <InputFieldItem {...p} field_name={'hands'} read_only={true}/>
+                <InputFieldItem {...p} field_name={'dmg'} type={'number'}/>
+                <InputFieldItem {...p} field_name={'AS'}/>
+                <InputFieldItem {...p} field_name={'gp'} type={'number'}/>
+                <InputFieldItem {...p} field_name={'fix_cost'} type={'number'}/>
+                <InputFieldItem {...p} field_name={'name'} width={200}/>
                 <L onClick={this.equip_item}>Equip</L> &nbsp; &nbsp; &nbsp;
                 <Clear onClick={this.remove_item}/>
             < /span>
@@ -58,17 +60,19 @@ class ItemBackPack extends Component {
     }
 
     render_header() {
+        const p = {class_name: 'field_input_header'};
         return (
             <span>
-                <InputFieldItem field_name={'D100'} width={60}/>
-                <InputFieldItem field_name={'Item'} width={80}/>
-                <InputFieldItem field_name={'Type'} width={60}/>
-                <InputFieldItem field_name={'Hands'}/>
-                <InputFieldItem field_name={'Dmg'}/>
-                <InputFieldItem field_name={'A/S'}/>
-                <InputFieldItem field_name={'GP'}/>
-                <InputFieldItem field_name={'Fix'}/>
-                <InputFieldItem field_name={'Name'}/>
+                <InputFieldItem {...p} field_name={'D100'} width={60}/>
+                <InputFieldItem {...p} field_name={'Item'} width={80}/>
+                <InputFieldItem {...p} field_name={'Type'} width={60}/>
+                <InputFieldItem {...p} field_name={'Slot'} width={60}/>
+                <InputFieldItem {...p} field_name={'Hands'}/>
+                <InputFieldItem {...p} field_name={'Dmg'}/>
+                <InputFieldItem {...p} field_name={'A/S'}/>
+                <InputFieldItem {...p} field_name={'GP💰'}/>
+                <InputFieldItem {...p} field_name={'Fix💰'}/>
+                <InputFieldItem {...p} field_name={'Name'}/>
             < /span>
         );
     }

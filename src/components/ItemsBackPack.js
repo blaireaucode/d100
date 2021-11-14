@@ -27,9 +27,9 @@ class ItemsBackPack extends Component {
                         </span>);
         }
         return (
-            <Paper elevation={5} className={'character'}>
-                - Backpack -
-                <p/>
+            <Paper elevation={5} className={'character_panel'}>
+                Backpack
+                <br/>
                 {items}
             </Paper>
         );

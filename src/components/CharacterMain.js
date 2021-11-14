@@ -12,6 +12,7 @@ import InputFieldCharacter from "components/InputFieldCharacter"
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 //import {Paper} from "@material-ui/core"
 import F from 'helpers/F'
+import {Paper} from "@material-ui/core";
 
 class CharacterMain extends Component {
 
@@ -22,8 +23,7 @@ class CharacterMain extends Component {
 
     render() {
         return (
-            <div elevation={5} className={'character'}>
-
+            <Paper elevation={5} className={'character_panel'}>
                 {/* Name etc */}
                 <F>Name</F> <InputFieldCharacter field_name={'name'}/>
                 <F>Hero Path</F> <InputFieldCharacter field_name={'hero_path'}/>
@@ -49,28 +49,31 @@ class CharacterMain extends Component {
                 <InputFieldCharacter type={'number'} field_name={'str_adj'}/>
                 <F>xp</F> <InputFieldCharacter type={'number'} field_name={'str_exp'}/>
                 <F>Mighty Blow</F> <InputFieldCharacter type={'bool'} field_name={'mighty_blow'}/>
-                &nbsp; &nbsp; &nbsp; (During combat Dmg rolls of 6 roll again and add to the roll)
+                &nbsp; &nbsp; &nbsp;
+                <span className={'help'}>(During combat Dmg rolls of 6 roll again and add to the roll)</span>
 
                 <p/>
                 <F>Dex</F> <InputFieldCharacter type={'number'} field_name={'dex'}/>
                 <InputFieldCharacter type={'number'} field_name={'dex_adj'}/>
                 <F>xp</F> <InputFieldCharacter type={'number'} field_name={'dex_exp'}/>
                 <F>Perfect Aim</F> <InputFieldCharacter type={'bool'} field_name={'perfect_aim'}/>
-                &nbsp; &nbsp; &nbsp; (Roll again for hit location and choose either result)
+                &nbsp; &nbsp; &nbsp;
+                <span className={'help'}>(Roll again for hit location and choose either result)</span>
 
                 <p/>
                 <F>Int</F> <InputFieldCharacter type={'number'} field_name={'int'}/>
                 <InputFieldCharacter type={'number'} field_name={'int_adj'}/>
                 <F>xp</F> <InputFieldCharacter type={'number'} field_name={'int_exp'}/>
                 <F>Spell Caster</F> <InputFieldCharacter type={'bool'} field_name={'spell_caster'}/>
-                &nbsp; &nbsp; &nbsp; (Can now use spells from the spell book)
+                &nbsp; &nbsp; &nbsp;
+                <span className={'help'}>(Can now use spells from the spell book)</span>
 
                 <p/>
                 <F>Dmg (LATER) </F> <InputFieldCharacter type={'number'} field_name={'dmg'}/>
                 <F>Armour (LATER) </F> <InputFieldCharacter type={'number'} field_name={'armour'}/>
                 <p/>
 
-            </div>);
+            </Paper>);
     }
 }
 

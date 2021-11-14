@@ -41,6 +41,7 @@ class EncounterAbility extends Component {
                             </span>);
             }
         }
+        if (abilities.length === 0) return '';
         return (
             <span>
                 <L onClick={this.toggle}>(help)</L>

@@ -11,6 +11,7 @@ import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import InputFieldItem from "./InputFieldItem";
 import Clear from "./Clear";
+import {update_g_equip_item_location, update_g_item} from "../helpers/equipment_helpers";
 
 class ItemEquipped extends Component {
 
@@ -21,11 +22,15 @@ class ItemEquipped extends Component {
     }
 
     remove_item() {
-        /*
-        const g = update_g_remove_item(this.props.game, this.props.id);
+        const item_slot = this.props.game.equipped_items[this.props.id - 1];
+        const item = this.props.game.items[item_slot.item_id];
+        let g = update_g_item(this.props.game, item.id, 'current_location', 'backpack');
+        g = update_g_equip_item_location(g, this.props.id - 1, 'none')
+        if (item.hands === 2) {
+            g = update_g_equip_item_location(g, 5, 'none')
+            g = update_g_equip_item_location(g, 6, 'none')
+        }
         this.props.set_game(g);
-
-         */
     }
 
     render() {
@@ -42,54 +47,58 @@ class ItemEquipped extends Component {
         const item = this.props.game.items[item_slot.item_id];
         //console.log('item eq', this.props.id, item);
 
-        const p = {items: this.props.game.items, id: item.id};
+        const p = {items: this.props.game.items, id: item.id, class_name: 'field_input_small'};
+        const w = 40;
         return (
             <span>
                 {slot_columns}
-                <InputFieldItem {...p} field_name={'name'} width={120}/>
-                <InputFieldItem {...p} field_name={'str'} type={'number'}/>
-                <InputFieldItem {...p} field_name={'dex'} type={'number'}/>
-                <InputFieldItem {...p} field_name={'int'} type={'number'}/>
-                <InputFieldItem {...p} field_name={'hp'} type={'number'}/>
-                <InputFieldItem {...p} field_name={'dmg'} type={'number'}/>
-                <InputFieldItem {...p} field_name={'def'} type={'number'}/>
-                <InputFieldItem {...p} field_name={'gp'} type={'number'}/>
-                <InputFieldItem {...p} field_name={'fix_cost'} type={'number'}/>
-                <InputFieldItem {...p} field_name={'AS'} />
-                <InputFieldItem {...p} field_name={'damaged'} />
+                <InputFieldItem {...p} field_name={'name'} width={160}/>
+                <InputFieldItem {...p} field_name={'str'} type={'number'} width={w}/>
+                <InputFieldItem {...p} field_name={'dex'} type={'number'} width={w}/>
+                <InputFieldItem {...p} field_name={'int'} type={'number'} width={w}/>
+                <InputFieldItem {...p} field_name={'hp'} type={'number'} width={w}/>
+                <InputFieldItem {...p} field_name={'dmg'} type={'number'} width={w}/>
+                <InputFieldItem {...p} field_name={'def'} type={'number'} width={w}/>
+                <InputFieldItem {...p} field_name={'AS'} width={w}/>
+                <InputFieldItem {...p} field_name={'gp'} type={'number'} width={60}/>
+                <InputFieldItem {...p} field_name={'fix_cost'} type={'number'} width={60}/>
+                <InputFieldItem {...p} field_name={'damaged'}/>
+                &nbsp;&nbsp;&nbsp;
                 <Clear onClick={this.remove_item}/>
             < /span>
         );
     }
 
     render_slot_columns(item_slot) {
-        const p = {items: this.props.game.equipped_items, id: this.props.id - 1};
+        const p = {items: this.props.game.equipped_items, id: this.props.id - 1, class_name: 'field_input_small'};
         return (
             <span>
-                <InputFieldItem {...p} field_name={'d10'} read_only={true}/>
-                <InputFieldItem {...p} field_name={'dmg_mod'} read_only={true}/>
+                <InputFieldItem {...p} field_name={'d10'} read_only={true} width={40}/>
+                <InputFieldItem {...p} field_name={'dmg_mod'} read_only={true} width={40}/>
                 <InputFieldItem {...p} field_name={'location'} read_only={true}/>
             < /span>
         );
     }
 
     render_header() {
+        const p = {class_name: 'field_input_header'};
+        const w = 40;
         return (
             <span>
-                <InputFieldItem field_name={'D10'} read_only={true}/>
-                <InputFieldItem field_name={'mod'}/>
-                <InputFieldItem field_name={'location'}/>
-                <InputFieldItem field_name={'name'} width={120}/>
-                <InputFieldItem field_name={'str'}/>
-                <InputFieldItem field_name={'dex'}/>
-                <InputFieldItem field_name={'int'}/>
-                <InputFieldItem field_name={'hp'}/>
-                <InputFieldItem field_name={'dmg'}/>
-                <InputFieldItem field_name={'def'}/>
-                <InputFieldItem field_name={'gp'}/>
-                <InputFieldItem field_name={'fix_cost'}/>
-                <InputFieldItem field_name={'AS'}/>
-                <InputFieldItem field_name={'damaged'}/>
+                <InputFieldItem {...p} field_name={'D10'} read_only={true} width={40}/>
+                <InputFieldItem {...p} field_name={'Mod'} width={40}/>
+                <InputFieldItem {...p} field_name={'Loc.'}/>
+                <InputFieldItem {...p} field_name={'Name'} width={160}/>
+                <InputFieldItem {...p} field_name={'str'} width={w}/>
+                <InputFieldItem {...p} field_name={'dex'} width={w}/>
+                <InputFieldItem {...p} field_name={'int'} width={w}/>
+                <InputFieldItem {...p} field_name={'HP'} width={w}/>
+                <InputFieldItem {...p} field_name={'dmg'} width={w}/>
+                <InputFieldItem {...p} field_name={'def'} width={w}/>
+                <InputFieldItem {...p} field_name={'AS'} width={w}/>
+                <InputFieldItem {...p} field_name={'GP💰'} width={60}/>
+                <InputFieldItem {...p} field_name={'Fix💰'} width={60}/>
+                <InputFieldItem {...p} field_name={'damaged'}/>
             < /span>
         );
     }

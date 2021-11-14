@@ -51,7 +51,8 @@ class AttackRollDamage extends Component {
         if (dmg === 'none') dmg = '';
         else {
             // damage modifier from location
-            const dm = l.dmg_mod === 'none' ? 0 : parseInt(l.dmg_mod);
+            let dm = l.dmg_mod === 'none' ? 0 : parseInt(l.dmg_mod);
+            if (isNaN(dm)) dm = 0;
             // encounter is attacking
             if (att.who_attack === 'encounter') {
                 const cdef = parseInt(c.armour);

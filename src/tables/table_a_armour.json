@@ -33,7 +33,7 @@
   },
   {
     "d100": "13-16",
-    "slot": "Off Hand",
+    "slot": "Off H",
     "name": "Buckler Shield",
     "AS": "S0",
     "gp": 79,
@@ -105,7 +105,7 @@
   },
   {
     "d100": "46-49",
-    "slot": "Off Hand",
+    "slot": "Off H",
     "name": "Targe Shield",
     "AS": "S1",
     "gp": 123,
@@ -177,7 +177,7 @@
   },
   {
     "d100": "67-68",
-    "slot": "Off Hand",
+    "slot": "Off H",
     "name": "Heater Shield",
     "AS": "S2",
     "gp": 189,
@@ -241,7 +241,7 @@
   },
   {
     "d100": "83-84",
-    "slot": "Off Hand",
+    "slot": "Off H",
     "name": "Kite Shield",
     "AS": "S3",
     "gp": 267,
@@ -305,7 +305,7 @@
   },
   {
     "d100": "96",
-    "slot": "Off Hand",
+    "slot": "Off H",
     "name": "Pavise Shield",
     "AS": "S4",
     "gp": 467,

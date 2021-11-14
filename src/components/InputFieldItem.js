@@ -19,6 +19,7 @@ class InputFieldItem extends Component {
         width: 80,
         id: 'header',
         equipped: false,
+        class_name: 'field_input',
         items: false,
         read_only: false
     }
@@ -36,9 +37,10 @@ class InputFieldItem extends Component {
         const fn = this.props.field_name;
         let value = fn;
         let ro = this.props.read_only;
+        let ctype = this.props.type;
 
         // class name (for style)
-        let cn = 'field_input';
+        let cn = this.props.class_name;
 
         // start adornment
         let a = '';
@@ -54,22 +56,23 @@ class InputFieldItem extends Component {
                     else value = '✋✋';
                 }
             } else { // field does not exist
-                value = '';
+                value = '-';
+                ctype = 'text';
                 ro = true;
             }
         } else { // this is an header
             ro = true;
-            cn = 'field_input_header';
-            if (fn === 'gp') a = '💰';
-            if (fn === 'cost') a = '💰';
         }
+
+        // special case
+        if ((fn === 'd10') && (value > 10)) value = '';
 
         //console.log('input field', this.props.id, fn, value);
 
         return (
             <Input className={cn}
                    disableUnderline={true}
-                   type={this.props.type}
+                   type={ctype}
                    name={fn}
                    value={value}
                    style={{width: this.props.width}}

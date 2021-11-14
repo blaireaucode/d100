@@ -86,6 +86,7 @@ export function update_g_equip_item(game, id) {
     }
     const item = game.items[id];
     if (item.item_type === 'weapon') return update_g_equip_weapon(game, item);
+    if (item.item_type === 'armour') return update_g_equip_armour(game, item);
     return game;
 }
 
@@ -123,6 +124,16 @@ export function update_g_equip_weapon(game, item) {
         }
         game = update_g_equip_item_location(game, 5, item);
     }
+    return game;
+}
+
+export function update_g_equip_armour(game, item) {
+    let i = 0;
+    for (const l of game.equipped_items) {
+        if (item.slot === l.location) break;
+        i++;
+    }
+    game = update_g_equip_item_location(game, i, item);
     return game;
 }
 

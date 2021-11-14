@@ -12,6 +12,7 @@
 
 .field_name {
     color: #aaa;
+    color: #bbb;
 }
 
 .field_input {
@@ -21,6 +22,17 @@
     padding: 0 !important;
     /* text-align:left; */
     /*font-size: calc(8px + 0.7vmin) !important;*/
+}
+
+.field_input_small {
+    /* color: #18b26f!important; */
+    /* color: #3e84f2!important; */
+    color: #2982d2 !important;
+    padding: 0 !important;
+    max-height: 25px;
+    /* text-align:left; */
+    font-size: 0.85rem !important;
+    /*font-size: calc(5px + 0.7vmin) !important;*/
 }
 
 .field_input_header {
@@ -69,20 +81,6 @@
     color: #0de587;
 }
 
-.Book {
-    min-height: 100vh;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /*align-items: left;*/
-    justify-content: left;
-    max-width: 800px;
-    font-family: Verdana;
-    font-weight: 300;
-    line-height: 1.6em;
-    font-size: calc(7px + 0.9vmin);
-    color: #eee;
-}
-
 .Book-topbar {
     max-width: 800px;
     text-align: right;
@@ -103,6 +101,7 @@
 
 .help {
     font-size: calc(0.8em);
+    color: #aaa;
 }
 
 
@@ -134,13 +133,22 @@
     color: #000000 !important;
 }
 
-.character {
+.OLD_character {
     #max-width: 18em;
     #min-height: 45em;
     #max-height: 45em;
     margin-right: 2em;
     display: block;
     overflow-x: auto;
+}
+
+.character_panel {
+    margin-right: 2em;
+    padding-left: 1em;
+    display: block;
+    overflow-x: auto;
+    background-color: #24282f !important;
+    max-width: 1000px;
 }
 
 .collapse-css-transition {
