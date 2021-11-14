@@ -6,7 +6,7 @@
     "name": "none",
     "dmg": "none",
     "gp": "none",
-    "cost": "none"
+    "fix_cost": "none"
   },
   {
     "d100": "1-2",
@@ -15,7 +15,7 @@
     "name": "Sling",
     "dmg": -2,
     "gp": 12,
-    "cost": 3
+    "fix_cost": 3
   },
   {
     "d100": "5-6",
@@ -24,7 +24,7 @@
     "name": "Baton",
     "dmg": -2,
     "gp": 23,
-    "cost": 5
+    "fix_cost": 5
   },
   {
     "d100": "7-8",
@@ -33,7 +33,7 @@
     "name": "Stave",
     "dmg": -2,
     "gp": 32,
-    "cost": 7
+    "fix_cost": 7
   },
   {
     "d100": "9-10",
@@ -42,7 +42,7 @@
     "name": "Knife",
     "dmg": -2,
     "gp": 44,
-    "cost": 9
+    "fix_cost": 9
   },
   {
     "d100": "11-12",
@@ -51,7 +51,7 @@
     "name": "Club",
     "dmg": -1,
     "gp": 50,
-    "cost": 10
+    "fix_cost": 10
   },
   {
     "d100": "13-14",
@@ -60,7 +60,7 @@
     "name": "Quarterstaff",
     "dmg": -1,
     "gp": 51,
-    "cost": 11
+    "fix_cost": 11
   },
   {
     "d100": "15-16",
@@ -69,7 +69,7 @@
     "name": "Throwing Knife",
     "dmg": -1,
     "gp": 54,
-    "cost": 11
+    "fix_cost": 11
   },
   {
     "d100": "17-18",
@@ -78,7 +78,7 @@
     "name": "Dagger",
     "dmg": -1,
     "gp": 54,
-    "cost": 11
+    "fix_cost": 11
   },
   {
     "d100": "19-20",
@@ -87,7 +87,7 @@
     "name": "Spiked Club",
     "dmg": 0,
     "gp": 57,
-    "cost": 12
+    "fix_cost": 12
   },
   {
     "d100": "21-22",
@@ -96,7 +96,7 @@
     "name": "Hammer",
     "dmg": 0,
     "gp": 60,
-    "cost": 12
+    "fix_cost": 12
   },
   {
     "d100": "23-24",
@@ -105,7 +105,7 @@
     "name": "Throwing Spear",
     "dmg": 0,
     "gp": 66,
-    "cost": 14
+    "fix_cost": 14
   },
   {
     "d100": "25-26",
@@ -114,7 +114,7 @@
     "name": "R",
     "dmg": 0,
     "gp": 67,
-    "cost": 14
+    "fix_cost": 14
   },
   {
     "d100": "27-28",
@@ -123,7 +123,7 @@
     "name": "War Pick",
     "dmg": 0,
     "gp": 68,
-    "cost": 14
+    "fix_cost": 14
   },
   {
     "d100": "29-30",
@@ -132,7 +132,7 @@
     "name": "Short Sword",
     "dmg": 0,
     "gp": 70,
-    "cost": 14
+    "fix_cost": 14
   },
   {
     "d100": "31-32",
@@ -141,7 +141,7 @@
     "name": "Scimitar",
     "dmg": 0,
     "gp": 73,
-    "cost": 15
+    "fix_cost": 15
   },
   {
     "d100": "33-34",
@@ -150,7 +150,7 @@
     "name": "Rapier",
     "dmg": 0,
     "gp": 75,
-    "cost": 15
+    "fix_cost": 15
   },
   {
     "d100": "35-36",
@@ -159,7 +159,7 @@
     "name": "Scythe",
     "dmg": 0,
     "gp": 75,
-    "cost": 15
+    "fix_cost": 15
   },
   {
     "d100": "37-38",
@@ -168,7 +168,7 @@
     "name": "Mace",
     "dmg": 0,
     "gp": 78,
-    "cost": 16
+    "fix_cost": 16
   },
   {
     "d100": "39-40",
@@ -177,7 +177,7 @@
     "name": "Throwing Axe",
     "dmg": 0,
     "gp": 87,
-    "cost": 18
+    "fix_cost": 18
   },
   {
     "d100": "41-42",
@@ -186,7 +186,7 @@
     "name": "Chakram",
     "dmg": 0,
     "gp": 89,
-    "cost": 18
+    "fix_cost": 18
   },
   {
     "d100": "43-44",
@@ -195,7 +195,7 @@
     "name": "Repeating Crossbow",
     "dmg": 0,
     "gp": 94,
-    "cost": 19
+    "fix_cost": 19
   },
   {
     "d100": "45-46",
@@ -204,7 +204,7 @@
     "name": "Lance",
     "dmg": 1,
     "gp": 123,
-    "cost": 25
+    "fix_cost": 25
   },
   {
     "d100": "47-48",
@@ -213,7 +213,7 @@
     "name": "Spear",
     "dmg": 1,
     "gp": 132,
-    "cost": 27
+    "fix_cost": 27
   },
   {
     "d100": "49-50",
@@ -222,7 +222,7 @@
     "name": "Half Maul",
     "dmg": 1,
     "gp": 134,
-    "cost": 27
+    "fix_cost": 27
   },
   {
     "d100": "51-52",
@@ -231,7 +231,7 @@
     "name": "Falchion",
     "dmg": 1,
     "gp": 143,
-    "cost": 29
+    "fix_cost": 29
   },
   {
     "d100": "53-54",
@@ -240,7 +240,7 @@
     "name": "Bow",
     "dmg": 1,
     "gp": 146,
-    "cost": 30
+    "fix_cost": 30
   },
   {
     "d100": "55-56",
@@ -249,7 +249,7 @@
     "name": "Axe",
     "dmg": 1,
     "gp": 165,
-    "cost": 33
+    "fix_cost": 33
   },
   {
     "d100": "57-58",
@@ -258,7 +258,7 @@
     "name": "Morning Star",
     "dmg": 1,
     "gp": 167,
-    "cost": 34
+    "fix_cost": 34
   },
   {
     "d100": "59-60",
@@ -267,7 +267,7 @@
     "name": "Broadsword",
     "dmg": 1,
     "gp": 178,
-    "cost": 36
+    "fix_cost": 36
   },
   {
     "d100": "61-62",
@@ -276,7 +276,7 @@
     "name": "Pernach",
     "dmg": 1,
     "gp": 178,
-    "cost": 36
+    "fix_cost": 36
   },
   {
     "d100": "63-64",
@@ -285,7 +285,7 @@
     "name": "Military Fork",
     "dmg": 1,
     "gp": 187,
-    "cost": 38
+    "fix_cost": 38
   },
   {
     "d100": "65-66",
@@ -294,7 +294,7 @@
     "name": "Partisan",
     "dmg": 1,
     "gp": 189,
-    "cost": 38
+    "fix_cost": 38
   },
   {
     "d100": "67-68",
@@ -303,7 +303,7 @@
     "name": "Glaive",
     "dmg": 1,
     "gp": 190,
-    "cost": 38
+    "fix_cost": 38
   },
   {
     "d100": "69-70",
@@ -312,7 +312,7 @@
     "name": "Halberd",
     "dmg": 2,
     "gp": 234,
-    "cost": 47
+    "fix_cost": 47
   },
   {
     "d100": "71-72",
@@ -321,7 +321,7 @@
     "name": "Bill",
     "dmg": 2,
     "gp": 236,
-    "cost": 48
+    "fix_cost": 48
   },
   {
     "d100": "73-74",
@@ -330,7 +330,7 @@
     "name": "Two Handed Flail",
     "dmg": 1,
     "gp": 243,
-    "cost": 49
+    "fix_cost": 49
   },
   {
     "d100": "75-76",
@@ -339,7 +339,7 @@
     "name": "Recurve Bow",
     "dmg": 2,
     "gp": 243,
-    "cost": 49
+    "fix_cost": 49
   },
   {
     "d100": "77-78",
@@ -348,7 +348,7 @@
     "name": "Maul",
     "dmg": 2,
     "gp": 265,
-    "cost": 53
+    "fix_cost": 53
   },
   {
     "d100": "79-80",
@@ -357,7 +357,7 @@
     "name": "War Scythe",
     "dmg": 2,
     "gp": 266,
-    "cost": 54
+    "fix_cost": 54
   },
   {
     "d100": "81-82",
@@ -366,7 +366,7 @@
     "name": "Bardiche",
     "dmg": 2,
     "gp": 267,
-    "cost": 54
+    "fix_cost": 54
   },
   {
     "d100": "83-84",
@@ -375,7 +375,7 @@
     "name": "Long Sword",
     "dmg": 2,
     "gp": 278,
-    "cost": 56
+    "fix_cost": 56
   },
   {
     "d100": "85-86",
@@ -384,7 +384,7 @@
     "name": "Battle Axe",
     "dmg": 2,
     "gp": 287,
-    "cost": 58
+    "fix_cost": 58
   },
   {
     "d100": "87-88",
@@ -393,7 +393,7 @@
     "name": "Claymore",
     "dmg": 2,
     "gp": 290,
-    "cost": 58
+    "fix_cost": 58
   },
   {
     "d100": "89-90",
@@ -402,7 +402,7 @@
     "name": "Crossbow",
     "dmg": 2,
     "gp": 298,
-    "cost": 60
+    "fix_cost": 60
   },
   {
     "d100": "91-92",
@@ -411,7 +411,7 @@
     "name": "War Hammer",
     "dmg": 3,
     "gp": 367,
-    "cost": 74
+    "fix_cost": 74
   },
   {
     "d100": "93-94",
@@ -420,7 +420,7 @@
     "name": "Arbalest",
     "dmg": 3,
     "gp": 367,
-    "cost": 74
+    "fix_cost": 74
   },
   {
     "d100": "95-96",
@@ -429,7 +429,7 @@
     "name": "Long Bow",
     "dmg": 3,
     "gp": 378,
-    "cost": 76
+    "fix_cost": 76
   },
   {
     "d100": "97-98",
@@ -438,7 +438,7 @@
     "name": "Bastard Sword",
     "dmg": 3,
     "gp": 378,
-    "cost": 76
+    "fix_cost": 76
   },
   {
     "d100": "99",
@@ -447,7 +447,7 @@
     "name": "Great Sword",
     "dmg": 4,
     "gp": 420,
-    "cost": 84
+    "fix_cost": 84
   },
   {
     "d100": "100",
@@ -456,6 +456,6 @@
     "name": "Mighty Claymore",
     "dmg": 4,
     "gp": 467,
-    "cost": 94
+    "fix_cost": 94
   }
 ]

@@ -9,7 +9,6 @@
 import React, {Component} from 'react'
 import {HashRouter as Router} from 'react-router-dom'
 import Debug from 'components/ScreenDebug'
-//import Team from 'components/ScreenTeam'
 import Character from 'components/ScreenCharacter'
 import Map from 'components/ScreenMap'
 import Room from 'components/ScreenRoom'
@@ -21,6 +20,8 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import {connect} from "react-redux"
 import DiceRoller from 'components/DiceRoller'
 import {close_dice_ui, get_dice_ui} from 'helpers/dice_helpers'
+import ItemsTableWeapon from "./components/ItemsTableWeapon"
+import ItemsTableArmour from "./components/ItemsTableArmour";
 
 ReactModal.setAppElement('#root')
 
@@ -81,6 +82,8 @@ class Routes extends Component {
                     <Layout path="/character" component={Character}/>
                     <Layout path="/map" component={Map}/>
                     <Layout path="/town" component={Town}/>
+                    <Layout path="/town/weapons" component={ItemsTableWeapon}/>
+                    <Layout path="/town/armours" component={ItemsTableArmour}/>
                     <Layout path="/room" component={Room}/>
                     <Layout path="/debug" component={Debug}/>
                     <Layout path="/system" component={ScreenSystem}/>

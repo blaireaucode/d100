@@ -11,6 +11,7 @@ import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import CharacterMain from "./CharacterMain";
 import ItemsBackPack from "./ItemsBackPack";
+import ItemsEquipped from "./ItemsEquipped";
 
 class ScreenCharacter extends Component {
 
@@ -18,6 +19,8 @@ class ScreenCharacter extends Component {
         return (
             <div>
                 <CharacterMain/>
+                <p/>
+                <ItemsEquipped/>
                 <p/>
                 <ItemsBackPack/>
             </div>

@@ -18,6 +18,8 @@ class InputFieldItem extends Component {
         type: "txt",
         width: 80,
         id: 'header',
+        equipped: false,
+        items: false,
         read_only: false
     }
 
@@ -30,7 +32,7 @@ class InputFieldItem extends Component {
 
     render() {
         // input : props.characteristic props.field_name
-        const items = this.props.game.items;
+        const items = this.props.items === false ? this.props.game.items : this.props.items;
         const fn = this.props.field_name;
         let value = fn;
         let ro = this.props.read_only;
@@ -42,14 +44,20 @@ class InputFieldItem extends Component {
         let a = '';
 
         if (this.props.id !== 'header') {
+            //console.log('items, item', items, this.props.id)
             const item = items[this.props.id];
-            value = item[fn];
-            // special case : hands
-            if (fn === 'hands') {
-                if (value === 1) value = '✋';
-                else value = '✋✋';
+            if (fn in item) {
+                value = item[fn];
+                // special case : hands
+                if (fn === 'hands') {
+                    if (value === 1) value = '✋';
+                    else value = '✋✋';
+                }
+            } else { // field does not exist
+                value = '';
+                ro = true;
             }
-        } else {
+        } else { // this is an header
             ro = true;
             cn = 'field_input_header';
             if (fn === 'gp') a = '💰';

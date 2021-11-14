@@ -9,16 +9,18 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import ItemsTable from "./ItemsTable";
+import L from "../helpers/L"
 
 class ScreenTown extends Component {
 
     render() {
         return (
             <div>
-
-            <ItemsTable/>
-
+                <L to='/town' className={'clear'}> ✗ </L>
+                <p/>
+                <L to='/town/weapons'>Weapon table</L>
+                <p/>
+                <L to='/town/armours'>Armour table</L>
             </div>
         );
     }

@@ -9,10 +9,10 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import L from "../helpers/L";
-import Input from "@material-ui/core/Input";
-import * as st from "../helpers/store";
-import update from "immutability-helper";
+import L from "../helpers/L"
+import Input from "@material-ui/core/Input"
+import * as st from "../helpers/store"
+import update from "immutability-helper"
 
 class Save extends Component {
 

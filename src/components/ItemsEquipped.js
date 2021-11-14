@@ -10,25 +10,24 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import {Paper} from "@material-ui/core"
-import ItemBackPack from "./ItemBackPack";
+import ItemEquipped from "./ItemEquipped";
 
-class ItemsBackPack extends Component {
+class ItemsEquipped extends Component {
 
     render() {
         let items = [];
         items.push(<span key={'header'}>
-                    <ItemBackPack id={'header'}/><br/>
+                    <ItemEquipped id={'header'}/><br/>
                     </span>);
-        for (const key in this.props.game.items) {
-            const item = this.props.game.items[key];
-            if (item.current_location !== 'backpack') continue;
-            items.push(<span key={key}>
-                        <ItemBackPack id={key}/><br/>
+        for (const key in this.props.game.equipped_items) {
+            const item = this.props.game.equipped_items[key];
+            items.push(<span key={item.d10}>
+                        <ItemEquipped id={item.d10}/><br/>
                         </span>);
         }
         return (
             <Paper elevation={5} className={'character'}>
-                - Backpack -
+                - Equipped -
                 <p/>
                 {items}
             </Paper>
@@ -36,4 +35,4 @@ class ItemsBackPack extends Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ItemsBackPack)
+export default connect(mapStateToProps, mapDispatchToProps)(ItemsEquipped)

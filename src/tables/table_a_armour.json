@@ -1,0 +1,346 @@
+[
+  {
+    "d100": "none",
+    "slot": "none",
+    "name": "none",
+    "AS": "none",
+    "gp": "none",
+    "fix_cost": "none"
+  },
+  {
+    "d100": "1-4",
+    "slot": "Feet",
+    "name": "Leather Boots",
+    "AS": "A0",
+    "gp": 67,
+    "fix_cost": 14
+  },
+  {
+    "d100": "5-8",
+    "slot": "Legs",
+    "name": "Leather Tasset",
+    "AS": "A0",
+    "gp": 68,
+    "fix_cost": 14
+  },
+  {
+    "d100": "9-12",
+    "slot": "Waist",
+    "name": "Leather Girdle",
+    "AS": "A0",
+    "gp": 70,
+    "fix_cost": 14
+  },
+  {
+    "d100": "13-16",
+    "slot": "Off Hand",
+    "name": "Buckler Shield",
+    "AS": "S0",
+    "gp": 79,
+    "fix_cost": 16
+  },
+  {
+    "d100": "17-20",
+    "slot": "Hands",
+    "name": "Leather Gauntlets",
+    "AS": "A0",
+    "gp": 73,
+    "fix_cost": 15
+  },
+  {
+    "d100": "21-24",
+    "slot": "Arms",
+    "name": "Leather Arm Guards",
+    "AS": "A0",
+    "gp": 66,
+    "fix_cost": 14
+  },
+  {
+    "d100": "25-28",
+    "slot": "Torso",
+    "name": "Leather Cuirass",
+    "AS": "A0",
+    "gp": 78,
+    "fix_cost": 16
+  },
+  {
+    "d100": "29-32",
+    "slot": "Back",
+    "name": "Leather Cloak",
+    "AS": "A0",
+    "gp": 67,
+    "fix_cost": 14
+  },
+  {
+    "d100": "33-36",
+    "slot": "Head",
+    "name": "Leather Cap",
+    "AS": "A0",
+    "gp": 75,
+    "fix_cost": 15
+  },
+  {
+    "d100": "37-39",
+    "slot": "Feet",
+    "name": "Studded Leather Sollerets",
+    "AS": "A1",
+    "gp": 87,
+    "fix_cost": 18
+  },
+  {
+    "d100": "40-42",
+    "slot": "Legs",
+    "name": "Studded Leather Chausses",
+    "AS": "A1",
+    "gp": 89,
+    "fix_cost": 18
+  },
+  {
+    "d100": "43-45",
+    "slot": "Waist",
+    "name": "Studded Leather Belt",
+    "AS": "A1",
+    "gp": 94,
+    "fix_cost": 19
+  },
+  {
+    "d100": "46-49",
+    "slot": "Off Hand",
+    "name": "Targe Shield",
+    "AS": "S1",
+    "gp": 123,
+    "fix_cost": 25
+  },
+  {
+    "d100": "49-51",
+    "slot": "Hands",
+    "name": "Studded Leather Gloves",
+    "AS": "A1",
+    "gp": 97,
+    "fix_cost": 20
+  },
+  {
+    "d100": "52-54",
+    "slot": "Arms",
+    "name": "Studded Leather Bracers",
+    "AS": "A1",
+    "gp": 83,
+    "fix_cost": 17
+  },
+  {
+    "d100": "55-56",
+    "slot": "Torso",
+    "name": "Studded Leather Brigandine",
+    "AS": "A1",
+    "gp": 123,
+    "fix_cost": 25
+  },
+  {
+    "d100": "57-58",
+    "slot": "Back",
+    "name": "Studded Leather Cape",
+    "AS": "A1",
+    "gp": 87,
+    "fix_cost": 18
+  },
+  {
+    "d100": "59-60",
+    "slot": "Head",
+    "name": "Studded Leather Helmet",
+    "AS": "A1",
+    "gp": 104,
+    "fix_cost": 21
+  },
+  {
+    "d100": "61-62",
+    "slot": "Feet",
+    "name": "Mail Sabatons",
+    "AS": "A2",
+    "gp": 143,
+    "fix_cost": 29
+  },
+  {
+    "d100": "63-64",
+    "slot": "Legs",
+    "name": "Mail Cuisse",
+    "AS": "A2",
+    "gp": 146,
+    "fix_cost": 30
+  },
+  {
+    "d100": "65-66",
+    "slot": "Waist",
+    "name": "Padded Mail Belt",
+    "AS": "A2",
+    "gp": 165,
+    "fix_cost": 33
+  },
+  {
+    "d100": "67-68",
+    "slot": "Off Hand",
+    "name": "Heater Shield",
+    "AS": "S2",
+    "gp": 189,
+    "fix_cost": 38
+  },
+  {
+    "d100": "69-70",
+    "slot": "Hands",
+    "name": "Mail Handwraps",
+    "AS": "A2",
+    "gp": 167,
+    "fix_cost": 34
+  },
+  {
+    "d100": "71-72",
+    "slot": "Arms",
+    "name": "Mail Sleeves",
+    "AS": "A2",
+    "gp": 134,
+    "fix_cost": 27
+  },
+  {
+    "d100": "73-74",
+    "slot": "Torso",
+    "name": "Mail Shirt",
+    "AS": "A2",
+    "gp": 187,
+    "fix_cost": 38
+  },
+  {
+    "d100": "75-76",
+    "slot": "Head",
+    "name": "Mail Coif",
+    "AS": "A2",
+    "gp": 178,
+    "fix_cost": 36
+  },
+  {
+    "d100": "77-78",
+    "slot": "Feet",
+    "name": "Scale Mail Boot",
+    "AS": "A3",
+    "gp": 190,
+    "fix_cost": 38
+  },
+  {
+    "d100": "79-80",
+    "slot": "Legs",
+    "name": "Scale Mail Poleyn",
+    "AS": "A3",
+    "gp": 236,
+    "fix_cost": 48
+  },
+  {
+    "d100": "81-82",
+    "slot": "Waist",
+    "name": "Scale Mail Fauld",
+    "AS": "A3",
+    "gp": 243,
+    "fix_cost": 49
+  },
+  {
+    "d100": "83-84",
+    "slot": "Off Hand",
+    "name": "Kite Shield",
+    "AS": "S3",
+    "gp": 267,
+    "fix_cost": 54
+  },
+  {
+    "d100": "85-86",
+    "slot": "Hands",
+    "name": "Scale Mail Gloves",
+    "AS": "A3",
+    "gp": 256,
+    "fix_cost": 52
+  },
+  {
+    "d100": "87-88",
+    "slot": "Arms",
+    "name": "Scale Mail Vambrace",
+    "AS": "A3",
+    "gp": 234,
+    "fix_cost": 47
+  },
+  {
+    "d100": "89-90",
+    "slot": "Torso",
+    "name": "Scale Mail Hauberk",
+    "AS": "A3",
+    "gp": 266,
+    "fix_cost": 54
+  },
+  {
+    "d100": "91-92",
+    "slot": "Head",
+    "name": "Scale Mail Armet",
+    "AS": "A3",
+    "gp": 265,
+    "fix_cost": 53
+  },
+  {
+    "d100": "93",
+    "slot": "Feet",
+    "name": "Plate Mail Sabatons",
+    "AS": "A4",
+    "gp": 287,
+    "fix_cost": 58
+  },
+  {
+    "d100": "94",
+    "slot": "Legs",
+    "name": "Plate Mail Greaves",
+    "AS": "A4",
+    "gp": 290,
+    "fix_cost": 58
+  },
+  {
+    "d100": "95",
+    "slot": "Waist",
+    "name": "Plate Mail Girdle",
+    "AS": "A4",
+    "gp": 298,
+    "fix_cost": 60
+  },
+  {
+    "d100": "96",
+    "slot": "Off Hand",
+    "name": "Pavise Shield",
+    "AS": "S4",
+    "gp": 467,
+    "fix_cost": 94
+  },
+  {
+    "d100": "97",
+    "slot": "Hands",
+    "name": "Plate Mail Manifers",
+    "AS": "A4",
+    "gp": 367,
+    "fix_cost": 74
+  },
+  {
+    "d100": "98",
+    "slot": "Arms",
+    "name": "Plate Mail Bracers",
+    "AS": "A4",
+    "gp": 278,
+    "fix_cost": 56
+  },
+  {
+    "d100": "99",
+    "slot": "Torso",
+    "name": "Plate Mail Breastplate",
+    "AS": "A4",
+    "gp": 420,
+    "fix_cost": 84
+  },
+  {
+    "d100": "100",
+    "slot": "Head",
+    "name": "Plate Mail Great Helm",
+    "AS": "A4",
+    "gp": 378,
+    "fix_cost": 76
+  }
+]

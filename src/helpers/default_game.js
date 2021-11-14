@@ -47,6 +47,7 @@ const default_game = {
     },
 
     items: {},
+    equipped_items: {},
     skills: {},
     room: {},
     encounter: {} // new_encounter('none')

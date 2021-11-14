@@ -11,12 +11,15 @@ import update from "immutability-helper"
 import {v4 as uuidv4} from "uuid"
 import default_game from "./default_game";
 import {new_encounter} from "./encounter_helpers";
+import {new_equipped_items} from "./equipment_helpers";
 
 export function create_new_game() {
     let new_game = JSON.parse(JSON.stringify(default_game))
     new_game.encounter = new_encounter('none');
+    new_game.equipped_items = new_equipped_items();
     new_game.id = uuidv4();
     new_game = update(new_game, {date: {$set: new Date()}});
+    console.log('New game', new_game);
     return new_game;
 }
 
