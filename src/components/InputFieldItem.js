@@ -40,7 +40,12 @@ class InputFieldItem extends Component {
         let ctype = this.props.type;
 
         // class name (for style)
+        let align = 'left';
         let cn = this.props.class_name;
+        if (this.props.type === 'number') {
+            //cn += ' field_input_nb';
+            align = 'right';
+        }
 
         // start adornment
         let a = '';
@@ -50,15 +55,17 @@ class InputFieldItem extends Component {
             const item = items[this.props.id];
             if (fn in item) {
                 value = item[fn];
+                //if (value === 'none') value = '-';
                 // special case : hands
                 if (fn === 'hands') {
                     if (value === 1) value = '✋';
-                    else value = '✋✋';
+                    else if (value === 2) value = '✋✋';
+                    else value = '';
                 }
             } else { // field does not exist
-                value = '-';
-                ctype = 'text';
-                ro = true;
+                value = '';
+                //ctype = 'text';
+                //ro = true;
             }
         } else { // this is an header
             ro = true;
@@ -76,6 +83,7 @@ class InputFieldItem extends Component {
                    name={fn}
                    value={value}
                    style={{width: this.props.width}}
+                   inputProps={{style: {textAlign: align}}}
                    readOnly={ro}
                    onChange={this.handleChange}
                    startAdornment={a}

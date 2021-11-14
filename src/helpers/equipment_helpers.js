@@ -11,7 +11,7 @@ import armour_table from 'tables/table_a_armour.json'
 import {parse_d100_interval} from "./encounter_helpers"
 import update from "immutability-helper"
 import {v4 as uuidv4} from "uuid"
-
+import default_item from "./default_item";
 
 export function get_item_in_table(table, id, copy = true) {
     let found = false;
@@ -31,6 +31,10 @@ export function get_item_in_table(table, id, copy = true) {
         let item = JSON.parse(JSON.stringify(table[i]));
         item["id"] = uuidv4();
         item["current_location"] = 'backpack';
+        for (const k in default_item) {
+            if (k in item) continue;
+            item[k] = '';
+        }
         return item;
     }
     return table[i];
@@ -53,11 +57,13 @@ export function update_g_add_item(game, item) {
 }
 
 export function update_g_remove_item(game, id) {
-    return update(game, {items: {$unset: [id]}});
+    return update(game, {items: {$unset: [id]}});// check total
 }
 
 export function update_g_item(game, id, fn, v) {
-    return update(game, {items: {[id]: {[fn]: {$set: v}}}});
+    game = update(game, {items: {[id]: {[fn]: {$set: v}}}});
+    game = update_g_equip_total(game);
+    return game;
 }
 
 export function new_equipped_items() {
@@ -85,8 +91,11 @@ export function update_g_equip_item(game, id) {
         return game;
     }
     const item = game.items[id];
-    if (item.item_type === 'weapon') return update_g_equip_weapon(game, item);
-    if (item.item_type === 'armour') return update_g_equip_armour(game, item);
+    if (item.item_type === 'weapon') game = update_g_equip_weapon(game, item);
+    if (item.item_type === 'armour') game = update_g_equip_armour(game, item);
+
+    // check total
+    game = update_g_equip_total(game);
     return game;
 }
 
@@ -96,10 +105,13 @@ export function update_g_equip_item_location(game, location_id, item) {
         game = update_g_item(game, prev_item_id, 'current_location', 'backpack');
     }
     if (item === 'none') {
-        return update(game, {equipped_items: {[location_id]: {item_id: {$set: 'none'}}}});
+        game = update(game, {equipped_items: {[location_id]: {item_id: {$set: 'none'}}}});
+        //game = update_g_equip_total(game);
+        return game;
     }
     game = update_g_item(game, item.id, 'current_location', location_id);
     game = update(game, {equipped_items: {[location_id]: {item_id: {$set: item.id}}}});
+    //game = update_g_equip_total(game);
     return game;
 }
 
@@ -136,6 +148,29 @@ export function update_g_equip_armour(game, item) {
     game = update_g_equip_item_location(game, i, item);
     return game;
 }
+
+export function update_g_equip_total(game) {
+    game = update_g_equip_total_fn(game, 'str');
+    game = update_g_equip_total_fn(game, 'dex');
+    game = update_g_equip_total_fn(game, 'int');
+    game = update_g_equip_total_fn(game, 'hp');
+    game = update_g_equip_total_fn(game, 'dmg');
+    return game;
+}
+
+export function update_g_equip_total_fn(game, field_name) {
+    let total = 0;
+    for (const k in game.items) {
+        const item = game.items[k];
+        if (item.current_location !== 'backpack' && field_name in item) {
+            let v = parseInt(item[field_name]);
+            if (isNaN(v)) v = 0;
+            total += v;
+        }
+    }
+    return update(game, {characteristics: {[field_name + '_items']: {$set: total}}});
+}
+
 
 
 

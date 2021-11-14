@@ -11,6 +11,7 @@ import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import {Paper} from "@material-ui/core"
 import ItemEquipped from "./ItemEquipped";
+import InputFieldItem from "./InputFieldItem";
 
 class ItemsEquipped extends Component {
 
@@ -25,9 +26,14 @@ class ItemsEquipped extends Component {
                         <ItemEquipped id={item.d10}/><br/>
                         </span>);
         }
+        const c = this.props.game.characteristics;
         return (
             <Paper elevation={5} className={'character_panel'}>
+                {c.str_items} {c.dex_items} {c.int_items} {c.hp_items} {c.dmg_items}
+                <br/>
                 {items}
+                <br/>
+                <InputFieldItem field_name={'fake'} read_only={true} width={40}/>
             </Paper>
         );
     }

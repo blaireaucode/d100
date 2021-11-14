@@ -25,16 +25,14 @@ export function defaultSaves() {
 }
 
 export function read_saves_in_store() {
-    let saves = {};
-    //const st = global.localStorage.getItem('d100_save');
     if (global.localStorage.getItem('d100_save') !== null) {
-        saves = JSON.parse(global.localStorage.getItem('d100_save'));
+        return JSON.parse(global.localStorage.getItem('d100_save'));
     } else {
         console.log('Cannot find local storage d100_save : use default');
-        saves = defaultSaves();
+        const saves = defaultSaves();
         global.localStorage.setItem('d100_save', JSON.stringify(saves));
+        return saves;
     }
-    return saves;
 }
 
 export function setupStore() {

@@ -12,11 +12,16 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 
 class F extends Component {
 
+    static defaultProps = {
+        width: 'auto',
+        class_name: 'field_name'
+    }
+
     render() {
-        return (<span className={'field_name'}>
-                      {this.props.children}
-                    </span>
-        );
+        return (<span className={this.props.class_name}
+                      style={{width: this.props.width}}>
+                    {this.props.children}
+                </span>);
     }
 }
 

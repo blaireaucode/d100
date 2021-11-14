@@ -11,8 +11,9 @@
 }
 
 .field_name {
-    color: #aaa;
+    /*color: #aaa;*/
     color: #bbb;
+    display: inline-block;
 }
 
 .field_input {
@@ -45,7 +46,8 @@
 }
 
 .field_input_nb {
-    max-width: 5ch;
+    /*max-width: 5ch;*/
+    text-align: right !important;
 }
 
 .fieldLabel {
@@ -101,7 +103,8 @@
 
 .help {
     font-size: calc(0.8em);
-    color: #aaa;
+    /*color: #aaa;*/
+    color: #807c62;
 }
 
 

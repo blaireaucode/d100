@@ -35,8 +35,8 @@ class EncounterAbility extends Component {
             if (e['ability'].includes(ab.name)) {
                 //console.log('a', ab);
                 abilities.push(
-                            <span>
-                                ៚ <EncounterAbilityHelp key={ab.name} name={ab.name}/>
+                            <span key={ab.name}>
+                                ៚ <EncounterAbilityHelp  name={ab.name}/>
                                 <p/>
                             </span>);
             }

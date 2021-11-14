@@ -17,7 +17,11 @@ class InputFieldCharacter extends Component {
 
     static defaultProps = {
         type: "txt",
-        read_only: false
+        width: 80,
+        read_only: false,
+        align: 'left',
+        mod: 0,
+        class_name: 'field_input'
     }
 
     handleChange = ({target}) => {
@@ -31,35 +35,43 @@ class InputFieldCharacter extends Component {
         // input : props.characteristic props.field_name
         const c = this.props.game.characteristics;
         const fn = this.props.field_name;
-        const value = c[fn];
+        let value = c[fn];
 
         // class name (for style)
-        let cn = 'field_input';
-        if (this.props.type === 'number')
+        let align = 'left';
+        let cn = this.props.class_name;
+        if (this.props.type === 'number') {
             cn += ' field_input_nb';
+            value = parseInt(value) + this.props.mod;
+            // console.log('mod', fn, value, this.props.mod);
+            align = 'right';
+        }
 
         // start adornment
         let a = '';
 
         // special case
         // if (fn === 'life') a = '💙'; //❤️ 🤍♡
+        //console.log('w', this.props.width);
         if (this.props.type === 'bool') {
             return (
                 <Checkbox
                     className={cn}
                     name={fn}
                     checked={value}
+                    style={{width: '2ch'}}
                     onChange={this.handleChange}
                 />
             )
         }
-
         return (
             <Input className={cn}
                    disableUnderline={true}
                    type={this.props.type}
                    name={fn}
                    value={value}
+                   style={{width: this.props.width}}
+                   inputProps={{style: {textAlign: align}}}
                    readOnly={this.props.read_only}
                    onChange={this.handleChange}
                    startAdornment={a}
