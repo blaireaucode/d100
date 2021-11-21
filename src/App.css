@@ -33,7 +33,7 @@
     background-color: #131315;
     max-height: 25px;
     /* text-align:left; */
-    font-size: 0.85rem !important;
+    font-size: 0.8rem !important;
     /*font-size: calc(5px + 0.7vmin) !important;*/
 }
 
@@ -152,7 +152,7 @@
     display: block;
     overflow-x: auto;
     background-color: #24282f !important;
-    max-width: 1000px;
+    max-width: 1050px;
 }
 
 .collapse-css-transition {

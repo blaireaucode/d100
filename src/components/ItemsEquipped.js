@@ -27,19 +27,18 @@ class ItemsEquipped extends Component {
                         <ItemEquipped id={item.d10}/><br/>
                         </span>);
         }
-        const c = this.props.game.characteristics;
+        //const c = this.props.game.characteristics;
         const p = {align: 'center', value: ''};
         const w = '3rem';
         const pn = {width: w, align: 'center'};
         return (
             <Paper elevation={5} className={'character_panel'}>
-                Equipped items<br/>
                 {/*{c.str_items} {c.dex_items} {c.int_items} {c.hp_items} {c.dmg_items}*/}
                 {items}
                 <InputFieldHeader {...p} width={'3rem'}/>
                 <InputFieldHeader {...p} width={'3rem'}/>
                 <InputFieldHeader {...p} width={'4rem'}/>
-                <InputFieldHeader {...p} value={'Total'} width={'10rem'} align={'right'}/>
+                <InputFieldHeader {...p} value={'Total'} width={'14rem'} align={'right'}/>
                 <InputFieldCharacter {...pn} field_name={'str_items'} align={'center'}/>
                 <InputFieldCharacter {...pn} field_name={'dex_items'}/>
                 <InputFieldCharacter {...pn} field_name={'int_items'}/>
@@ -54,7 +53,7 @@ class ItemsEquipped extends Component {
                 <InputFieldHeader {...p} width={'3rem'}/>
                 <InputFieldHeader {...p} width={'3rem'}/>
                 <InputFieldHeader {...p} width={'4rem'}/>
-                <InputFieldHeader {...p} width={'10rem'} align={'right'}/>
+                <InputFieldHeader {...p} width={'14rem'} align={'right'}/>
                 <InputFieldHeader {...pn} value={'str'} align={'center'}/>
                 <InputFieldHeader {...pn} value={'dex'}/>
                 <InputFieldHeader {...pn} value={'int'}/>

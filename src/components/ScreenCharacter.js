@@ -22,6 +22,7 @@ class ScreenCharacter extends Component {
                 <p/>
                 <ItemsEquipped/>
                 <p/>
+                Backpack<br/>
                 <ItemsBackPack/>
             </div>
         );

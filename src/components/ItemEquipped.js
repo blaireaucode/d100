@@ -25,6 +25,7 @@ class ItemEquipped extends Component {
     remove_item() {
         const item_slot = this.props.game.equipped_items[this.props.id - 1];
         const item = this.props.game.items[item_slot.item_id];
+        // console.log('remote item', item);
         let g = update_g_item(this.props.game, item.id, 'current_location', 'backpack');
         g = update_g_equip_item_location(g, this.props.id - 1, 'none')
         if (item.hands === 2) {
@@ -53,7 +54,7 @@ class ItemEquipped extends Component {
         return (
             <span>
                 {slot_columns}
-                <InputFieldItem {...p} field_name={'name'} width={'10rem'}/>
+                <InputFieldItem {...p} field_name={'name'} width={'14rem'}/>
                 <InputFieldItem {...p} field_name={'str'} type={'number'} width={w}/>
                 <InputFieldItem {...p} field_name={'dex'} type={'number'} width={w}/>
                 <InputFieldItem {...p} field_name={'int'} type={'number'} width={w}/>
@@ -92,10 +93,10 @@ class ItemEquipped extends Component {
         const p = {align: 'center'};
         return (
             <span>
-                <InputFieldHeader {...p} value={'D10'} width={'3rem'}/>
+                <InputFieldHeader {...p} value={'D10'} width={'3rem'} align={'left'}/>
                 <InputFieldHeader {...p} value={'Mod'} width={'3rem'}/>
                 <InputFieldHeader {...p} value={'Loc.'} width={'4rem'}/>
-                <InputFieldHeader {...p} value={'Name'} width={'10rem'} align={'right'}/>
+                <InputFieldHeader {...p} value={'Name'} width={'14rem'} align={'right'}/>
                 <InputFieldHeader {...pn} value={'str'}/>
                 <InputFieldHeader {...pn} value={'dex'}/>
                 <InputFieldHeader {...pn} value={'int'}/>

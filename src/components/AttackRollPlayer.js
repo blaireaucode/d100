@@ -68,11 +68,11 @@ class AttackRollPlayer extends Component {
                 {att}
                 &nbsp;&nbsp;&nbsp;
                 <F>
-                    Current (adjusted) str: <InputFieldCharacter type={'number'} field_name={'str_adj'}/>
+                    Current (adjusted) str: <InputFieldCharacter type={'number'} field_name={'str'} mod={c.str_items}/>
                     {str_res} &nbsp;&nbsp;&nbsp;&nbsp;
                 </F>
                 <F>
-                    Current (adjusted) dex: <InputFieldCharacter type={'number'} field_name={'dex_adj'}/>
+                    Current (adjusted) dex: <InputFieldCharacter type={'number'} field_name={'dex'} mod={c.dex_items}/>
                     {dex_res}
                 </F>
             </span>

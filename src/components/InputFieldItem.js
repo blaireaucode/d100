@@ -58,8 +58,8 @@ class InputFieldItem extends Component {
             //if (value === 'none') value = '-';
             // special case : hands
             if (fn === 'hands') {
-                if (value === 1) value = '✋';
-                else if (value === 2) value = '✋✋';
+                if (value === 1) value = '|'; // ✋
+                else if (value === 2) value = '||';//✋✋';
                 else value = '';
             }
         } else { // field does not exist

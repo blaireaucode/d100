@@ -16,7 +16,9 @@ class InputFieldEncounter extends Component {
 
     static defaultProps = {
         type: "txt",
-        read_only: false
+        width: 80,
+        read_only: false,
+        align: 'left'
     }
 
     handleChange = ({target}) => {
@@ -29,10 +31,8 @@ class InputFieldEncounter extends Component {
         const c = this.props.game.encounter;
         const fn = this.props.field_name;
         const value = c[fn];
-
-        let cn = 'field_input';
-        if (this.props.type === 'number')
-            cn += ' field_input_nb'
+        const align = this.props.align;
+        const cn = 'field_input';
 
         let a = '';
         if (this.props.field_name === 'life') a = '💙'; //❤️ 🤍♡
@@ -42,7 +42,9 @@ class InputFieldEncounter extends Component {
                    type={this.props.type}
                    name={this.props.field_name}
                    value={value}
+                   style={{width: this.props.width}}
                    readOnly={this.props.read_only}
+                   inputProps={{style: {textAlign: align}}}
                    onChange={this.handleChange}
                    startAdornment={a}
             />

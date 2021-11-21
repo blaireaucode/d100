@@ -44,17 +44,22 @@ class ItemBackPack extends Component {
         const p = {class_name: 'field_input_small', id:item.id};
         return (
             <span>
-                <InputFieldItem {...p} field_name={'d100'} read_only={true} width={60}/>
-                <InputFieldItem {...p} field_name={'item_type'} width={80}/>
-                <InputFieldItem {...p} field_name={'type'} width={60}/>
-                <InputFieldItem {...p} field_name={'slot'} width={60}/>
+                <InputFieldItem {...p} field_name={'d100'} read_only={true} width={40} align={'right'}/>
+                <InputFieldItem {...p} field_name={'item_type'} width={60} align={'center'}/>
+                <InputFieldItem {...p} field_name={'type'} width={50} align={'center'}/>
+                <InputFieldItem {...p} field_name={'slot'} width={60}  align={'center'}/>
                 <InputFieldItem {...p} field_name={'hands'} read_only={true} width={'3rem'} align={'center'}/>
+                <InputFieldItem {...p} field_name={'str'} width={'4rem'} type={'number'} align={'right'}/>
+                <InputFieldItem {...p} field_name={'dex'} width={'4rem'} type={'number'} align={'right'}/>
+                <InputFieldItem {...p} field_name={'int'} width={'4rem'} type={'number'} align={'right'}/>
+                <InputFieldItem {...p} field_name={'hp'} width={'4rem'} type={'number'} align={'right'}/>
                 <InputFieldItem {...p} field_name={'dmg'} width={'4rem'} type={'number'} align={'right'}/>
-                <InputFieldItem {...p} field_name={'AS'}/>
-                <InputFieldItem {...p} field_name={'gp'} type={'number'}/>
-                <InputFieldItem {...p} field_name={'fix_cost'} type={'number'}/>
+                <InputFieldItem {...p} field_name={'AS'} width={'4rem'} align={'center'}/>
+                <InputFieldItem {...p} field_name={'gp'} width={'4rem'} type={'number'} align={'center'}/>
+                <InputFieldItem {...p} field_name={'fix_cost'} width={'4rem'} type={'number'} align={'center'}/>
                 <InputFieldItem {...p} field_name={'name'} width={200}/>
-                <L onClick={this.equip_item}>Equip</L> &nbsp; &nbsp; &nbsp;
+                &nbsp;
+                <L onClick={this.equip_item}>➹</L> &nbsp;
                 <Clear onClick={this.remove_item}/>
             < /span>
         );
@@ -64,16 +69,20 @@ class ItemBackPack extends Component {
         const p = {class_name: 'field_input_header'};
         return (
             <span>
-                <InputFieldHeader {...p} value={'D100'} width={60}/>
-                <InputFieldHeader {...p} value={'Item'} width={80}/>
-                <InputFieldHeader {...p} value={'Type'} width={60}/>
-                <InputFieldHeader {...p} value={'Slot'} width={60}/>
-                <InputFieldHeader {...p} value={'Hands'} width={'3rem'}/>
-                <InputFieldHeader {...p} value={'Dmg'} width={'4rem'} align={'center'}/>
-                <InputFieldHeader {...p} value={'A/S'}/>
-                <InputFieldHeader {...p} value={'GP💰'}/>
-                <InputFieldHeader {...p} value={'Fix💰'}/>
-                <InputFieldHeader {...p} value={'Name'}/>
+                <InputFieldHeader {...p} value={'D100'} width={40}/>
+                <InputFieldHeader {...p} value={'Item'} width={60} align={'center'}/>
+                <InputFieldHeader {...p} value={'Type'} width={50} align={'center'}/>
+                <InputFieldHeader {...p} value={'Slot'} width={60}  align={'center'}/>
+                <InputFieldHeader {...p} value={'Hands'} width={'3rem'}  align={'center'}/>
+                <InputFieldHeader {...p} value={'str'} width={'4rem'} align={'center'}/>
+                <InputFieldHeader {...p} value={'dex'} width={'4rem'} align={'center'}/>
+                <InputFieldHeader {...p} value={'int'} width={'4rem'} align={'center'}/>
+                <InputFieldHeader {...p} value={'HP'} width={'4rem'} align={'center'}/>
+                <InputFieldHeader {...p} value={'dmg'} width={'4rem'} align={'center'}/>
+                <InputFieldHeader {...p} value={'A/S'} width={'4rem'} align={'center'}/>
+                <InputFieldHeader {...p} value={'GP💰'} width={'4rem'} align={'center'}/>
+                <InputFieldHeader {...p} value={'Fix💰'} width={'4rem'}  align={'center'}/>
+                <InputFieldHeader {...p} value={'Name'} align={'left'}/>
             < /span>
         );
     }

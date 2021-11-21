@@ -97,23 +97,25 @@ class Encounter extends Component {
                 {e.description}<br/>
          */
 
-
+        //console.log('enc', e);
+        const p = {width: '4ch', type: 'number', align: 'right'};
         return (
-            <Paper elevation={5} className={'encounter'}>
-                <InputFieldEncounter field_name={'name'}/>
-                n°<InputFieldEncounter field_name={'id'} type={'number'} read_only={true}/>
-                <InputFieldEncounter field_name={'d100'} read_only={true}/>
+            <span>
+                <Paper elevation={5} className={'encounter'}>
+                <InputFieldEncounter field_name={'name'} width={'15ch'}/>
+                n° <InputFieldEncounter field_name={'d100'} read_only={true} width={'5ch'}/>
                 <br/>
-                <F>Attack Value</F> <InputFieldEncounter field_name={'av'} type={'number'}/>
-                <F>Defence</F> <InputFieldEncounter field_name={'def'} type={'number'}/>
-                <F>Damage Modifier</F> <InputFieldEncounter field_name={'dmg'} type={'number'}/>
-                <F>Health Points</F> <InputFieldEncounter field_name={'hp'}/>
+                <F>Attack Value</F> <InputFieldEncounter {...p} field_name={'av'}/>
+                <F>&nbsp;&nbsp;&nbsp;Defence</F> <InputFieldEncounter {...p} field_name={'def'}/>
+                <F>&nbsp;&nbsp;&nbsp;Damage Modifier</F> <InputFieldEncounter {...p} field_name={'dmg'}/>
+                <F>&nbsp;&nbsp;&nbsp;Health Points</F> <InputFieldEncounter {...p} type={'txt'} field_name={'hp'}/>
                 <br/>
-                <F>Reward</F> <InputFieldEncounter field_name={'k'}/>
-                <F>Ability</F> <InputFieldEncounter field_name={'ability'}/>
-                &nbsp; &nbsp;
-                <EncounterAbility/>
-            </Paper>
+                <F>Reward</F> <InputFieldEncounter field_name={'k'} width={'30ch'}/>
+                <F>Ability</F> <InputFieldEncounter field_name={'ability'} width={'30ch'}/>
+                    <EncounterAbility/>
+                </Paper>
+                &nbsp; <p/>
+            </span>
         );
     }
 }
