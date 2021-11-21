@@ -40,7 +40,9 @@ const default_game = {
         dex_exp: 0,
         int_exp: 0,
         dmg: 0, // see later within weapon
+        dmg_items: 0,
         armour: 0, // see later within weapon
+        def_items: 0,
         mighty_blow: false,
         perfect_aim: false,
         spell_caster: false

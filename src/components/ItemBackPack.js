@@ -13,6 +13,7 @@ import InputFieldItem from "./InputFieldItem";
 import Clear from "./Clear";
 import {update_g_equip_item, update_g_remove_item} from "../helpers/equipment_helpers";
 import L from 'helpers/L';
+import InputFieldHeader from "./InputFieldHeader";
 
 class ItemBackPack extends Component {
 
@@ -47,8 +48,8 @@ class ItemBackPack extends Component {
                 <InputFieldItem {...p} field_name={'item_type'} width={80}/>
                 <InputFieldItem {...p} field_name={'type'} width={60}/>
                 <InputFieldItem {...p} field_name={'slot'} width={60}/>
-                <InputFieldItem {...p} field_name={'hands'} read_only={true}/>
-                <InputFieldItem {...p} field_name={'dmg'} type={'number'}/>
+                <InputFieldItem {...p} field_name={'hands'} read_only={true} width={'3rem'} align={'center'}/>
+                <InputFieldItem {...p} field_name={'dmg'} width={'4rem'} type={'number'} align={'right'}/>
                 <InputFieldItem {...p} field_name={'AS'}/>
                 <InputFieldItem {...p} field_name={'gp'} type={'number'}/>
                 <InputFieldItem {...p} field_name={'fix_cost'} type={'number'}/>
@@ -63,16 +64,16 @@ class ItemBackPack extends Component {
         const p = {class_name: 'field_input_header'};
         return (
             <span>
-                <InputFieldItem {...p} field_name={'D100'} width={60}/>
-                <InputFieldItem {...p} field_name={'Item'} width={80}/>
-                <InputFieldItem {...p} field_name={'Type'} width={60}/>
-                <InputFieldItem {...p} field_name={'Slot'} width={60}/>
-                <InputFieldItem {...p} field_name={'Hands'}/>
-                <InputFieldItem {...p} field_name={'Dmg'}/>
-                <InputFieldItem {...p} field_name={'A/S'}/>
-                <InputFieldItem {...p} field_name={'GP💰'}/>
-                <InputFieldItem {...p} field_name={'Fix💰'}/>
-                <InputFieldItem {...p} field_name={'Name'}/>
+                <InputFieldHeader {...p} value={'D100'} width={60}/>
+                <InputFieldHeader {...p} value={'Item'} width={80}/>
+                <InputFieldHeader {...p} value={'Type'} width={60}/>
+                <InputFieldHeader {...p} value={'Slot'} width={60}/>
+                <InputFieldHeader {...p} value={'Hands'} width={'3rem'}/>
+                <InputFieldHeader {...p} value={'Dmg'} width={'4rem'} align={'center'}/>
+                <InputFieldHeader {...p} value={'A/S'}/>
+                <InputFieldHeader {...p} value={'GP💰'}/>
+                <InputFieldHeader {...p} value={'Fix💰'}/>
+                <InputFieldHeader {...p} value={'Name'}/>
             < /span>
         );
     }

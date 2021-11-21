@@ -18,10 +18,10 @@ class InputFieldItem extends Component {
         type: "txt",
         width: 80,
         id: 'header',
-        equipped: false,
         class_name: 'field_input',
         items: false,
-        read_only: false
+        read_only: false,
+        align: 'left'
     }
 
     handleChange = ({target}) => {
@@ -40,36 +40,36 @@ class InputFieldItem extends Component {
         let ctype = this.props.type;
 
         // class name (for style)
-        let align = 'left';
+        let align = this.props.align;
         let cn = this.props.class_name;
         if (this.props.type === 'number') {
             //cn += ' field_input_nb';
-            align = 'right';
+            //align = 'right';
         }
 
         // start adornment
         let a = '';
 
-        if (this.props.id !== 'header') {
-            //console.log('items, item', items, this.props.id)
-            const item = items[this.props.id];
-            if (fn in item) {
-                value = item[fn];
-                //if (value === 'none') value = '-';
-                // special case : hands
-                if (fn === 'hands') {
-                    if (value === 1) value = '✋';
-                    else if (value === 2) value = '✋✋';
-                    else value = '';
-                }
-            } else { // field does not exist
-                value = '';
-                //ctype = 'text';
-                //ro = true;
+        //if (this.props.id !== 'header') {
+        //console.log('items, item', items, this.props.id)
+        const item = items[this.props.id];
+        if (fn in item) {
+            value = item[fn];
+            //if (value === 'none') value = '-';
+            // special case : hands
+            if (fn === 'hands') {
+                if (value === 1) value = '✋';
+                else if (value === 2) value = '✋✋';
+                else value = '';
             }
-        } else { // this is an header
-            ro = true;
+        } else { // field does not exist
+            value = ' ';
+            //ctype = 'text';
+            //ro = true;
         }
+        //} else { // this is an header
+        //    ro = true;
+        // }
 
         // special case
         if ((fn === 'd10') && (value > 10)) value = '';

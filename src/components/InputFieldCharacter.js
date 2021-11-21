@@ -38,7 +38,7 @@ class InputFieldCharacter extends Component {
         let value = c[fn];
 
         // class name (for style)
-        let align = 'left';
+        let align = this.props.align;
         let cn = this.props.class_name;
         if (this.props.type === 'number') {
             cn += ' field_input_nb';

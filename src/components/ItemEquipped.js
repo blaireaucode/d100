@@ -12,6 +12,8 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import InputFieldItem from "./InputFieldItem";
 import Clear from "./Clear";
 import {update_g_equip_item_location, update_g_item} from "../helpers/equipment_helpers";
+import InputFieldHeader from "./InputFieldHeader";
+import L from "../helpers/L";
 
 class ItemEquipped extends Component {
 
@@ -47,59 +49,65 @@ class ItemEquipped extends Component {
         const item = this.props.game.items[item_slot.item_id];
         //console.log('item eq', this.props.id, item);
 
-        const p = {items: this.props.game.items, id: item.id, class_name: 'field_input_small'};
-        const w = 40;
+        const p = {items: this.props.game.items, id: item.id, class_name: 'field_input_small', align: 'right'};
+        const w = '3rem';
         return (
             <span>
                 {slot_columns}
-                <InputFieldItem {...p} field_name={'name'} width={160}/>
+                <InputFieldItem {...p} field_name={'name'} width={'10rem'}/>
                 <InputFieldItem {...p} field_name={'str'} type={'number'} width={w}/>
                 <InputFieldItem {...p} field_name={'dex'} type={'number'} width={w}/>
                 <InputFieldItem {...p} field_name={'int'} type={'number'} width={w}/>
                 <InputFieldItem {...p} field_name={'hp'} type={'number'} width={w}/>
                 <InputFieldItem {...p} field_name={'dmg'} type={'number'} width={w}/>
                 <InputFieldItem {...p} field_name={'def'} type={'number'} width={w}/>
-                <InputFieldItem {...p} field_name={'AS'} width={w}/>
-                <InputFieldItem {...p} field_name={'gp'} type={'number'} width={60}/>
-                <InputFieldItem {...p} field_name={'fix_cost'} type={'number'} width={60}/>
+                <InputFieldItem {...p} field_name={'AS'} width={w} align={'center'}/>
+                <InputFieldItem {...p} field_name={'gp'} type={'number'} width={'5rem'} align={'center'}/>
+                <InputFieldItem {...p} field_name={'fix_cost'} type={'number'} width={'5rem'} align={'center'}/>
                 <InputFieldItem {...p} field_name={'damaged'}/>
-                &nbsp;&nbsp;&nbsp;
-                <Clear onClick={this.remove_item}/>
+                &nbsp;
+                <L onClick={this.remove_item}>➷</L>
             < /span>
         );
     }
 
     render_slot_columns(item_slot) {
-        const p = {items: this.props.game.equipped_items, id: this.props.id - 1, class_name: 'field_input_small'};
+        const p = {
+            items: this.props.game.equipped_items,
+            id: this.props.id - 1,
+            class_name: 'field_input_small',
+            align: 'center'
+        };
         return (
             <span>
-                <InputFieldItem {...p} field_name={'d10'} read_only={true} width={40}/>
-                <InputFieldItem {...p} field_name={'dmg_mod'} read_only={true} width={40}/>
-                <InputFieldItem {...p} field_name={'location'} read_only={true}/>
+                <InputFieldItem {...p} field_name={'d10'} read_only={true} width={'3rem'}/>
+                <InputFieldItem {...p} field_name={'dmg_mod'} read_only={true} width={'3rem'}/>
+                <InputFieldItem {...p} field_name={'location'} read_only={true} width={'4rem'}/>
             < /span>
         );
     }
 
     render_header() {
-        const p = {class_name: 'field_input_header'};
-        const w = 40;
+        const w = '3rem';
+        const pn = {width: w, align: 'center'};
+        const p = {align: 'center'};
         return (
             <span>
-                <InputFieldItem {...p} field_name={'D10'} read_only={true} width={40}/>
-                <InputFieldItem {...p} field_name={'Mod'} width={40}/>
-                <InputFieldItem {...p} field_name={'Loc.'}/>
-                <InputFieldItem {...p} field_name={'Name'} width={160}/>
-                <InputFieldItem {...p} field_name={'str'} width={w}/>
-                <InputFieldItem {...p} field_name={'dex'} width={w}/>
-                <InputFieldItem {...p} field_name={'int'} width={w}/>
-                <InputFieldItem {...p} field_name={'HP'} width={w}/>
-                <InputFieldItem {...p} field_name={'dmg'} width={w}/>
-                <InputFieldItem {...p} field_name={'def'} width={w}/>
-                <InputFieldItem {...p} field_name={'AS'} width={w}/>
-                <InputFieldItem {...p} field_name={'GP💰'} width={60}/>
-                <InputFieldItem {...p} field_name={'Fix💰'} width={60}/>
-                <InputFieldItem {...p} field_name={'damaged'}/>
-            < /span>
+                <InputFieldHeader {...p} value={'D10'} width={'3rem'}/>
+                <InputFieldHeader {...p} value={'Mod'} width={'3rem'}/>
+                <InputFieldHeader {...p} value={'Loc.'} width={'4rem'}/>
+                <InputFieldHeader {...p} value={'Name'} width={'10rem'} align={'right'}/>
+                <InputFieldHeader {...pn} value={'str'}/>
+                <InputFieldHeader {...pn} value={'dex'}/>
+                <InputFieldHeader {...pn} value={'int'}/>
+                <InputFieldHeader {...pn} value={'HP'}/>
+                <InputFieldHeader {...pn} value={'dmg'}/>
+                <InputFieldHeader {...pn} value={'def'}/>
+                <InputFieldHeader {...pn} value={'AS'} width={w}/>
+                <InputFieldHeader {...p} value={'GP💰'} width={'5rem'} align={'center'}/>
+                <InputFieldHeader {...p} value={'Fix💰'} width={'5rem'} align={'center'}/>
+                <InputFieldHeader {...p} value={'damaged'}/>
+            </span>
         );
     }
 
