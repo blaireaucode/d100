@@ -10,7 +10,6 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import InputFieldItem from "./InputFieldItem";
-import Clear from "./Clear";
 import {update_g_equip_item_location, update_g_item} from "../helpers/equipment_helpers";
 import InputFieldHeader from "./InputFieldHeader";
 import L from "../helpers/L";

@@ -16,26 +16,28 @@ class CharacterMain extends Component {
 
     render() {
         const c = this.props.game.characteristics;
+        const p = {width: '4ch', align: 'right', type: 'number'}
         return (
             <span>
                 {/* health etc */}
 
                 <F>Health Points</F>&nbsp;
-                <InputFieldCharacter type={'number'} field_name={'hp'} width={'4ch'}/>
-                <F>⇒</F><InputFieldCharacter type={'number'} field_name={'hp'}
-                                             mod={c.hp_items} read_only={true}/>
+                <InputFieldCharacter {...p} field_name={'hp'}/>
+                <F>⇒&nbsp;</F>
+                <InputFieldCharacter {...p} field_name={'hp'}
+                                     mod={c.hp_items} read_only={true} align={'left'}/>
 
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <F>Rep</F> <InputFieldCharacter type={'number'} field_name={'rep'}/>
+                <F>Rep</F> <InputFieldCharacter {...p} field_name={'rep'}/>
                 &nbsp;&nbsp;&nbsp;&nbsp;
 
-                <F>Fate</F> <InputFieldCharacter type={'number'} field_name={'fate'}/>
+                <F>Fate</F> <InputFieldCharacter {...p} field_name={'fate'}/>
                 &nbsp;&nbsp;&nbsp;&nbsp;
 
-                <F>Life</F> <InputFieldCharacter type={'number'} field_name={'life'}/>
+                <F>Life</F> <InputFieldCharacter {...p} field_name={'life'}/>
                 &nbsp;&nbsp;&nbsp;&nbsp;
 
-                <F>Encounter modifier</F> <InputFieldCharacter type={'number'} field_name={'encounter_modifier'}/>
+                <F>Encounter modifier</F> <InputFieldCharacter {...p} field_name={'encounter_modifier'}/>
 
             </span>);
     }

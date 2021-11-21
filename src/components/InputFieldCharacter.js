@@ -44,7 +44,7 @@ class InputFieldCharacter extends Component {
             cn += ' field_input_nb';
             value = parseInt(value) + this.props.mod;
             // console.log('mod', fn, value, this.props.mod);
-            align = 'right';
+            //align = 'right';
         }
 
         // start adornment

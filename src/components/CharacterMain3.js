@@ -15,7 +15,7 @@ import F from 'helpers/F'
 class CharacterMain extends Component {
 
     render() {
-        const p = {width: '4ch', type: 'number'};
+        const p = {width: '4ch', type: 'number', align:'right'};
         const c = this.props.game.characteristics;
         return (
             <span>

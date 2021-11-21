@@ -17,9 +17,9 @@ class CharacterMain extends Component {
     render() {
         return (
             <span>
-                <F>Dmg from equipment</F>
-                <InputFieldCharacter type={'number'} field_name={'dmg_items'} read_only={true}/>
-                <F>Armour (LATER) </F> <InputFieldCharacter type={'number'} field_name={'armour'}/>
+                <F>Dmg from equipment&nbsp;&nbsp;</F>
+                <InputFieldCharacter type={'number'} field_name={'dmg_items'} read_only={true} align={'left'}/>
+                <F>Armour (LATER) &nbsp;&nbsp; </F> <InputFieldCharacter type={'number'} field_name={'armour'}/>
             </span>);
     }
 }
