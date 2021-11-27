@@ -52,9 +52,8 @@ class ScreenSystem extends Component {
                 Saved games:<p/>
                 {list}
                 <br/>
-                <L onClick={this.reset}>Start new</L><br/>
-                <L onClick={this.clearStore}> ⚠ Clear store ⚠</L><br/>
-
+                <L onClick={this.reset}>Start a new game</L><p/>
+                <L onClick={this.clearStore}> ⚠ Clear store ⚠</L>
             </div>
         )
     }

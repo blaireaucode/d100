@@ -25,7 +25,7 @@ import L from 'helpers/L'
 import {close_dice_ui, create_D100_rolling_dices, getRandomInt, open_dice_ui} from 'helpers/dice_helpers'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 
-const drawerWidth = 170
+const drawerWidth = 150
 
 const styles = theme => ({
     drawer: {

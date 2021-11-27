@@ -14,7 +14,7 @@ import {new_reaction} from "../helpers/encounter_helpers"
 import {create_D10_rolling_dice, getRandomInt, open_dice_ui} from "../helpers/dice_helpers"
 import * as up from "../helpers/update_helpers";
 import reaction_table from 'tables/table_monster_reaction.json'
-import {Select} from "@material-ui/core";
+import {MenuItem, Select} from "@material-ui/core";
 import {clear_if_not_none} from "../helpers/ui_helpers";
 
 class AttackRollEncounter extends Component {
@@ -31,7 +31,8 @@ class AttackRollEncounter extends Component {
         const id = this.props.game.encounter.reaction.d10;
         for (let i in table) {
             const e = table[i];
-            const op = <option key={e.d10} value={e.d10}>{e.d10} {e.reaction}</option>;
+            const op = <MenuItem key={e.d10} value={e.d10} className={'field_input_small_select'}>
+                {e.d10} {e.reaction}</MenuItem>;
             this.options.push(op);
         }
         this.state = {current: id};
@@ -74,6 +75,7 @@ class AttackRollEncounter extends Component {
                 <L onClick={this.roll_reaction}>D6 &#127922;</L>
                 &nbsp; &nbsp;
                 <Select value={r.d10/*this.state.current*/}
+                        disableUnderline={true}
                         defaultValue={'none'}
                         onChange={this.set_reaction}
                         className={'select'}>

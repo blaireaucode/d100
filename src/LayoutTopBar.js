@@ -85,10 +85,10 @@ class LayoutTopBar extends React.Component {
                         {left}
                     </Grid>
                     <Grid item xs={1} className='Book-topbar-c'>
-                        {'center' /*title_passage*/}
+                        {'' /*title_passage*/}
                     </Grid>
                     <Grid item xs={5} className='Book-topbar-r'>
-                        {'right' /*hen*/}
+                        {'' /*hen*/}
                     </Grid>
                 </Grid>
             </Toolbar>

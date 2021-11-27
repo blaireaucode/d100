@@ -110,8 +110,8 @@
   {
     "d100": "25-26",
     "hands": 2,
-    "type": "Short Bow",
-    "name": "R",
+    "name": "Short Bow",
+    "type": "R",
     "dmg": 0,
     "gp": 67,
     "fix_cost": 14

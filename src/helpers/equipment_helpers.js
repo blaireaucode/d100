@@ -11,7 +11,7 @@ import armour_table from 'tables/table_a_armour.json'
 import {parse_d100_interval} from "./encounter_helpers"
 import update from "immutability-helper"
 import {v4 as uuidv4} from "uuid"
-import default_item from "./default_item";
+import default_item from "./default_item"
 
 export function get_item_in_table(table, id, copy = true) {
     let found = false;
@@ -68,7 +68,7 @@ export function update_g_item(game, id, fn, v) {
 }
 
 export function new_equipped_items() {
-    const items = [
+    return [
         {d10: 1, dmg_mod: "+3", location: 'Head', item_id: 'none'},
         {d10: 2, dmg_mod: "+2", location: 'Back', item_id: 'none'},
         {d10: 3, dmg_mod: "+1", location: 'Torso', item_id: 'none'},
@@ -83,7 +83,6 @@ export function new_equipped_items() {
         {d10: 12, dmg_mod: "", location: 'Ring', item_id: 'none'},
         {d10: 13, dmg_mod: "", location: 'Ring', item_id: 'none'}
     ];
-    return items;
 }
 
 export function update_g_equip_item(game, id) {

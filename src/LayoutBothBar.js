@@ -14,7 +14,7 @@ import {withStyles} from '@material-ui/core/styles'
 import LayoutLeftBar from 'LayoutLeftBar'
 import LayoutTopBar from 'LayoutTopBar'
 
-const drawerWidth = 170;
+const drawerWidth = 150;
 
 const styles = theme => ({
     root: {

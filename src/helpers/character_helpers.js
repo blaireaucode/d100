@@ -12,6 +12,7 @@ import {v4 as uuidv4} from "uuid"
 import default_game from "./default_game";
 import {new_encounter} from "./encounter_helpers";
 import {new_equipped_items} from "./equipment_helpers";
+import table_r_race from "../tables/table_r_race.json";
 
 export function create_new_game() {
     let new_game = JSON.parse(JSON.stringify(default_game))
@@ -21,6 +22,14 @@ export function create_new_game() {
     new_game = update(new_game, {date: {$set: new Date()}});
     console.log('New game', new_game);
     return new_game;
+}
+
+export function get_race(race_name) {
+    let race = table_r_race[0];
+    for (const r of table_r_race) {
+        if (r.race === race_name) race = JSON.parse(JSON.stringify(r));
+    }
+    return race;
 }
 
 // OLD -------------------------------------------------------

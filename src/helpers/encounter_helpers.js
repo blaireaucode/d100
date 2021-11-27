@@ -25,8 +25,8 @@ export function parse_d100_interval(d100, id) {
 
 export function d100_interval_min_max(d100) {
     if (d100 === 'none') return ['none', 'none'];
-    let min = 1;
-    let max = 1;
+    let min;
+    let max;
     const index = d100.indexOf('-');
     if (index >= 0) {
         min = parseInt(d100.substr(0, index + 1));
@@ -62,7 +62,7 @@ export function new_encounter(id = 'none') {
     e["reaction"] = new_reaction();
     e["attack"] = new_attack();
     e["location"] = new_location();
-    console.log('e',e);
+    console.log('e', e);
     return e;
 }
 
@@ -110,7 +110,7 @@ export function new_location(id = 'none') {
 
 export function get_ability(name) {
     const t = ability_table;
-    for(let ab of t) {
+    for (let ab of t) {
         if (ab.name === name) return ab;
     }
     return t[0];

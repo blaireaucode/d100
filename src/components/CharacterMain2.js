@@ -11,6 +11,8 @@ import {connect} from 'react-redux'
 import InputFieldCharacter from "components/InputFieldCharacter"
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import F from 'helpers/F'
+import CollapsibleHelp from "./CollapsibleHelp"
+import CharacterHPHelp from "./CharacterHPHelp"
 
 class CharacterMain extends Component {
 
@@ -38,6 +40,13 @@ class CharacterMain extends Component {
                 &nbsp;&nbsp;&nbsp;&nbsp;
 
                 <F>Encounter modifier</F> <InputFieldCharacter {...p} field_name={'encounter_modifier'}/>
+
+                &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                &nbsp;&nbsp;
+                <CollapsibleHelp text={'(?)'}>
+                    <CharacterHPHelp/>
+                </CollapsibleHelp>
 
             </span>);
     }

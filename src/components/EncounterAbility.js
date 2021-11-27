@@ -9,48 +9,28 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props';
-import Collapse from "@kunukn/react-collapse";
-import L from "../helpers/L";
 import ability_table from "../tables/table_encounter_ability.json";
 import EncounterAbilityHelp from "./EncounterAbilityHelp";
+import CollapsibleHelp from "./CollapsibleHelp";
 
 class EncounterAbility extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {open: false};
-        this.toggle = this.toggle.bind(this);
-    }
-
-    toggle() {
-        const v = !this.state.open;
-        this.setState({open: v});
-    }
 
     render() {
         const e = this.props.game.encounter;
         let abilities = [];
         for (let ab of ability_table) {
-            //console.log('e', e, ab);
             if (e['ability'].includes(ab.name)) {
-                //console.log('a', ab);
                 abilities.push(
-                            <span key={ab.name}>
-                                ៚ <EncounterAbilityHelp  name={ab.name}/>
+                    <span key={ab.name}>
+                                ៚ <EncounterAbilityHelp name={ab.name}/>
                                 <p/>
                             </span>);
             }
         }
         if (abilities.length === 0) return '';
-        return (
-            <span>
-                <L onClick={this.toggle}>(help)</L>
-                <Collapse isOpen={this.state.open}>
-                    <span className={'help collapse-css-transition'}>
-                        {abilities}
-                    </span>
-                </Collapse>
-            </span>
+        return (<CollapsibleHelp text={'(?)'}>
+                {abilities}
+            </CollapsibleHelp>
         );
     }
 }

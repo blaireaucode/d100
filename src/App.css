@@ -30,11 +30,21 @@
     /* color: #3e84f2!important; */
     color: #2982d2 !important;
     padding: 0 !important;
-    background-color: #131315;
+    background-color: rgba(29, 29, 33, 0.47);
     max-height: 25px;
     /* text-align:left; */
     font-size: 0.8rem !important;
     /*font-size: calc(5px + 0.7vmin) !important;*/
+}
+
+.field_input_small_select {
+    color: #2982d2 !important;
+    font-size: 0.8rem !important;
+}
+
+.field_input_small_select:hover {
+    color: #aaa !important;
+    background-color: #131315 !important;
 }
 
 .field_input_header {
@@ -63,9 +73,13 @@
     color: #eee;
 }
 
+.item_table_odd {
+    background: #20222a;
+}
+
 .encounter {
     border: 0 solid #777;
-    margin-left: 0px;
+    margin-left: 0;
     padding-left: 10px;
     max-width: 800px;
     background-color: #1a1b1e !important;
@@ -152,7 +166,7 @@
     display: block;
     overflow-x: auto;
     background-color: #24282f !important;
-    max-width: 1050px;
+    max-width: 1030px;
 }
 
 .collapse-css-transition {

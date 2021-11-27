@@ -16,7 +16,7 @@ import * as up from "../helpers/update_helpers";
 import {update_g_encounter} from "../helpers/update_helpers";
 import Clear from "./Clear";
 import encounters_table from 'tables/table_e_encounter.json'
-import {Select} from "@material-ui/core";
+import {MenuItem, Select} from "@material-ui/core";
 
 class EncounterRoll extends Component {
 
@@ -32,7 +32,10 @@ class EncounterRoll extends Component {
         for (let i in table) {
             const e = table[i];
             const min = d100_interval_min_max(e.d100)[0];
-            const op = <option key={e.name} value={min}>{e.d100} {e.name}</option>;
+            const op =
+                <MenuItem key={e.name} value={min} className={'field_input_small_select'}>
+                    {e.d100} {e.name}
+                </MenuItem>;
             this.options.push(op);
         }
         // state (needed)
@@ -88,6 +91,7 @@ class EncounterRoll extends Component {
                 <L onClick={this.roll_encounter}>D100 &#127922;</L>
                 &nbsp; &nbsp;
                 <Select value={this.state.current}
+                        disableUnderline={true}
                         defaultValue={'none'}
                         className={'select'}
                         onChange={this.set_encounter}>

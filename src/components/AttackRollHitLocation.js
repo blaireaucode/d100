@@ -13,7 +13,7 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import {create_D10_rolling_dice, getRandomInt, open_dice_ui} from "../helpers/dice_helpers";
 import * as up from "../helpers/update_helpers";
 import location_table from "../tables/table_hit_location.json";
-import {Select} from "@material-ui/core";
+import {MenuItem, Select} from "@material-ui/core";
 import {new_location} from "../helpers/encounter_helpers";
 import F from 'helpers/F'
 import {clear_if_not_none} from "../helpers/ui_helpers";
@@ -31,7 +31,9 @@ class AttackRollHitLocation extends Component {
         const table = location_table;
         for (let i in table) {
             const e = table[i];
-            const op = <option key={e.d10} value={e.d10}>{e.d10} {e.location}</option>;
+            const op = <MenuItem key={e.d10} value={e.d10}
+                                 className={'field_input_small_select'}>
+                {e.d10} {e.location}</MenuItem>;
             this.options.push(op);
         }
         const id = this.props.game.encounter.location.d10;
@@ -84,6 +86,7 @@ class AttackRollHitLocation extends Component {
                 <L onClick={this.roll_location}>D6 &#127922;</L>
                 &nbsp; &nbsp;
                 <Select value={this.state.current}
+                        disableUnderline={true}
                         defaultValue={'none'}
                         onChange={this.set_location}
                         className={'select'}>

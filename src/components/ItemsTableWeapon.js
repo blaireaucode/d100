@@ -11,6 +11,7 @@ import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import weapon_table from "../tables/table_w_weapon.json";
 import ItemWeapon from "./ItemWeapon";
+import InputFieldHeader from "./InputFieldHeader";
 
 class ItemsTableWeapon extends Component {
 
@@ -20,22 +21,32 @@ class ItemsTableWeapon extends Component {
         super(props);
         // list of items in table w (ftm)
         const table = weapon_table;
+        let i = 0;
         for (let item of table) {
             const v = item.d100;
             if (v === 'none') continue;
+            const cn = (i % 2 === 0) ? 'item_table_odd':'';
             const op = <span key={v}>
-                        <ItemWeapon id={v}/><br/>
+                        <ItemWeapon id={v} class_name={cn}/><br/>
                        </span>;
             this.items.push(op);
+            i += 1;
         }
     }
 
     render() {
-
         return (
             <span>
-                Weapons
-                <p/>
+                <b>-- Table W (Weapons) --</b>
+                <br/>
+                <InputFieldHeader width={'8ch'} value={'d100'}/>
+                <InputFieldHeader width={'20ch'} value={'Name'}/>
+                <InputFieldHeader width={'6ch'} value={'Hands'}/>
+                <InputFieldHeader width={'6ch'} value={'Type'}/>
+                <InputFieldHeader width={'5ch'} value={'Dmg'}/>
+                <InputFieldHeader width={'5ch'} value={'GP'}/>
+                <InputFieldHeader width={'8ch'} value={'fix cost'}/>
+                <br/>
                 {this.items}
             < /span>
         );

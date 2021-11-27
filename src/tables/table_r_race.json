@@ -1,0 +1,26 @@
+[
+  {
+    "d6": "1-2",
+    "race": "Dwarf",
+    "str_mod": "+5",
+    "dex_mod": "",
+    "int_mod": "-5",
+    "skills_mod": "✪ + 5 Strong Skill"
+  },
+  {
+    "d6": "3-4",
+    "race": "Elf",
+    "str_mod": "-5",
+    "dex_mod": "+5",
+    "int_mod": "",
+    "skills_mod": "✪ + 5 Dodge Skill"
+  },
+  {
+    "d6": "5-6",
+    "race": "Human",
+    "str_mod": "",
+    "dex_mod": "-5",
+    "int_mod": "+5",
+    "skills_mod": "✪ + 5 Aware Skill"
+  }
+]

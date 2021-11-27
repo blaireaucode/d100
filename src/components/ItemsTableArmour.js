@@ -11,6 +11,7 @@ import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import armour_table from "../tables/table_a_armour.json";
 import ItemArmour from "./ItemArmour";
+import InputFieldHeader from "./InputFieldHeader";
 
 class ItemsTableArmour extends Component {
 
@@ -20,21 +21,32 @@ class ItemsTableArmour extends Component {
         super(props);
         // list of items in table w (ftm)
         const table = armour_table;
+        let i = 0;
         for (let item of table) {
             const v = item.d100;
             if (v === 'none') continue;
+            const cn = (i % 2 === 0) ? 'item_table_odd':'';
             const op = <span key={v}>
-                        <ItemArmour id={v}/><br/>
+                        <ItemArmour id={v} class_name={cn}/><br/>
                        </span>;
             this.items.push(op);
+            i += 1;
         }
     }
 
     render() {
         return (
             <span>
-                Armours
-                <p/>
+                <b>-- Table A (Armours) --</b>
+                <br/>
+                <InputFieldHeader width={'8ch'} value={'d100'}/>
+                <InputFieldHeader width={'25ch'} value={'Name'}/>
+                <InputFieldHeader width={'6ch'} value={'Slot'}/>
+                <InputFieldHeader width={'6ch'} value={'Type'}/>
+                <InputFieldHeader width={'5ch'} value={'AS'}/>
+                <InputFieldHeader width={'5ch'} value={'GP'}/>
+                <InputFieldHeader width={'8ch'} value={'fix cost'}/>
+                <br/>
                 {this.items}
             < /span>
         );
