@@ -14,7 +14,7 @@ import F from 'helpers/F'
 import InputFieldSelectCharacter from "./InputFieldSelectCharacter"
 import table_r_race from 'tables/table_r_race.json'
 import CollapsibleHelp from "./CollapsibleHelp"
-import CharacterHeroPathHelp from "./CharacterHeroPathHelp"
+import CharacterHeroPathHelp from "./HelpCharacterHeroPath"
 
 class CharacterMain extends Component {
 

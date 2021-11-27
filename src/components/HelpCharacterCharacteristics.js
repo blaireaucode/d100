@@ -10,7 +10,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props';
 
-class CharacterCharacteristicsHelp extends Component {
+class HelpCharacterCharacteristics extends Component {
 
     render() {
         return (
@@ -24,4 +24,4 @@ class CharacterCharacteristicsHelp extends Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CharacterCharacteristicsHelp)
+export default connect(mapStateToProps, mapDispatchToProps)(HelpCharacterCharacteristics)

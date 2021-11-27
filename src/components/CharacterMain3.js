@@ -11,7 +11,7 @@ import {connect} from 'react-redux'
 import InputFieldCharacter from "components/InputFieldCharacter"
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import F from 'helpers/F'
-import CharacterCharacteristicsHelp from "./CharacterCharacteristicsHelp";
+import CharacterCharacteristicsHelp from "./HelpCharacterCharacteristics";
 import CollapsibleHelp from "./CollapsibleHelp";
 
 class CharacterMain extends Component {

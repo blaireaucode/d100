@@ -1,0 +1,110 @@
+[
+  {
+    "d100": "none",
+    "name": "none",
+    "detail": "none",
+    "gp": "none"
+  },
+  {
+    "d100": "1-15",
+    "name": "Lock Pick",
+    "detail": "Easy to break (+1 pick)",
+    "gp": 5
+  },
+  {
+    "d100": "16-30",
+    "name": "Food",
+    "detail": "Dried rations (+1 food)",
+    "gp": 10
+  },
+  {
+    "d100": "31-45",
+    "name": "Oil",
+    "detail": "Leather flask containing lantern Oil (+1 oil)",
+    "gp": 15
+  },
+  {
+    "d100": "46-50",
+    "name": "Brew of lesser DMG",
+    "detail": "Drink to gain +1 Dmg to your next damage roll",
+    "gp": 35
+  },
+  {
+    "d100": "51-55",
+    "name": "Brew of lesser STR",
+    "detail": "Drink to gain +3 Str to your next D100 dice roll",
+    "gp": 45
+  },
+  {
+    "d100": "56-60",
+    "name": "Brew of lesser DEX",
+    "detail": "Drink to gain +3 Dex to your next D100 dice roll",
+    "gp": 45
+  },
+  {
+    "d100": "61-65",
+    "name": "Brew of lesser INT",
+    "detail": "Drink to gain +3 Int to your next d100 dice roll.",
+    "gp": 50
+  },
+  {
+    "d100": "66-70",
+    "name": "Brew of lesser DEF",
+    "detail": "Drink to gain +1 Def on a monsters next damage roll",
+    "gp": 50
+  },
+  {
+    "d100": "71-75",
+    "name": "Potion of lesser remove poison",
+    "detail": "Drink to remove up to 2 shaded pips on the poison track",
+    "gp": 80
+  },
+  {
+    "d100": "76-80",
+    "name": "Potion of lesser healing",
+    "detail": "Drink to restore up to 4 lost HP",
+    "gp": 80
+  },
+  {
+    "d100": "81-85",
+    "name": "Potion of lesser STR",
+    "detail": "Drink to gain +3 Str until you next shade a \uD83D\uDD50 on the time track",
+    "gp": 90
+  },
+  {
+    "d100": "86-90",
+    "name": "Potion of lesser DEX",
+    "detail": "Drink to gain +3 Dex until you next shade a \uD83D\uDD50 on the time track",
+    "gp": 90
+  },
+  {
+    "d100": "91-95",
+    "name": "Potion of lesser INT",
+    "detail": "Drink to gain +3 Int until you next shade a \uD83D\uDD50 on the time track",
+    "gp": 90
+  },
+  {
+    "d100": "96-97",
+    "name": "Potion of lesser cure disease",
+    "detail": "Drink to remove up to 2 shaded pips on the disease track",
+    "gp": 130
+  },
+  {
+    "d100": "98",
+    "name": "Scroll of open magic",
+    "detail": "Use once to make a CAST SCROLL test to attempt to open magic doors",
+    "gp": 200
+  },
+  {
+    "d100": "99",
+    "name": "Potion of lesser fate",
+    "detail": "Drink to add +20 to a result when rolling on the next table",
+    "gp": 400
+  },
+  {
+    "d100": "100",
+    "name": "Scroll of resurrection",
+    "detail": "See spells, it has a value of 1500gp to buy and 200gp when selling",
+    "gp": 1500
+  }
+]

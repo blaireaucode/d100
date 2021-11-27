@@ -12,6 +12,10 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import L from "../helpers/L"
 import ItemsTableWeapon from "./ItemsTableWeapon";
 import ItemsTableArmour from "./ItemsTableArmour";
+import CollapsibleHelp from "./CollapsibleHelp";
+import C from "../helpers/C";
+import ItemsTableNeeded from "./ItemsTableNeeded";
+import HelpStartingItems from "./HelpStartingItems";
 
 class ScreenTown extends Component {
 
@@ -29,6 +33,7 @@ class ScreenTown extends Component {
         let table = '';
         if (this.state.table === 'weapons') table = <ItemsTableWeapon/>
         if (this.state.table === 'armours') table = <ItemsTableArmour/>
+        if (this.state.table === 'needed') table = <ItemsTableNeeded/>
         return (
             <span>
                 <L onClick={() => this.toggle('none')} className={'clear'}> ✗ </L>
@@ -36,6 +41,12 @@ class ScreenTown extends Component {
                 <L onClick={() => this.toggle('weapons')}>Weapon table</L>
                 &nbsp;&nbsp;&nbsp;
                 <L onClick={() => this.toggle('armours')}>Armour table</L>
+                &nbsp;&nbsp;&nbsp;
+                <L onClick={() => this.toggle('needed')}>Needed table</L>
+                <C width={'10ch'}/>
+                <CollapsibleHelp text={'(?)'}>
+                    <HelpStartingItems/>
+                </CollapsibleHelp>
                 <p/>
                 {table}
             </span>

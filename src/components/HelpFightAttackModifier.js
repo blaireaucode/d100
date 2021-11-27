@@ -11,7 +11,7 @@ import {connect} from 'react-redux'
 
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 
-class FightHelpAttackModifier extends Component {
+class HelpFightAttackModifier extends Component {
 
     render() {
         const c = this.props.character;
@@ -24,4 +24,4 @@ class FightHelpAttackModifier extends Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(FightHelpAttackModifier);
+export default connect(mapStateToProps, mapDispatchToProps)(HelpFightAttackModifier);

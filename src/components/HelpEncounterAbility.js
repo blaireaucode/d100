@@ -11,7 +11,7 @@ import {connect} from 'react-redux';
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props';
 import {get_ability} from "../helpers/encounter_helpers";
 
-class EncounterAbilityHelp extends Component {
+class HelpEncounterAbility extends Component {
 
     render() {
         const abn = this.props.name;
@@ -24,4 +24,4 @@ class EncounterAbilityHelp extends Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(EncounterAbilityHelp)
+export default connect(mapStateToProps, mapDispatchToProps)(HelpEncounterAbility)

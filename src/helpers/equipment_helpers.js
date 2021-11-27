@@ -8,6 +8,7 @@
 
 import weapon_table from 'tables/table_w_weapon.json'
 import armour_table from 'tables/table_a_armour.json'
+import needed_table from 'tables/table_n_needed.json'
 import {parse_d100_interval} from "./encounter_helpers"
 import update from "immutability-helper"
 import {v4 as uuidv4} from "uuid"
@@ -50,6 +51,13 @@ export function get_weapon_in_table(id, copy = true) {
 export function get_armour_in_table(id, copy = true) {
     let item = get_item_in_table(armour_table, id, copy);
     item["item_type"] = 'armour';
+    return item;
+}
+
+export function get_needed_in_table(id, copy = true) {
+    let item = get_item_in_table(needed_table, id, copy);
+    item["item_type"] = 'needed';
+    item["number"] = 1;
     return item;
 }
 

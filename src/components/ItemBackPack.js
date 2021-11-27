@@ -57,6 +57,7 @@ class ItemBackPack extends Component {
                 <InputFieldItem {...p} field_name={'AS'} width={'4rem'} align={'center'}/>
                 <InputFieldItem {...p} field_name={'gp'} width={'4rem'} type={'number'} align={'center'}/>
                 <InputFieldItem {...p} field_name={'fix_cost'} width={'4rem'} type={'number'} align={'center'}/>
+                <InputFieldItem {...p} field_name={'number'} width={'4rem'} type={'number'} align={'right'}/>
                 <InputFieldItem {...p} field_name={'name'} width={200}/>
                 &nbsp;
                 <L onClick={this.equip_item}>➹</L> &nbsp;
@@ -82,6 +83,7 @@ class ItemBackPack extends Component {
                 <InputFieldHeader {...p} value={'A/S'} width={'4rem'} align={'center'}/>
                 <InputFieldHeader {...p} value={'GP💰'} width={'4rem'} align={'center'}/>
                 <InputFieldHeader {...p} value={'Fix💰'} width={'4rem'}  align={'center'}/>
+                <InputFieldHeader {...p} value={'#'} width={'4rem'}  align={'center'}/>
                 <InputFieldHeader {...p} value={'Name'} align={'left'}/>
             < /span>
         );

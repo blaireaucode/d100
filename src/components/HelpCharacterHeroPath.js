@@ -11,7 +11,7 @@ import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import {get_race} from "../helpers/character_helpers";
 
-class CharacterHeroPathHelp extends Component {
+class HelpCharacterHeroPath extends Component {
 
     render() {
         const c = this.props.game.characteristics;
@@ -37,4 +37,4 @@ class CharacterHeroPathHelp extends Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CharacterHeroPathHelp)
+export default connect(mapStateToProps, mapDispatchToProps)(HelpCharacterHeroPath)

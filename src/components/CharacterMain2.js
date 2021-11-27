@@ -12,7 +12,7 @@ import InputFieldCharacter from "components/InputFieldCharacter"
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import F from 'helpers/F'
 import CollapsibleHelp from "./CollapsibleHelp"
-import CharacterHPHelp from "./CharacterHPHelp"
+import CharacterHPHelp from "./HelpCharacterHP"
 
 class CharacterMain extends Component {
 

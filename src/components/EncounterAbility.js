@@ -10,7 +10,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props';
 import ability_table from "../tables/table_encounter_ability.json";
-import EncounterAbilityHelp from "./EncounterAbilityHelp";
+import EncounterAbilityHelp from "./HelpEncounterAbility";
 import CollapsibleHelp from "./CollapsibleHelp";
 
 class EncounterAbility extends Component {
