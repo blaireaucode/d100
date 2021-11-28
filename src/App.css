@@ -214,3 +214,21 @@
         color: -moz-default-color;
     }
 }
+
+.room_color_red {
+    color: #f48c82;
+}
+
+.room_color_green {
+    color: #a3d882;
+}
+
+.room_color_yellow {
+    color: #f4a707;
+}
+
+.room_color_blue {
+    color: #a5c2f4;
+}
+
+

@@ -9,8 +9,11 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
+import {Grid} from "@material-ui/core";
+import RoomImage from "./RoomImage";
+import RoomInfo from "./RoomInfo";
 
-class Encounter extends Component {
+class Room extends Component {
 
     constructor(props) {
         super(props);
@@ -25,20 +28,16 @@ class Encounter extends Component {
         const r = this.props.game.room;
         if (r.d100 === 'none') return '';
         return (
-            <span>
-                {/*<Paper elevation={5} className={'encounter'}>*/}
-                <img className={'map-img'}
-                     src={r.src}
-                     alt={r.d100}
-                     width={150}
-                    /* style={{transform: `rotate(${rotation}deg)`}} */
-                    /* onClick={() => this.on_area_click([c,r])} */
-                />
-                {r.d100} {r.color} {r.exits}
-                {/*</Paper>*/}
-            </span>
+            <Grid container spacing={2}>
+                <Grid item xs={2} style={{maxWidth: "170px"}}>
+                    <RoomImage/>
+                </Grid>
+                <Grid item xs={10}>
+                    <RoomInfo/>
+                </Grid>
+            </Grid>
         );
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Encounter)
+export default connect(mapStateToProps, mapDispatchToProps)(Room)
