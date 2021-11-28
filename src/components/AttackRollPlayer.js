@@ -10,13 +10,15 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import L from 'helpers/L'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import InputFieldCharacter from "./InputFieldCharacter"
 import {create_D100_rolling_dices, getRandomInt, open_dice_ui} from "../helpers/dice_helpers";
 import {update_g_encounter_field} from "../helpers/update_helpers";
 import {new_attack} from "../helpers/encounter_helpers";
-import F from 'helpers/F';
 import AttackToggle from "./AttackToggle";
 import {clear_if_not_none} from "../helpers/ui_helpers";
+import C from "../helpers/C";
+import InputFieldCharacter from "./InputFieldCharacter";
+import {get_item_at_slot, is_attack_hit} from "../helpers/equipment_helpers";
+import CollapsibleHelp from "./CollapsibleHelp";
 
 class AttackRollPlayer extends Component {
 
@@ -47,34 +49,45 @@ class AttackRollPlayer extends Component {
     render() {
         const e = this.props.game.encounter;
         const c = this.props.game.characteristics;
-        let str_res = '';
-        let dex_res = '';
+        let txt = '';
+        let txt2 = '';
+        const weapon = get_item_at_slot(this.props.game, 5); // 5 = Hands
+        let att_type = 'str';
+        if (weapon === 'none') return 'no weapon, flee!';
+        if (weapon.type.includes('R')) { // Hand Weapons (H)
+            att_type = 'dex';
+        }
+        // FIXME what when both D and R ?? keep max ?
+        txt2 = <span> Adjusted {att_type}: &nbsp;
+            <InputFieldCharacter type={'number'}
+                                 read_only={true}
+                                 field_name={att_type}
+                                 mod={c[att_type + '_items']}/>
+                </span>
         let att = '';
         if (e.attack.d100 !== 'none') { // attack exist
             att = e.attack.d100;
-            if (att <= c.str_adj)
-                str_res = <span className={'attack_hit'}>Hit !</span>
-            else str_res = <span className={'attack_miss'}>miss</span>
-            if (att <= c.dex_adj)
-                dex_res = <span className={'attack_hit'}>Hit !</span>
-            else dex_res = <span className={'attack_miss'}>miss</span>
+            if (is_attack_hit(c, att_type, att))
+                txt = <span className={'attack_hit'}>Hit !</span>
+            else txt = <span className={'attack_miss'}>miss</span>
+
         }
         // clear
         const clear = clear_if_not_none(this, e.attack.d100);
         return (
             <span>
-                {clear} Attack &nbsp; <AttackToggle/>  &nbsp; <L onClick={this.roll_attack}>D100 &#127922;</L>
-                &nbsp;&nbsp;&nbsp;
+                {clear} <AttackToggle/>
+                &nbsp;Attacks &nbsp; <L onClick={this.roll_attack}>D100 &#127922;</L>
+                <C width={'1ch'}/>
                 {att}
-                &nbsp;&nbsp;&nbsp;
-                <F>
-                    Current (adjusted) str: <InputFieldCharacter type={'number'} field_name={'str'} mod={c.str_items}/>
-                    {str_res} &nbsp;&nbsp;&nbsp;&nbsp;
-                </F>
-                <F>
-                    Current (adjusted) dex: <InputFieldCharacter type={'number'} field_name={'dex'} mod={c.dex_items}/>
-                    {dex_res}
-                </F>
+                <C width={'4ch'}/>
+                {txt2}
+                <C width={'1ch'}/>
+                {txt}
+                <C width={'4ch'}/>
+                <CollapsibleHelp text={'(?)'}>
+                    To attack a monster, the player rolls 1d100 and must score equal to, or below the adventurer’s adjusted Str, or Dex value; which is used depends on the weapon being used. Hand Weapons (H) use Str, whilst Ranged Weapons (R) use Dex to hit the monster. If the character has two weapons equipped, either may be used to attack, but not both. If the result scores a hit go to step 4, otherwise go to step 5.
+                </CollapsibleHelp>
             </span>
         );
     }

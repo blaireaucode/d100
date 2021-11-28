@@ -15,6 +15,7 @@ import InputFieldSelectCharacter from "./InputFieldSelectCharacter"
 import table_r_race from 'tables/table_r_race.json'
 import CollapsibleHelp from "./CollapsibleHelp"
 import CharacterHeroPathHelp from "./HelpCharacterHeroPath"
+import C from "../helpers/C"
 
 class CharacterMain extends Component {
 
@@ -36,15 +37,11 @@ class CharacterMain extends Component {
                 <F>Hero Path</F> <InputFieldSelectCharacter width={'10ch'}
                                                             items={items}
                                                             field_name={'hero_path'}/>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <C width={'11ch'}/>
                 <F>Race</F> <InputFieldSelectCharacter field_name={'race'}
                                                        items={this.items_race}
                                                        width={'10ch'}/>
-                &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp; &nbsp;
+                <C width={'20ch'}/>
                 <CollapsibleHelp text={'(?)'}><CharacterHeroPathHelp/></CollapsibleHelp>
             </span>);
     }

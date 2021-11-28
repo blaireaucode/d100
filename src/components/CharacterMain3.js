@@ -11,8 +11,9 @@ import {connect} from 'react-redux'
 import InputFieldCharacter from "components/InputFieldCharacter"
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import F from 'helpers/F'
-import CharacterCharacteristicsHelp from "./HelpCharacterCharacteristics";
-import CollapsibleHelp from "./CollapsibleHelp";
+import CharacterCharacteristicsHelp from "./HelpCharacterCharacteristics"
+import CollapsibleHelp from "./CollapsibleHelp"
+import C from "../helpers/C"
 
 class CharacterMain extends Component {
 
@@ -61,9 +62,7 @@ class CharacterMain extends Component {
                 <F width={'10ch'}>Spell Caster</F> <InputFieldCharacter type={'bool'} field_name={'spell_caster'}/>
                 &nbsp; &nbsp;
                 <span className={'help'}>Can now use spells from the spell book</span>
-                &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-                &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-                &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                <C width={'20ch'}/>
                 <CollapsibleHelp text={'(?)'}>
                     <CharacterCharacteristicsHelp/>
                 </CollapsibleHelp>

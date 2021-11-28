@@ -11,7 +11,7 @@ import {connect} from 'react-redux'
 import L from 'helpers/L'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import {update_g_encounter_field} from "../helpers/update_helpers";
-import {new_attack} from "../helpers/encounter_helpers";
+import {new_attack, new_location} from "../helpers/encounter_helpers";
 
 class AttackToggle extends Component {
 
@@ -23,14 +23,17 @@ class AttackToggle extends Component {
     toggle_attack() {
         const att = this.props.game.encounter.attack;
         const w = att.who_attack === 'encounter' ? 'character' : 'encounter';
-        const a = new_attack(att.d100, att.dmg, w);
-        const g = update_g_encounter_field(this.props.game, 'attack', a);
+        //const a = new_attack(att.d100, att.dmg, w);
+        const a = new_attack('none', 'none', w);
+        //const l = new_location();
+        let g = update_g_encounter_field(this.props.game, 'attack', a);
+        //g = update_g_encounter_field(g, 'location', l);
         this.props.set_game(g);
     }
 
     render() {
         const e = this.props.game.encounter;
-        const text = e.attack.who_attack === 'encounter' ? '↺🛡' : '↺🗡';
+        const text = e.attack.who_attack === 'encounter' ? '↺' : '↺';//'↺🛡' : '↺🗡';
         return (
             <L onClick={this.toggle_attack}>{text}</L>
         );

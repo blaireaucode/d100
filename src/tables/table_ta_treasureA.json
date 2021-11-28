@@ -1,0 +1,173 @@
+[
+  {
+    "d100": "none",
+    "reroll_market": false,
+    "name": "",
+    "details": "",
+    "gp": 0
+  },
+  {
+    "d100": "1-3",
+    "reroll_market": true,
+    "name": "Silver pieces",
+    "details": "A small bag filled with silver coins",
+    "gp": 70
+  },
+  {
+    "d100": "4-6",
+    "reroll_market": false,
+    "name": "Brew of finer Dmg",
+    "details": "Drink to gain +2 dmg to your next damage roll",
+    "gp": 70
+  },
+  {
+    "d100": "7-9",
+    "reroll_market": false,
+    "name": "Brew of finer Str",
+    "details": "drink  to gain  +5 str to your next d100 dice roll",
+    "gp": 75
+  },
+  {
+    "d100": "10-12",
+    "reroll_market": false,
+    "name": "Brew of finer Dex",
+    "details": "drink  to gain  +5 dex to your next d100 dice roll",
+    "gp": 75
+  },
+  {
+    "d100": "13-15",
+    "reroll_market": false,
+    "name": "Brew of finer Int",
+    "details": "Drink\n  to gain\n  +5 int to your next d100 dice roll",
+    "gp": 75
+  },
+  {
+    "d100": "16-46",
+    "reroll_market": true,
+    "name": "Objective item",
+    "details": "An 'objective item' is found that may be required for a quest (check the current quest’s\n  details). if it’s not needed for the quest, it is instead a “fine item” worth 100gp",
+    "gp": 100
+  },
+  {
+    "d100": "47-49",
+    "reroll_market": false,
+    "name": "Brew of finer Def",
+    "details": "Drink to gain +2 def on a monsters next damage roll",
+    "gp": 100
+  },
+  {
+    "d100": "50-52",
+    "reroll_market": false,
+    "name": "Finer armour",
+    "details": "Roll on table A (armour) and add “finer” before its name, it gains +0.2 def",
+    "gp": "-"
+  },
+  {
+    "d100": "53-55",
+    "reroll_market": false,
+    "name": "Finer weapon",
+    "details": "Roll on table w – weapon and add “finer” before its name, add +1 to its dmg",
+    "gp": "-"
+  },
+  {
+    "d100": "56-58",
+    "reroll_market": true,
+    "name": "Silver pieces",
+    "details": "A small bag filled with silver coins",
+    "gp": 140
+  },
+  {
+    "d100": "59-61",
+    "reroll_market": false,
+    "name": "Potion of finer str",
+    "details": "Drink to gain +5 str until you next shade a \uD83D\uDD50 on the time track",
+    "gp": 150
+  },
+  {
+    "d100": "62-64",
+    "reroll_market": false,
+    "name": "Potion of finer dex",
+    "details": "Drink to gain +5 dex until you next shade a \uD83D\uDD50 on the time track",
+    "gp": 150
+  },
+  {
+    "d100": "65-67",
+    "reroll_market": false,
+    "name": "Potion of finer int",
+    "details": "Drink to gain +5 int until you next shade a \uD83D\uDD50 on the time track",
+    "gp": 150
+  },
+  {
+    "d100": "68-70",
+    "reroll_market": false,
+    "name": "Potion of finer remove poison",
+    "details": "Drink to remove up to 4 shaded pips on the poison track",
+    "gp": 160
+  },
+  {
+    "d100": "71-73",
+    "reroll_market": false,
+    "name": "Potion of finer healing",
+    "details": "Drink to restore up to 8 lost HP",
+    "gp": 160
+  },
+  {
+    "d100": "74-76",
+    "reroll_market": false,
+    "name": "Elixir of finer fate",
+    "details": "Drink to gain 1 fate point",
+    "gp": 200
+  },
+
+  77-79
+  scroll:
+  you find a parchment containing a spell, roll once on table s – spells, and add “scroll of” before
+  the spell name before adding it to the adventure sheet.
+  200gp
+  80-82
+  potion of finer cure disease:
+  drink to remove up to 4 shaded pips on the disease track.
+  260gp
+  83-85*
+  silver pieces:
+  a small bag filled with silver coins.
+  280gp
+  86-88
+  elixir of finer str:
+  drink to gain 1 point of primary str.
+  300gp
+  89-91
+  elixir of finer dex:
+  drink to gain 1 point of primary dex.
+  300gp
+  92-94
+  elixir of finer int:
+  drink to gain 1 point of primary int.
+  300gp
+  95
+  elixir of finer health:
+  drink to gain 1 point of primary hp.
+  400gp
+  96
+  potion of finer fate:
+  drink to add +40 to a result when rolling on the next table.
+  800gp
+  97
+  elixir of finer life:
+  drink to gain 1 life point.
+  1000gp
+  98
+  greater treasure:
+  a much greater treasure is found, roll on table tb – treasure b.
+  -
+  99
+  legendary ring:
+  roll on table l for its legend (ring slot) and value.
+  -
+  100
+  legendary necklace:
+  roll on table l for its legend (neck slot)
+  and value.
+
+]
+

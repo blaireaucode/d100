@@ -179,8 +179,19 @@ export function update_g_equip_total_fn(game, field_name) {
     return update(game, {characteristics: {[field_name + '_items']: {$set: total}}});
 }
 
+export function get_item_at_slot(game, slot) {
+    const s = game.equipped_items[slot];
+    if (s.item_id === 'none') return 'none';
+    return game.items[s.item_id];
+}
 
 
+export function is_attack_hit(c, att_type, value) {
+    const att = parseInt(value);
+    const a = parseInt(c[att_type]);
+    const b = parseInt(c[att_type + '_items']);
+    return (att < a + b);
+}
 
 
 

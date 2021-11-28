@@ -24,7 +24,6 @@ class RoomInfo extends Component {
     }
 
     rotate() {
-        console.log('rotate');
         const g = rotate_g_room(this.props.game);
         this.props.set_game(g);
     }
@@ -32,7 +31,6 @@ class RoomInfo extends Component {
     render() {
         const r = this.props.game.room;
         if (r.d100 === 'none') return '';
-        console.log('room', r)
         const cn = 'room_color_' + r.color;
         let t = '';
         if (r.color === 'red') t = <RoomInfoRed/>;
@@ -46,7 +44,7 @@ class RoomInfo extends Component {
         }
         return (
             <span>
-                #{r.d100} - <span className={cn}>{r.color}</span> - <L onClick={this.rotate}>⤵</L>
+                #{r.d100} - <span className={cn}>{r.color}</span> - <L onClick={this.rotate}>↻</L>
                 <p/>
                 {r.exits.length} exit{r.exits.length > 1 ? 's' : ''}: {map_dir(r.exits)}
                 <br/>

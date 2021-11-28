@@ -13,6 +13,7 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import F from 'helpers/F'
 import CollapsibleHelp from "./CollapsibleHelp"
 import CharacterHPHelp from "./HelpCharacterHP"
+import C from "../helpers/C"
 
 class CharacterMain extends Component {
 
@@ -23,27 +24,26 @@ class CharacterMain extends Component {
             <span>
                 {/* health etc */}
 
-                <F>Health Points</F>&nbsp;
-                <InputFieldCharacter {...p} field_name={'hp'}/>
+                <F>Health Points&nbsp;</F>
+                <InputFieldCharacter {...p} field_name={'hp'} width={'4ch'}/>
                 <F>⇒&nbsp;</F>
                 <InputFieldCharacter {...p} field_name={'hp'}
-                                     mod={c.hp_items} read_only={true} align={'left'}/>
+                                     mod={c.hp_items} read_only={true}
+                                     align={'left'}  width={'4ch'}/>
 
-                &nbsp;&nbsp;&nbsp;&nbsp;
+                <C width={'4ch'}/>
                 <F>Rep</F> <InputFieldCharacter {...p} field_name={'rep'}/>
-                &nbsp;&nbsp;&nbsp;&nbsp;
+                <C width={'2ch'}/>
 
                 <F>Fate</F> <InputFieldCharacter {...p} field_name={'fate'}/>
-                &nbsp;&nbsp;&nbsp;&nbsp;
+                <C width={'2ch'}/>
 
                 <F>Life</F> <InputFieldCharacter {...p} field_name={'life'}/>
-                &nbsp;&nbsp;&nbsp;&nbsp;
+                <C width={'2ch'}/>
 
-                <F>Encounter modifier</F> <InputFieldCharacter {...p} field_name={'encounter_modifier'}/>
+                <F>Encounter modifier</F> <InputFieldCharacter {...p} field_name={'encounter_modifier'} width={'5ch'}/>
 
-                &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-                &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-                &nbsp;&nbsp;
+                <C width={'14ch'}/>
                 <CollapsibleHelp text={'(?)'}>
                     <CharacterHPHelp/>
                 </CollapsibleHelp>

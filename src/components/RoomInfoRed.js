@@ -9,8 +9,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import L from "../helpers/L";
-import CollapsibleHelp from "./CollapsibleHelp";
+import L from "../helpers/L"
+import CollapsibleHelp from "./CollapsibleHelp"
 
 class RoomInfoRed extends Component {
 

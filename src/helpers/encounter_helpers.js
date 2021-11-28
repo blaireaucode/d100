@@ -62,6 +62,7 @@ export function new_encounter(id = 'none') {
     e["reaction"] = new_reaction();
     e["attack"] = new_attack();
     e["location"] = new_location();
+    e["round"] = 1;
     console.log('e', e);
     return e;
 }
@@ -103,7 +104,7 @@ export function new_location(id = 'none') {
     }
     if (!found) {
         console.log('ERROR : cannot find id ', id);
-        i = 1;
+        i = 0;
     }
     return JSON.parse(JSON.stringify(table[i]));
 }

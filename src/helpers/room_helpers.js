@@ -35,7 +35,6 @@ export function new_room(id = 'none') {
         e["src"] = require('../images/' + id + '.png').default;
         if (!("doors_direction" in e)) e["doors_direction"] = [];
     }
-    console.log('e', e);
     return e;
 }
 
@@ -55,13 +54,13 @@ export function rotate_g_room(game) {
         if (e === 'S') return 'W';
         if (e === 'E') return 'S';
         if (e === 'N') return 'E';
-        if (e === 'W') return 'N';
+        return 'N';
     });
     const dd = g.room.doors_direction.map(e => {
         if (e === 'S') return 'W';
         if (e === 'E') return 'S';
         if (e === 'N') return 'E';
-        if (e === 'W') return 'N';
+        return 'N';
     });
     g = update(g, {room: {exits: {$set: ex}}});
     g = update(g, {room: {doors_direction: {$set: dd}}});

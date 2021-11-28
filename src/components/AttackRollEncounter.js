@@ -12,11 +12,12 @@ import L from 'helpers/L'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import {create_D100_rolling_dices, getRandomInt, open_dice_ui} from "../helpers/dice_helpers";
 import {update_g_encounter_field} from "../helpers/update_helpers";
-import F from 'helpers/F';
 import {new_attack} from "../helpers/encounter_helpers";
 import InputFieldEncounter from "./InputFieldEncounter";
 import AttackToggle from "./AttackToggle";
 import {clear_if_not_none} from "../helpers/ui_helpers";
+import C from "../helpers/C";
+import CollapsibleHelp from "./CollapsibleHelp";
 
 class AttackRollEncounter extends Component {
 
@@ -59,14 +60,17 @@ class AttackRollEncounter extends Component {
         return (
             <span>
                 {clear}
-                Monster is attacking &nbsp; <AttackToggle/>  &nbsp; <L onClick={this.roll_attack}>D100 &#127922;</L>
-                &nbsp;&nbsp;&nbsp;
+                <AttackToggle/>  &nbsp;
+                Monster attacks &nbsp;  <L onClick={this.roll_attack}>D100 &#127922;</L>
+                <C width={'1ch'}/>
                 {att}
-                &nbsp;&nbsp;&nbsp;
-                <F>
-                    Monster Attack Value (AV): <InputFieldEncounter type={'number'} field_name={'av'}/>
-                    {str_res}
-                </F>
+                <C width={'4ch'}/>
+                AV: <InputFieldEncounter type={'number'} read_only={true} field_name={'av'}/>
+                {str_res}
+                <C width={'4ch'}/>
+                <CollapsibleHelp text={'(?)'}>
+                    If the monster attempted to escape and has remained, start a new combat round from Step 1, otherwise it will make an attack. Roll 1d100 equal to, or less than the monsters Attack Value (AV), and if the result scores a hit go to step 6, otherwise start a new combat round from step 1.
+                </CollapsibleHelp>
             </span>
         );
     }

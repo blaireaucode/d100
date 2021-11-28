@@ -105,7 +105,7 @@ class Encounter extends Component {
                 <InputFieldEncounter field_name={'name'} width={'15ch'}/>
                 n° <InputFieldEncounter field_name={'d100'} read_only={true} width={'5ch'}/>
                 <br/>
-                <F>Attack Value</F> <InputFieldEncounter {...p} field_name={'av'}/>
+                <F>Attack Value (AV)</F> <InputFieldEncounter {...p} field_name={'av'}/>
                 <F>&nbsp;&nbsp;&nbsp;Defence</F> <InputFieldEncounter {...p} field_name={'def'}/>
                 <F>&nbsp;&nbsp;&nbsp;Damage Modifier</F> <InputFieldEncounter {...p} field_name={'dmg'}/>
                 <F>&nbsp;&nbsp;&nbsp;Health Points</F> <InputFieldEncounter {...p} type={'txt'} field_name={'hp'}/>

@@ -91,7 +91,7 @@ class RoomRoll extends Component {
         const clear = e.d100 === 'none' ? '' : <Clear onClick={this.clear}/>;
         return (
             <span>
-                Room : &nbsp;
+                Area : &nbsp;
                 <L onClick={this.roll_room}>D100 &#127922;</L>
                 &nbsp; &nbsp;
                 <Select value={this.state.current}

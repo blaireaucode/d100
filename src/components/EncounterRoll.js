@@ -17,6 +17,8 @@ import {update_g_encounter} from "../helpers/update_helpers";
 import Clear from "./Clear";
 import encounters_table from 'tables/table_e_encounter.json'
 import {MenuItem, Select} from "@material-ui/core";
+import InputFieldCharacter from "./InputFieldCharacter";
+import C from "../helpers/C";
 
 class EncounterRoll extends Component {
 
@@ -69,9 +71,11 @@ class EncounterRoll extends Component {
 
     roll_encounter() {
         const total = getRandomInt(1, 100);
+        const t = Math.min(100, Math.max(0,
+            total + parseInt(this.props.game.characteristics.encounter_modifier)));
 
         // encounter
-        const e = new_encounter(total);
+        const e = new_encounter(t);
         let g = up.update_g_encounter(this.props.game, e);
 
         // rolling dice
@@ -85,11 +89,13 @@ class EncounterRoll extends Component {
     render() {
         const e = this.props.game.encounter;
         const clear = e.d100 === 'none' ? '' : <Clear onClick={this.clear}/>;
+        const p = {width: '4ch', align: 'right', type: 'number'}
         return (
             <span>
                 Monster : &nbsp;
                 <L onClick={this.roll_encounter}>D100 &#127922;</L>
-                &nbsp; &nbsp;
+                <InputFieldCharacter {...p} field_name={'encounter_modifier'} width={'5ch'}/>
+                <C width={'3ch'}/>
                 <Select value={this.state.current}
                         disableUnderline={true}
                         defaultValue={'none'}
