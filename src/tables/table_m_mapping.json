@@ -1,0 +1,977 @@
+[
+  {
+    "d100": "none",
+    "color": "",
+    "exits": []
+  },
+  {
+    "d100": 1,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "N"
+    ]
+  },
+  {
+    "d100": 2,
+    "color": "red",
+    "exits": [
+      "S",
+      "E"
+    ],
+    "doors_direction": [
+      "E"
+    ]
+  },
+  {
+    "d100": 3,
+    "color": "yellow",
+    "exits": [
+      "S"
+    ]
+  },
+  {
+    "d100": 4,
+    "color": "red",
+    "exits": [
+      "S",
+      "N",
+      "E"
+    ]
+  },
+  {
+    "d100": 5,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "W"
+    ]
+  },
+  {
+    "d100": 6,
+    "color": "green",
+    "exits": [
+      "W",
+      "E",
+      "S"
+    ],
+    "doors_direction": [
+      "E"
+    ]
+  },
+  {
+    "d100": 7,
+    "color": "red",
+    "exits": [
+      "W",
+      "S",
+      "N"
+    ],
+    "doors_direction": [
+      "W"
+    ]
+  },
+  {
+    "d100": 8,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "N",
+      "W"
+    ],
+    "doors_direction": [
+      "N"
+    ]
+  },
+  {
+    "d100": 9,
+    "color": "green",
+    "exits": [
+      "S",
+      "E"
+    ],
+    "doors_direction": [
+      "E"
+    ]
+  },
+  {
+    "d100": 10,
+    "color": "red",
+    "exits": [
+      "S",
+      "N"
+    ]
+  },
+  {
+    "d100": 11,
+    "color": "green",
+    "exits": [
+      "N",
+      "S",
+      "W"
+    ]
+  },
+  {
+    "d100": 12,
+    "color": "red",
+    "exits": [
+      "N",
+      "S"
+    ]
+  },
+  {
+    "d100": 13,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "W",
+      "E"
+    ],
+    "doors_direction": [
+      "W"
+    ]
+  },
+  {
+    "d100": 14,
+    "color": "green",
+    "exits": [
+      "N",
+      "S"
+    ]
+  },
+  {
+    "d100": 15,
+    "color": "red",
+    "exits": [
+      "N",
+      "S",
+      "E"
+    ]
+  },
+  {
+    "d100": 16,
+    "color": "red",
+    "exits": [
+      "S",
+      "E"
+    ]
+  },
+  {
+    "d100": 17,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "W",
+      "N"
+    ],
+    "doors_direction": [
+      "N"
+    ]
+  },
+  {
+    "d100": 18,
+    "color": "red",
+    "exits": [
+      "S",
+      "E",
+      "W"
+    ],
+    "doors_direction": [
+      "E",
+      "W"
+    ]
+  },
+  {
+    "d100": 19,
+    "color": "yellow",
+    "exits": [
+      "N",
+      "S"
+    ]
+  },
+  {
+    "d100": 20,
+    "color": "green",
+    "exits": [
+      "N",
+      "S",
+      "E"
+    ]
+  },
+  {
+    "d100": 21,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "E",
+      "N"
+    ],
+    "doors_direction": [
+      "E"
+    ]
+  },
+  {
+    "d100": 22,
+    "color": "red",
+    "exits": [
+      "N",
+      "S"
+    ]
+  },
+  {
+    "d100": 23,
+    "color": "yellow",
+    "exits": [
+      "N",
+      "S"
+    ]
+  },
+  {
+    "d100": 24,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "W",
+      "N"
+    ]
+  },
+  {
+    "d100": 25,
+    "color": "red",
+    "exits": [
+      "S"
+    ]
+  },
+  {
+    "d100": 26,
+    "color": "green",
+    "exits": [
+      "S",
+      "W",
+      "E"
+    ]
+  },
+  {
+    "d100": 27,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "W"
+    ]
+  },
+  {
+    "d100": 28,
+    "color": "yellow",
+    "exits": [
+      "N",
+      "S"
+    ],
+    "doors_direction": [
+      "N"
+    ]
+  },
+  {
+    "d100": 29,
+    "color": "yellow",
+    "exits": [
+      "N",
+      "S",
+      "E"
+    ]
+  },
+  {
+    "d100": 30,
+    "color": "red",
+    "exits": [
+      "S",
+      "E"
+    ]
+  },
+  {
+    "d100": 31,
+    "color": "red",
+    "exits": [
+      "S",
+      "W"
+    ]
+  },
+  {
+    "d100": 32,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "E"
+    ]
+  },
+  {
+    "d100": 33,
+    "color": "red",
+    "exits": [
+      "S",
+      "N",
+      "W"
+    ],
+    "doors_direction": [
+      "N",
+      "W"
+    ]
+  },
+  {
+    "d100": 34,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "N"
+    ]
+  },
+  {
+    "d100": 35,
+    "color": "green",
+    "exits": [
+      "S",
+      "E"
+    ]
+  },
+  {
+    "d100": 36,
+    "color": "red",
+    "exits": [
+      "S",
+      "E",
+      "W"
+    ]
+  },
+  {
+    "d100": 37,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "N",
+      "W",
+      "E"
+    ]
+  },
+  {
+    "d100": 38,
+    "color": "red",
+    "exits": [
+      "S",
+      "W",
+      "N"
+    ]
+  },
+  {
+    "d100": 39,
+    "color": "green",
+    "exits": [
+      "S",
+      "N"
+    ],
+    "doors_direction": [
+      "N"
+    ]
+  },
+  {
+    "d100": 40,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "E",
+      "W"
+    ]
+  },
+  {
+    "d100": 41,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "E"
+    ],
+    "doors_direction": [
+      "E"
+    ]
+  },
+  {
+    "d100": 42,
+    "color": "red",
+    "exits": [
+      "S",
+      "E",
+      "W"
+    ]
+  },
+  {
+    "d100": 43,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "E"
+    ]
+  },
+  {
+    "d100": 44,
+    "color": "green",
+    "exits": [
+      "S",
+      "E",
+      "W"
+    ]
+  },
+  {
+    "d100": 45,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "N"
+    ]
+  },
+  {
+    "d100": 46,
+    "color": "red",
+    "exits": [
+      "S",
+      "N",
+      "E",
+      "W"
+    ],
+    "doors_direction": [
+      "N"
+    ]
+  },
+  {
+    "d100": 47,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "N"
+    ],
+    "doors_direction": [
+      "N"
+    ]
+  },
+  {
+    "d100": 48,
+    "color": "red",
+    "exits": [
+      "S",
+      "W"
+    ]
+  },
+  {
+    "d100": 49,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "N",
+      "E",
+      "W"
+    ]
+  },
+  {
+    "d100": 50,
+    "color": "red",
+    "exits": [
+      "S",
+      "N"
+    ],
+    "doors_direction": [
+      "N"
+    ]
+  },
+  {
+    "d100": 51,
+    "color": "green",
+    "exits": [
+      "S",
+      "W"
+    ],
+    "doors_direction": [
+      "W"
+    ]
+  },
+  {
+    "d100": 52,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "N",
+      "E",
+      "W"
+    ]
+  },
+  {
+    "d100": 53,
+    "color": "red",
+    "exits": [
+      "S"
+    ]
+  },
+  {
+    "d100": 54,
+    "color": "green",
+    "exits": [
+      "S",
+      "N",
+      "E"
+    ],
+    "doors_direction": [
+      "N"
+    ]
+  },
+  {
+    "d100": 55,
+    "color": "yellow",
+    "exits": [
+      "S"
+    ]
+  },
+  {
+    "d100": 56,
+    "color": "red",
+    "exits": [
+      "S",
+      "E",
+      "W"
+    ],
+    "doors_direction": [
+      "E"
+    ]
+  },
+  {
+    "d100": 57,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "N"
+    ],
+    "doors_direction": [
+      "N"
+    ]
+  },
+  {
+    "d100": 58,
+    "color": "red",
+    "exits": [
+      "S",
+      "E",
+      "W",
+      "N"
+    ],
+    "doors_direction": [
+      "N"
+    ]
+  },
+  {
+    "d100": 59,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "W"
+    ],
+    "doors_direction": [
+      "W"
+    ]
+  },
+  {
+    "d100": 60,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "W",
+      "N"
+    ]
+  },
+  {
+    "d100": 61,
+    "color": "red",
+    "exits": [
+      "S",
+      "E",
+      "W"
+    ],
+    "doors_direction": [
+      "W"
+    ]
+  },
+  {
+    "d100": 62,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "E"
+    ]
+  },
+  {
+    "d100": 63,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "E",
+      "W",
+      "N"
+    ]
+  },
+  {
+    "d100": 64,
+    "color": "yellow",
+    "exits": [
+      "S"
+    ]
+  },
+  {
+    "d100": 65,
+    "color": "green",
+    "exits": [
+      "S",
+      "W"
+    ],
+    "doors_direction": [
+      "W"
+    ]
+  },
+  {
+    "d100": 66,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "W"
+    ]
+  },
+  {
+    "d100": 67,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "N"
+    ]
+  },
+  {
+    "d100": 68,
+    "color": "green",
+    "exits": [
+      "S",
+      "E",
+      "W",
+      "N"
+    ],
+    "doors_direction": [
+      "W",
+      "E",
+      "N"
+    ]
+  },
+  {
+    "d100": 69,
+    "color": "red",
+    "exits": [
+      "S",
+      "N"
+    ]
+  },
+  {
+    "d100": 70,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "N",
+      "E"
+    ],
+    "doors_direction": [
+      "E"
+    ]
+  },
+  {
+    "d100": 71,
+    "color": "green",
+    "exits": [
+      "S",
+      "W"
+    ]
+  },
+  {
+    "d100": 72,
+    "color": "red",
+    "exits": [
+      "S",
+      "E",
+      "W"
+    ],
+    "doors_direction": [
+      "E"
+    ]
+  },
+  {
+    "d100": 73,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "W"
+    ]
+  },
+  {
+    "d100": 74,
+    "color": "red",
+    "exits": [
+      "S",
+      "E"
+    ]
+  },
+  {
+    "d100": 75,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "N"
+    ]
+  },
+  {
+    "d100": 76,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "E",
+      "N"
+    ],
+    "doors_direction": [
+      "N"
+    ]
+  },
+  {
+    "d100": 77,
+    "color": "red",
+    "exits": [
+      "S",
+      "W"
+    ]
+  },
+  {
+    "d100": 78,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "N"
+    ]
+  },
+  {
+    "d100": 79,
+    "color": "red",
+    "exits": [
+      "S",
+      "E",
+      "N"
+    ],
+    "doors_direction": [
+      "N"
+    ]
+  },
+  {
+    "d100": 80,
+    "color": "green",
+    "exits": [
+      "S",
+      "W"
+    ]
+  },
+  {
+    "d100": 81,
+    "color": "red",
+    "exits": [
+      "S",
+      "E",
+      "N",
+      "W"
+    ],
+    "doors_direction": [
+      "W"
+    ]
+  },
+  {
+    "d100": 82,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "W"
+    ]
+  },
+  {
+    "d100": 83,
+    "color": "green",
+    "exits": [
+      "S",
+      "W",
+      "N"
+    ],
+    "doors_direction": [
+      "W"
+    ]
+  },
+  {
+    "d100": 84,
+    "color": "red",
+    "exits": [
+      "S",
+      "N"
+    ]
+  },
+  {
+    "d100": 85,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "W"
+    ],
+    "doors_direction": [
+      "W"
+    ]
+  },
+  {
+    "d100": 86,
+    "color": "red",
+    "exits": [
+      "S",
+      "W"
+    ],
+    "doors_direction": [
+      "W"
+    ]
+  },
+  {
+    "d100": 87,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "W"
+    ],
+    "doors_direction": [
+      "W"
+    ]
+  },
+  {
+    "d100": 88,
+    "color": "green",
+    "exits": [
+      "S",
+      "N",
+      "E"
+    ]
+  },
+  {
+    "d100": 89,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "N"
+    ],
+    "doors_direction": [
+      "N"
+    ]
+  },
+  {
+    "d100": 90,
+    "color": "red",
+    "exits": [
+      "S",
+      "W"
+    ],
+    "doors_direction": [
+      "W"
+    ]
+  },
+  {
+    "d100": 91,
+    "color": "yellow",
+    "exits": [
+      "S",
+      "E",
+      "W"
+    ]
+  },
+  {
+    "d100": 92,
+    "color": "blue",
+    "exits": [
+      "S",
+      "N",
+      "W"
+    ],
+    "doors_direction": [
+      "N"
+    ]
+  },
+  {
+    "d100": 93,
+    "color": "blue",
+    "exits": [
+      "S"
+    ]
+  },
+  {
+    "d100": 94,
+    "color": "blue",
+    "exits": [
+      "S",
+      "N",
+      "W"
+    ],
+    "doors_direction": [
+      "W"
+    ]
+  },
+  {
+    "d100": 95,
+    "color": "blue",
+    "exits": [
+      "S",
+      "W"
+    ],
+    "doors_direction": [
+      "W"
+    ]
+  },
+  {
+    "d100": 96,
+    "color": "blue",
+    "exits": [
+      "S",
+      "W",
+      "N"
+    ],
+    "doors_direction": [
+      "W",
+      "N"
+    ]
+  },
+  {
+    "d100": 97,
+    "color": "blue",
+    "exits": [
+      "S",
+      "N"
+    ],
+    "doors_direction": [
+      "N"
+    ]
+  },
+  {
+    "d100": 98,
+    "color": "blue",
+    "exits": [
+      "S"
+    ]
+  },
+  {
+    "d100": 99,
+    "color": "blue",
+    "exits": [
+      "S",
+      "N"
+    ]
+  },
+  {
+    "d100": 100,
+    "color": "blue",
+    "exits": [
+      "S"
+    ]
+  }
+]

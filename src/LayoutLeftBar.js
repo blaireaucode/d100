@@ -113,6 +113,10 @@ class LayoutLeftBar extends React.Component {
                         <ListItemText primary={'Room'}/> {/*🐍 🐲 🐉 👊 🪨*/}
                     </ListItem>
 
+                    <ListItem button component={Link} to='/fight'>
+                        <ListItemText primary={'⚔️'}/>
+                    </ListItem>
+
                     {/*<ListItem button component={Link} to='/map'>
                         <ListItemText primary={'Map'}/> // 🌏
                     </ListItem>

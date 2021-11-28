@@ -11,7 +11,8 @@ import {HashRouter as Router} from 'react-router-dom'
 import Debug from 'components/ScreenDebug'
 import Character from 'components/ScreenCharacter'
 import Map from 'components/ScreenMap'
-import Room from 'components/ScreenRoom'
+import ScreenRoom from 'components/ScreenRoom'
+import ScreenFight from 'components/ScreenFight'
 import Town from 'components/ScreenTown'
 import ScreenSystem from 'components/ScreenSystem'
 import Layout from 'Layout'
@@ -80,7 +81,8 @@ class Routes extends Component {
                     <Layout path="/character" component={Character}/>
                     <Layout path="/map" component={Map}/>
                     <Layout path="/town" component={Town}/>
-                    <Layout path="/room" component={Room}/>
+                    <Layout path="/room" component={ScreenRoom}/>
+                    <Layout path="/fight" component={ScreenFight}/>
                     <Layout path="/debug" component={Debug}/>
                     <Layout path="/system" component={ScreenSystem}/>
                     <Layout exact path="/" component={Debug}/>
