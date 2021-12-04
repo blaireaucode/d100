@@ -10,11 +10,20 @@ import encounters_table from 'tables/table_e_encounter.json'
 import reactions_table from 'tables/table_monster_reaction.json'
 import locations_table from 'tables/table_hit_location.json'
 import ability_table from 'tables/table_encounter_ability.json'
-import {update_character, update_dic, update_g_encounter, update_g_room, update_g_team} from "./update_helpers"
+import * as up from "./update_helpers"
+import {
+    update_character,
+    update_dic,
+    update_g_encounter,
+    update_g_encounter_field,
+    update_g_room,
+    update_g_team
+} from "./update_helpers"
 import {D6} from "helpers/dice_helpers"
 import update from "immutability-helper"
 import {v4 as uuidv4} from "uuid";
 import H from "./H";
+import {get_item_at_hit_location} from "./equipment_helpers";
 
 export function parse_d100_interval(d100, id) {
     const mm = d100_interval_min_max(d100);
@@ -106,7 +115,6 @@ export function new_location(id = 'none') {
         console.log('ERROR : cannot find id ', id);
         i = 0;
     }
-    console.log('location', table[i], i);
     return JSON.parse(JSON.stringify(table[i]));
 }
 
@@ -129,10 +137,21 @@ export function compute_dmg(game) {
     let dm = l.dmg_mod === 'none' ? 0 : l.dmg_mod;
     if (isNaN(dm)) dm = 0;
     // attack dice
-    if (att.dmg === 'none') return 0;
+    if (att.dmg === 'none') return {total: 0, txt: ''};
     // encounter is attacking
     if (att.who_attack === 'encounter') {
-        total = parseInt(att.dmg) + parseInt(dm) + parseInt(e.dmg) - parseInt(c.armour);
+        let armour = 0;
+        let item = get_item_at_hit_location(game);
+        if (item === 'none') armour = 0;
+        else {
+            if ('AS' in item) {
+                if (item.AS.includes('A')) armour = item.AS.substr(1);
+            }
+        }
+        if (armour === '') armour = 0;
+        if (isNaN(armour)) armour = 0;
+        total = parseInt(att.dmg) + parseInt(dm) + parseInt(e.dmg) - parseInt(armour);
+        total = Math.max(0, total);
         if (dm >= 0) dm = ' + ' + dm;
         else dm = ' - ' + -dm;
         let dgi;
@@ -142,13 +161,14 @@ export function compute_dmg(game) {
             {att.dmg} <H>(dice) </H>&nbsp;
             {dm} <H>(location) </H>&nbsp;
             {dgi} <H>(dmg) </H>&nbsp;
-            - {c.armour} <H>(armour) </H>&nbsp;
+            - {armour} <H>(armour) </H>&nbsp;
             = {total}
         </span>
     } else {
         // player is attacking
         const edef = e.def === 'none' ? 0 : e.def;
         total = parseInt(att.dmg) + parseInt(dm) + parseInt(c.dmg_items) - parseInt(edef);
+        total = Math.max(0, total);
         if (dm >= 0) dm = ' + ' + dm;
         else dm = ' - ' + -dm;
         let dgi;
@@ -163,6 +183,29 @@ export function compute_dmg(game) {
         </span>
     }
     return {total: total, txt: txt}
+}
+
+export function apply_dmg(game) {
+    const r = compute_dmg(game);
+    const e = game.encounter;
+    const hps = e.hp.split('/');
+    let total = r.total;
+    let nhps = [];
+    for (const hp of hps) {
+        nhps.push(Math.max(0, parseInt(hp) - total));
+        total = Math.max(0, total - parseInt(hp));
+    }
+    nhps = nhps.join('/');
+    return up.update_g_encounter_field(game, 'hp', nhps);
+}
+
+export function clear_attack(game) {
+    const a = new_attack();
+    const l = new_location();
+    const r = new_reaction();
+    let g = update_g_encounter_field(game, 'attack', a);
+    g = update_g_encounter_field(g, 'location', l);
+    return update_g_encounter_field(g, 'reaction', r);
 }
 
 

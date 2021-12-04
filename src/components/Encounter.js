@@ -14,6 +14,7 @@ import F from 'helpers/F'
 import {Paper} from "@material-ui/core"
 import InputFieldEncounter from "./InputFieldEncounter";
 import EncounterAbility from "./EncounterAbility";
+import C from "../helpers/C";
 
 class Encounter extends Component {
 
@@ -106,12 +107,13 @@ class Encounter extends Component {
                 n° <InputFieldEncounter field_name={'d100'} read_only={true} width={'5ch'}/>
                 <br/>
                 <F>Attack Value (AV)</F> <InputFieldEncounter {...p} field_name={'av'}/>
-                <F>&nbsp;&nbsp;&nbsp;Defence</F> <InputFieldEncounter {...p} field_name={'def'}/>
-                <F>&nbsp;&nbsp;&nbsp;Damage Modifier</F> <InputFieldEncounter {...p} field_name={'dmg'}/>
-                <F>&nbsp;&nbsp;&nbsp;Health Points</F> <InputFieldEncounter {...p} type={'txt'} field_name={'hp'}/>
+                <F><C width={'3ch'}/>Defence</F> <InputFieldEncounter {...p} field_name={'def'}/>
+                <F><C width={'3ch'}/>Damage Modifier</F> <InputFieldEncounter {...p} field_name={'dmg'}/>
+                <F><C width={'3ch'}/>Health Points</F>
+                    <InputFieldEncounter {...p} type={'txt'} width={'6ch'} field_name={'hp'}/>
                 <br/>
-                <F>Reward</F> <InputFieldEncounter field_name={'k'} width={'30ch'}/>
-                <F>Ability</F> <InputFieldEncounter field_name={'ability'} width={'30ch'}/>
+                <F>Reward</F> <InputFieldEncounter field_name={'k'} width={'29ch'}/>
+                <F>Ability</F> <InputFieldEncounter field_name={'ability'} width={'31ch'}/>
                     <EncounterAbility/>
                 </Paper>
                 &nbsp; <p/>

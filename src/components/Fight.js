@@ -10,12 +10,14 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import {clear_action} from "helpers/encounter_helpers"
-import EncounterFightRound from "./EncounterFightRound";
+import EncounterFightRound from "./AttackRound";
 import AttackRollEncounterReaction from "./AttackRollEncounterReaction";
 import AttackRoll from "./AttackRoll";
 import AttackRollHitLocation from "./AttackRollHitLocation";
 import AttackRollDamage from "./AttackRollDamage";
 import {Paper} from "@material-ui/core";
+import AttackPlayerInfoAttack from "./AttackPlayerInfoAttack";
+import AttackPlayerInfoDefend from "./AttackPlayerInfoDefend";
 
 class Fight extends Component {
 
@@ -35,16 +37,18 @@ class Fight extends Component {
         return (
             <Paper elevation={5} className={'encounter'}>
                 <EncounterFightRound/>
-                <br/>
+                <hr color={'#333'} size={1}/>
+                <AttackPlayerInfoAttack/>
+                <AttackPlayerInfoDefend/>
+                <hr color={'#333'} size={1}/>
+                <p/>
                 <AttackRollEncounterReaction/>
                 <p/>
                 <AttackRoll/>
                 <p/>
                 <AttackRollHitLocation/>
                 <p/>
-                <AttackRollDamage/>
-                <br/>
-                &nbsp;
+                <AttackRollDamage/><br/>&nbsp;
             </Paper>
         );
     }

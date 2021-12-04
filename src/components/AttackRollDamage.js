@@ -14,6 +14,8 @@ import {create_D6_rolling_dice, getRandomInt, open_dice_ui} from "../helpers/dic
 import {update_g_encounter_field} from "../helpers/update_helpers";
 import {compute_dmg, new_attack} from "../helpers/encounter_helpers";
 import {clear_if_not_none} from "../helpers/ui_helpers";
+import AttackApplyDamage from "./AttackApplyDamage";
+import C from "../helpers/C";
 
 class AttackRollDamage extends Component {
 
@@ -44,10 +46,7 @@ class AttackRollDamage extends Component {
     render() {
         const e = this.props.game.encounter;
         const att = e.attack;
-        const l = e.location;
-        const c = this.props.game.characteristics;
         let dmg = att.dmg;
-        let total = '';
         if (dmg === 'none') dmg = '';
         else {
             const r = compute_dmg(this.props.game);
@@ -57,8 +56,10 @@ class AttackRollDamage extends Component {
         return (
             <span>
                 {clear} Damage <L onClick={this.roll_damage}>D6 🎲</L>
-                &nbsp;&nbsp;&nbsp;
+                <C width={'3ch'}/>
                 {dmg}
+                <C width={'5ch'}/>
+                <AttackApplyDamage/>
             </span>
         );
     }

@@ -61,14 +61,13 @@ class AttackRollEncounter extends Component {
         const clear = clear_if_not_none(this, e.attack.d100);
         return (
             <span>
-                {clear}
-                <AttackToggle/>  &nbsp;
+                {clear}<AttackToggle/> <C width={'1ch'}/>
                 Monster attacks &nbsp;  <L onClick={this.roll_attack}>D100 &#127922;</L>
                 <C width={'1ch'}/>
                 {att}
                 <C width={'4ch'}/>
                 <H>
-                AV: <InputFieldEncounter type={'number'} read_only={true} field_name={'av'}/>
+                {/*AV: <InputFieldEncounter type={'number'} read_only={true} field_name={'av'}/>*/}
                 </H>
                 {str_res}
                 <C width={'4ch'}/>

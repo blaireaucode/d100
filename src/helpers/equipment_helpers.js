@@ -185,6 +185,11 @@ export function get_item_at_slot(game, slot) {
     return game.items[s.item_id];
 }
 
+export function get_item_at_hit_location(game) {
+    const location = game.encounter.location.d10;
+    if (location === 'none') return '';
+    return get_item_at_slot(game, location);
+}
 
 export function is_attack_hit(c, att_type, value) {
     const att = parseInt(value);

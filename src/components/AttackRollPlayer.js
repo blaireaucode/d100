@@ -16,9 +16,7 @@ import {new_attack} from "../helpers/encounter_helpers";
 import AttackToggle from "./AttackToggle";
 import {clear_if_not_none} from "../helpers/ui_helpers";
 import C from "../helpers/C";
-import InputFieldCharacter from "./InputFieldCharacter";
 import {get_item_at_slot, is_attack_hit} from "../helpers/equipment_helpers";
-import CollapsibleHelp from "./CollapsibleHelp";
 
 class AttackRollPlayer extends Component {
 
@@ -50,7 +48,6 @@ class AttackRollPlayer extends Component {
         const e = this.props.game.encounter;
         const c = this.props.game.characteristics;
         let txt = '';
-        let txt2 = '';
         const weapon = get_item_at_slot(this.props.game, 5); // 5 = Hands
         let att_type = 'str';
         if (weapon === 'none') return 'no weapon, flee!';
@@ -58,26 +55,11 @@ class AttackRollPlayer extends Component {
             att_type = 'dex';
         }
         // FIXME what when both D and R ?? keep max ?
-        txt2 = <span>
-                <span className={'help'}> Adjusted {att_type}: &nbsp;
-                    <InputFieldCharacter type={'number'}
-                                         read_only={true}
-                                         width={'4ch'}
-                                         field_name={att_type}
-                                         mod={c[att_type + '_items']}/>
-                    Dmg modifier: &nbsp;
-                    <InputFieldCharacter type={'number'}
-                                         read_only={true}
-                                         width={'4ch'}
-                                         field_name={'dmg_items'}/>
-                </span>
-
-                </span>
         let att = '';
         if (e.attack.d100 !== 'none') { // attack exist
             att = e.attack.d100;
             if (is_attack_hit(c, att_type, att))
-                txt = <span className={'attack_hit'}>Hit !</span>
+                txt = <span className={'attack_hit'}>💥 Hit !</span>
             else txt = <span className={'attack_miss'}>missed</span>
             txt = <span> ➜ &nbsp; {txt}</span>
         }
@@ -85,18 +67,12 @@ class AttackRollPlayer extends Component {
         const clear = clear_if_not_none(this, e.attack.d100);
         return (
             <span>
-                {clear} <AttackToggle/>
-                &nbsp;Attacks &nbsp; <L onClick={this.roll_attack}>D100 &#127922;</L>
+                {clear}<AttackToggle/> <C width={'1ch'}/>
+                Attacks &nbsp; <L onClick={this.roll_attack}>D100 &#127922;</L>
                 <C width={'1ch'}/>
                 {att}
-                <C width={'4ch'}/>
-                {txt2}
                 <C width={'1ch'}/>
                 {txt}
-                <C width={'4ch'}/>
-                <CollapsibleHelp text={'(?)'}>
-                    To attack a monster, the player rolls 1d100 and must score equal to, or below the adventurer’s adjusted Str, or Dex value; which is used depends on the weapon being used. Hand Weapons (H) use Str, whilst Ranged Weapons (R) use Dex to hit the monster. If the character has two weapons equipped, either may be used to attack, but not both. If the result scores a hit go to step 4, otherwise go to step 5.
-                </CollapsibleHelp>
             </span>
         );
     }
