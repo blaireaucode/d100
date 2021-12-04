@@ -1,5 +1,10 @@
 [
   {
+    "d10": "none",
+    "location": "",
+    "dmg_mod": "none"
+  },
+  {
     "d10": 10,
     "location": "Feet",
     "dmg_mod": -1
@@ -48,11 +53,6 @@
     "d10": 1,
     "location": "Head",
     "dmg_mod": 3
-  },
-  {
-    "d10": "none",
-    "location": "",
-    "dmg_mod": "none"
   }
 ]
 

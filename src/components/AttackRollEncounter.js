@@ -18,6 +18,7 @@ import AttackToggle from "./AttackToggle";
 import {clear_if_not_none} from "../helpers/ui_helpers";
 import C from "../helpers/C";
 import CollapsibleHelp from "./CollapsibleHelp";
+import H from "../helpers/H";
 
 class AttackRollEncounter extends Component {
 
@@ -54,6 +55,7 @@ class AttackRollEncounter extends Component {
             if (att <= e.av)
                 str_res = <span className={'attack_hit'}>Hit !</span>
             else str_res = <span className={'attack_miss'}>miss</span>
+            str_res = <span> ➜ &nbsp; {str_res}</span>
         }
         // clear
         const clear = clear_if_not_none(this, e.attack.d100);
@@ -65,7 +67,9 @@ class AttackRollEncounter extends Component {
                 <C width={'1ch'}/>
                 {att}
                 <C width={'4ch'}/>
+                <H>
                 AV: <InputFieldEncounter type={'number'} read_only={true} field_name={'av'}/>
+                </H>
                 {str_res}
                 <C width={'4ch'}/>
                 <CollapsibleHelp text={'(?)'}>

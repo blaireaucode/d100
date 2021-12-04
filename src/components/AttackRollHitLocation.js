@@ -15,8 +15,8 @@ import * as up from "../helpers/update_helpers";
 import location_table from "../tables/table_hit_location.json";
 import {MenuItem, Select} from "@material-ui/core";
 import {new_location} from "../helpers/encounter_helpers";
-import F from 'helpers/F'
 import {clear_if_not_none} from "../helpers/ui_helpers";
+import H from "../helpers/H";
 
 class AttackRollHitLocation extends Component {
 
@@ -31,9 +31,12 @@ class AttackRollHitLocation extends Component {
         const table = location_table;
         for (let i in table) {
             const e = table[i];
+            let txt;
+            if (e.d10 === 'none') txt = 'none';
+            else txt = <span>{e.d10} {e.location} ({e.dmg_mod})</span>
             const op = <MenuItem key={e.d10} value={e.d10}
                                  className={'field_input_small_select'}>
-                {e.d10} {e.location}</MenuItem>;
+                {txt} </MenuItem>;
             this.options.push(op);
         }
         const id = this.props.game.encounter.location.d10;
@@ -79,13 +82,13 @@ class AttackRollHitLocation extends Component {
     render() {
         const l = this.props.game.encounter.location;
         const clear = clear_if_not_none(this, l.d10);
-        const dmg = l.d10 === 'none' ? '' : <F>Damage modifier: {l.dmg_mod}</F>
+        const dmg = l.d10 === 'none' ? '' : <H>Damage modifier: {l.dmg_mod}</H>
         return (
             <span>
                 {clear} Hit Location &nbsp;
                 <L onClick={this.roll_location}>D6 &#127922;</L>
-                &nbsp; &nbsp;
-                <Select value={this.state.current}
+                &nbsp;  ➜  &nbsp;
+                <Select value={l.d10}
                         disableUnderline={true}
                         defaultValue={'none'}
                         onChange={this.set_location}

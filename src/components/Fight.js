@@ -9,8 +9,13 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import Attack from "components/AttackRoll"
 import {clear_action} from "helpers/encounter_helpers"
+import EncounterFightRound from "./EncounterFightRound";
+import AttackRollEncounterReaction from "./AttackRollEncounterReaction";
+import AttackRoll from "./AttackRoll";
+import AttackRollHitLocation from "./AttackRollHitLocation";
+import AttackRollDamage from "./AttackRollDamage";
+import {Paper} from "@material-ui/core";
 
 class Fight extends Component {
 
@@ -25,17 +30,22 @@ class Fight extends Component {
     }
 
     render() {
-        const e = this.props.game.room.encounter;
-        if (e.id < 0)
-            return (<span>no encounter</span>);
+        const e = this.props.game.encounter;
+        if (e.id === 'none') return '';
         return (
-            <span>
-                {/*<Clear onClick={this.clear}/>*/}
-                <Attack id={1}/><br/>
-                <Attack id={2}/><br/>
-                <Attack id={3}/><br/>
-                <Attack id={4}/><br/>
-            </span>
+            <Paper elevation={5} className={'encounter'}>
+                <EncounterFightRound/>
+                <br/>
+                <AttackRollEncounterReaction/>
+                <p/>
+                <AttackRoll/>
+                <p/>
+                <AttackRollHitLocation/>
+                <p/>
+                <AttackRollDamage/>
+                <br/>
+                &nbsp;
+            </Paper>
         );
     }
 }

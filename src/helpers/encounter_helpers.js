@@ -14,6 +14,7 @@ import {update_character, update_dic, update_g_encounter, update_g_room, update_
 import {D6} from "helpers/dice_helpers"
 import update from "immutability-helper"
 import {v4 as uuidv4} from "uuid";
+import H from "./H";
 
 export function parse_d100_interval(d100, id) {
     const mm = d100_interval_min_max(d100);
@@ -63,7 +64,6 @@ export function new_encounter(id = 'none') {
     e["attack"] = new_attack();
     e["location"] = new_location();
     e["round"] = 1;
-    console.log('e', e);
     return e;
 }
 
@@ -106,6 +106,7 @@ export function new_location(id = 'none') {
         console.log('ERROR : cannot find id ', id);
         i = 0;
     }
+    console.log('location', table[i], i);
     return JSON.parse(JSON.stringify(table[i]));
 }
 
@@ -116,6 +117,54 @@ export function get_ability(name) {
     }
     return t[0];
 }
+
+export function compute_dmg(game) {
+    const e = game.encounter;
+    const c = game.characteristics;
+    const att = e.attack;
+    const l = e.location;
+    let total = '';
+    let txt = '';
+    // location
+    let dm = l.dmg_mod === 'none' ? 0 : l.dmg_mod;
+    if (isNaN(dm)) dm = 0;
+    // attack dice
+    if (att.dmg === 'none') return 0;
+    // encounter is attacking
+    if (att.who_attack === 'encounter') {
+        total = parseInt(att.dmg) + parseInt(dm) + parseInt(e.dmg) - parseInt(c.armour);
+        if (dm >= 0) dm = ' + ' + dm;
+        else dm = ' - ' + -dm;
+        let dgi;
+        if (e.dmg >= 0) dgi = ' + ' + e.dmg;
+        else dgi = ' - ' + -e.dmg;
+        txt = <span>
+            {att.dmg} <H>(dice) </H>&nbsp;
+            {dm} <H>(location) </H>&nbsp;
+            {dgi} <H>(dmg) </H>&nbsp;
+            - {c.armour} <H>(armour) </H>&nbsp;
+            = {total}
+        </span>
+    } else {
+        // player is attacking
+        const edef = e.def === 'none' ? 0 : e.def;
+        total = parseInt(att.dmg) + parseInt(dm) + parseInt(c.dmg_items) - parseInt(edef);
+        if (dm >= 0) dm = ' + ' + dm;
+        else dm = ' - ' + -dm;
+        let dgi;
+        if (c.dmg_items >= 0) dgi = ' + ' + c.dmg_items;
+        else dgi = ' - ' + -c.dmg_items;
+        txt = <span>
+            {att.dmg} <H>(dice) </H>&nbsp;
+            {dm} <H>(location) </H>&nbsp;
+            {dgi} <H>(dmg) </H>&nbsp;
+            - {edef} <H>(monster def) </H>&nbsp;
+            = {total}
+        </span>
+    }
+    return {total: total, txt: txt}
+}
+
 
 // OLD -------------------------------------------------------
 

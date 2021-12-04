@@ -95,7 +95,7 @@ class EncounterRoll extends Component {
                 Monster : &nbsp;
                 <L onClick={this.roll_encounter}>D100 &#127922;</L>
                 <InputFieldCharacter {...p} field_name={'encounter_modifier'} width={'5ch'}/>
-                <C width={'3ch'}/>
+                <C width={'4ch'}/>
                 <Select value={this.state.current}
                         disableUnderline={true}
                         defaultValue={'none'}

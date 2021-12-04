@@ -11,12 +11,7 @@ import {connect} from 'react-redux'
 import Encounter from 'components/Encounter'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import EncounterRoll from "components/EncounterRoll"
-import AttackRollEncounterReaction from "./AttackRollEncounterReaction";
-import AttackRoll from "./AttackRoll";
-import AttackRollHitLocation from "./AttackRollHitLocation";
-import AttackRollDamage from "./AttackRollDamage";
-import EncounterFightRound from "./EncounterFightRound";
-import {Paper} from "@material-ui/core";
+import Fight from "./Fight";
 
 
 class ScreenFight extends Component {
@@ -28,19 +23,7 @@ class ScreenFight extends Component {
                 <p/>
                 <Encounter/>
                 <p/>
-                <Paper elevation={5} className={'encounter'}>
-                    <EncounterFightRound/>
-                    <br/>
-                    <AttackRollEncounterReaction/>
-                    <p/>
-                    <AttackRoll/>
-                    <p/>
-                    <AttackRollHitLocation/>
-                    <p/>
-                    <AttackRollDamage/>
-                    <br/>
-                    &nbsp;
-                </Paper>
+                <Fight/>
             </div>
         );
     }

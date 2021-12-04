@@ -73,7 +73,7 @@ class AttackRollEncounter extends Component {
             <span>
                 {clear} Reaction &nbsp;
                 <L onClick={this.roll_reaction}>D6 &#127922;</L>
-                &nbsp; &nbsp;
+                &nbsp; ➜ &nbsp;
                 <Select value={r.d10/*this.state.current*/}
                         disableUnderline={true}
                         defaultValue={'none'}

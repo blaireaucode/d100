@@ -12,7 +12,7 @@ import L from 'helpers/L'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import {create_D6_rolling_dice, getRandomInt, open_dice_ui} from "../helpers/dice_helpers";
 import {update_g_encounter_field} from "../helpers/update_helpers";
-import {new_attack} from "../helpers/encounter_helpers";
+import {compute_dmg, new_attack} from "../helpers/encounter_helpers";
 import {clear_if_not_none} from "../helpers/ui_helpers";
 
 class AttackRollDamage extends Component {
@@ -50,21 +50,8 @@ class AttackRollDamage extends Component {
         let total = '';
         if (dmg === 'none') dmg = '';
         else {
-            // damage modifier from location
-            let dm = l.dmg_mod === 'none' ? 0 : parseInt(l.dmg_mod);
-            if (isNaN(dm)) dm = 0;
-            // encounter is attacking
-            if (att.who_attack === 'encounter') {
-                const cdef = parseInt(c.armour);
-                total = parseInt(dmg) + dm + parseInt(e.dmg) - cdef;
-                dmg = dmg + ' + ' + dm + ' (location) + ' + e.dmg + ' (monster dmg) - ' + cdef + ' (armour) = ' + total;
-            }
-            // player is attacking
-            else {
-                const edef = e.def === 'none' ? 0 : parseInt(e.def);
-                total = parseInt(dmg) + dm + parseInt(c.dmg) - edef;
-                dmg = dmg + ' + ' + dm + ' (location) + ' + c.dmg + ' (your dmg) - ' + edef + ' (monster def) = ' + total;
-            }
+            const r = compute_dmg(this.props.game);
+            dmg = r.txt
         }
         const clear = clear_if_not_none(this, att.dmg);
         return (

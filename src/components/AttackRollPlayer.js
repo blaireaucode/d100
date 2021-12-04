@@ -58,19 +58,28 @@ class AttackRollPlayer extends Component {
             att_type = 'dex';
         }
         // FIXME what when both D and R ?? keep max ?
-        txt2 = <span> Adjusted {att_type}: &nbsp;
-            <InputFieldCharacter type={'number'}
-                                 read_only={true}
-                                 field_name={att_type}
-                                 mod={c[att_type + '_items']}/>
+        txt2 = <span>
+                <span className={'help'}> Adjusted {att_type}: &nbsp;
+                    <InputFieldCharacter type={'number'}
+                                         read_only={true}
+                                         width={'4ch'}
+                                         field_name={att_type}
+                                         mod={c[att_type + '_items']}/>
+                    Dmg modifier: &nbsp;
+                    <InputFieldCharacter type={'number'}
+                                         read_only={true}
+                                         width={'4ch'}
+                                         field_name={'dmg_items'}/>
+                </span>
+
                 </span>
         let att = '';
         if (e.attack.d100 !== 'none') { // attack exist
             att = e.attack.d100;
             if (is_attack_hit(c, att_type, att))
                 txt = <span className={'attack_hit'}>Hit !</span>
-            else txt = <span className={'attack_miss'}>miss</span>
-
+            else txt = <span className={'attack_miss'}>missed</span>
+            txt = <span> ➜ &nbsp; {txt}</span>
         }
         // clear
         const clear = clear_if_not_none(this, e.attack.d100);

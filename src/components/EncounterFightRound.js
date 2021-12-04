@@ -38,8 +38,9 @@ class EncounterFightRound extends Component {
         return (
             <span>
                 <C width={'40ch'}/>
-                Round n° <InputFieldEncounter field_name={'round'} width={'3ch'} type={'number'}/>
-                <L onClick={this.next_round}> ⮕ </L>
+                Round n° <InputFieldEncounter field_name={'round'} width={'4ch'} type={'number'}/>
+                <L onClick={this.next_round}>+</L>
+
             </span>
         );
     }
