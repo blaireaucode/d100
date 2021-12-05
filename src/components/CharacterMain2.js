@@ -29,7 +29,7 @@ class CharacterMain extends Component {
                 <F>⇒&nbsp;</F>
                 <InputFieldCharacter {...p} field_name={'hp'}
                                      mod={c.hp_items} read_only={true}
-                                     align={'left'}  width={'4ch'}/>
+                                     align={'left'} width={'4ch'}/>
 
                 <C width={'4ch'}/>
                 <F>Rep</F> <InputFieldCharacter {...p} field_name={'rep'}/>

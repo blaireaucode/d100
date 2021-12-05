@@ -10,7 +10,11 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import L from 'helpers/L'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {apply_dmg, clear_attack, compute_dmg} from "../helpers/encounter_helpers";
+import {apply_dmg, compute_dmg, toggle_attack} from "../helpers/encounter_helpers";
+import C from "../helpers/C";
+import InputFieldCharacter from "./InputFieldCharacter";
+import F from "../helpers/F";
+import {update_g_encounter_field} from "../helpers/update_helpers";
 
 class AttackApplyDamage extends Component {
 
@@ -21,20 +25,49 @@ class AttackApplyDamage extends Component {
 
     apply_damage() {
         let g = apply_dmg(this.props.game);
-        g = clear_attack(g);
+        const a = toggle_attack(g);
+        g = update_g_encounter_field(g, 'attack', a);
         this.props.set_game(g);
     }
 
     render() {
+        const att = this.props.game.encounter.attack;
+        if (att.who_attack === 'encounter') return this.render_encounter_attacks();
+        return this.render_player_attacks();
+    }
+
+    render_encounter_attacks() {
+        const r = compute_dmg(this.props.game);
+        const c = this.props.game.characteristics;
+        const p = {width: '4ch', align: 'right', type: 'number'}
+        const total = r.total;
+        if (total <= 0) return '';
+        return (
+            <span>
+                <p/>
+                <C width={'29ch'}/>
+                <F>Current HP: </F>
+                <C width={'1ch'}/>
+                <InputFieldCharacter {...p} field_name={'hp'}
+                                     mod={c.hp_items} read_only={true}
+                                     align={'left'} width={'4ch'}/>
+                <L onClick={this.apply_damage}>-{r.total} ✔</L>
+            </span>
+        );
+    }
+
+    render_player_attacks() {
         const r = compute_dmg(this.props.game);
         const total = r.total;
         if (total <= 0) return '';
         return (
             <span>
-                <L onClick={this.apply_damage}>apply dmg</L>
+                <L onClick={this.apply_damage}>✔</L>
             </span>
         );
     }
+
+
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AttackApplyDamage)

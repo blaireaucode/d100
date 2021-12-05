@@ -24,7 +24,7 @@ class AttackPlayerInfoShield extends Component {
                 const p = {items: this.props.game.items, id: item.id, class_name: 'field_input_small'};
                 if (item.AS.includes('S'))
                     name = <span>
-                            <C width={'20ch'}>
+                            <C width={'25ch'}>
                                 {item.name}
                                 <InputFieldItem {...p} field_name={'AS'} width={'4ch'} align={'center'}/>
                             </C>

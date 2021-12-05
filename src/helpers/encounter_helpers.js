@@ -14,6 +14,7 @@ import * as up from "./update_helpers"
 import {
     update_character,
     update_dic,
+    update_g_characteristic,
     update_g_encounter,
     update_g_encounter_field,
     update_g_room,
@@ -99,7 +100,8 @@ export function new_attack(id = 'none', dmg = 'none', who = 'character') {
     return {
         d100: id,
         dmg: dmg,
-        who_attack: who
+        who_attack: who,
+        deflect: 0
     };
 }
 
@@ -146,15 +148,18 @@ export function compute_dmg(game) {
     if (att.who_attack === 'encounter') {
         let armour = 0;
         let item = get_item_at_hit_location(game);
-        if (item === 'none') armour = 0;
+        if (item === 'none' || item === '') armour = 0;
         else {
             if ('AS' in item) {
                 if (item.AS.includes('A')) armour = item.AS.substr(1);
+                if (armour === '') armour = 0;
             }
         }
-        if (armour === '') armour = 0;
         if (isNaN(armour)) armour = 0;
-        total = parseInt(att.dmg) + parseInt(dm) + parseInt(e.dmg) - parseInt(armour);
+        let deflect = 0;
+        if ('deflect' in att)
+            deflect = att.deflect
+        total = parseInt(att.dmg) + parseInt(dm) + parseInt(e.dmg) - parseInt(armour) - parseInt(deflect);
         total = Math.max(0, total);
         if (dm >= 0) dm = ' + ' + dm;
         else dm = ' - ' + -dm;
@@ -162,10 +167,11 @@ export function compute_dmg(game) {
         if (e.dmg >= 0) dgi = ' + ' + e.dmg;
         else dgi = ' - ' + -e.dmg;
         txt = <span>
-            {att.dmg} <H>(dice) </H>&nbsp;
-            {dm} <H>(location) </H>&nbsp;
-            {dgi} <H>(dmg) </H>&nbsp;
-            - {armour} <H>(armour) </H>&nbsp;
+            {att.dmg} <H>(dice) </H>
+            {dm} <H>(location) </H>
+            {dgi} <H>(att dmg mod) </H>
+            - {armour} <H>(def dmg mod) </H>
+            - {deflect} <H>(deflect) </H>
             = {total}
         </span>
     } else {
@@ -179,10 +185,10 @@ export function compute_dmg(game) {
         if (c.dmg_items >= 0) dgi = ' + ' + c.dmg_items;
         else dgi = ' - ' + -c.dmg_items;
         txt = <span>
-            {att.dmg} <H>(dice) </H>&nbsp;
-            {dm} <H>(location) </H>&nbsp;
-            {dgi} <H>(dmg) </H>&nbsp;
-            - {edef} <H>(monster def) </H>&nbsp;
+            {att.dmg} <H>(dice) </H>
+            {dm} <H>(location) </H>
+            {dgi} <H>(dmg) </H>
+            - {edef} <H>(monster def) </H>
             = {total}
         </span>
     }
@@ -190,6 +196,14 @@ export function compute_dmg(game) {
 }
 
 export function apply_dmg(game) {
+    const att = game.encounter.attack;
+    if (att.who_attack === 'encounter')
+        return apply_dmg_to_player(game);
+    else
+        return apply_dmg_to_encounter(game);
+}
+
+export function apply_dmg_to_encounter(game) {
     const r = compute_dmg(game);
     const e = game.encounter;
     const hps = e.hp.split('/');
@@ -203,13 +217,29 @@ export function apply_dmg(game) {
     return up.update_g_encounter_field(game, 'hp', nhps);
 }
 
-export function clear_attack(game) {
+export function apply_dmg_to_player(game) {
+    const r = compute_dmg(game);
+    const hp = game.characteristics.hp - r.total;
+    return update_g_characteristic(game, 'hp', hp);
+}
+
+export function toggle_attack(game) {
+    const att = game.encounter.attack;
+    const w = att.who_attack === 'encounter' ? 'character' : 'encounter';
+    return new_attack('none', 'none', w);
+}
+
+export function clear_g_attack(game) {
     const a = new_attack();
     const l = new_location();
     const r = new_reaction();
     let g = update_g_encounter_field(game, 'attack', a);
     g = update_g_encounter_field(g, 'location', l);
     return update_g_encounter_field(g, 'reaction', r);
+}
+
+export function update_attack_field(attack, fn, value) {
+    return update(attack, {[fn]: {$set: value}});
 }
 
 

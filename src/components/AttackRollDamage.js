@@ -62,7 +62,7 @@ class AttackRollDamage extends Component {
                 <L onClick={this.roll_damage}>🎲 D6</L>
                 <C width={'4ch'}/>
                 {dmg}
-                <C width={'5ch'}/>
+                <C width={'1ch'}/>
                 <AttackApplyDamage/>
             </span>
         );

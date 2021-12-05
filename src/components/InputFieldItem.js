@@ -27,23 +27,16 @@ class InputFieldItem extends Component {
     handleChange = ({target}) => {
         const fn = this.props.field_name;
         const v = target.value;
-        //const v = this.props.type === 'number' ? parseInt(target.value):target.value;
         const g = update_g_item(this.props.game, this.props.id, fn, v);
         this.props.set_game(g);
     };
 
     render() {
-        // input : props.characteristic props.field_name
         const items = this.props.items === false ? this.props.game.items : this.props.items;
         const fn = this.props.field_name;
         let value = '';
         let ro = this.props.read_only;
-        let ctype = this.props.type;
 
-        // class name (for style)
-        let align = this.props.align;
-        let cn = this.props.class_name;
-        //console.log('input field ', fn, ctype)
         if (this.props.id in items) {
             const item = items[this.props.id];
             if (fn in item) {
@@ -60,13 +53,13 @@ class InputFieldItem extends Component {
         if ((fn === 'd10') && (value > 10)) value = '';
 
         return (
-            <Input className={cn}
+            <Input className={this.props.class_name}
                    disableUnderline={true}
-                   type={ctype}
+                   type={this.props.type}
                    name={fn}
                    value={value}
                    style={{width: this.props.width}}
-                   inputProps={{style: {textAlign: align}}}
+                   inputProps={{style: {textAlign: this.props.align}}}
                    readOnly={ro}
                    onChange={this.handleChange}
             />

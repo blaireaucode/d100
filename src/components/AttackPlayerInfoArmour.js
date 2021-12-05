@@ -29,12 +29,12 @@ class AttackPlayerInfoArmour extends Component {
                 } else {
                     const p = {items: this.props.game.items, id: armour.id, class_name: 'field_input_small'};
                     item = <span>
-                            <C width={'20ch'}>{armour.name}</C>
-                            <InputFieldItem {...p} field_name={'AS'} width={'4ch'} align={'center'}/>
-                            <C width={'4ch'}/>
+                            <C width={'25ch'}>{armour.name}</C>
                             Damage:<C width={'1ch'}/>
                             <InputFieldItem {...p} field_name={'damaged'} type={'number'} width={'8ch'}
-                                            align={'left'}/>
+                                            align={'center'}/>
+                            <C width={'4ch'}/>
+                            <InputFieldItem {...p} field_name={'AS'} width={'4ch'} align={'left'}/>
                         </span>
                     aname = '';
                 }

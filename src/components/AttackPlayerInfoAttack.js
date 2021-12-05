@@ -20,7 +20,7 @@ class AttackPlayerInfoAttack extends Component {
         const c = this.props.game.characteristics;
         const weapon = get_item_at_slot(this.props.game, 5); // 5 = Hands
         let att_type = 'str';
-        if (weapon === 'none') return 'no weapon, flee!';
+        if (weapon === 'none') return <span>no weapon, flee!<br/></span>;
         if (weapon.type.includes('R')) { // Hand Weapons (H)
             att_type = 'dex';
         }
@@ -29,7 +29,7 @@ class AttackPlayerInfoAttack extends Component {
             <span>
                 <C width={'16ch'}>Current weapon</C>
                 <C className={'help'} width={'66ch'}>
-                    <C width={'20ch'}>{weapon.name}</C>
+                    <C width={'25ch'}>{weapon.name}</C>
                     <C width={'20ch'}>Adjusted {att_type}:
                     <InputFieldCharacter type={'number'}
                                          read_only={true}

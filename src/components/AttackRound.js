@@ -12,7 +12,7 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import InputFieldEncounter from "./InputFieldEncounter";
 import C from "../helpers/C";
 import L from "../helpers/L";
-import {clear_attack} from "../helpers/encounter_helpers";
+import {clear_g_attack} from "../helpers/encounter_helpers";
 import {update_g_encounter_field} from "../helpers/update_helpers";
 import Clear from "./Clear";
 
@@ -25,7 +25,7 @@ class AttackRound extends Component {
     }
 
     clear() {
-        let g = clear_attack(this.props.game);
+        let g = clear_g_attack(this.props.game);
         this.props.set_game(g);
         return g;
     }
