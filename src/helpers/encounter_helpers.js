@@ -96,7 +96,11 @@ export function new_reaction(id = 'none') {
 }
 
 export function new_attack(id = 'none', dmg = 'none', who = 'character') {
-    return {d100: id, dmg: dmg, who_attack: who};
+    return {
+        d100: id,
+        dmg: dmg,
+        who_attack: who
+    };
 }
 
 export function new_location(id = 'none') {

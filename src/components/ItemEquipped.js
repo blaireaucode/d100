@@ -65,7 +65,7 @@ class ItemEquipped extends Component {
                 <InputFieldItem {...p} field_name={'AS'} align={'center'}/>
                 <InputFieldItem {...p} field_name={'gp'} type={'number'} width={'5rem'} align={'center'}/>
                 <InputFieldItem {...p} field_name={'fix_cost'} type={'number'} width={'5rem'} align={'center'}/>
-                <InputFieldItem {...p} field_name={'damaged'} width={'5rem'}/>
+                <InputFieldItem {...p} field_name={'damaged'} width={'5rem'} type={'number'} align={'center'}/>
                 &nbsp;
                 {remove}
             < /span>
@@ -106,7 +106,7 @@ class ItemEquipped extends Component {
                 <InputFieldHeader {...pn} value={'AS'}/>
                 <InputFieldHeader {...p} value={'GP💰'} width={'5rem'} align={'center'}/>
                 <InputFieldHeader {...p} value={'Fix💰'} width={'5rem'} align={'center'}/>
-                <InputFieldHeader {...p} value={'damaged'}/>
+                <InputFieldHeader {...p} value={'🛠'}/>
             </span>
         );
     }

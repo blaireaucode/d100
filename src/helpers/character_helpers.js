@@ -13,10 +13,12 @@ import default_game from "./default_game";
 import {new_encounter} from "./encounter_helpers";
 import {new_equipped_items} from "./equipment_helpers";
 import table_r_race from "../tables/table_r_race.json";
+import {new_room} from "./room_helpers";
 
 export function create_new_game() {
     let new_game = JSON.parse(JSON.stringify(default_game))
     new_game.encounter = new_encounter('none');
+    new_game.room = new_room('none');
     new_game.equipped_items = new_equipped_items();
     new_game.id = uuidv4();
     new_game = update(new_game, {date: {$set: new Date()}});

@@ -30,6 +30,7 @@ class RoomInfo extends Component {
 
     render() {
         const r = this.props.game.room;
+        console.log('room', r)
         if (r.d100 === 'none') return '';
         const cn = 'room_color_' + r.color;
         let t = '';

@@ -32,7 +32,7 @@ export function get_item_in_table(table, id, copy = true) {
         let item = JSON.parse(JSON.stringify(table[i]));
         item["id"] = uuidv4();
         item["current_location"] = 'backpack';
-        item["damaged"] = '- - - - - - - ';
+        item["damaged"] = 0;
         for (const k in default_item) {
             if (k in item) continue;
             item[k] = '';

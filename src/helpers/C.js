@@ -10,12 +10,11 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 
-
 class C extends Component {
 
     static defaultProps = {
         width: '20ch',
-        className:''
+        className: ''
     }
 
     render() {

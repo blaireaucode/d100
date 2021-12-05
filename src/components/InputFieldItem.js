@@ -15,7 +15,7 @@ import {update_g_item} from "../helpers/equipment_helpers";
 class InputFieldItem extends Component {
 
     static defaultProps = {
-        type: "txt",
+        type: "text",
         width: 80,
         id: 'header',
         class_name: 'field_input',
@@ -27,6 +27,7 @@ class InputFieldItem extends Component {
     handleChange = ({target}) => {
         const fn = this.props.field_name;
         const v = target.value;
+        //const v = this.props.type === 'number' ? parseInt(target.value):target.value;
         const g = update_g_item(this.props.game, this.props.id, fn, v);
         this.props.set_game(g);
     };
@@ -35,16 +36,15 @@ class InputFieldItem extends Component {
         // input : props.characteristic props.field_name
         const items = this.props.items === false ? this.props.game.items : this.props.items;
         const fn = this.props.field_name;
-        let value;
+        let value = '';
         let ro = this.props.read_only;
         let ctype = this.props.type;
 
         // class name (for style)
         let align = this.props.align;
         let cn = this.props.class_name;
-
+        //console.log('input field ', fn, ctype)
         if (this.props.id in items) {
-
             const item = items[this.props.id];
             if (fn in item) {
                 value = item[fn];
@@ -54,12 +54,8 @@ class InputFieldItem extends Component {
                     else if (value === 2) value = '||';
                     else value = '';
                 }
-            } else { // field does not exist
-                value = ' ';
             }
         }
-        else value= ''
-
         // special case for the first column in 'equipped items'
         if ((fn === 'd10') && (value > 10)) value = '';
 

@@ -14,12 +14,10 @@ import InputFieldCharacter from "./InputFieldCharacter";
 import {get_item_at_slot} from "../helpers/equipment_helpers";
 import CollapsibleHelp from "./CollapsibleHelp";
 
-class AttackRollPlayer extends Component {
+class AttackPlayerInfoAttack extends Component {
 
     render() {
-        const e = this.props.game.encounter;
         const c = this.props.game.characteristics;
-        let txt = '';
         const weapon = get_item_at_slot(this.props.game, 5); // 5 = Hands
         let att_type = 'str';
         if (weapon === 'none') return 'no weapon, flee!';
@@ -29,27 +27,27 @@ class AttackRollPlayer extends Component {
         // FIXME what when both D and R ?? keep max ?
         return (
             <span>
-                Current weapon: <C width={'1ch'}/>
-                <span className={'help'}>
-                    {weapon.name}
-                    <C width={'4ch'}/>
-                    Adjusted {att_type}: &nbsp;
+                <C width={'16ch'}>Current weapon</C>
+                <C className={'help'} width={'66ch'}>
+                    <C width={'20ch'}>{weapon.name}</C>
+                    <C width={'20ch'}>Adjusted {att_type}:
                     <InputFieldCharacter type={'number'}
                                          read_only={true}
-                                         width={'6ch'}
+                                         width={'5ch'}
+                                         align={'center'}
                                          class_name={'field_input_small'}
                                          field_name={att_type}
                                          mod={c[att_type + '_items']}/>
-                    Dmg modifier: &nbsp;
+                    </C>
+                    <C width={'20ch'}>Dmg modifier:
                     <InputFieldCharacter type={'number'}
                                          read_only={true}
                                          class_name={'field_input_small'}
-                                         width={'6ch'}
+                                         width={'5ch'}
+                                         align={'right'}
                                          field_name={'dmg_items'}/>
-                </span>
-                <C width={'1ch'}/>
-                {txt}
-                <C width={'1ch'}/>
+                    </C>
+                </C>
                 <CollapsibleHelp text={'(?)'}>
                     To attack a monster, the player rolls 1d100 and must score equal to, or below the adventurer’s adjusted Str, or Dex value; which is used depends on the weapon being used. Hand Weapons (H) use Str, whilst Ranged Weapons (R) use Dex to hit the monster. If the character has two weapons equipped, either may be used to attack, but not both. If the result scores a hit go to step 4, otherwise go to step 5.
                 </CollapsibleHelp>
@@ -58,4 +56,4 @@ class AttackRollPlayer extends Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AttackRollPlayer)
+export default connect(mapStateToProps, mapDispatchToProps)(AttackPlayerInfoAttack)

@@ -59,7 +59,7 @@ class AttackRollPlayer extends Component {
         if (e.attack.d100 !== 'none') { // attack exist
             att = e.attack.d100;
             if (is_attack_hit(c, att_type, att))
-                txt = <span className={'attack_hit'}>💥 Hit !</span>
+                txt = <span className={'attack_hit'}>Hit 💥 </span>
             else txt = <span className={'attack_miss'}>missed</span>
             txt = <span> ➜ &nbsp; {txt}</span>
         }
@@ -67,9 +67,13 @@ class AttackRollPlayer extends Component {
         const clear = clear_if_not_none(this, e.attack.d100);
         return (
             <span>
-                {clear}<AttackToggle/> <C width={'1ch'}/>
-                Attacks &nbsp; <L onClick={this.roll_attack}>D100 &#127922;</L>
-                <C width={'1ch'}/>
+                <C width={'20ch'}>
+                    {clear}
+                    Attacks &nbsp;
+                    <AttackToggle/>
+                </C>
+                <L onClick={this.roll_attack}>🎲 D100</L>
+                <C width={'2ch'}/>
                 {att}
                 <C width={'1ch'}/>
                 {txt}

@@ -16,6 +16,7 @@ import * as up from "../helpers/update_helpers";
 import reaction_table from 'tables/table_monster_reaction.json'
 import {MenuItem, Select} from "@material-ui/core";
 import {clear_if_not_none} from "../helpers/ui_helpers";
+import C from "../helpers/C";
 
 class AttackRollEncounter extends Component {
 
@@ -71,9 +72,12 @@ class AttackRollEncounter extends Component {
         const clear = clear_if_not_none(this, r.d10);
         return (
             <span>
-                {clear} Reaction &nbsp;
-                <L onClick={this.roll_reaction}>D6 &#127922;</L>
-                &nbsp; ➜ &nbsp;
+                <C width={'20ch'}>
+                    {clear}
+                    Reaction
+                </C>
+                <L onClick={this.roll_reaction}>🎲 D6</L>
+                <C width={'4ch'}/>
                 <Select value={r.d10/*this.state.current*/}
                         disableUnderline={true}
                         defaultValue={'none'}

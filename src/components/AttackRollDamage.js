@@ -55,8 +55,12 @@ class AttackRollDamage extends Component {
         const clear = clear_if_not_none(this, att.dmg);
         return (
             <span>
-                {clear} Damage <L onClick={this.roll_damage}>D6 🎲</L>
-                <C width={'3ch'}/>
+                <C width={'20ch'}>
+                    {clear}
+                    Damage
+                </C>
+                <L onClick={this.roll_damage}>🎲 D6</L>
+                <C width={'4ch'}/>
                 {dmg}
                 <C width={'5ch'}/>
                 <AttackApplyDamage/>

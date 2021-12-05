@@ -29,6 +29,9 @@ export function new_room(id = 'none') {
     let e = JSON.parse(JSON.stringify(rooms_table[i]));
     if (id === "none") {
         e["id"] = "none";
+        e["doors_direction"] = [];
+        e["rotation"] = 0;
+        e["src"] = '';
     } else {
         e["id"] = uuidv4();
         e["rotation"] = 0;

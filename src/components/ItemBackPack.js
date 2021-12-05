@@ -45,14 +45,12 @@ class ItemBackPack extends Component {
         const p = {class_name: 'input field_input_small', id: item.id};
         let icon = '➹';//'➹';
         if ('slot' in item) {
-            let i = 0;
             for (const l of this.props.game.equipped_items) {
                 if (item.slot === l.location) {
-                    if (l.item_id !=='none')
+                    if (l.item_id !== 'none')
                         icon = '↺'
                     break;
                 }
-                i++;
             }
             //console.log('i', i, this.props.game.equipped_items[i])
         }
@@ -60,6 +58,7 @@ class ItemBackPack extends Component {
             if (item.hands === 2) icon = '👐';
             if (item.hands === 1) icon = <span style={{fontSize: '0.7rem'}}>✋</span>;
         }
+        //console.log('item', item)
         return (
             <span className={'item_row'}>
                 <Clear onClick={this.remove_item}/>
@@ -79,7 +78,8 @@ class ItemBackPack extends Component {
                 <InputFieldItem {...p} field_name={'gp'} width={'4rem'} type={'number'} align={'center'}/>
                 <InputFieldItem {...p} field_name={'fix_cost'} width={'4rem'} type={'number'} align={'center'}/>
                 <InputFieldItem {...p} field_name={'number'} width={'4rem'} type={'number'} align={'right'}/>
-                <InputFieldItem {...p} field_name={'name'} width={250}/>
+                <InputFieldItem {...p} field_name={'damaged'} width={'3rem'} type={'number'} align={'center'}/>
+                <InputFieldItem {...p} field_name={'name'} width={220}/>
                 &nbsp;
                 <L onClick={this.equip_item}>{icon}</L>
             < /span>
@@ -105,6 +105,7 @@ class ItemBackPack extends Component {
                 <InputFieldHeader {...p} value={'GP💰'} width={'4rem'} align={'center'}/>
                 <InputFieldHeader {...p} value={'Fix💰'} width={'4rem'} align={'center'}/>
                 <InputFieldHeader {...p} value={'#'} width={'4rem'} align={'center'}/>
+                <InputFieldHeader {...p} value={'🛠'} width={'3rem'} align={'left'}/>
                 <InputFieldHeader {...p} value={'Name'} align={'left'}/>
             < /span>
         );

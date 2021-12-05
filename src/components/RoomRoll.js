@@ -92,7 +92,7 @@ class RoomRoll extends Component {
         return (
             <span>
                 Area : &nbsp;
-                <L onClick={this.roll_room}>D100 &#127922;</L>
+                <L onClick={this.roll_room}>🎲 D100</L>
                 &nbsp; &nbsp;
                 <Select value={this.state.current}
                         disableUnderline={true}

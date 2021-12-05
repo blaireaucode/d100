@@ -574,7 +574,7 @@
   },
   {
     "d100": 60,
-    "color": "yellow",
+    "color": "red",
     "exits": [
       "S",
       "W",

@@ -93,7 +93,7 @@ class EncounterRoll extends Component {
         return (
             <span>
                 Monster : &nbsp;
-                <L onClick={this.roll_encounter}>D100 &#127922;</L>
+                <L onClick={this.roll_encounter}>🎲 D100</L>
                 <InputFieldCharacter {...p} field_name={'encounter_modifier'} width={'5ch'}/>
                 <C width={'4ch'}/>
                 <Select value={this.state.current}

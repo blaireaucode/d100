@@ -17,7 +17,9 @@ import AttackRollHitLocation from "./AttackRollHitLocation";
 import AttackRollDamage from "./AttackRollDamage";
 import {Paper} from "@material-ui/core";
 import AttackPlayerInfoAttack from "./AttackPlayerInfoAttack";
-import AttackPlayerInfoDefend from "./AttackPlayerInfoDefend";
+import AttackPlayerInfoArmour from "./AttackPlayerInfoArmour";
+import AttackDefendDamage from "./AttackDefendDamage";
+import AttackPlayerInfoShield from "./AttackPlayerInfoShield";
 
 class Fight extends Component {
 
@@ -39,7 +41,8 @@ class Fight extends Component {
                 <EncounterFightRound/>
                 <hr color={'#333'} size={1}/>
                 <AttackPlayerInfoAttack/>
-                <AttackPlayerInfoDefend/>
+                <AttackPlayerInfoShield/>
+                <AttackPlayerInfoArmour/>
                 <hr color={'#333'} size={1}/>
                 <p/>
                 <AttackRollEncounterReaction/>
@@ -48,7 +51,10 @@ class Fight extends Component {
                 <p/>
                 <AttackRollHitLocation/>
                 <p/>
-                <AttackRollDamage/><br/>&nbsp;
+                <AttackRollDamage/>
+                <p/>
+                <AttackDefendDamage/>
+                <br/>&nbsp;
             </Paper>
         );
     }

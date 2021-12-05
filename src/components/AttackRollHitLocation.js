@@ -17,6 +17,7 @@ import {MenuItem, Select} from "@material-ui/core";
 import {new_location} from "../helpers/encounter_helpers";
 import {clear_if_not_none} from "../helpers/ui_helpers";
 import H from "../helpers/H";
+import C from "../helpers/C";
 
 class AttackRollHitLocation extends Component {
 
@@ -85,9 +86,12 @@ class AttackRollHitLocation extends Component {
         const dmg = l.d10 === 'none' ? '' : <H>Damage modifier: {l.dmg_mod}</H>
         return (
             <span>
-                {clear} Hit Location &nbsp;
-                <L onClick={this.roll_location}>D6 &#127922;</L>
-                &nbsp;  ➜  &nbsp;
+                <C width={'20ch'}>
+                    {clear}
+                    Hit Location
+                </C>
+                <L onClick={this.roll_location}>🎲 D6</L>
+                <C width={'4ch'}/>
                 <Select value={l.d10}
                         disableUnderline={true}
                         defaultValue={'none'}

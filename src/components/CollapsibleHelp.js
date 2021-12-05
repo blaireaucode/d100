@@ -34,11 +34,11 @@ class CollapsibleHelp extends Component {
             <span>
                 <L onClick={this.toggle}>{this.props.text}</L>
                     <Collapse isOpen={this.state.open}>
-                    <span className={'help collapse-css-transition'}>
+                        <span className={'help collapse-css-transition'}>
                         {this.props.children}
-                    </span>
-                </Collapse>
-                </span>
+                        </span>
+                    </Collapse>
+            </span>
         );
     }
 }
