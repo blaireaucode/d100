@@ -33,7 +33,6 @@ class ItemsEquipped extends Component {
         const pn = {width: w, align: 'center'};
         return (
             <Paper elevation={5} className={'character_panel'}>
-                {/*{c.str_items} {c.dex_items} {c.int_items} {c.hp_items} {c.dmg_items}*/}
                 {items}
                 <InputFieldHeader {...p} width={'3rem'}/>
                 <InputFieldHeader {...p} width={'3rem'}/>

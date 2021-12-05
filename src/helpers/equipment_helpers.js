@@ -163,6 +163,7 @@ export function update_g_equip_total(game) {
     game = update_g_equip_total_fn(game, 'int');
     game = update_g_equip_total_fn(game, 'hp');
     game = update_g_equip_total_fn(game, 'dmg');
+    game = update_g_equip_total_fn(game, 'def');
     return game;
 }
 

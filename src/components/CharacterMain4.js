@@ -11,15 +11,18 @@ import {connect} from 'react-redux'
 import InputFieldCharacter from "components/InputFieldCharacter"
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import F from 'helpers/F'
+import C from "../helpers/C";
 
 class CharacterMain extends Component {
 
     render() {
         return (
             <span>
-                <F>Dmg from equipment&nbsp;&nbsp;</F>
+                From equipment: <C width={'6ch'}/>
+                <F>Additional damage <C width={'2ch'}/></F>
                 <InputFieldCharacter type={'number'} field_name={'dmg_items'} read_only={true} align={'left'}/>
-                <F>Armour (LATER) &nbsp;&nbsp; </F> <InputFieldCharacter type={'number'} field_name={'armour'}/>
+                <F>Defence <C width={'2ch'}/></F>
+                <InputFieldCharacter type={'number'} field_name={'def_items'} read_only={true} />
             </span>);
     }
 }

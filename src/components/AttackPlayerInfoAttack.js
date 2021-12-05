@@ -40,7 +40,7 @@ class AttackRollPlayer extends Component {
                                          class_name={'field_input_small'}
                                          field_name={att_type}
                                          mod={c[att_type + '_items']}/>
-                    &nbsp; Dmg modifier: &nbsp;
+                    Dmg modifier: &nbsp;
                     <InputFieldCharacter type={'number'}
                                          read_only={true}
                                          class_name={'field_input_small'}

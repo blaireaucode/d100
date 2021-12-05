@@ -1,7 +1,17 @@
 
+
+:root {
+    --bg:   #282c34;    /* background */
+    --fg:   #eee;       /* foreground */
+    --fgh:  #aaa;       /* foreground header */
+    --fgl:  #18b26f;    /* link */
+    --fglh: #0de587;    /* link hover */
+    --fge:  #2982d2;    /* edit */
+}
+
 .App {
     text-align: left;
-    background-color: #282c34;
+    background-color: var(--bg);
     /* background-color: #141517!important; */
     display: flex;
     flex-direction: column;
@@ -30,11 +40,38 @@
     /* color: #3e84f2!important; */
     color: #2982d2 !important;
     padding: 0 !important;
-    background-color: rgba(29, 29, 33, 0.47);
-    max-height: 25px;
+    /*background-color: rgba(29, 29, 33, 0.47);*/
+    /*max-height: 25px;*/
+    max-height: 2ch;
     /* text-align:left; */
     font-size: 0.85rem !important;
     /*font-size: calc(5px + 0.7vmin) !important;*/
+}
+
+.field_input_small_header {
+    /* color: #18b26f!important; */
+    /* color: #3e84f2!important; */
+    /*color: #2982d2 !important;*/
+    color: #aaa !important;
+    padding: 0 !important;
+    /*background-color: rgba(29, 29, 33, 0.47);*/
+    /*max-height: 25px;*/
+    max-height: 2ch;
+    /* text-align:left; */
+    font-size: 0.85rem !important;
+    /*font-size: calc(5px + 0.7vmin) !important;*/
+}
+
+.field_input_small:hover {
+    background-color: #131315;
+}
+
+.item_row {
+
+}
+
+.item_row:hover {
+    background-color: #131315;
 }
 
 .field_input_small_select {
@@ -84,6 +121,7 @@
     max-width: 800px;
     background-color: #1a1b1e !important;
     background-color: #222326 !important;
+    /*background-color: #24282f !important;*/
 }
 
 .App a:link {
@@ -149,7 +187,9 @@
 }
 
 .clear {
-    color: #000000 !important;
+    /*color: #000000 !important;*/
+    /*background-color: #24282f !important;
+    background-color: #222326 !important;*/
 }
 
 .OLD_character {
@@ -167,6 +207,7 @@
     display: block;
     overflow-x: auto;
     background-color: #24282f !important;
+    background-color: #222326 !important;
     max-width: 1100px;
 }
 
@@ -176,7 +217,7 @@
 
 .table_cell {
     word-wrap: break-word;
-    background-color: #282c34;
+    background-color: var(--bg);
     border-bottom: #777777;
     border-bottom-style: solid;
     border-bottom-width: 1px;
