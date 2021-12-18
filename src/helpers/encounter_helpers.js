@@ -74,6 +74,7 @@ export function new_encounter(id = 'none') {
     e["attack"] = new_attack();
     e["location"] = new_location();
     e["round"] = 1;
+    e["initial_hp"] = e["hp"];
     return e;
 }
 
@@ -205,13 +206,35 @@ export function apply_dmg(game) {
 
 export function apply_dmg_to_encounter(game) {
     const r = compute_dmg(game);
+    let total = r.total;
+    return apply_n_dmg_to_encounter(game, total);
+}
+
+export function apply_n_dmg_to_encounter(game, n) {
     const e = game.encounter;
     const hps = e.hp.split('/');
-    let total = r.total;
     let nhps = [];
     for (const hp of hps) {
-        nhps.push(Math.max(0, parseInt(hp) - total));
-        total = Math.max(0, total - parseInt(hp));
+        nhps.push(Math.max(0, parseInt(hp) - n));
+        n = Math.max(0, n - parseInt(hp));
+    }
+    nhps = nhps.join('/');
+    return up.update_g_encounter_field(game, 'hp', nhps);
+}
+
+export function apply_n_dmg_to_encounter_index(game, n, index) {
+    const e = game.encounter;
+    const hps = e.hp.split('/');
+    let nhps = [];
+    let i = 0;
+    for (const hp of hps) {
+        if (index === i) {
+            nhps.push(Math.max(0, parseInt(hp) - n));
+            n = Math.max(0, n - parseInt(hp));
+        } else {
+            nhps.push(hp);
+        }
+        i++;
     }
     nhps = nhps.join('/');
     return up.update_g_encounter_field(game, 'hp', nhps);

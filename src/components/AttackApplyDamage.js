@@ -10,7 +10,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import L from 'helpers/L'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {apply_dmg, compute_dmg, toggle_attack} from "../helpers/encounter_helpers";
+import {apply_dmg, compute_dmg, new_location, toggle_attack} from "../helpers/encounter_helpers";
 import C from "../helpers/C";
 import InputFieldCharacter from "./InputFieldCharacter";
 import F from "../helpers/F";
@@ -26,7 +26,12 @@ class AttackApplyDamage extends Component {
     apply_damage() {
         let g = apply_dmg(this.props.game);
         const a = toggle_attack(g);
+        const l = new_location();
         g = update_g_encounter_field(g, 'attack', a);
+        g = update_g_encounter_field(g, 'location', l);
+        // next round ? no
+        //const round = parseInt(g.encounter.round) + 1;
+        //g = update_g_encounter_field(g, 'round', round);
         this.props.set_game(g);
     }
 
@@ -51,7 +56,7 @@ class AttackApplyDamage extends Component {
                 <InputFieldCharacter {...p} field_name={'hp'}
                                      mod={c.hp_items} read_only={true}
                                      align={'left'} width={'4ch'}/>
-                <L onClick={this.apply_damage}>-{r.total} ✔</L>
+                <L onClick={this.apply_damage}> -{r.total} ✔  (apply this damage)</L>
             </span>
         );
     }

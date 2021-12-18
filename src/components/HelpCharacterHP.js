@@ -24,6 +24,7 @@ class CharacterHeroPathHelp extends Component {
         g = up.update_g_characteristic(g, 'rep', 1);
         g = up.update_g_characteristic(g, 'fate', 3);
         g = up.update_g_characteristic(g, 'life', 3);
+        g = up.update_g_characteristic(g, 'encounter_modifier', -40);
         this.props.set_game(g);
     }
 

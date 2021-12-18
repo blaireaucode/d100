@@ -23,13 +23,13 @@ import AttackPlayerInfoShield from "./AttackPlayerInfoShield";
 
 class Fight extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.clear = this.clear.bind(this);
     }
 
     clear() {
-        const g = clear_action(this.props.game)
+        const g = clear_action(this.props.game);
         this.props.set_game(g);
     }
 

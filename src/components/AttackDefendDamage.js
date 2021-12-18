@@ -23,14 +23,15 @@ class AttackDefendDamage extends Component {
         const att = this.props.game.encounter.attack;
         if ('deflect' in att)
             if (att.deflect > 0) {
-                this.toggle();
                 this.state = {checked: true}
             }
         this.toggle = this.toggle.bind(this);
     }
 
     toggle() {
-        const c = !this.state.checked;
+        const e = this.props.game.encounter;
+        const att = e.attack;
+        const c = !att.deflect > 0;
         this.setState({checked: c});
         let item = get_item_at_slot(this.props.game, 6);
         const value = parseInt(item.AS.substr(1));
@@ -48,7 +49,6 @@ class AttackDefendDamage extends Component {
         if (att.dmg === 'none') return '';
         if (att.who_attack === 'character') return '';
         let item = get_item_at_slot(this.props.game, 6); // Off hand
-        console.log('item', item);
 
         if (item !== 'none') {
             if ('AS' in item) {
@@ -66,6 +66,7 @@ class AttackDefendDamage extends Component {
                                 />
                                 pip = {item.damaged}
                            </span>
+
                 }
             }
         }

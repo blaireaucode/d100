@@ -21,8 +21,8 @@ const default_game = {
 
     characteristics: {
         name: 'your name',
-        hero_path: 'hero path',
-        race: 'race',
+        hero_path: 'Warrior',
+        race: 'Human',
         hp: 20,
         hp_items: 0,
         rep: 1,
