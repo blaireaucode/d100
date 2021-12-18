@@ -12,6 +12,7 @@ import locations_table from 'tables/table_hit_location.json'
 import ability_table from 'tables/table_encounter_ability.json'
 import * as up from "./update_helpers"
 import {
+    get_table_element,
     update_character,
     update_dic,
     update_g_characteristic,
@@ -35,7 +36,8 @@ export function parse_d100_interval(d100, id) {
 }
 
 export function d100_interval_min_max(d100) {
-    if (d100 === 'none') return ['none', 'none'];
+    d100 = d100.toString();
+    if (d100 === 'none') return [0, 0];
     let min;
     let max;
     const index = d100.indexOf('-');
@@ -50,22 +52,7 @@ export function d100_interval_min_max(d100) {
 }
 
 export function new_encounter(id = 'none') {
-    const table = encounters_table;
-    // get the encounter
-    let found = false;
-    let i;
-    for (i in table) {
-        const d100 = table[i].d100;
-        if (d100 === id || parse_d100_interval(d100, id)) {
-            found = true;
-            break;
-        }
-    }
-    if (!found) {
-        console.log('ERROR : cannot find id ', id);
-        i = 1;
-    }
-    let e = JSON.parse(JSON.stringify(table[i]));
+    const e = get_table_element(encounters_table, id);
     if (id !== "none") e["id"] = uuidv4();
     else e["id"] = id;
     e["dmin"] = d100_interval_min_max(e.d100)[0];
@@ -79,22 +66,7 @@ export function new_encounter(id = 'none') {
 }
 
 export function new_reaction(id = 'none') {
-    const table = reactions_table;
-    // get the reaction
-    let found = false;
-    let i;
-    for (i in table) {
-        const d10 = table[i].d10;
-        if (id === d10) {
-            found = true;
-            break;
-        }
-    }
-    if (!found) {
-        console.log('ERROR : cannot find id ', id);
-        i = 1;
-    }
-    return JSON.parse(JSON.stringify(table[i]));
+    return get_table_element(reactions_table, id);
 }
 
 export function new_attack(id = 'none', dmg = 'none', who = 'character') {
@@ -107,22 +79,7 @@ export function new_attack(id = 'none', dmg = 'none', who = 'character') {
 }
 
 export function new_location(id = 'none') {
-    const table = locations_table;
-    // get the reaction
-    let found = false;
-    let i;
-    for (i in table) {
-        const d10 = table[i].d10;
-        if (id.toString() === d10.toString()) {
-            found = true;
-            break;
-        }
-    }
-    if (!found) {
-        console.log('ERROR : cannot find id ', id);
-        i = 0;
-    }
-    return JSON.parse(JSON.stringify(table[i]));
+    return get_table_element(locations_table, id);
 }
 
 export function get_ability(name) {

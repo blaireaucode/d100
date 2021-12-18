@@ -33,14 +33,14 @@ class AttackRollHitLocation extends Component {
         for (let i in table) {
             const e = table[i];
             let txt;
-            if (e.d10 === 'none') txt = 'none';
-            else txt = <span>{e.d10} {e.location} ({e.dmg_mod})</span>
-            const op = <MenuItem key={e.d10} value={e.d10}
+            if (e.d100 === 'none') txt = 'none';
+            else txt = <span>{e.d100} {e.location} ({e.dmg_mod})</span>
+            const op = <MenuItem key={e.d100} value={e.d100}
                                  className={'field_input_small_select'}>
                 {txt} </MenuItem>;
             this.options.push(op);
         }
-        const id = this.props.game.encounter.location.d10;
+        const id = this.props.game.encounter.location.d100;
         this.state = {current: id};
     }
 
@@ -48,14 +48,14 @@ class AttackRollHitLocation extends Component {
         const l = new_location();
         const g = up.update_g_encounter_field(this.props.game, 'location', l);
         this.props.set_game(g);
-        this.setState({current: l.d10});
+        this.setState({current: l.d100});
     }
 
     set_location(e) {
         let i;
         for (i in location_table) {
             const enc = location_table[i];
-            const id = enc.d10
+            const id = enc.d100
             if (id.toString() === e.target.value.toString()) {
                 const l = new_location(id);
                 const g = up.update_g_encounter_field(this.props.game, 'location', l);
@@ -82,8 +82,8 @@ class AttackRollHitLocation extends Component {
 
     render() {
         const l = this.props.game.encounter.location;
-        const clear = clear_if_not_none(this, l.d10);
-        const dmg = l.d10 === 'none' ? '' : <H>Damage modifier: {l.dmg_mod}</H>
+        const clear = clear_if_not_none(this, l.d100);
+        const dmg = l.d100 === 'none' ? '' : <H>Damage modifier: {l.dmg_mod}</H>
         return (
             <span>
                 <C width={'20ch'}>
@@ -92,7 +92,7 @@ class AttackRollHitLocation extends Component {
                 </C>
                 <L onClick={this.roll_location}>🎲 D6</L>
                 <C width={'4ch'}/>
-                <Select value={l.d10}
+                <Select value={l.d100}
                         disableUnderline={true}
                         defaultValue={'none'}
                         onChange={this.set_location}

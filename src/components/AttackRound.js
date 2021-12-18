@@ -9,12 +9,12 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import InputFieldEncounter from "./InputFieldEncounter";
-import C from "../helpers/C";
-import L from "../helpers/L";
-import {clear_g_attack} from "../helpers/encounter_helpers";
-import {update_g_encounter_field} from "../helpers/update_helpers";
-import Clear from "./Clear";
+import InputFieldEncounter from "./InputFieldEncounter"
+import C from "../helpers/C"
+import L from "../helpers/L"
+import {clear_g_attack} from "../helpers/encounter_helpers"
+import {update_g_encounter_field} from "../helpers/update_helpers"
+import Clear from "./Clear"
 
 class AttackRound extends Component {
 

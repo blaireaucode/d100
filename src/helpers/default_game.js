@@ -52,7 +52,8 @@ const default_game = {
     equipped_items: {},
     skills: {},
     room: {}, // new_room('none')
-    encounter: {} // new_encounter('none')
+    encounter: {}, // new_encounter('none')
+    quest: {} // new_quest('none')
 }
 
 export default default_game

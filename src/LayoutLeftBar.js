@@ -14,16 +14,13 @@ import Hidden from '@material-ui/core/Hidden'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
-import IconButton from '@material-ui/core/IconButton'
-import ZoomIn from '@material-ui/icons/ZoomIn'
-import ZoomOut from '@material-ui/icons/ZoomOut'
-import ZoomReset from '@material-ui/icons/YoutubeSearchedFor'
 import {withStyles} from '@material-ui/core/styles'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import L from 'helpers/L'
 import {close_dice_ui, create_D100_rolling_dices, getRandomInt, open_dice_ui} from 'helpers/dice_helpers'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
+import {get_img} from "./helpers/room_helpers";
 
 const drawerWidth = 150
 
@@ -105,16 +102,31 @@ class LayoutLeftBar extends React.Component {
                 <Divider/>
                 <List>
 
+                    <ListItem>
+                        <L onClick={this.roll}>🎲 D100</L> {/*&#127922;*/}
+                    </ListItem>
+
                     <ListItem button component={Link} to='/character'>
                         <ListItemText primary={'Character'}/>
                     </ListItem>
 
+                    <ListItem button component={Link} to='/quest'>
+                        <ListItemText primary={'Quest'}/>
+                    </ListItem>
+
                     <ListItem button component={Link} to='/room'>
-                        <ListItemText primary={'Room'}/> {/*🐍 🐲 🐉 👊 🪨*/}
+                        <ListItemText>
+                            <img className={'map-img'}
+                                 src={get_img()}
+                                 alt={'aaa'}
+                                 width={20}
+                                 align={'top'}
+                            />
+                        </ListItemText>
                     </ListItem>
 
                     <ListItem button component={Link} to='/fight'>
-                        <ListItemText primary={'⚔️'}/>
+                        <ListItemText>⚔️</ListItemText>
                     </ListItem>
 
                     {/*<ListItem button component={Link} to='/map'>
@@ -124,15 +136,11 @@ class LayoutLeftBar extends React.Component {
                     */}
 
                     <ListItem button component={Link} to='/town'>
-                        <ListItemText primary={'Market'}/> {/* 🏔🗻*/}
-                    </ListItem>
-
-                    <ListItem>
-                        <L onClick={this.roll}>🎲 D100</L> {/*&#127922;*/}
+                        <ListItemText primary={'Market'}/>
                     </ListItem>
 
                     <ListItem button component={Link} to='/system'>
-                        <ListItemText>Games</ListItemText> {/*📜📃📋📎🔧*/}
+                        <ListItemText>⚙️</ListItemText>
                     </ListItem>
 
                     {/*<ListItem button component={Link} to='/debug'>
@@ -142,11 +150,11 @@ class LayoutLeftBar extends React.Component {
                 </List>
                 <Divider/>
                 <List>
-                    <ListItem button>
+                    <ListItem button component={Link} to='/about'>
                         <ListItemText primary={'About'}/>
                     </ListItem>
                 </List>
-                <Divider/>
+                {/*<Divider/>
                 <div>
                     <IconButton onClick={this.scaleUp.bind(this)}>
                         <ZoomIn/>
@@ -158,6 +166,7 @@ class LayoutLeftBar extends React.Component {
                         <ZoomOut/>
                     </IconButton>
                 </div>
+                */}
             </div>
         );
 

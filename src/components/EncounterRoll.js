@@ -71,7 +71,7 @@ class EncounterRoll extends Component {
 
     roll_encounter() {
         const total = getRandomInt(1, 100);
-        const t = Math.min(100, Math.max(0,
+        const t = Math.min(100, Math.max(1,
             total + parseInt(this.props.game.characteristics.encounter_modifier)));
 
         // encounter

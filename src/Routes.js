@@ -21,6 +21,8 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import {connect} from "react-redux"
 import DiceRoller from 'components/DiceRoller'
 import {close_dice_ui, get_dice_ui} from 'helpers/dice_helpers'
+import ScreenAbout from "./components/ScreenAbout";
+import ScreenQuest from "./components/ScreenQuest";
 
 ReactModal.setAppElement('#root')
 
@@ -84,8 +86,10 @@ class Routes extends Component {
                     <Layout path="/room" component={ScreenRoom}/>
                     <Layout path="/fight" component={ScreenFight}/>
                     <Layout path="/debug" component={Debug}/>
+                    <Layout path="/about" component={ScreenAbout}/>
+                    <Layout path="/quest" component={ScreenQuest}/>
                     <Layout path="/system" component={ScreenSystem}/>
-                    <Layout exact path="/" component={Debug}/>
+                    <Layout exact path="/" component={ScreenSystem}/>
                 </div>
             </Router>
         );

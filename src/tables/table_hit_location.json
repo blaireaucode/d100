@@ -1,56 +1,56 @@
 [
   {
-    "d10": "none",
+    "d100": "none",
     "location": "",
     "dmg_mod": "none"
   },
   {
-    "d10": 10,
+    "d100": 10,
     "location": "Feet",
     "dmg_mod": -1
   },
   {
-    "d10": 9,
+    "d100": 9,
     "location": "Legs",
     "dmg_mod": -1
   },
   {
-    "d10": 8,
+    "d100": 8,
     "location": "Waist",
     "dmg_mod": "Make a Belt Check"
   },
   {
-    "d10": 7,
+    "d100": 7,
     "location": "Off weapon",
     "dmg_mod": 0
   },
   {
-    "d10": 6,
+    "d100": 6,
     "location": "Main weapon",
     "dmg_mod": 0
   },
   {
-    "d10": 5,
+    "d100": 5,
     "location": "Hands",
     "dmg_mod": 0
   },
   {
-    "d10": 4,
+    "d100": 4,
     "location": "Arms",
     "dmg_mod": 0
   },
   {
-    "d10": 3,
+    "d100": 3,
     "location": "Torso",
     "dmg_mod": 1
   },
   {
-    "d10": 2,
+    "d100": 2,
     "location": "Back",
     "dmg_mod": 2
   },
   {
-    "d10": 1,
+    "d100": 1,
     "location": "Head",
     "dmg_mod": 3
   }

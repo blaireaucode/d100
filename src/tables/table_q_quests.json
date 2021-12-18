@@ -1,0 +1,58 @@
+[
+  {
+    "d100": "none",
+    "name": "none",
+    "enc_mod": 0,
+    "S": "none",
+    "F": "none",
+    "txt": "none"
+  },
+  {
+    "d100": "1-2",
+    "name": "Dungeon training 1",
+    "enc_mod": -40,
+    "S": "+50gp",
+    "F": "-0.5gp",
+    "txt": "Enter the dungeon and loot 3 parts from the monsters there."
+  },
+  {
+    "d100": "3-4",
+    "name": "Dungeon training 2",
+    "enc_mod": -30,
+    "S": "+50gp",
+    "F": "-0.5gp",
+    "txt": "Enter the dungeon and loot 3 weapons from the monsters there."
+  },
+  {
+    "d100": "5-6",
+    "name": "Dungeon training 3",
+    "enc_mod": -30,
+    "S": "+80gp",
+    "F": "-0.5gp",
+    "txt": "Enter the dungeon and loot 3 armours from the monsters there."
+  },
+  {
+    "d100": "7-8",
+    "name": "Dungeon training 4",
+    "enc_mod": -30,
+    "S": "+80gp",
+    "F": "-0.5gp",
+    "txt": "Enter the dungeon and loot 1 part, 1 weapon and 1 armour from the monsters there."
+  },
+  {
+    "d100": "9-10",
+    "name": "Dungeon training 5",
+    "enc_mod": -30,
+    "S": "+100gp",
+    "F": "-0.5gp",
+    "txt": "Enter the dungeon and collect 2 treasures from the table TA - Treasures A."
+  },
+  {
+    "d100": "11-12",
+    "name": "Trip through the dungeon",
+    "enc_mod": -20,
+    "S": "+150gp",
+    "F": "-0.5gp",
+    "txt": "Enter the dungeon and explore until 2 yellow, 2 green, 2 red and 2 blue areas have been added to the dungeon sheet."
+  }
+]

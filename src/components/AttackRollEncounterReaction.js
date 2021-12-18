@@ -29,11 +29,11 @@ class AttackRollEncounter extends Component {
         this.clear = this.clear.bind(this);
         // list of reactions
         const table = reaction_table;
-        const id = this.props.game.encounter.reaction.d10;
+        const id = this.props.game.encounter.reaction.d100;
         for (let i in table) {
             const e = table[i];
-            const op = <MenuItem key={e.d10} value={e.d10} className={'field_input_small_select'}>
-                {e.d10} {e.reaction}</MenuItem>;
+            const op = <MenuItem key={e.d100} value={e.d100} className={'field_input_small_select'}>
+                {e.d100} {e.reaction}</MenuItem>;
             this.options.push(op);
         }
         this.state = {current: id};
@@ -43,14 +43,14 @@ class AttackRollEncounter extends Component {
         const r = new_reaction();
         const g = up.update_g_encounter_field(this.props.game, 'reaction', r);
         this.props.set_game(g);
-        this.setState({current: r.d10});
+        this.setState({current: r.d100});
     }
 
     set_reaction(e) {
         const r = new_reaction(e.target.value);
         let g = up.update_g_encounter_field(this.props.game, 'reaction', r);
         this.props.set_game(g);
-        this.setState({current: r.d10});
+        this.setState({current: r.d100});
     }
 
     roll_reaction() {
@@ -69,7 +69,7 @@ class AttackRollEncounter extends Component {
 
     render() {
         const r = this.props.game.encounter.reaction;
-        const clear = clear_if_not_none(this, r.d10);
+        const clear = clear_if_not_none(this, r.d100);
         return (
             <span>
                 <C width={'20ch'}>
@@ -78,7 +78,7 @@ class AttackRollEncounter extends Component {
                 </C>
                 <L onClick={this.roll_reaction}>🎲 D6</L>
                 <C width={'4ch'}/>
-                <Select value={r.d10/*this.state.current*/}
+                <Select value={r.d100/*this.state.current*/}
                         disableUnderline={true}
                         defaultValue={'none'}
                         onChange={this.set_reaction}

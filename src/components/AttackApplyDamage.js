@@ -10,11 +10,11 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import L from 'helpers/L'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {apply_dmg, compute_dmg, new_location, toggle_attack} from "../helpers/encounter_helpers";
-import C from "../helpers/C";
-import InputFieldCharacter from "./InputFieldCharacter";
-import F from "../helpers/F";
-import {update_g_encounter_field} from "../helpers/update_helpers";
+import {apply_dmg, compute_dmg, new_location, toggle_attack} from "../helpers/encounter_helpers"
+import C from "../helpers/C"
+import InputFieldCharacter from "./InputFieldCharacter"
+import F from "../helpers/F"
+import {update_g_encounter_field} from "../helpers/update_helpers"
 
 class AttackApplyDamage extends Component {
 

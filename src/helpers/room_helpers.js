@@ -9,24 +9,11 @@
 import rooms_table from 'tables/table_m_mapping.json'
 import {v4 as uuidv4} from "uuid"
 import update from "immutability-helper"
+import {get_table_element} from "./update_helpers";
 
 export function new_room(id = 'none') {
     // get the room
-    let found = false;
-    let i;
-    id = id.toString()
-    for (i in rooms_table) {
-        const d100 = rooms_table[i].d100.toString();
-        if (d100 === id) {
-            found = true;
-            break;
-        }
-    }
-    if (!found) {
-        console.log('ERROR : cannot find id ', id);
-        i = 1;
-    }
-    let e = JSON.parse(JSON.stringify(rooms_table[i]));
+    const e = get_table_element(rooms_table, id);
     if (id === "none") {
         e["id"] = "none";
         e["doors_direction"] = [];
@@ -39,6 +26,11 @@ export function new_room(id = 'none') {
         if (!("doors_direction" in e)) e["doors_direction"] = [];
     }
     return e;
+}
+
+export function get_img() {
+    const img = require('../images/dungeon.png').default;
+    return img;
 }
 
 const direction_names = {'S': 'South', 'E': 'East', 'N': 'North', 'W': 'West'};

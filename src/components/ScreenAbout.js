@@ -8,25 +8,26 @@
 
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import L from 'helpers/L'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import RoomRoll from "./RoomRoll";
-import Room from "./Room";
-import Dungeon from "./Dungeon";
+import {Link} from "react-router-dom"
+import default_game from "helpers/default_game"
 
+class ScreenAbout extends Component {
 
-class ScreenRoom extends Component {
+    reset() {
+
+    }
 
     render() {
+
         return (
             <div>
-                <RoomRoll/>
-                <p/>
-                <Room/>
-                <p/>
-                <Dungeon/>
+               about
+
             </div>
         );
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ScreenRoom)
+export default connect(mapStateToProps, mapDispatchToProps)(ScreenAbout)

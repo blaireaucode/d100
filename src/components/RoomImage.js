@@ -12,6 +12,10 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 
 class RoomImage extends Component {
 
+    static defaultProps = {
+        width: 150
+    }
+
     render() {
         const r = this.props.game.room;
         if (r.d100 === 'none') return '';
@@ -19,7 +23,7 @@ class RoomImage extends Component {
             <img className={'map-img'}
                  src={r.src}
                  alt={r.d100}
-                 width={150}
+                 width={this.props.width}
                  align={'top'}
                  style={{transform: `rotate(${r.rotation}deg)`}}
                 /* onClick={() => this.on_area_click([c,r])} */

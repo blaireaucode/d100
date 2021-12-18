@@ -7,6 +7,7 @@
  */
 
 import update from "immutability-helper";
+import {d100_interval_min_max} from "./encounter_helpers";
 
 /*
     ONLY update here, no set_game
@@ -20,6 +21,38 @@ export function update_g_characteristic(game, field_name, value) {
     return update(game, {characteristics: {[field_name]: {$set: value}}});
 }
 
+/*
+    common fct helpers
+    - get_table_element(table, id, copy=true) => all roll rooms, encounter etc
+        - roll room OK, roll encounter OK, roll hit location OK, roll reaction OK
+
+ */
+
+export function get_table_element(table, id, copy = true) {
+    let found = false;
+    let i;
+    id = parseInt(id);
+    for (i in table) {
+        const d100 = d100_interval_min_max(table[i].d100);
+        if (id >= d100[0] && id <= d100[1]) {
+            found = true;
+            break;
+        }
+    }
+    if (!found) {
+        console.log('ERROR : cannot find id in table, took the first', id, table[0]);
+        i = 0;
+    }
+    let e = table[i];
+    if (copy) e = JSON.parse(JSON.stringify(e));
+    console.log('Get in table', i, id, e);
+    return e;
+}
+
+
+//------------------------------------------------------------
+//------------------------------------------------------------
+//------------------------------------------------------------
 //------------------------------------------------------------
 
 export function update_character(team, character) {
@@ -35,6 +68,11 @@ export function update_g_encounter(game, encounter) {
 export function update_g_team(game, team) {
     return update(game,
         {team: {$set: team}});
+}
+
+export function update_g_quest(game, quest) {
+    return update(game,
+        {quest: {$set: quest}});
 }
 
 export function update_g_room(game, room) {
