@@ -21,6 +21,7 @@ class AttackPlayerInfoArmour extends Component {
         let item = '(on defence, depends on hit location)';
         const att = this.props.game.encounter.attack;
         if (att.who_attack === 'encounter') {
+            console.log('att', att);
             const armour = get_item_at_hit_location(this.props.game);
             if (armour !== '') {
                 if (armour === 'none') {

@@ -11,7 +11,6 @@ import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import {Grid} from "@material-ui/core";
 import RoomImage from "./RoomImage";
-import RoomInfo from "./RoomInfo";
 
 class Dungeon extends Component {
 
@@ -27,13 +26,23 @@ class Dungeon extends Component {
     render() {
         const r = this.props.game.room;
         if (r.d100 === 'none') return '';
+        const d = this.props.game.quest.dungeon.rooms;
+        console.log('d', d);
+        if (d.length === 0) return '';
+        let rows = [];
+        const size = [d.length, d[0].length];
+        for (let row = 0; row < size[0]; row++) {
+            const cols = [];
+            for (let col = 0; col < size[1]; col++) {
+                const c = <RoomImage width={100} room={d[row][col]}/>;
+                cols.push(c);
+            }
+            rows.push(<Grid container spacing={2}><Grid item>{cols}</Grid></Grid>);
+        }
+
         return (
             <Grid container spacing={2}>
-                <Grid item xs={20}>
-                    <RoomImage width={100}/>
-                    <RoomImage width={100}/>
-                    <RoomImage width={100}/>
-                </Grid>
+                {rows}
             </Grid>
         );
     }

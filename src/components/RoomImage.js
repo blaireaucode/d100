@@ -13,12 +13,17 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 class RoomImage extends Component {
 
     static defaultProps = {
-        width: 150
+        width: 150,
+        room: 'auto'
     }
 
     render() {
-        const r = this.props.game.room;
-        if (r.d100 === 'none') return '';
+        let r = this.props.room;
+        if (this.props.room === 'auto') {
+            r = this.props.game.room;
+            if (r.d100 === 'none') return '';
+        }
+        if (r === {}) return ''; // FIXME not needed
         return (
             <img className={'map-img'}
                  src={r.src}

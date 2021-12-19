@@ -14,14 +14,16 @@ import {new_encounter} from "./encounter_helpers";
 import {new_equipped_items} from "./equipment_helpers";
 import table_r_race from "../tables/table_r_race.json";
 import {new_room} from "./room_helpers";
+import {new_quest} from "./quest_helpers";
 
 export function create_new_game() {
     let new_game = JSON.parse(JSON.stringify(default_game))
     new_game.encounter = new_encounter('none');
-    new_game.room = new_room('none');
+    new_game.room = new_room(2);// FIXME
     new_game.equipped_items = new_equipped_items();
     new_game.id = uuidv4();
     new_game = update(new_game, {date: {$set: new Date()}});
+    new_game.quest = new_quest(1); // FIXME
     console.log('New game', new_game);
     return new_game;
 }

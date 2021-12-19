@@ -7,7 +7,13 @@
  */
 
 import React, {Component} from 'react'
+import ReactModal from "react-modal"
+import {connect} from "react-redux"
 import {HashRouter as Router} from 'react-router-dom'
+import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
+import Layout from 'Layout'
+import DiceRoller from 'components/DiceRoller'
+import {close_dice_ui, get_dice_ui} from 'helpers/dice_helpers'
 import Debug from 'components/ScreenDebug'
 import Character from 'components/ScreenCharacter'
 import Map from 'components/ScreenMap'
@@ -15,14 +21,9 @@ import ScreenRoom from 'components/ScreenRoom'
 import ScreenFight from 'components/ScreenFight'
 import Town from 'components/ScreenTown'
 import ScreenSystem from 'components/ScreenSystem'
-import Layout from 'Layout'
-import ReactModal from "react-modal"
-import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {connect} from "react-redux"
-import DiceRoller from 'components/DiceRoller'
-import {close_dice_ui, get_dice_ui} from 'helpers/dice_helpers'
-import ScreenAbout from "./components/ScreenAbout";
-import ScreenQuest from "./components/ScreenQuest";
+import ScreenAbout from "./components/ScreenAbout"
+import ScreenQuest from "./components/ScreenQuest"
+import ScreenLog from "./components/ScreenLog"
 
 ReactModal.setAppElement('#root')
 
@@ -88,6 +89,7 @@ class Routes extends Component {
                     <Layout path="/debug" component={Debug}/>
                     <Layout path="/about" component={ScreenAbout}/>
                     <Layout path="/quest" component={ScreenQuest}/>
+                    <Layout path="/log" component={ScreenLog}/>
                     <Layout path="/system" component={ScreenSystem}/>
                     <Layout exact path="/" component={ScreenSystem}/>
                 </div>

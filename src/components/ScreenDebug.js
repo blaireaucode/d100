@@ -11,15 +11,18 @@ import {connect} from 'react-redux'
 import L from 'helpers/L'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import {Link} from "react-router-dom"
-import default_game from "helpers/default_game"
+import {JSONEditor} from "react-json-editor-viewer"
+
 
 class ScreenDebug extends Component {
 
-    reset() {
-        console.log('reset', default_game);
-        //const def = {current: 'default', default: default_game};
-        this.props.set_game(default_game);
-        //this.props.set(elem, val);
+    constructor(props) {
+        super(props);
+        this.onJsonChange = this.onJsonChange.bind(this);
+    }
+
+    onJsonChange(key, value, parent, data) {
+        console.log(key, value, parent, data);
     }
 
     render() {
@@ -29,6 +32,14 @@ class ScreenDebug extends Component {
                 debug <L to='/team'>team</L> <p/>
 
                 <Link to={'#'} onClick={() => this.reset()}> Reset </Link><br/>
+
+
+                <JSONEditor
+                    data={this.props.game}
+                    collapsible
+                    view={"dual"}
+                    onChange={this.onJsonChange}
+                />;
 
             </div>
         );

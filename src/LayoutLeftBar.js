@@ -121,12 +121,12 @@ class LayoutLeftBar extends React.Component {
                                  alt={'aaa'}
                                  width={20}
                                  align={'top'}
-                            />
+                            /> Dungeon
                         </ListItemText>
                     </ListItem>
 
                     <ListItem button component={Link} to='/fight'>
-                        <ListItemText>⚔️</ListItemText>
+                        <ListItemText>⚔️ Fight</ListItemText>
                     </ListItem>
 
                     {/*<ListItem button component={Link} to='/map'>
@@ -137,6 +137,10 @@ class LayoutLeftBar extends React.Component {
 
                     <ListItem button component={Link} to='/town'>
                         <ListItemText primary={'Market'}/>
+                    </ListItem>
+
+                    <ListItem button component={Link} to='/log'>
+                        <ListItemText>📓 Log</ListItemText>
                     </ListItem>
 
                     <ListItem button component={Link} to='/system'>
