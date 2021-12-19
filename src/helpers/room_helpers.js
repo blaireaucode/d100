@@ -33,7 +33,8 @@ export function empty_room() {
         id: 'empty',
         rotation: 0,
         src: require('../images/0.png').default,
-        doors_direction: []
+        doors_direction: [],
+        index: []
     }
 }
 
@@ -45,8 +46,10 @@ export function dungeon_create_empty(size) {
     let d = [];
     for (let row = 0; row < size[0]; row++) {
         d[row] = [];
-        for (let col = 0; col < size[1]; col++)
+        for (let col = 0; col < size[1]; col++) {
             d[row][col] = empty_room();
+            d[row][col].index = [row,col];
+        }
     }
     return d;
 }
@@ -61,8 +64,10 @@ export function dungeon_copy_at(output, input, at) {
         for (let col = 0; col < size[1]; col++) {
             try {
                 output[row][col] = JSON.parse(JSON.stringify(input[row + at[0]][col + at[1]]));
+                output[row][col].index = [row, col];
             } catch (exception) {
                 output[row][col] = empty_room();
+                output[row][col].index = [row, col];
             }
         }
     }
@@ -80,6 +85,7 @@ export function add_room_to_dungeon(game, direction) {
     if (last === 'none') {
         r = [[JSON.parse(JSON.stringify(game.room))]];
         index = [0, 0];
+        r[0][0].index = index;
     } else {
 
         // new index according to direction
@@ -128,6 +134,7 @@ export function add_room_to_dungeon(game, direction) {
         console.log("r", r);
         // set new room
         r[index[0]][index[1]] = JSON.parse(JSON.stringify(game.room));
+        r[index[0]][index[1]].index = index;
     }
     console.log("r", r);
     let g = update(game, {quest: {dungeon: {last_room: {$set: index}}}});
@@ -149,23 +156,50 @@ export function map_dir(a) {
     });
 }
 
+export function rotate_room(room) {
+    const rot = room.rotation + 90;
+    let r = update(room, {rotation: {$set: rot}});
+    const ex = r.exits.map(e => {
+        if (e === 'S') return 'W';
+        if (e === 'E') return 'S';
+        if (e === 'N') return 'E';
+        return 'N';
+    });
+    const dd = r.doors_direction.map(e => {
+        if (e === 'S') return 'W';
+        if (e === 'E') return 'S';
+        if (e === 'N') return 'E';
+        return 'N';
+    });
+    r = update(r, {exits: {$set: ex}});
+    r = update(r, {doors_direction: {$set: dd}});
+    return r;
+}
+
 export function rotate_g_room(game) {
     if (game.room.d100 === 'none') return game;
-    const r = game.room.rotation + 90;
-    let g = update(game, {room: {rotation: {$set: r}}});
-    const ex = g.room.exits.map(e => {
-        if (e === 'S') return 'W';
-        if (e === 'E') return 'S';
-        if (e === 'N') return 'E';
-        return 'N';
+    const room = rotate_room(game.room);
+    return update(game, {room: {$set: room}});
+}
+
+export function get_dungeon_room(game, index) {
+    return game.quest.dungeon.rooms[index[0]][index[1]];
+}
+
+export function set_g_dungeon_room(game, index, room) {
+    return update(game, {
+        quest: {
+            dungeon: {
+                rooms: {
+                    [index[0]]:
+                        {[index[1]]: {$set: room}}
+                }
+            }
+        }
     });
-    const dd = g.room.doors_direction.map(e => {
-        if (e === 'S') return 'W';
-        if (e === 'E') return 'S';
-        if (e === 'N') return 'E';
-        return 'N';
-    });
-    g = update(g, {room: {exits: {$set: ex}}});
-    g = update(g, {room: {doors_direction: {$set: dd}}});
-    return g;
+}
+
+export function rotate_g_dungeon_room(game, index) {
+    const room = rotate_room(get_dungeon_room(game, index));
+    return set_g_dungeon_room(game, index, room);
 }

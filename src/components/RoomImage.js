@@ -9,30 +9,45 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
+import RoomMenu from "./RoomMenu";
 
 class RoomImage extends Component {
 
     static defaultProps = {
         width: 150,
-        room: 'auto'
+        room: 'current'
     }
 
     render() {
         let r = this.props.room;
-        if (this.props.room === 'auto') {
+        let m = '';
+        let b = 0;
+        if (this.props.room === 'current') {
             r = this.props.game.room;
             if (r.d100 === 'none') return '';
+        } else {
+            if (r.id !== 'empty') {
+                m = <RoomMenu room={r}/>;
+                if (r.index[0] === this.props.game.quest.dungeon.last_room[0] &&
+                    r.index[1] === this.props.game.quest.dungeon.last_room[1])
+                    b = 2;
+            }
         }
-        if (r === {}) return ''; // FIXME not needed
+        //console.log('state', this.state.over)
         return (
-            <img className={'map-img'}
-                 src={r.src}
-                 alt={r.d100}
-                 width={this.props.width}
-                 align={'top'}
-                 style={{transform: `rotate(${r.rotation}deg)`}}
-                /* onClick={() => this.on_area_click([c,r])} */
-            />
+            <span style={{position: 'relative', zIndex: 0}}>
+                <img className={'room'}
+                     src={r.src}
+                     alt={r.d100}
+                     width={this.props.width}
+                     align={'top'}
+                     style={{transform: `rotate(${r.rotation}deg)`}}
+                     onMouseOver={this.over}
+                     onMouseOut={this.leave}
+                     border={b}
+                />
+                {m}
+            </span>
         );
     }
 }

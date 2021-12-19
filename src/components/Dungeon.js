@@ -34,10 +34,10 @@ class Dungeon extends Component {
         for (let row = 0; row < size[0]; row++) {
             const cols = [];
             for (let col = 0; col < size[1]; col++) {
-                const c = <RoomImage width={100} room={d[row][col]}/>;
+                const c = <RoomImage key={row + ' ' + col} width={100} room={d[row][col]}/>;
                 cols.push(c);
             }
-            rows.push(<Grid container spacing={2}><Grid item>{cols}</Grid></Grid>);
+            rows.push(<Grid container key={row}><Grid item>{cols}</Grid></Grid>);
         }
 
         return (

@@ -27,6 +27,8 @@ class AttackPlayerInfoAttack extends Component {
         // FIXME what when both D and R ?? keep max ?
         return (
             <span>
+                <C width={'16ch'}>Health Points</C>
+                <InputFieldCharacter field_name={'hp'} type={'number'} width={'5ch'}/><br/>
                 <C width={'16ch'}>Current weapon</C>
                 <C className={'help'} width={'66ch'}>
                     <C width={'25ch'}>{weapon.name}</C>

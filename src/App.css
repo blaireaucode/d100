@@ -1,12 +1,11 @@
 
-
 :root {
-    --bg:   #282c34;    /* background */
-    --fg:   #eee;       /* foreground */
-    --fgh:  #aaa;       /* foreground header */
-    --fgl:  #18b26f;    /* link */
-    --fglh: #0de587;    /* link hover */
-    --fge:  #2982d2;    /* edit */
+    --bg: #282c34; /* background */
+    --fg: #eee; /* foreground */
+    --fgh: #aaa; /* foreground header */
+    --fgl: #18b26f; /* link */
+    --fglh: #0de587; /* link hover */
+    --fge: #2982d2; /* edit */
 }
 
 .App {
@@ -271,6 +270,33 @@
 
 .room_color_blue {
     color: #a5c2f4;
+}
+
+.room {
+    z-index: 0;
+    transition: .5s ease;
+    border-color: var(--fg);
+}
+
+.room_menu {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: 0.2s ease;
+    color: var(--bg);
+}
+
+.room_menu a {
+    color: var(--bg) !important;
+}
+
+
+.room_menu:hover {
+    background-color: rgba(100, 100, 100, .7);
+    opacity: 1;
 }
 
 
