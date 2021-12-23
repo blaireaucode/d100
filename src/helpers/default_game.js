@@ -29,10 +29,10 @@ const default_game = {
         fate: 3,
         life: 3,
         gold_pieces: 0,
-        encounter_modifier: 0,
-        str: 10,
-        dex: 10,
-        int: 10,
+        encounter_modifier: -40,
+        str: 50,
+        dex: 40,
+        int: 30,
         str_items: 0,
         dex_items: 0,
         int_items: 0,
@@ -53,7 +53,8 @@ const default_game = {
     skills: {},
     room: {}, // new_room('none')
     encounter: {}, // new_encounter('none')
-    quest: {} // new_quest('none')
+    quest: {}, // new_quest('none')
+    log: ''
 }
 
 export default default_game

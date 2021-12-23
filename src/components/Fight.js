@@ -9,7 +9,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {clear_action} from "helpers/encounter_helpers"
+import {clear_g_fight_action} from "helpers/encounter_helpers"
 import EncounterFightRound from "./AttackRound";
 import AttackRollEncounterReaction from "./AttackRollEncounterReaction";
 import AttackRoll from "./AttackRoll";
@@ -29,7 +29,7 @@ class Fight extends Component {
     }
 
     clear() {
-        const g = clear_action(this.props.game);
+        const g = clear_g_fight_action(this.props.game);
         this.props.set_game(g);
     }
 
@@ -54,7 +54,7 @@ class Fight extends Component {
                 <AttackRollDamage/>
                 <p/>
                 <AttackDefendDamage/>
-                <br/>&nbsp;
+                <br/>
             </Paper>
         );
     }

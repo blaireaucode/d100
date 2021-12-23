@@ -11,17 +11,7 @@ import reactions_table from 'tables/table_monster_reaction.json'
 import locations_table from 'tables/table_hit_location.json'
 import ability_table from 'tables/table_encounter_ability.json'
 import * as up from "./update_helpers"
-import {
-    get_table_element,
-    update_character,
-    update_dic,
-    update_g_characteristic,
-    update_g_encounter,
-    update_g_encounter_field,
-    update_g_room,
-    update_g_team
-} from "./update_helpers"
-import {D6} from "helpers/dice_helpers"
+import {get_table_element, update_g_characteristic, update_g_encounter_field, update_g_room} from "./update_helpers"
 import update from "immutability-helper"
 import {v4 as uuidv4} from "uuid";
 import H from "./H";
@@ -222,47 +212,7 @@ export function update_attack_field(attack, fn, value) {
     return update(attack, {[fn]: {$set: value}});
 }
 
-
-// OLD -------------------------------------------------------
-
-export function update_encounter_number(game, dice) {
-    const t = dice.total;
-    let g = update(game, {room: {encounter: {initial_number: {$set: t}}}});
-    g = update(g, {room: {encounter: {number: {$set: t}}}});
-    return g;
-}
-
-export function update_attack(game, id) {
-    const dice = D6();
-    const a = {
-        id: id,
-        dice: dice,
-        action_type: 'attack'
-    };
-    const r = update(game.room, {action: {$set: a}});
-    return update_g_room(game, r);
-}
-
-export function update_defend(game, id) {
-    const dice = D6();
-    const a = {
-        id: id,
-        dice: dice,
-        action_type: 'defend'
-    };
-    const r = update(game.room, {action: {$set: a}});
-    return update_g_room(game, r);
-}
-
-export function action_in_progress(game, id) {
-    // Is there a action in progress ?
-    if (!("action" in game.room)) return false;
-    // Concern the current character ?
-    return id === game.room.action.id;
-
-}
-
-export function clear_action(game) {
+export function clear_g_fight_action(game) {
     let r = game.room;
     if ('action' in game.room) {
         const previous = JSON.parse(JSON.stringify(game.room.action));
@@ -272,56 +222,5 @@ export function clear_action(game) {
     return update_g_room(game, r);
 }
 
-export function get_action_mod(game) {
-    const action = game.room.action;
-    const c = game.team[action.id];
-    if (action.action_type === 'attack') return c.attack_mod;
-    if (action.action_type === 'defend') return c.def_mod;
-}
 
-export function get_action_total(game) {
-    const action = game.room.action;
-    const mod = get_action_mod(game)
-    return parseFloat(action.dice.total) + parseFloat(mod);
-}
-
-export function apply_attack(game) {
-    const l = game.room.encounter.level;
-    // number or life ?
-    let n = game.room.encounter.life;
-    let m = "life";
-    if ("number" in game.room.encounter) {
-        n = game.room.encounter.number;
-        m = "number";
-    }
-    const total = get_action_total(game);
-    const diff = Math.floor(total / l);
-    n = Math.max(0, n - diff);
-    const e = update_dic(game.room.encounter, m, n);
-    return update_g_encounter(game, e);
-}
-
-export function receive_wound(game) {
-    let c = game.team[game.room.action.id];
-    c = update_dic(c, "life", c.life - 1);
-    const t = update_character(game.team, c);
-    return update_g_team(game, t);
-}
-
-export function get_current_character(room) {
-    if ('action' in room) return room.action.id;
-    if (!('previous_action' in room)) return 1;
-    const pr = room.previous_action;
-    if (pr.action_type === 'attack') return pr.id;
-    let i = pr.id + 1;
-    if (i > 4) i = 1;
-    return i;
-}
-
-export function get_current_action(room) {
-    if ('action' in room) return room.action.action_type;
-    if (!('previous_action' in room)) return 'attack';
-    const pr = room.previous_action;
-    if (pr.action_type === 'attack') return 'defend';
-    return 'attack';
-}
+// OLD -------------------------------------------------------

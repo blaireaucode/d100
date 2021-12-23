@@ -28,6 +28,10 @@ export function new_room(id = 'none') {
     return e;
 }
 
+export function new_dungeon() {
+    return {last_room: 'none', rooms: []}
+}
+
 export function empty_room() {
     return {
         id: 'empty',
@@ -38,17 +42,13 @@ export function empty_room() {
     }
 }
 
-export function new_dungeon() {
-    return {last_room: 'none', rooms: []}
-}
-
-export function dungeon_create_empty(size) {
+export function new_empty_dungeon(size) {
     let d = [];
     for (let row = 0; row < size[0]; row++) {
         d[row] = [];
         for (let col = 0; col < size[1]; col++) {
             d[row][col] = empty_room();
-            d[row][col].index = [row,col];
+            d[row][col].index = [row, col];
         }
     }
     return d;
@@ -57,9 +57,6 @@ export function dungeon_create_empty(size) {
 export function dungeon_copy_at(output, input, at) {
     // at 0,0 or 0,1 or 1,0
     const size = [output.length, output[0].length];
-    console.log('copy output', output);
-    console.log('copy input', input);
-    console.log('copy at', at);
     for (let row = 0; row < size[0]; row++) {
         for (let col = 0; col < size[1]; col++) {
             try {
@@ -74,9 +71,7 @@ export function dungeon_copy_at(output, input, at) {
     return output;
 }
 
-export function add_room_to_dungeon(game, direction) {
-    console.log('add room room', game.room);
-    console.log('add room dung', game.quest.dungeon, direction);
+export function add_g_room_to_dungeon(game, direction) {
     const last = game.quest.dungeon.last_room;
     const rooms = game.quest.dungeon.rooms;
     let r = '';
@@ -100,9 +95,6 @@ export function add_room_to_dungeon(game, direction) {
 
 
         const size = [rooms.length, rooms[0].length];
-        console.log('size ', size);
-        console.log('last', last);
-        console.log('index', index);
         // increase size ?
         if (index[0] >= size[0] || index[1] >= size[1] ||
             index[0] < 0 || index[1] < 0) {
@@ -122,24 +114,17 @@ export function add_room_to_dungeon(game, direction) {
                     index[1] = 0;
                 }
             }
-            console.log('new size ', newsize);
-            console.log('new at', at);
-            console.log('new index', index);
-            r = dungeon_create_empty(newsize);
-            console.log("empty r", r);
+            r = new_empty_dungeon(newsize);
             r = dungeon_copy_at(r, rooms, at);
         } else {
             r = JSON.parse(JSON.stringify(rooms));
         }
-        console.log("r", r);
         // set new room
         r[index[0]][index[1]] = JSON.parse(JSON.stringify(game.room));
         r[index[0]][index[1]].index = index;
     }
-    console.log("r", r);
     let g = update(game, {quest: {dungeon: {last_room: {$set: index}}}});
     g = update(g, {quest: {dungeon: {rooms: {$set: r}}}});
-    console.log('d', g.quest.dungeon)
     return g;
 }
 

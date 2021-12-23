@@ -22,6 +22,7 @@ class ScreenRoom extends Component {
                 <RoomRoll/>
                 <p/>
                 <Room/>
+                <hr color={'#333'} size={1}/>
                 <p/>
                 <Dungeon/>
             </div>

@@ -9,18 +9,21 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import RoomInfoRed from "./RoomInfoRed";
-import RoomInfoYellow from "./RoomInfoYellow";
-import RoomInfoGreen from "./RoomInfoGreen";
-import RoomInfoBlue from "./RoomInfoBlue";
-import L from "../helpers/L";
-import {map_dir, rotate_g_room} from "../helpers/room_helpers";
+import RoomInfoRed from "./RoomInfoRed"
+import RoomInfoYellow from "./RoomInfoYellow"
+import RoomInfoGreen from "./RoomInfoGreen"
+import RoomInfoBlue from "./RoomInfoBlue"
+import L from "../helpers/L"
+import {add_g_room_to_dungeon, map_dir, new_room, rotate_g_room} from "../helpers/room_helpers"
+import C from "../helpers/C";
+import {update_g_room} from "../helpers/update_helpers";
 
 class RoomInfo extends Component {
 
     constructor(props) {
         super(props);
         this.rotate = this.rotate.bind(this);
+        this.add = this.add.bind(this);
     }
 
     rotate() {
@@ -28,9 +31,16 @@ class RoomInfo extends Component {
         this.props.set_game(g);
     }
 
+    add(direction) {
+        let g = add_g_room_to_dungeon(this.props.game, direction);
+        const e = new_room("none");
+        g = update_g_room(g, e);
+        this.props.set_game(g);
+    }
+
+
     render() {
         const r = this.props.game.room;
-        console.log('room', r)
         if (r.d100 === 'none') return '';
         const cn = 'room_color_' + r.color;
         let t = '';
@@ -52,6 +62,11 @@ class RoomInfo extends Component {
                 {d} {map_dir(r.doors_direction)}
                 <p/>
                 {t}
+                <p/>
+                    <L onClick={() => this.add('W')}>Add West ⇦</L> <C width={'3ch'}/>
+                    <L onClick={() => this.add('E')}>Add East ⇨ </L> <C width={'3ch'}/>
+                    <L onClick={() => this.add('N')}>Add North ⇧</L> <C width={'3ch'}/>
+                    <L onClick={() => this.add('S')}>Add South ⇩</L><C width={'3ch'}/>
             </span>
         );
     }

@@ -21,7 +21,6 @@ class AttackPlayerInfoArmour extends Component {
         let item = '(when defend, depends on hit location)';
         const att = this.props.game.encounter.attack;
         if (att.who_attack === 'encounter') {
-            console.log('att', att);
             const armour = get_item_at_hit_location(this.props.game);
             if (armour !== '') {
                 if (armour === 'none') {
@@ -31,10 +30,10 @@ class AttackPlayerInfoArmour extends Component {
                     const p = {items: this.props.game.items, id: armour.id, class_name: 'field_input_small'};
                     item = <span>
                             <C width={'25ch'}>{armour.name}</C>
-                            Damage:<C width={'1ch'}/>
+                            <C width={'14ch'}>Armour damage:</C>
                             <InputFieldItem {...p} field_name={'damaged'} type={'number'} width={'8ch'}
                                             align={'center'}/>
-                            <C width={'4ch'}/>
+                            <C width={'4ch'}>AS:</C>
                             <InputFieldItem {...p} field_name={'AS'} width={'4ch'} align={'left'}/>
                         </span>
                     aname = '';

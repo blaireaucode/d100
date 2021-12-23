@@ -34,19 +34,28 @@ class Encounter extends Component {
         if (e.id === 'none') return '';
 
         // dead ? 💀
+        let dead = '';
+        let hp = 0;
+        let cn = '';
+        for (const h of e.hp.split('/'))
+            hp += parseInt(h);
+        if (hp <= 0) {
+            dead = <span><C width={'4ch'}>💀</C></span>
+            cn = 'encounter-dead'
+        }
 
         //console.log('enc', e);
         const p = {width: '4ch', type: 'number', align: 'right'};
         return (
             <span>
-                <Paper elevation={5} className={'encounter'}>
-                <InputFieldEncounter field_name={'name'} width={'15ch'}/>
+                <Paper elevation={5} className={'encounter '+cn}>
+                {dead} <InputFieldEncounter field_name={'name'} width={'15ch'}/>
                 n° <InputFieldEncounter field_name={'d100'} read_only={true} width={'5ch'}/>
                 <br/>
-                <F>Attack Value (AV)</F> <InputFieldEncounter {...p} field_name={'av'}/>
-                <F><C width={'3ch'}/>Defence</F> <InputFieldEncounter {...p} field_name={'def'}/>
-                <F><C width={'3ch'}/>Damage Modifier</F> <InputFieldEncounter {...p} field_name={'dmg'}/>
-                <FieldEncounterHealthPoints/>
+                <F>Attack Value</F> <InputFieldEncounter {...p} field_name={'av'}/>
+                <F><C width={'2ch'}/>Defence</F> <InputFieldEncounter {...p} field_name={'def'}/>
+                <F><C width={'2ch'}/>Damage Modifier</F> <InputFieldEncounter {...p} field_name={'dmg'}/>
+                <FieldEncounterHealthPoints/><br/>
                 <F>Reward</F> <InputFieldEncounter field_name={'k'} width={'29ch'}/>
                 <F>Ability</F> <InputFieldEncounter field_name={'ability'} width={'31ch'}/>
                     <EncounterAbility/>

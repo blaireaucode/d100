@@ -15,7 +15,7 @@ class Clear extends Component {
 
     render() {
         return (
-            <L enabled={this.props.enabled} onClick={this.props.onClick} className={'clear'}> ✗ </L>
+            <L enabled={this.props.enabled} onClick={this.props.onClick} className={'clear'}> ✗  {this.props.children}</L>
         );
     }
 }

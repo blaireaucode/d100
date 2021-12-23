@@ -11,23 +11,24 @@ import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import {Grid} from "@material-ui/core";
 import RoomImage from "./RoomImage";
+import Clear from "./Clear";
+import update from "immutability-helper";
+import {new_dungeon} from "../helpers/room_helpers";
 
 class Dungeon extends Component {
 
     constructor(props) {
         super(props);
-        this.clear_action = this.clear_action.bind(this);
+        this.clear_dungeon = this.clear_dungeon.bind(this);
     }
 
-    clear_action() {
+    clear_dungeon() {
+        const g = update(this.props.game, {quest: {dungeon: {$set: new_dungeon()}}});
+        this.props.set_game(g);
     }
-
 
     render() {
-        const r = this.props.game.room;
-        if (r.d100 === 'none') return '';
         const d = this.props.game.quest.dungeon.rooms;
-        console.log('d', d);
         if (d.length === 0) return '';
         let rows = [];
         const size = [d.length, d[0].length];
@@ -43,6 +44,7 @@ class Dungeon extends Component {
         return (
             <Grid container spacing={2}>
                 {rows}
+                <Clear onClick={this.clear_dungeon}>Delete the dungeon</Clear>
             </Grid>
         );
     }

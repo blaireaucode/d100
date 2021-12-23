@@ -120,7 +120,10 @@
     max-width: 810px;
     background-color: #1a1b1e !important;
     background-color: #222326 !important;
-    /*background-color: #24282f !important;*/
+}
+
+.encounter-dead {
+    background-color: #2f1111 !important;
 }
 
 .App a:link {

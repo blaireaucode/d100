@@ -30,14 +30,10 @@ class ScreenDebug extends Component {
         return (
             <div>
                 debug <L to='/team'>team</L> <p/>
-
                 <Link to={'#'} onClick={() => this.reset()}> Reset </Link><br/>
-
-
                 <JSONEditor
                     data={this.props.game}
                     collapsible
-                    view={"dual"}
                     onChange={this.onJsonChange}
                 />;
 

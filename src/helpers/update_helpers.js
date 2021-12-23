@@ -31,8 +31,12 @@ export function update_g_characteristic(game, field_name, value) {
 export function get_table_element(table, id, copy = true) {
     let found = false;
     let i;
-    id = parseInt(id);
+    if (id !== 'none') id = parseInt(id);
     for (i in table) {
+        if (id === table[i].d100) {
+            found = true;
+            break;
+        }
         const d100 = d100_interval_min_max(table[i].d100);
         if (id >= d100[0] && id <= d100[1]) {
             found = true;

@@ -10,9 +10,8 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import L from "../helpers/L"
-import C from "../helpers/C";
-import {empty_room, rotate_g_dungeon_room, set_g_dungeon_room} from "../helpers/room_helpers";
-import Clear from "./Clear";
+import C from "../helpers/C"
+import {empty_room, rotate_g_dungeon_room, set_g_dungeon_room} from "../helpers/room_helpers"
 
 class RoomMenu extends Component {
 
@@ -39,6 +38,8 @@ class RoomMenu extends Component {
                 <C width={'1.5ch'}/><L onClick={this.rotate}>↻</L>
                 {/*<br/>
                 <C width={'1ch'}/><Clear onClick={this.remove}/>*/}
+                <p/>
+                <C width={'4ch'}/>{r.d100}
             </span>
         );
     }

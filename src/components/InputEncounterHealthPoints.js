@@ -50,6 +50,7 @@ class FieldEncounterHealthPoints extends Component {
         let plus = [];
         let minus = [];
         const hps = e.hp.split('/');
+        const w = e.hp.length;
         for (let i = 0; i < hps.length; i++) {
             const a = i;
             plus.push(<L key={a} onClick={() => this.hp_plus(a)}>+</L>);
@@ -63,7 +64,7 @@ class FieldEncounterHealthPoints extends Component {
                 <InputFieldEncounter {...p} type={'txt'} width={'6ch'} align={'center'} field_name={'hp'}/>
                 {plus}
                 <F><C width={'1ch'}/>(</F>
-                <InputFieldEncounter {...p} type={'txt'} width={'4ch'} align={'center'} read_only={true}
+                <InputFieldEncounter {...p} type={'txt'} width={w+'ch'} align={'center'} read_only={true}
                                      field_name={'initial_hp'}/>
                 <F>)</F>
             </span>

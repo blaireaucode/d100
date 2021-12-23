@@ -28,8 +28,8 @@ class AttackPlayerInfoShield extends Component {
                                 {item.name}
                                 <InputFieldItem {...p} field_name={'AS'} width={'4ch'} align={'center'}/>
                             </C>
-                            <C width={'18ch'}>
-                                Damage:
+                            <C width={'25ch'}>
+                                <C width={'14ch'}>Shield damage:</C>
                                 <InputFieldItem {...p} field_name={'damaged'} type={'number'} width={'8ch'}
                                                 align={'center'}/>
                             </C>

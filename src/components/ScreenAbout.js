@@ -8,10 +8,7 @@
 
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import L from 'helpers/L'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {Link} from "react-router-dom"
-import default_game from "helpers/default_game"
 
 class ScreenAbout extends Component {
 
@@ -23,7 +20,7 @@ class ScreenAbout extends Component {
 
         return (
             <div>
-               about
+                about
 
             </div>
         );
