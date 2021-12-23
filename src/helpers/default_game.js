@@ -54,7 +54,12 @@ const default_game = {
     room: {}, // new_room('none')
     encounter: {}, // new_encounter('none')
     quest: {}, // new_quest('none')
-    log: ''
+    log: '',
+    test: {
+        type: 'str',
+        mod: 0,
+        dice: -1
+    }
 }
 
 export default default_game

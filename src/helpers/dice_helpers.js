@@ -124,3 +124,14 @@ export function open_dice_ui(game, total, dices) {
     return update_g_dice_ui(game, dice);
 }
 
+export function test_g_set_type(game, type) {
+    return update(game, {test: {type: {$set: type}}});
+}
+
+export function test_g_set_mod(game, mod) {
+    return update(game, {test: {mod: {$set: mod}}});
+}
+
+export function test_g_set_dice(game, dice) {
+    return update(game, {test: {dice: {$set: dice}}});
+}

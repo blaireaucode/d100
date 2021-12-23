@@ -12,6 +12,7 @@ import Encounter from 'components/Encounter'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import EncounterRoll from "components/EncounterRoll"
 import Fight from "./Fight";
+import TestDice from "./TestDice";
 
 
 class ScreenFight extends Component {
@@ -24,6 +25,8 @@ class ScreenFight extends Component {
                 <Encounter/>
                 <p/>
                 <Fight/>
+                <br/>
+                <TestDice/>
             </div>
         );
     }

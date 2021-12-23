@@ -6,9 +6,9 @@
  * https://opensource.org/licenses/MIT.
  */
 
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props';
 import Collapse from "@kunukn/react-collapse";
 import L from "../helpers/L";
 
