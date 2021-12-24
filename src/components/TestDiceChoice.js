@@ -25,12 +25,8 @@ import {
 import TestDiceResult from "./TestDiceResult";
 import {clear_if_not_none} from "../helpers/ui_helpers";
 
-class TestDice extends Component {
+class TestDiceChoice extends Component {
 
-    static defaultProps = {
-        type: "auto",
-        mod: "auto"
-    }
     menuitems = [];
 
     constructor(props) {
@@ -76,7 +72,7 @@ class TestDice extends Component {
         return (
             <Paper elevation={5} className={'encounter '}>
                 {clear}
-                <C width={'12ch'}>Test  </C>
+                <C width={'12ch'}>Test against </C>
                 <Select className={'field_input'}
                         disableUnderline={true}
                         type={'txt'}
@@ -111,4 +107,4 @@ class TestDice extends Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TestDice)
+export default connect(mapStateToProps, mapDispatchToProps)(TestDiceChoice)

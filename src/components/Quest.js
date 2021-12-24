@@ -10,6 +10,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Paper} from "@material-ui/core"
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
+import F from "../helpers/F";
 
 class Quest extends Component {
 
@@ -27,12 +28,14 @@ class Quest extends Component {
         if (q.d100 === 'none') return '';
         return (
             <span>
+                Current quest<p/>
                 <Paper elevation={5} className={'encounter'}>
-                CURRENT QUEST
-                {q.d100}
-                {q.name}<p/>
-                {q.S} {q.F}
-                <p/>{q.txt}
+                ({q.d100}) {q.name}<p/>
+                    <F width={'18ch'}>Encounter modifier: </F> {q.enc_mod}<br/>
+                    <F width={'18ch'}>Success: </F> {q.S}<br/>
+                    <F width={'18ch'}>Failure: </F> {q.F}
+                    <p/>
+                    {q.txt}
                 </Paper>
             </span>
         );

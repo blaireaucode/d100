@@ -14,7 +14,7 @@ import L from "../helpers/L"
 import C from "../helpers/C";
 
 
-class ItemNeeded extends Component {
+class ItemTreasure extends Component {
 
     static defaultProps = {
         class_name: ''
@@ -27,18 +27,17 @@ class ItemNeeded extends Component {
     }
 
     buy_item() {
-        const g = buy_g_item(this.props.game, 'needed', this.props.id);
+        const g = buy_g_item(this.props.game, 'treasureA', this.props.id);
         this.props.set_game(g);
         buy_state_item(this);
     }
 
     render() {
-        const item = get_item_in_table('needed', this.props.id, false);
+        const item = get_item_in_table('treasureA', this.props.id, false);
         return (
             <span className={this.props.class_name}>
                 <C width={'8ch'}>{item.d100}</C>
-                <C width={'30ch'}>{item.name}</C>
-                <C width={'65ch'}>{item.detail}</C>
+                <C width={'95ch'}>{item.name}</C>
                 <C width={'6ch'}>{item.gp}</C>
                 <L onClick={this.buy_item}>Buy</L>
                 <C width={'5ch'}/>
@@ -49,4 +48,4 @@ class ItemNeeded extends Component {
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ItemNeeded)
+export default connect(mapStateToProps, mapDispatchToProps)(ItemTreasure)

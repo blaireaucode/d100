@@ -58,14 +58,16 @@ class ItemBackPack extends Component {
             if (item.hands === 2) icon = '👐';
             if (item.hands === 1) icon = <span style={{fontSize: '0.7rem'}}>✋</span>;
         }
-        //console.log('item', item)
+        if ('weapon' !== item.item_type && 'armour' !== item.item_type) {
+            icon = '';
+        }
         return (
             <span className={'item_row'}>
                 <Clear onClick={this.remove_item}/>
                 <InputFieldItem {...p} field_name={'d100'}
                                 class_name={'field_input_small_header'}
-                                read_only={true} width={40} align={'right'}/>
-                <InputFieldItem {...p} field_name={'item_type'} width={60} align={'center'}/>
+                                read_only={true} width={'5ch'} align={'right'}/>
+                <InputFieldItem {...p} field_name={'item_type'} width={'10ch'} align={'center'}/>
                 <InputFieldItem {...p} field_name={'type'} width={40} align={'center'}/>
                 <InputFieldItem {...p} field_name={'slot'} width={60} align={'center'}/>
                 <InputFieldItem {...p} field_name={'hands'} read_only={true} width={'3rem'} align={'center'}/>
@@ -90,10 +92,10 @@ class ItemBackPack extends Component {
         const p = {class_name: 'field_input_header'};
         return (
             <span>
-                <C width={'2ch'}/>
-                <InputFieldHeader {...p} value={'D100'} width={40}/>
-                <InputFieldHeader {...p} value={'Item'} width={60} align={'center'}/>
-                <InputFieldHeader {...p} value={'Type'} width={40} align={'center'}/>
+                <C width={'1ch'}/>
+                <InputFieldHeader {...p} value={'D100'} width={'5ch'} align={'right'}/>
+                <InputFieldHeader {...p} value={'Type'} width={'10ch'} align={'center'}/>
+                <InputFieldHeader {...p} value={'H/R'} width={40} align={'left'}/>
                 <InputFieldHeader {...p} value={'Slot'} width={60} align={'center'}/>
                 <InputFieldHeader {...p} value={'Hands'} width={'3rem'} align={'center'}/>
                 <InputFieldHeader {...p} value={'str'} width={'3rem'} align={'center'}/>
@@ -102,8 +104,8 @@ class ItemBackPack extends Component {
                 <InputFieldHeader {...p} value={'HP'} width={'3rem'} align={'center'}/>
                 <InputFieldHeader {...p} value={'dmg'} width={'3rem'} align={'center'}/>
                 <InputFieldHeader {...p} value={'A/S'} width={'4rem'} align={'center'}/>
-                <InputFieldHeader {...p} value={'GP💰'} width={'4rem'} align={'center'}/>
-                <InputFieldHeader {...p} value={'Fix💰'} width={'4rem'} align={'center'}/>
+                <InputFieldHeader {...p} value={'💰GP'} width={'4rem'} align={'left'}/>
+                <InputFieldHeader {...p} value={'💰Fix'} width={'4rem'} align={'left'}/>
                 <InputFieldHeader {...p} value={'#'} width={'4rem'} align={'center'}/>
                 <InputFieldHeader {...p} value={'🛠'} width={'3rem'} align={'left'}/>
                 <InputFieldHeader {...p} value={'Name'} align={'left'}/>

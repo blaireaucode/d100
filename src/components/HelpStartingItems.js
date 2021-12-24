@@ -12,12 +12,7 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import L from "../helpers/L"
 import C from "../helpers/C";
 import {create_D100_rolling_dices, getRandomInt, open_dice_ui} from "../helpers/dice_helpers";
-import {
-    get_armour_in_table,
-    get_needed_in_table,
-    get_weapon_in_table,
-    update_g_add_item
-} from "../helpers/equipment_helpers";
+import {get_item_in_table, update_g_add_item} from "../helpers/equipment_helpers";
 
 class HelpStartingItems extends Component {
 
@@ -33,7 +28,7 @@ class HelpStartingItems extends Component {
         const total = getRandomInt(1, 100);
 
         // add the item
-        const w = get_weapon_in_table(total);
+        const w = get_item_in_table('weapon', total);
         let g = update_g_add_item(this.props.game, w);
         this.setState({...this.state, weapon: w.name});
         setTimeout(() => {
@@ -52,9 +47,9 @@ class HelpStartingItems extends Component {
         const total3 = getRandomInt(1, 100);
 
         // add the item
-        let w1 = get_armour_in_table(total1);
-        let w2 = get_armour_in_table(total2);
-        let w3 = get_armour_in_table(total3);
+        let w1 = get_item_in_table('armour', total1);
+        let w2 = get_item_in_table('armour', total2);
+        let w3 = get_item_in_table('armour', total3);
 
         // update
         let g = update_g_add_item(this.props.game, w1);
@@ -73,16 +68,17 @@ class HelpStartingItems extends Component {
     }
 
     get_needed() {
-        const oil = get_needed_in_table(31);
+        const oil = get_item_in_table('needed', 31);
         oil['number'] = 20;
-        const food = get_needed_in_table(16);
+        const food = get_item_in_table('needed', 16);
         food['number'] = 10;
-        const picks = get_needed_in_table(1);
+        const picks = get_item_in_table('needed', 1);
         picks['number'] = 15;
         let g = update_g_add_item(this.props.game, oil);
         g = update_g_add_item(g, food);
         g = update_g_add_item(g, picks);
-        this.props.set_game(g);this.setState({...this.state, needed: '20 oil ; 10 food ; 15 picks'});
+        this.props.set_game(g);
+        this.setState({...this.state, needed: '20 oil ; 10 food ; 15 picks'});
         setTimeout(() => {
             this.setState({...this.state, needed: ''});
         }, 10000);

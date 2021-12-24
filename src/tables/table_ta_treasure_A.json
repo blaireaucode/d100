@@ -1,0 +1,147 @@
+[
+  {
+    "d100": "none",
+    "name": "none",
+    "gp": 0
+  },
+  {
+    "d100": "1-3",
+    "name": "Silver pieces: A small bag filled with Silver coins.",
+    "gp": 70
+  },
+  {
+    "d100": "4-6",
+    "name": "Brew of finer DMG: Drink to gain +2 Dmg to your next damage roll.",
+    "gp": 70
+  },
+  {
+    "d100": "7-9",
+    "name": "Brew of finer STR: Drink to gain +5 Str to your next d100 dice roll.",
+    "gp": 75
+  },
+  {
+    "d100": "10-12",
+    "name": "Brew of finer DEX: Drink to gain +5 Dex to your next d100 dice roll.",
+    "gp": 75
+  },
+  {
+    "d100": "13-15",
+    "name": "Brew of finer INT: Drink to gain +5 Int to your next d100 dice roll.",
+    "gp": 75
+  },
+  {
+    "d100": "16-46",
+    "name": "Objective item: An “Objective item” is found that may be required for a quest (check the current quest’s details). If it’s not needed for the quest, it is instead a “Fine item” worth 100gp.",
+    "gp": 100
+  },
+  {
+    "d100": "47-49",
+    "name": "Brew of finer DEF: Drink to gain +2 Def on a monsters next damage roll.",
+    "gp": 100
+  },
+  {
+    "d100": "50-52",
+    "name": "finer armour: Roll on table A – Armour and add “finer” before its name, it gains +0.2 Def.",
+    "gp": 0
+  },
+  {
+    "d100": "53-55",
+    "name": "finer weapon: Roll on table W – Weapon and add “finer” before its name, add +1 to its Dmg.",
+    "gp": 0
+  },
+  {
+    "d100": "56-58",
+    "name": "Silver pieces: A small bag filled with Silver coins.",
+    "gp": 140
+  },
+  {
+    "d100": "59-61",
+    "name": "Potion of finer STR: Drink to gain +5 Str until you next shade a Â on the time track.",
+    "gp": 150
+  },
+  {
+    "d100": "62-64",
+    "name": "Potion of finer DEX: Drink to gain +5 Dex until you next shade a Â on the time track.",
+    "gp": 150
+  },
+  {
+    "d100": "65-67",
+    "name": "Potion of finer INT: Drink to gain +5 Int until you next shade a Â on the time track.",
+    "gp": 150
+  },
+  {
+    "d100": "68-70",
+    "name": "Potion of finer remove poison: Drink to remove up to 4 shaded pips on the poison track.",
+    "gp": 160
+  },
+  {
+    "d100": "71-73",
+    "name": "Potion of finer healing: Drink to restore up to 8 lost HP.",
+    "gp": 160
+  },
+  {
+    "d100": "74-76",
+    "name": "Elixir of finer fate: Drink to gain 1 fate point.",
+    "gp": 200
+  },
+  {
+    "d100": "77-79",
+    "name": "SCROLL: You find a parchment containing a spell, roll once on table S – Spells, and add “Scroll of” before the spell name before adding it to the adventure sheet.\n  ",
+    "gp": 200
+  },
+  {
+    "d100": "80-82",
+    "name": "Potion of finer cure disease: Drink to remove up to 4 shaded pips on the disease track.",
+    "gp": 260
+  },
+  {
+    "d100": "83-85",
+    "name": "Silver pieces: A small bag filled with Silver coins.",
+    "gp": 280
+  },
+  {
+    "d100": "86-88",
+    "name": "Elixir of finer STR: Drink to gain 1 point of primary Str.",
+    "gp": 300
+  },
+  {
+    "d100": "89-91",
+    "name": "Elixir of finer DEX: Drink to gain 1 point of primary Dex.",
+    "gp": 300
+  },
+  {
+    "d100": "92-94",
+    "name": "Elixir of finer INT: Drink to gain 1 point of primary Int.",
+    "gp": 300
+  },
+  {
+    "d100": "95",
+    "name": "Elixir of finer health: Drink to gain 1 point of primary HP.",
+    "gp": 400
+  },
+  {
+    "d100": "96",
+    "name": "Potion of finer fate: Drink to add +40 to a result when rolling on the next table.",
+    "gp": 800
+  },
+  {
+    "d100": "97",
+    "name": "Elixir of finer life: Drink to gain 1 Life point.",
+    "gp": 1000
+  },
+  {
+    "d100": "98",
+    "name": "Greater treasure: A much greater treasure is found, roll on table TB – Treasure B.",
+    "gp": 0
+  },
+  {
+    "d100": "99",
+    "name": "Legendary ring: Roll on table L for its legend (ring slot) and value.",
+    "gp": 0
+  },
+  {
+    "d100": "100",
+    "name": "Legendary necklace: Roll on table L for its legend (neck slot) and value.",
+    "gp": 0
+  }
+]

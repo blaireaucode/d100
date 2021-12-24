@@ -6,14 +6,12 @@
  * https://opensource.org/licenses/MIT.
  */
 
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {get_weapon_in_table, update_g_add_item} from "../helpers/equipment_helpers"
-import L from "../helpers/L"
-import {update_g_encounter_field} from "../helpers/update_helpers"
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props';
+import {buy_g_item, buy_state_item, get_item_in_table} from "../helpers/equipment_helpers";
+import L from "../helpers/L";
 import C from "../helpers/C";
-
 
 class ItemWeapon extends Component {
 
@@ -28,20 +26,13 @@ class ItemWeapon extends Component {
     }
 
     buy_item() {
-        const item = get_weapon_in_table(this.props.id);
-        const gp = this.props.game.characteristics.gold_pieces - item.gp;
-        let g = update_g_encounter_field(this.props.game, 'gold_pieces', gp);
-        g = update_g_add_item(g, item);
+        const g = buy_g_item(this.props.game, 'weapon', this.props.id);
         this.props.set_game(g);
-        this.setState({buy: 'You just bought it!'});
-        setTimeout(() => {
-            this.setState({buy: ''});
-        }, 3000);
+        buy_state_item(this);
     }
 
     render() {
-        //console.log('render', this.state);
-        const item = get_weapon_in_table(this.props.id, false);
+        const item = get_item_in_table('weapon', this.props.id, false);
         return (
             <span className={this.props.class_name}>
                 <C width={'8ch'}>{item.d100}</C>

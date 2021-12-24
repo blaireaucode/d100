@@ -13,6 +13,8 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import EncounterRoll from "components/EncounterRoll"
 import Fight from "./Fight";
 import TestDice from "./TestDice";
+import TestBlockEscape from "./TestBlockEscape";
+import TestTryToFlee from "./TestTryToFlee";
 
 
 class ScreenFight extends Component {
@@ -26,6 +28,8 @@ class ScreenFight extends Component {
                 <p/>
                 <Fight/>
                 <br/>
+                <TestBlockEscape/>
+                <TestTryToFlee/>
                 <TestDice/>
             </div>
         );

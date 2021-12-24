@@ -113,6 +113,18 @@
     background: #20222a;
 }
 
+.item_table_even {
+
+}
+
+.item_table_odd:hover {
+    background-color: #131315;
+}
+.item_table_even:hover {
+    background-color: #131315;
+}
+
+
 .encounter {
     border: 0 solid #777;
     margin-left: 0;
@@ -161,6 +173,7 @@
     font-size: calc(0.85em);
     /*color: #aaa;*/
     color: #807c62;
+    font-weight: normal;
 }
 
 

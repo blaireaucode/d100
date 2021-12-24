@@ -6,15 +6,26 @@
  * https://opensource.org/licenses/MIT.
  */
 
-import weapon_table from 'tables/table_w_weapon.json'
-import armour_table from 'tables/table_a_armour.json'
-import needed_table from 'tables/table_n_needed.json'
-import {parse_d100_interval} from "./encounter_helpers"
-import update from "immutability-helper"
-import {v4 as uuidv4} from "uuid"
-import default_item from "./default_item"
+import weapon_table from 'tables/table_w_weapon.json';
+import armour_table from 'tables/table_a_armour.json';
+import needed_table from 'tables/table_n_needed.json';
+import treasureA_table from 'tables/table_ta_treasure_A.json';
+import {parse_d100_interval} from "./encounter_helpers";
+import update from "immutability-helper";
+import {v4 as uuidv4} from "uuid";
+import default_item from "./default_item";
+import React from "react";
+import {update_g_characteristic} from "./update_helpers";
 
-export function get_item_in_table(table, id, copy = true) {
+const tables = {
+    weapon: weapon_table,
+    armour: armour_table,
+    needed: needed_table,
+    treasureA: treasureA_table
+}
+
+export function get_item_in_table(table_name, id, copy = true) {
+    const table = tables[table_name];
     let found = false;
     let i;
     for (i in table) {
@@ -33,6 +44,7 @@ export function get_item_in_table(table, id, copy = true) {
         item["id"] = uuidv4();
         item["current_location"] = 'backpack';
         item["damaged"] = 0;
+        item["item_type"] = table_name;
         for (const k in default_item) {
             if (k in item) continue;
             item[k] = '';
@@ -42,23 +54,36 @@ export function get_item_in_table(table, id, copy = true) {
     return table[i];
 }
 
-export function get_weapon_in_table(id, copy = true) {
-    let item = get_item_in_table(weapon_table, id, copy);
-    item["item_type"] = 'weapon';
-    return item;
+export function get_items_from_table(table_name, Component) {
+    const table = tables[table_name];
+    let i = 0;
+    let items = [];
+    for (let item of table) {
+        const v = item.d100;
+        if (v === 'none') continue;
+        const cn = (i % 2 === 0) ? 'item_table_odd' : 'item_table_even';
+        const op = <span key={v}>
+                        <Component id={v} class_name={cn}/><br/>
+                       </span>;
+        items.push(op);
+        i += 1;
+    }
+    return items;
 }
 
-export function get_armour_in_table(id, copy = true) {
-    let item = get_item_in_table(armour_table, id, copy);
-    item["item_type"] = 'armour';
-    return item;
+export function buy_g_item(game, table_name, id) {
+    const item = get_item_in_table(table_name, id);
+    const gp = game.characteristics.gold_pieces - item.gp;
+    let g = update_g_characteristic(game, 'gold_pieces', gp);
+    g = update_g_add_item(g, item);
+    return g;
 }
 
-export function get_needed_in_table(id, copy = true) {
-    let item = get_item_in_table(needed_table, id, copy);
-    item["item_type"] = 'needed';
-    item["number"] = 1;
-    return item;
+export function buy_state_item(t) {
+    t.setState({buy: 'You just bought it!'});
+    setTimeout(() => {
+        t.setState({buy: ''});
+    }, 3000);
 }
 
 export function update_g_add_item(game, item) {

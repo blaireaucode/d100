@@ -10,12 +10,15 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import L from "../helpers/L"
-import ItemsTableWeapon from "./ItemsTableWeapon";
-import ItemsTableArmour from "./ItemsTableArmour";
+import ItemsTableWeapon from "./TableWeapon";
+import TableArmour from "./TableArmour";
 import CollapsibleHelp from "./CollapsibleHelp";
 import C from "../helpers/C";
-import ItemsTableNeeded from "./ItemsTableNeeded";
+import ItemsTableNeeded from "./TableNeeded";
 import HelpStartingItems from "./HelpStartingItems";
+import ItemsTableTreasureA from "./TableTreasureA";
+import F from "../helpers/F";
+import InputFieldCharacter from "./InputFieldCharacter";
 
 class ScreenTown extends Component {
 
@@ -32,17 +35,23 @@ class ScreenTown extends Component {
     render() {
         let table = '';
         if (this.state.table === 'weapons') table = <ItemsTableWeapon/>
-        if (this.state.table === 'armours') table = <ItemsTableArmour/>
+        if (this.state.table === 'armours') table = <TableArmour/>
         if (this.state.table === 'needed') table = <ItemsTableNeeded/>
+        if (this.state.table === 'treasureA') table = <ItemsTableTreasureA/>
         return (
             <span>
+                <F>💰Gold pieces <C width={'2ch'}/></F>
+                <InputFieldCharacter type={'number'} width={'7ch'} field_name={'gold_pieces'}/>
+                <br/>
                 <L onClick={() => this.toggle('none')} className={'clear'}> ✗ </L>
-                &nbsp;&nbsp;&nbsp;
-                <L onClick={() => this.toggle('weapons')}>Weapon table</L>
-                &nbsp;&nbsp;&nbsp;
-                <L onClick={() => this.toggle('armours')}>Armour table</L>
-                &nbsp;&nbsp;&nbsp;
-                <L onClick={() => this.toggle('needed')}>Needed table</L>
+                <C width={'3ch'}/>
+                <L onClick={() => this.toggle('weapons')}>Weapon</L>
+                <C width={'3ch'}/>
+                <L onClick={() => this.toggle('armours')}>Armour</L>
+                <C width={'3ch'}/>
+                <L onClick={() => this.toggle('needed')}>Needed</L>
+                <C width={'3ch'}/>
+                <L onClick={() => this.toggle('treasureA')}>Treasure A</L>
                 <C width={'10ch'}/>
                 <CollapsibleHelp text={'(?)'}>
                     <HelpStartingItems/>

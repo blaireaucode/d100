@@ -54,5 +54,53 @@
     "S": "+150gp",
     "F": "-0.5gp",
     "txt": "Enter the dungeon and explore until 2 yellow, 2 green, 2 red and 2 blue areas have been added to the dungeon sheet."
+  },
+  {
+    "d100": "13-14",
+    "name": "Potion hunt",
+    "enc_mod": -20,
+    "S": "+180gp",
+    "F": "-0.5gp",
+    "txt": "A young wizard has asked the adventurer to Collect any 4 potions from within the dungeon to further his research."
+  },
+  {
+    "d100": "15-16",
+    "name": "Monster hunt",
+    "enc_mod": -20,
+    "S": "+300gp",
+    "F": "-0.5gp",
+    "txt": "Kill any 5 monsters 34 or higher on table E (Encounter), as they have been terrorising the local townsfolk."
+  },
+  {
+    "d100": "17-18",
+    "name": "Head of the beast",
+    "enc_mod": -20,
+    "S": "+300gp",
+    "F": "-0.5gp",
+    "txt": "The villagers need evidence that a beast terrorising them has been killed, Loot 1 head part from any monster."
+  },
+  {
+    "d100": "19-20",
+    "name": "Amulet of hope",
+    "enc_mod": -20,
+    "S": "+300gp",
+    "F": "-0.5gp",
+    "txt": "The 'Amulet of Hope' was taken by two goblins and broken in two, it is now lost deep inside the dungeon and a feeling of hopelessness has engulfed the kingdom, it is time to bring the two parts together again, Collect 2 Objective Items."
+  },
+  {
+    "d100": "21-22",
+    "name": "Rescue the villagers",
+    "enc_mod": -20,
+    "S": "+350gp",
+    "F": "-0.5gp",
+    "txt": "Several villagers have been taken by a group of terrifying monsters to be tortured to death. Kill any 3 monsters 45, or higher on table E."
+  },
+  {
+    "d100": "23-24",
+    "name": "Monster cull",
+    "enc_mod": -20,
+    "S": "+500gp",
+    "F": "-0.5gp",
+    "txt": "Kill any 10 monsters 34, or higher on table E – Encounter, their numbers have grown too strong."
   }
 ]

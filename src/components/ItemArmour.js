@@ -9,7 +9,13 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {get_armour_in_table, update_g_add_item} from "../helpers/equipment_helpers";
+import {
+    buy_g_item,
+    buy_state_item,
+    get_armour_in_table,
+    get_item_in_table,
+    update_g_add_item
+} from "../helpers/equipment_helpers";
 import L from "../helpers/L";
 import {update_g_encounter_field} from "../helpers/update_helpers";
 import C from "../helpers/C";
@@ -27,27 +33,21 @@ class ItemArmour extends Component {
     }
 
     buy_item() {
-        const item = get_armour_in_table(this.props.id);
-        const gp = this.props.game.characteristics.gold_pieces - item.gp;
-        let g = update_g_encounter_field(this.props.game, 'gold_pieces', gp);
-        g = update_g_add_item(g, item);
+        const g = buy_g_item(this.props.game, 'armour', this.props.id);
         this.props.set_game(g);
-        this.setState({buy: 'You just bought it!'});
-        setTimeout(() => {
-            this.setState({buy: ''});
-        }, 3000);
+        buy_state_item(this);
     }
 
     render() {
-        const item = get_armour_in_table(this.props.id, false);
+        const item = get_item_in_table('armour', this.props.id, false);
         return (
             <span className={this.props.class_name}>
                 <C width={'8ch'}>{item.d100}</C>
                 <C width={'25ch'}>{item.name}</C>
-                <C width={'6ch'}>{item.slot}</C>
-                <C width={'6ch'}>{item.type}</C>
+                <C width={'7ch'}>{item.slot}</C>
                 <C width={'5ch'}>{item.AS}</C>
                 <C width={'5ch'}>{item.gp}</C>
+                <C width={'2ch'}/>
                 <C width={'8ch'}>{item.fix_cost}</C>
                 <L onClick={this.buy_item}>Buy</L>
                 <C width={'5ch'}/>

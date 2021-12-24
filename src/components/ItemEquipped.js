@@ -104,9 +104,9 @@ class ItemEquipped extends Component {
                 <InputFieldHeader {...pn} value={'dmg'}/>
                 <InputFieldHeader {...pn} value={'def'}/>
                 <InputFieldHeader {...pn} value={'AS'}/>
-                <InputFieldHeader {...p} value={'GP💰'} width={'5rem'} align={'center'}/>
-                <InputFieldHeader {...p} value={'Fix💰'} width={'5rem'} align={'center'}/>
-                <InputFieldHeader {...p} value={'🛠'}/>
+                <InputFieldHeader {...p} value={'💰GP'} width={'5rem'} align={'center'}/>
+                <InputFieldHeader {...p} value={'💰Fix'} width={'5rem'} align={'center'}/>
+                <InputFieldHeader {...p} value={'🛠'} width={'4rem'}/>
             </span>
         );
     }
