@@ -28,7 +28,8 @@ class TableTreasureA extends Component {
             <span>
                 <TableTitle>Table TA - Treasures A</TableTitle>
                 <InputFieldHeader width={'8ch'} value={'D100'}/>
-                <InputFieldHeader width={'95ch'} value={'Name'}/>
+                <InputFieldHeader width={'28ch'} value={'Name'}/>
+                <InputFieldHeader width={'70ch'} value={'Detail'}/>
                 <InputFieldHeader width={'6ch'} value={'gp'}/>
                 <br/>
                 {this.items}

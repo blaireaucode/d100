@@ -14,7 +14,7 @@ import ItemEquipped from "./ItemEquipped";
 import InputFieldHeader from "./InputFieldHeader";
 import InputFieldCharacter from "./InputFieldCharacter";
 
-class ItemsEquipped extends Component {
+class EquippedTable extends Component {
 
     render() {
         let items = [];
@@ -28,16 +28,18 @@ class ItemsEquipped extends Component {
                         </span>);
         }
         //const c = this.props.game.characteristics;
-        const p = {align: 'center', value: ''};
+        const p = {align: 'center', value: '', class_name: 'field_input_small_header'};
         const w = '3rem';
-        const pn = {width: w, align: 'center'};
+        const pn = {width: w, align: 'center', class_name: 'field_input_small'};
+        const pnh = {width: w, align: 'center', class_name: 'field_input_small_header'};
         return (
             <Paper elevation={5} className={'character_panel'}>
                 {items}
-                <InputFieldHeader {...p} width={'3rem'}/>
+                <hr color={'#333'} size={1}/>
+                <InputFieldHeader {...p} width={'2rem'}/>
                 <InputFieldHeader {...p} width={'3rem'}/>
                 <InputFieldHeader {...p} width={'4rem'}/>
-                <InputFieldHeader {...p} value={'Total'} width={'14rem'} align={'right'}/>
+                <InputFieldHeader {...p} value={'Total'} width={'20ch'} align={'right'}/>
                 <InputFieldCharacter {...pn} field_name={'str_items'} align={'center'}/>
                 <InputFieldCharacter {...pn} field_name={'dex_items'}/>
                 <InputFieldCharacter {...pn} field_name={'int_items'}/>
@@ -48,18 +50,17 @@ class ItemsEquipped extends Component {
                 <InputFieldHeader {...p} width={'5rem'} align={'center'}/>
                 <InputFieldHeader {...p} width={'5rem'} align={'center'}/>
                 <InputFieldHeader {...p} />
-                <br/>
-                <InputFieldHeader {...p} width={'3rem'}/>
+                <InputFieldHeader {...p} width={'2rem'}/>
                 <InputFieldHeader {...p} width={'3rem'}/>
                 <InputFieldHeader {...p} width={'4rem'}/>
-                <InputFieldHeader {...p} width={'14rem'} align={'right'}/>
-                <InputFieldHeader {...pn} value={'str'} align={'center'}/>
-                <InputFieldHeader {...pn} value={'dex'}/>
-                <InputFieldHeader {...pn} value={'int'}/>
-                <InputFieldHeader {...pn} value={'HP'}/>
-                <InputFieldHeader {...pn} value={'dmg'}/>
-                <InputFieldHeader {...pn} value={'def'}/>
-                <InputFieldHeader {...pn} width={w}/>
+                <InputFieldHeader {...p} width={'39ch'} align={'right'}/>
+                <InputFieldHeader {...pnh} value={'str'} align={'center'}/>
+                <InputFieldHeader {...pnh} value={'dex'}/>
+                <InputFieldHeader {...pnh} value={'int'}/>
+                <InputFieldHeader {...pnh} value={'HP'}/>
+                <InputFieldHeader {...pnh} value={'dmg'}/>
+                <InputFieldHeader {...pnh} value={'def'}/>
+                <InputFieldHeader {...pnh} width={w}/>
                 <InputFieldHeader {...p} width={'5rem'} align={'center'}/>
                 <InputFieldHeader {...p} width={'5rem'} align={'center'}/>
                 <InputFieldHeader {...p} />
@@ -68,4 +69,4 @@ class ItemsEquipped extends Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ItemsEquipped)
+export default connect(mapStateToProps, mapDispatchToProps)(EquippedTable)

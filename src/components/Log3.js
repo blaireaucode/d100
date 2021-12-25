@@ -8,11 +8,9 @@
 
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {Paper} from "@material-ui/core"
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import 'draft-js/dist/Draft.css'
-import MDEditor from '@uiw/react-md-editor';
-import {MegadraftEditor, editorStateFromRaw} from "megadraft";
+import {editorStateFromRaw, MegadraftEditor} from "megadraft";
 
 //const [value, setValue] = React.useState("**Hello world!!!**");
 

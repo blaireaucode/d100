@@ -34,14 +34,16 @@ class CharacterMain extends Component {
             <span>
                 {/* Name etc */}
                 <F>Name</F> <InputFieldCharacter field_name={'name'} width={'20ch'}/>
-                <F>Hero Path</F> <InputFieldSelectCharacter width={'10ch'}
-                                                            items={items}
-                                                            field_name={'hero_path'}/>
-                <C width={'11ch'}/>
-                <F>Race</F> <InputFieldSelectCharacter field_name={'race'}
-                                                       items={this.items_race}
-                                                       width={'10ch'}/>
-                <C width={'20ch'}/>
+                <F>Hero Path </F> <C width={'1ch'}/>
+                <InputFieldSelectCharacter width={'10ch'}
+                                           items={items}
+                                           field_name={'hero_path'}/>
+                <C width={'10ch'}/>
+                <F>Race</F>  <C width={'1ch'}/>
+                <InputFieldSelectCharacter field_name={'race'}
+                                           items={this.items_race}
+                                           width={'10ch'}/>
+                <C width={'30ch'}/>
                 <CollapsibleHelp text={'(?)'}><CharacterHeroPathHelp/></CollapsibleHelp>
             </span>);
     }

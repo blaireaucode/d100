@@ -55,7 +55,7 @@ class ItemEquipped extends Component {
         return (
             <span className={'item_row'}>
                 {slot_columns}
-                <InputFieldItem {...p} field_name={'name'} width={'14rem'}/>
+                <InputFieldItem {...p} field_name={'name'} width={'20ch'} align={'right'}/>
                 <InputFieldItem {...p} field_name={'str'} type={'number'}/>
                 <InputFieldItem {...p} field_name={'dex'} type={'number'}/>
                 <InputFieldItem {...p} field_name={'int'} type={'number'}/>
@@ -81,7 +81,7 @@ class ItemEquipped extends Component {
         };
         return (
             <span>
-                <InputFieldItem {...p} field_name={'d10'} read_only={true} width={'3rem'}/>
+                <InputFieldItem {...p} field_name={'d10'} read_only={true} width={'2rem'}/>
                 <InputFieldItem {...p} field_name={'dmg_mod'} read_only={true} width={'3rem'}/>
                 <InputFieldItem {...p} field_name={'location'} read_only={true} width={'4rem'}/>
             < /span>
@@ -89,14 +89,14 @@ class ItemEquipped extends Component {
     }
 
     render_header() {
-        const pn = {width: '3rem', align: 'center'};
-        const p = {align: 'center'};
+        const pn = {width: '3rem', align: 'center', class_name: 'field_input_small_header'};
+        const p = {align: 'center', class_name: 'field_input_small_header'};
         return (
             <span>
-                <InputFieldHeader {...p} value={'D10'} width={'3rem'} align={'left'}/>
+                <InputFieldHeader {...p} value={'D10'} width={'2rem'} align={'left'}/>
                 <InputFieldHeader {...p} value={'Mod'} width={'3rem'}/>
                 <InputFieldHeader {...p} value={'Loc.'} width={'4rem'}/>
-                <InputFieldHeader {...p} value={'Name'} width={'14rem'} align={'right'}/>
+                <InputFieldHeader {...p} value={'Name'} width={'20ch'} align={'right'}/>
                 <InputFieldHeader {...pn} value={'str'}/>
                 <InputFieldHeader {...pn} value={'dex'}/>
                 <InputFieldHeader {...pn} value={'int'}/>
@@ -106,7 +106,7 @@ class ItemEquipped extends Component {
                 <InputFieldHeader {...pn} value={'AS'}/>
                 <InputFieldHeader {...p} value={'💰GP'} width={'5rem'} align={'center'}/>
                 <InputFieldHeader {...p} value={'💰Fix'} width={'5rem'} align={'center'}/>
-                <InputFieldHeader {...p} value={'🛠'} width={'4rem'}/>
+                <InputFieldHeader {...p} value={'🛠'} width={'5rem'}/>
             </span>
         );
     }

@@ -10,8 +10,9 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import CharacterMain from "./CharacterMain";
-import ItemsBackPack from "./ItemsBackPack";
-import ItemsEquipped from "./ItemsEquipped";
+import BackPackTable1 from "./BackPackTable1";
+import BackPackTable2 from "./BackPackTable2";
+import ItemsEquipped from "./EquippedTable";
 
 class ScreenCharacter extends Component {
 
@@ -20,10 +21,13 @@ class ScreenCharacter extends Component {
             <div>
                 <CharacterMain/>
                 <p/>
+                Equipped items: <p/>
                 <ItemsEquipped/>
                 <p/>
-                Backpack<br/>
-                <ItemsBackPack/>
+                Backpack: <p/>
+                <BackPackTable1/>
+                <p/>
+                <BackPackTable2/>
             </div>
         );
     }

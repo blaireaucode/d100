@@ -9,15 +9,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {
-    buy_g_item,
-    buy_state_item,
-    get_armour_in_table,
-    get_item_in_table,
-    update_g_add_item
-} from "../helpers/equipment_helpers";
+import {buy_g_item, buy_state_item, get_item_in_table} from "../helpers/equipment_helpers";
 import L from "../helpers/L";
-import {update_g_encounter_field} from "../helpers/update_helpers";
 import C from "../helpers/C";
 
 class ItemArmour extends Component {

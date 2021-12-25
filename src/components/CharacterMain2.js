@@ -43,7 +43,7 @@ class CharacterMain extends Component {
 
                 <F>Encounter modifier</F> <InputFieldCharacter {...p} field_name={'encounter_modifier'} width={'5ch'}/>
 
-                <C width={'14ch'}/>
+                <C width={'25ch'}/>
                 <CollapsibleHelp text={'(?)'}>
                     <CharacterHPHelp/>
                 </CollapsibleHelp>

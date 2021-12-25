@@ -16,7 +16,7 @@ import L from 'helpers/L';
 import InputFieldHeader from "./InputFieldHeader";
 import C from "../helpers/C";
 
-class ItemBackPack extends Component {
+class ItemBackPack1 extends Component {
 
     constructor(props) {
         super(props);
@@ -30,11 +30,6 @@ class ItemBackPack extends Component {
     }
 
     equip_item() {
-        /*
-            - weapon : hands, hand Off, hand main
-            - armour : head back torso arms waist legs feet
-            - other : neck ring belt ?
-         */
         const g = update_g_equip_item(this.props.game, this.props.id);
         this.props.set_game(g);
     }
@@ -43,7 +38,7 @@ class ItemBackPack extends Component {
         if (this.props.id === 'header') return this.render_header();
         const item = this.props.game.items[this.props.id];
         const p = {class_name: 'input field_input_small', id: item.id};
-        let icon = '➹';//'➹';
+        let icon = '➹'; //'➹';
         if ('slot' in item) {
             for (const l of this.props.game.equipped_items) {
                 if (item.slot === l.location) {
@@ -58,18 +53,13 @@ class ItemBackPack extends Component {
             if (item.hands === 2) icon = '👐';
             if (item.hands === 1) icon = <span style={{fontSize: '0.7rem'}}>✋</span>;
         }
-        if ('weapon' !== item.item_type && 'armour' !== item.item_type) {
-            icon = '';
-        }
         return (
             <span className={'item_row'}>
                 <Clear onClick={this.remove_item}/>
-                <InputFieldItem {...p} field_name={'d100'}
-                                class_name={'field_input_small_header'}
-                                read_only={true} width={'5ch'} align={'right'}/>
-                <InputFieldItem {...p} field_name={'item_type'} width={'10ch'} align={'center'}/>
-                <InputFieldItem {...p} field_name={'type'} width={40} align={'center'}/>
-                <InputFieldItem {...p} field_name={'slot'} width={60} align={'center'}/>
+                <InputFieldItem {...p} field_name={'d100'} read_only={true} width={'5ch'} align={'right'}/>
+                <InputFieldItem {...p} field_name={'item_type'} width={'11ch'} align={'center'}/>
+                <InputFieldItem {...p} field_name={'type'} width={'6ch'} align={'center'}/>
+                <InputFieldItem {...p} field_name={'slot'} width={'8ch'} align={'center'}/>
                 <InputFieldItem {...p} field_name={'hands'} read_only={true} width={'3rem'} align={'center'}/>
                 <InputFieldItem {...p} field_name={'str'} width={'3rem'} type={'number'} align={'right'}/>
                 <InputFieldItem {...p} field_name={'dex'} width={'3rem'} type={'number'} align={'right'}/>
@@ -79,7 +69,6 @@ class ItemBackPack extends Component {
                 <InputFieldItem {...p} field_name={'AS'} width={'4rem'} align={'center'}/>
                 <InputFieldItem {...p} field_name={'gp'} width={'4rem'} type={'number'} align={'center'}/>
                 <InputFieldItem {...p} field_name={'fix_cost'} width={'4rem'} type={'number'} align={'center'}/>
-                <InputFieldItem {...p} field_name={'number'} width={'4rem'} type={'number'} align={'right'}/>
                 <InputFieldItem {...p} field_name={'damaged'} width={'3rem'} type={'number'} align={'center'}/>
                 <InputFieldItem {...p} field_name={'name'} width={220}/>
                 &nbsp;
@@ -89,14 +78,14 @@ class ItemBackPack extends Component {
     }
 
     render_header() {
-        const p = {class_name: 'field_input_header'};
+        const p = {class_name: 'field_input_small_header'};
         return (
             <span>
                 <C width={'1ch'}/>
                 <InputFieldHeader {...p} value={'D100'} width={'5ch'} align={'right'}/>
-                <InputFieldHeader {...p} value={'Type'} width={'10ch'} align={'center'}/>
-                <InputFieldHeader {...p} value={'H/R'} width={40} align={'left'}/>
-                <InputFieldHeader {...p} value={'Slot'} width={60} align={'center'}/>
+                <InputFieldHeader {...p} value={'Type'} width={'11ch'} align={'center'}/>
+                <InputFieldHeader {...p} value={'H/R'} width={'6ch'} align={'center'}/>
+                <InputFieldHeader {...p} value={'Slot'} width={'8ch'} align={'center'}/>
                 <InputFieldHeader {...p} value={'Hands'} width={'3rem'} align={'center'}/>
                 <InputFieldHeader {...p} value={'str'} width={'3rem'} align={'center'}/>
                 <InputFieldHeader {...p} value={'dex'} width={'3rem'} align={'center'}/>
@@ -106,7 +95,6 @@ class ItemBackPack extends Component {
                 <InputFieldHeader {...p} value={'A/S'} width={'4rem'} align={'center'}/>
                 <InputFieldHeader {...p} value={'💰GP'} width={'4rem'} align={'left'}/>
                 <InputFieldHeader {...p} value={'💰Fix'} width={'4rem'} align={'left'}/>
-                <InputFieldHeader {...p} value={'#'} width={'4rem'} align={'center'}/>
                 <InputFieldHeader {...p} value={'🛠'} width={'3rem'} align={'left'}/>
                 <InputFieldHeader {...p} value={'Name'} align={'left'}/>
             < /span>
@@ -115,4 +103,4 @@ class ItemBackPack extends Component {
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ItemBackPack)
+export default connect(mapStateToProps, mapDispatchToProps)(ItemBackPack1)

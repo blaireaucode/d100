@@ -37,7 +37,8 @@ class ItemTreasure extends Component {
         return (
             <span className={this.props.class_name}>
                 <C width={'8ch'}>{item.d100}</C>
-                <C width={'95ch'}>{item.name}</C>
+                <C width={'28ch'}>{item.name}</C>
+                <C width={'70ch'}>{item.detail}</C>
                 <C width={'6ch'}>{item.gp}</C>
                 <L onClick={this.buy_item}>Buy</L>
                 <C width={'5ch'}/>

@@ -62,7 +62,7 @@ class CharacterMain extends Component {
                 <F width={'10ch'}>Spell Caster</F> <InputFieldCharacter type={'bool'} field_name={'spell_caster'}/>
                 <C width={'2ch'}/>
                 <span className={'help'}>Can now use spells from the spell book</span>
-                <C width={'20ch'}/>
+                <C width={'23ch'}/>
                 <CollapsibleHelp text={'(?)'}>
                     <CharacterCharacteristicsHelp/>
                 </CollapsibleHelp>
