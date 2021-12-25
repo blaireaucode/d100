@@ -25,7 +25,7 @@ class TestDiceResult extends Component {
             const v = parseInt(c[t.type.toLowerCase()]) + parseInt(t.mod);
             if (t.dice <= v) {
                 result = <span> ➜ &nbsp; {t.dice}<C width={'2ch'}/>
-                            <span className={'attack_hit'}>Success ! <C width={'4ch'}/>
+                            <span className={'success'}>Success ! <C width={'4ch'}/>
                              <C width={'25ch'} className={'help'}> {t.dice} is lower or equal to {v} </C>
                                 <br/><C width={'53ch'}/>
                                 {this.props.help}
@@ -33,7 +33,7 @@ class TestDiceResult extends Component {
                     </span>
             } else {
                 result = <span> ➜ &nbsp; {t.dice}<C width={'2ch'}/>
-                                <span className={'attack_miss'}>Fail <C width={'1ch'}/>
+                                <span className={'fail'}>Fail <C width={'1ch'}/>
                                 <span className={'help'}> {t.dice} is greater to {v}
                                 </span>
                                     <br/><C width={'53ch'}/>

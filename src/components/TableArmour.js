@@ -16,6 +16,9 @@ import TableTitle from "./TableTitle";
 
 class TableArmour extends Component {
 
+    static defaultProps = {
+        id: ''
+    }
     items = [];
 
     constructor(props) {
@@ -24,6 +27,9 @@ class TableArmour extends Component {
     }
 
     render() {
+        if (this.props.id !== '') {
+            this.items = get_items_from_table('armour', ItemArmour, this.props.id);
+        }
         return (
             <span>
                 <TableTitle>Table A - Armours</TableTitle>

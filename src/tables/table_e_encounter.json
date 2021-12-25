@@ -356,7 +356,7 @@
     "def": 5,
     "dmg": 2,
     "hp": "25",
-    "k": "Table I/W + 20/TB",
+    "k": "Table I/W+20/TB",
     "ability": "Dark, Magic, Regenerate, Resurrection"
   },
   {
@@ -366,7 +366,7 @@
     "def": 4,
     "dmg": 2,
     "hp": "29",
-    "k": "Table P2/I/W + 20/TB",
+    "k": "Table P2/I/W+20/TB",
     "ability": "Fire, Large, Fear, Fly"
   },
   {
@@ -376,7 +376,7 @@
     "def": 5,
     "dmg": 3,
     "hp": "30",
-    "k": "Table P2/TB + 5",
+    "k": "Table P2/TB+5",
     "ability": "Fear, Large"
   },
   {
@@ -386,7 +386,7 @@
     "def": 6,
     "dmg": 3,
     "hp": "33",
-    "k": "Table P2/TB + 5",
+    "k": "Table P2/TB+5",
     "ability": "Fear, Large"
   },
   {
@@ -396,7 +396,7 @@
     "def": 6,
     "dmg": 4,
     "hp": "35",
-    "k": "Table P2/TB + 10",
+    "k": "Table P2/TB+10",
     "ability": "Fear, Large, Stun"
   },
   {
@@ -406,7 +406,7 @@
     "def": 5,
     "dmg": 3,
     "hp": "36",
-    "k": "Table P2/TB + 10",
+    "k": "Table P2/TB+10",
     "ability": "Large, Fear, Regenerate"
   },
   {
@@ -416,7 +416,7 @@
     "def": 6,
     "dmg": 3,
     "hp": "34",
-    "k": "Table TB + 15",
+    "k": "Table TB+15",
     "ability": "Dark Magic"
   },
   {
@@ -426,7 +426,7 @@
     "def": 7,
     "dmg": 3,
     "hp": "35",
-    "k": "Table I/W + 20/TB + 15",
+    "k": "Table I/W+20/TB+15",
     "ability": "Dark Magic, Regenerate, Resurrection"
   },
   {
@@ -436,7 +436,7 @@
     "def": 7,
     "dmg": 3,
     "hp": "38",
-    "k": "Table P2/TB + 20",
+    "k": "Table P2/TB+20",
     "ability": "Fear,Stun"
   },
   {
@@ -476,7 +476,7 @@
     "def": 7,
     "dmg": 5,
     "hp": "47",
-    "k": "Table P4/TC + 5",
+    "k": "Table P4/TC+5",
     "ability": "Fly, Fear, Attacks 2, Large"
   },
   {
@@ -486,7 +486,7 @@
     "def": 8,
     "dmg": 5,
     "hp": "49",
-    "k": "Table P4/TC + 5",
+    "k": "Table P4/TC+5",
     "ability": "Poison, Fly, Fear, Attacks 2, Large"
   },
   {
@@ -496,7 +496,7 @@
     "def": 8,
     "dmg": 5,
     "hp": "44",
-    "k": "Table P4/TC + 10",
+    "k": "Table P4/TC+10",
     "ability": "Fire, Fly, Fear, Attacks 2, Large"
   },
   {
@@ -506,7 +506,7 @@
     "def": 7,
     "dmg": 5,
     "hp": "45",
-    "k": "Table P4/TC + 10",
+    "k": "Table P4/TC+10",
     "ability": "Freeze, Fly, Fear, Attacks 2, Large"
   },
   {
@@ -516,7 +516,7 @@
     "def": 8,
     "dmg": 5,
     "hp": "47",
-    "k": "Table P4/TC + 15",
+    "k": "Table P4/TC+15",
     "ability": "Dark Magic, Fly, Fear, Attack 2, Large"
   },
   {
@@ -526,7 +526,7 @@
     "def": 9,
     "dmg": 6,
     "hp": "48",
-    "k": "Table P4/TC + 15",
+    "k": "Table P4/TC+15",
     "ability": "Ethereal, Fly, Fear, Attacks 2, Large"
   },
   {
@@ -536,7 +536,7 @@
     "def": 9,
     "dmg": 6,
     "hp": "50",
-    "k": "Table P4/TC + 20",
+    "k": "Table P4/TC+20",
     "ability": "Fire, Fly, Fear, Attacks 2, Large, Stun"
   }
 ]

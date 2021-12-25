@@ -55,7 +55,9 @@ class ItemBackPack1 extends Component {
         }
         return (
             <span className={'item_row'}>
-                <Clear onClick={this.remove_item}/>
+                <C width={'2ch'}>
+                    <Clear onClick={this.remove_item}/>
+                </C>
                 <InputFieldItem {...p} field_name={'d100'} read_only={true} width={'5ch'} align={'right'}/>
                 <InputFieldItem {...p} field_name={'item_type'} width={'11ch'} align={'center'}/>
                 <InputFieldItem {...p} field_name={'type'} width={'6ch'} align={'center'}/>
@@ -81,7 +83,7 @@ class ItemBackPack1 extends Component {
         const p = {class_name: 'field_input_small_header'};
         return (
             <span>
-                <C width={'1ch'}/>
+                <C width={'2ch'}/>
                 <InputFieldHeader {...p} value={'D100'} width={'5ch'} align={'right'}/>
                 <InputFieldHeader {...p} value={'Type'} width={'11ch'} align={'center'}/>
                 <InputFieldHeader {...p} value={'H/R'} width={'6ch'} align={'center'}/>

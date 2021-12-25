@@ -51,8 +51,8 @@ class AttackRollEncounter extends Component {
         if (e.attack.d100 !== 'none') { // attack exist
             att = e.attack.d100;
             if (att <= e.av)
-                str_res = <span className={'attack_hit'}>Hit 💥 </span>
-            else str_res = <span className={'attack_miss'}>miss</span>
+                str_res = <span className={'success'}>Hit 💥 </span>
+            else str_res = <span className={'fail'}>miss</span>
             str_res = <span> ➜ &nbsp; {str_res}</span>
         }
         // clear

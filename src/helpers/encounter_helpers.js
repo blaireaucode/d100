@@ -222,5 +222,17 @@ export function clear_g_fight_action(game) {
     return update_g_room(game, r);
 }
 
+export function get_total_hp(encounter) {
+    const hps = encounter.hp.split('/');
+    const total = hps.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+    //console.log('hp', total);
+    return total;
+}
+
+export function get_reward_tables(encounter) {
+    const rew = encounter.k;
+    const r = rew.replace('Table ', '');
+    return r.split('/');
+}
 
 // OLD -------------------------------------------------------

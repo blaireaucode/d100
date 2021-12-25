@@ -16,7 +16,12 @@
     flex-direction: column;
     justify-content: center;
     font-size: 1rem;
-    color: #eee;
+    color:  var(--fg);
+}
+
+.normal {
+    font-weight: normal;
+    color:  var(--fg);
 }
 
 .field_name {
@@ -192,12 +197,12 @@
     font-weight: bold;
 }
 
-.attack_hit {
+.success {
     color: #2bb905;
     font-weight: bold;
 }
 
-.attack_miss {
+.fail {
     color: #c28585;
 }
 

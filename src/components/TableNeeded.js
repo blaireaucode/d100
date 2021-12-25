@@ -27,7 +27,7 @@ class TableNeeded extends Component {
         return (
             <span>
                 <TableTitle>Table N - Needed</TableTitle>
-                <InputFieldHeader width={'8ch'} value={'D100'}/>
+                <InputFieldHeader width={'8ch'} value={'Dta100'}/>
                 <InputFieldHeader width={'30ch'} value={'Name'}/>
                 <InputFieldHeader width={'65ch'} value={'Detail'}/>
                 <InputFieldHeader width={'6ch'} value={'GP'}/>

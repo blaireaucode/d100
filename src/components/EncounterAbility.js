@@ -27,7 +27,7 @@ class EncounterAbility extends Component {
                             </span>);
             }
         }
-        if (abilities.length === 0) return '';
+        if (abilities.length === 0) return <br/>;
         return (<CollapsibleHelp text={'(?)'}>
                 {abilities}
             </CollapsibleHelp>

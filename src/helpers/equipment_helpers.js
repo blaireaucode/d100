@@ -10,6 +10,7 @@ import weapon_table from 'tables/table_w_weapon.json';
 import armour_table from 'tables/table_a_armour.json';
 import needed_table from 'tables/table_n_needed.json';
 import treasureA_table from 'tables/table_ta_treasure_A.json';
+import parts_table from 'tables/table_p_parts.json';
 import {parse_d100_interval} from "./encounter_helpers";
 import update from "immutability-helper";
 import {v4 as uuidv4} from "uuid";
@@ -21,7 +22,8 @@ const tables = {
     weapon: weapon_table,
     armour: armour_table,
     needed: needed_table,
-    treasureA: treasureA_table
+    treasureA: treasureA_table,
+    parts: parts_table
 }
 
 export function get_item_in_table(table_name, id, copy = true) {
@@ -29,8 +31,16 @@ export function get_item_in_table(table_name, id, copy = true) {
     let found = false;
     let i;
     for (i in table) {
-        const d100 = table[i].d100;
-        if (d100 === id || parse_d100_interval(d100, id)) {
+        let d100 = '';
+        let nid = id;
+        if (id[0] === 'P') {// special case for parts P1 P2 P3 P4
+            const k = 'P' + id[1];
+            d100 = (table[i])[k];
+            nid = parseInt(id.substr(2, id.length));
+        } else {
+            d100 = table[i].d100;
+        }
+        if (d100 === nid || parse_d100_interval(d100, nid)) {
             found = true;
             break;
         }
@@ -54,13 +64,14 @@ export function get_item_in_table(table_name, id, copy = true) {
     return table[i];
 }
 
-export function get_items_from_table(table_name, Component) {
+export function get_items_from_table(table_name, Component, id = 'all') {
     const table = tables[table_name];
     let i = 0;
     let items = [];
     for (let item of table) {
-        const v = item.d100;
+        let v = item.d100;
         if (v === 'none') continue;
+        if (id !== 'all' && !parse_d100_interval(v, id)) continue;
         const cn = (i % 2 === 0) ? 'item_table_odd' : 'item_table_even';
         const op = <span key={v}>
                         <Component id={v} class_name={cn}/><br/>
@@ -71,16 +82,19 @@ export function get_items_from_table(table_name, Component) {
     return items;
 }
 
-export function buy_g_item(game, table_name, id) {
+export function buy_g_item(game, table_name, id, buy = true) {
     const item = get_item_in_table(table_name, id);
-    const gp = game.characteristics.gold_pieces - item.gp;
-    let g = update_g_characteristic(game, 'gold_pieces', gp);
+    let gp = item.gp;
+    if (!buy) gp = 0;
+    const gpt = game.characteristics.gold_pieces - gp;
+    let g = update_g_characteristic(game, 'gold_pieces', gpt);
     g = update_g_add_item(g, item);
     return g;
 }
 
-export function buy_state_item(t) {
-    t.setState({buy: 'You just bought it!'});
+export function buy_state_item(t, buy = true) {
+    if (buy) t.setState({buy: 'You just bought it!'});
+    else t.setState({buy: 'Now in your backpack'});
     setTimeout(() => {
         t.setState({buy: ''});
     }, 3000);
@@ -224,7 +238,18 @@ export function is_attack_hit(c, att_type, value) {
     return (att < a + b);
 }
 
-
+export function get_table_name(letter) {
+    if (letter[0] === 'A') return 'armour';
+    if (letter[0] === 'I') return 'items';
+    if (letter[0] === 'W') return 'weapon';
+    if (letter[0] === 'P') return 'parts';
+    if (letter[0] === 'T') {
+        if (letter[1] === 'A') return 'treasureA';
+        if (letter[1] === 'TB') return 'treasureB';
+        if (letter[1] === 'TC') return 'treasureC';
+    }
+    return 'weapon';
+}
 
 
 

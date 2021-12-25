@@ -136,7 +136,7 @@ class LayoutLeftBar extends React.Component {
                     */}
 
                     <ListItem button component={Link} to='/town'>
-                        <ListItemText primary={'Market'}/>
+                        <ListItemText primary={'Tables'}/>
                     </ListItem>
 
                     <ListItem button component={Link} to='/log'>

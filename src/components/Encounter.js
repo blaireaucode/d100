@@ -16,6 +16,7 @@ import InputFieldEncounter from "./InputFieldEncounter";
 import EncounterAbility from "./EncounterAbility";
 import C from "../helpers/C";
 import FieldEncounterHealthPoints from "./InputEncounterHealthPoints";
+import RewardRoll from "./RewardRoll";
 
 class Encounter extends Component {
 
@@ -48,7 +49,7 @@ class Encounter extends Component {
         const p = {width: '4ch', type: 'number', align: 'right'};
         return (
             <span>
-                <Paper elevation={5} className={'encounter '+cn}>
+                <Paper elevation={5} className={'encounter ' + cn}>
                 {dead} <InputFieldEncounter field_name={'name'} width={'15ch'}/>
                 n° <InputFieldEncounter field_name={'d100'} read_only={true} width={'5ch'}/>
                 <br/>
@@ -56,9 +57,9 @@ class Encounter extends Component {
                 <F><C width={'2ch'}/>Defence</F> <InputFieldEncounter {...p} field_name={'def'}/>
                 <F><C width={'2ch'}/>Damage Modifier</F> <InputFieldEncounter {...p} field_name={'dmg'}/>
                 <FieldEncounterHealthPoints/><br/>
-                <F>Reward</F> <InputFieldEncounter field_name={'k'} width={'29ch'}/>
-                <F>Ability</F> <InputFieldEncounter field_name={'ability'} width={'31ch'}/>
-                    <EncounterAbility/>
+                <F width={'8ch'}>Ability</F> <InputFieldEncounter field_name={'ability'} width={'40ch'}/>
+                <EncounterAbility/>
+                <RewardRoll/>
                 </Paper>
                 &nbsp; <p/>
             </span>

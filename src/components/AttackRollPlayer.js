@@ -59,8 +59,8 @@ class AttackRollPlayer extends Component {
         if (e.attack.d100 !== 'none') { // attack exist
             att = e.attack.d100;
             if (is_attack_hit(c, att_type, att))
-                txt = <span className={'attack_hit'}>Hit 💥 </span>
-            else txt = <span className={'attack_miss'}>missed</span>
+                txt = <span className={'success'}>Hit 💥 </span>
+            else txt = <span className={'fail'}>missed</span>
             txt = <span> ➜ &nbsp; {txt}</span>
         }
         // clear

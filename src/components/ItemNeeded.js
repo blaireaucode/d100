@@ -6,30 +6,17 @@
  * https://opensource.org/licenses/MIT.
  */
 
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {buy_g_item, buy_state_item, get_item_in_table} from "../helpers/equipment_helpers"
-import L from "../helpers/L"
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props';
+import {get_item_in_table} from "../helpers/equipment_helpers";
 import C from "../helpers/C";
-
+import ItemGet from "./ItemGet";
 
 class ItemNeeded extends Component {
 
     static defaultProps = {
         class_name: ''
-    }
-
-    constructor(props) {
-        super(props);
-        this.buy_item = this.buy_item.bind(this);
-        this.state = {buy: ''};
-    }
-
-    buy_item() {
-        const g = buy_g_item(this.props.game, 'needed', this.props.id);
-        this.props.set_game(g);
-        buy_state_item(this);
     }
 
     render() {
@@ -40,9 +27,7 @@ class ItemNeeded extends Component {
                 <C width={'30ch'}>{item.name}</C>
                 <C width={'65ch'}>{item.detail}</C>
                 <C width={'6ch'}>{item.gp}</C>
-                <L onClick={this.buy_item}>Buy</L>
-                <C width={'5ch'}/>
-                <C className={'field_input'}>{this.state.buy}</C>
+                <ItemGet {...this.props} item_type={'needed'}/>
             < /span>
         );
     }

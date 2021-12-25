@@ -10,15 +10,16 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import L from "../helpers/L"
-import ItemsTableWeapon from "./TableWeapon";
+import TableWeapon from "./TableWeapon";
 import TableArmour from "./TableArmour";
 import CollapsibleHelp from "./CollapsibleHelp";
 import C from "../helpers/C";
-import ItemsTableNeeded from "./TableNeeded";
+import TableNeeded from "./TableNeeded";
 import HelpStartingItems from "./HelpStartingItems";
-import ItemsTableTreasureA from "./TableTreasureA";
+import TableTreasureA from "./TableTreasureA";
 import F from "../helpers/F";
 import InputFieldCharacter from "./InputFieldCharacter";
+import TableParts from "./TableParts";
 
 class ScreenTown extends Component {
 
@@ -34,10 +35,11 @@ class ScreenTown extends Component {
 
     render() {
         let table = '';
-        if (this.state.table === 'weapons') table = <ItemsTableWeapon/>
+        if (this.state.table === 'weapons') table = <TableWeapon/>
         if (this.state.table === 'armours') table = <TableArmour/>
-        if (this.state.table === 'needed') table = <ItemsTableNeeded/>
-        if (this.state.table === 'treasureA') table = <ItemsTableTreasureA/>
+        if (this.state.table === 'needed') table = <TableNeeded/>
+        if (this.state.table === 'treasureA') table = <TableTreasureA/>
+        if (this.state.table === 'parts') table = <TableParts/>
         return (
             <span>
                 <F>💰Gold pieces <C width={'2ch'}/></F>
@@ -52,6 +54,8 @@ class ScreenTown extends Component {
                 <L onClick={() => this.toggle('needed')}>Needed</L>
                 <C width={'3ch'}/>
                 <L onClick={() => this.toggle('treasureA')}>Treasure A</L>
+                <C width={'3ch'}/>
+                <L onClick={() => this.toggle('parts')}>Parts</L>
                 <C width={'10ch'}/>
                 <CollapsibleHelp text={'(?)'}>
                     <HelpStartingItems/>

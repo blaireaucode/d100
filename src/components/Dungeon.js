@@ -44,6 +44,7 @@ class Dungeon extends Component {
         return (
             <Grid container spacing={2}>
                 {rows}
+                <p/>
                 <Clear onClick={this.clear_dungeon}>Delete the dungeon</Clear>
             </Grid>
         );

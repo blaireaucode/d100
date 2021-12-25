@@ -21,10 +21,10 @@ class CharacterMain extends Component {
                 <F>Additional damage <C width={'2ch'}/></F>
                 <InputFieldCharacter type={'number'} field_name={'dmg_items'} read_only={true} align={'left'}/>
                 <F>Defence <C width={'2ch'}/></F>
-                <InputFieldCharacter type={'number'} field_name={'def_items'} read_only={true} />
+                <InputFieldCharacter type={'number'} field_name={'def_items'} read_only={true}/>
                 <C width={'1ch'}/>
                 <F>💰Gold pieces <C width={'2ch'}/></F>
-                <InputFieldCharacter type={'number'} width={'7ch'} field_name={'gold_pieces'} />
+                <InputFieldCharacter type={'number'} width={'7ch'} field_name={'gold_pieces'}/>
             </span>);
     }
 }
