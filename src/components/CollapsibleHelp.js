@@ -11,6 +11,7 @@ import {connect} from 'react-redux';
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props';
 import Collapse from "@kunukn/react-collapse";
 import L from "../helpers/L";
+import C from "../helpers/C";
 
 class CollapsibleHelp extends Component {
 
@@ -35,7 +36,7 @@ class CollapsibleHelp extends Component {
                 <L onClick={this.toggle}>{this.props.text}</L>
                     <Collapse isOpen={this.state.open}>
                         <span className={'help collapse-css-transition'}>
-                        {this.props.children}
+                            {this.props.children}
                         </span>
                     </Collapse>
             </span>

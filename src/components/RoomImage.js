@@ -14,7 +14,7 @@ import RoomMenu from "./RoomMenu";
 class RoomImage extends Component {
 
     static defaultProps = {
-        width: 150,
+        width: 170,
         room: 'current'
     }
 

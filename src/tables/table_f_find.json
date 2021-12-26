@@ -1,0 +1,127 @@
+[
+  {
+    "d100": "none",
+    "time": "none",
+    "detail": "none"
+  },
+  {
+    "d100": "1-5",
+    "time": "+2",
+    "detail": "The adventurer moves away some junk and hears a click, a trap is triggered, roll 1d10 on table G – Geographic.",
+    "gp": 0
+  },
+  {
+    "d100": "6-10",
+    "time": "+2",
+    "detail": "A monster is hiding and jumps out from the shadows to attack the adventurer, roll on table E – Encounter, the monster has (Surprise).",
+    "gp": 0
+  },
+  {
+    "d100": "11-15",
+    "time": "+2",
+    "detail": "Moving through some of the rubbish strewn about the floor a small snake lashes out and bites the adventurer's hand injecting its venom into a vein, shade in two pips on the poison track.",
+    "gp": 0
+  },
+  {
+    "d100": "16-20",
+    "time": "+1",
+    "detail": "Searching through some of the larger heaps of debris, the adventurer abruptly stops and realises the pile is made up of diseased and rotting corpses, shade in 2 pips on the disease track.",
+    "gp": 0
+  },
+  {
+    "d100": "21-25",
+    "time": "+1",
+    "detail": "Whilst searching around a piece of equipment gets caught in a crevice of the dungeon wall, the adventurer carefully prises it free, but it has suffered some damage, roll 1d10 for location until an item is rolled and shade in 1 pip on its damage track.",
+    "gp": 0
+  },
+  {
+    "d100": "26-30",
+    "time": "+1",
+    "detail": "Climbing over some fallen rocks the adventurer accidentally stumbles and falls landing on their side, make a belt check.",
+    "gp": 0
+  },
+  {
+    "d100": "31-35",
+    "time": "+1",
+    "detail": "Searching for some considerable time the adventurer finds nothing of any real value.",
+    "gp": 0
+  },
+  {
+    "d100": "36-40",
+    "time": "+1",
+    "detail": "After a lot of digging through little more than junk, the adventurer eventfully wipes away the dirt to reveal something of value, roll on table I – Items.",
+    "gp": 0
+  },
+  {
+    "d100": "41-45",
+    "time": "+1",
+    "detail": "This area is dank and foul smelling, which is no surprise when a tomb is found hidden behind some fallen rocks, the tomb can be opened (optional) by rolling 1d10 on the table below and adding +1Âto the time track, add “Tomb F41” to the dungeon sheet and mark it with a ü if you decide to open it.  1   Empty apart from some strange blue beetles that are using the tomb as a nest. 2-4  A fresh corpse holding a bag of gold (+1d100gp).  5-10  A skeleton clutching a treasure, roll on table TA – Treasure A -15.",
+    "gp": 0
+  },
+  {
+    "d100": "46-50",
+    "time": "+1",
+    "detail": "Hidden and wedged in part of the dungeon wall is a Magic Scroll (200gp), roll once on table S – Spells, and add “Scroll of” before the spells name when adding it to the adventure sheet.",
+    "gp": 0
+  },
+  {
+    "d100": "51-55",
+    "time": "+1",
+    "detail": "Something catches the eye and the adventurer find something useful, roll on table N – Needed.",
+    "gp": 0
+  },
+  {
+    "d100": "56-60",
+    "time": "+1",
+    "detail": "Moving away some rubble a weapon is revealed, roll on table W – Weapons.",
+    "gp": 0
+  },
+  {
+    "d100": "61-65",
+    "time": "+1",
+    "detail": "Searching through some junk, a torn page from a spell book is found, it is a little crumbled but the spell is still intact, roll on table S – Spells and add the result to the spell book.",
+    "gp": 0
+  },
+  {
+    "d100": "66-70",
+    "time": "+1",
+    "detail": "Behind a badly hung curtain a small lever is found, after it is pulled a far off rumble can be heard, shade 1 pip on the lever track.",
+    "gp": 0
+  },
+  {
+    "d100": "71-75",
+    "time": "+0",
+    "detail": "Shifting through some debris a piece of armour is revealed, roll on table A – Armour +15.",
+    "gp": 0
+  },
+  {
+    "d100": "76-80",
+    "time": "+0",
+    "detail": "The adventurer has found a secret tunnel, add the tunnel to the dungeon sheet by making a thin exit through one of the rock faces from the adventurer's current area to the middle section of an adjacent mapped or unmapped area, and mark the tunnel with an S (=S=). Movement between these two areas is now permitted.",
+    "gp": 0
+  },
+  {
+    "d100": "81-85",
+    "time": "+0",
+    "detail": "This part of the dungeon was once a library, most of the books are missing now but a quick scan reveals a spell book with two spells written inside, roll twice on table S – Spells and add the results to the spell book.",
+    "gp": 0
+  },
+  {
+    "d100": "86-90",
+    "time": "+0",
+    "detail": "Behind a broken cupboard a hole is found carved into the dungeon wall, peering inside the adventurer finds a treasure, roll on table TA – Treasure A.",
+    "gp": 0
+  },
+  {
+    "d100": "91-95",
+    "time": "+0",
+    "detail": "Moving a large mouldy carpet from part of the dungeon floor, the adventurer finds it was covering a recessed panel, prising it away reveals a treasure laying in a roughly carved out hollow, roll on table TB – Treasure B -15.",
+    "gp": 0
+  },
+  {
+    "d100": "96-100",
+    "time": "+0",
+    "detail": "Shifting through the rubbish strewn about the floor the adventurer is startled to find a skeleton. It has been a good source of nourishment for the small insects and rats that inhabit the dungeon. A quick search reveals the poor chap had very little at the time of his death; that is apart from this magnificent treasure, roll on table TC – Treasure C -15.",
+    "gp": 0
+  }
+]

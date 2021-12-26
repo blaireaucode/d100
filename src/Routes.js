@@ -6,24 +6,23 @@
  * https://opensource.org/licenses/MIT.
  */
 
-import React, {Component} from 'react'
-import ReactModal from "react-modal"
-import {connect} from "react-redux"
-import {HashRouter as Router} from 'react-router-dom'
-import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import Layout from 'Layout'
-import DiceRoller from 'components/DiceRoller'
-import {close_dice_ui, get_dice_ui} from 'helpers/helpers_dice'
-import Debug from 'components/ScreenDebug'
-import Character from 'components/ScreenCharacter'
-import Map from 'components/ScreenMap'
-import ScreenRoom from 'components/ScreenDungeon'
-import ScreenFight from 'components/ScreenFight'
-import Town from 'components/ScreenTown'
-import ScreenSystem from 'components/ScreenSystem'
-import ScreenAbout from "./components/ScreenAbout"
-import ScreenQuest from "./components/ScreenQuest"
-import ScreenLog from "./components/ScreenLog"
+import React, {Component} from 'react';
+import ReactModal from "react-modal";
+import {connect} from "react-redux";
+import {HashRouter as Router} from 'react-router-dom';
+import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props';
+import Layout from 'Layout';
+import DiceRoller from 'components/DiceRoller';
+import {close_dice_ui, get_dice_ui} from 'helpers/helpers_dice';
+import Debug from 'components/ScreenDebug';
+import Character from 'components/ScreenCharacter';
+import ScreenRoom from 'components/ScreenDungeon';
+import ScreenFight from 'components/ScreenFight';
+import ScreenTown from 'components/ScreenTown';
+import ScreenSystem from 'components/ScreenSystem';
+import ScreenAbout from "./components/ScreenAbout";
+import ScreenQuest from "./components/ScreenQuest";
+import ScreenLog from "./components/ScreenLog";
 
 ReactModal.setAppElement('#root')
 
@@ -82,8 +81,7 @@ class Routes extends Component {
                     </ReactModal>
                     {/*<Layout path="/team" component={Team}/>*/}
                     <Layout path="/character" component={Character}/>
-                    <Layout path="/map" component={Map}/>
-                    <Layout path="/town" component={Town}/>
+                    <Layout path="/town" component={ScreenTown}/>
                     <Layout path="/room" component={ScreenRoom}/>
                     <Layout path="/fight" component={ScreenFight}/>
                     <Layout path="/debug" component={Debug}/>

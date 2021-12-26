@@ -17,6 +17,7 @@ import L from "../helpers/L"
 import {add_g_room_to_dungeon, map_dir, new_room, rotate_g_room} from "../helpers/helpers_dungeon"
 import C from "../helpers/C";
 import {update_g_room} from "../helpers/helpers_update";
+import RoomSearch from "./RoomSearch";
 
 class RoomInfo extends Component {
 
@@ -55,13 +56,18 @@ class RoomInfo extends Component {
         }
         return (
             <span>
-                #{r.d100} - <span className={cn}>{r.color}</span> - <L onClick={this.rotate}>↻</L>
+                <L onClick={this.rotate}>↻</L>
+                <C width={'1ch'}/>
+                #{r.d100}
+                <C width={'1ch'}/>
+                <span className={cn}>{r.color}</span>
+                <C width={'1ch'}/>{t}
                 <p/>
                 {r.exits.length} exit{r.exits.length > 1 ? 's' : ''}: {map_dir(r.exits)}
                 <br/>
                 {d} {map_dir(r.doors_direction)}
                 <p/>
-                {t}
+                <RoomSearch/>
                 <p/>
                     <L onClick={() => this.add('W')}>Add West ⇦</L> <C width={'3ch'}/>
                     <L onClick={() => this.add('E')}>Add East ⇨ </L> <C width={'3ch'}/>

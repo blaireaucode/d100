@@ -15,14 +15,10 @@ class RoomInfoGreen extends Component {
 
     render() {
         return (
-            <span>
-
-                <br/>
-
-                <CollapsibleHelp text={'(?)'}>
-                Green areas contain random features that may restrict movement, cause damage or offer rewards. The player rolls on table G – Geographic and follows the instructions.
-                </CollapsibleHelp>
-            </span>
+            <CollapsibleHelp text={'(?)'}>
+                Green areas contain random features that may restrict movement, cause damage or offer rewards. The
+                player rolls on table G – Geographic and follows the instructions.
+            </CollapsibleHelp>
         );
     }
 }

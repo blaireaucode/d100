@@ -14,6 +14,7 @@ import {get_table_element} from "./helpers_update";
 export function new_room(id = 'none') {
     // get the room
     const e = get_table_element(rooms_table, id);
+    e["search"] = {};
     if (id === "none") {
         e["id"] = "none";
         e["doors_direction"] = [];

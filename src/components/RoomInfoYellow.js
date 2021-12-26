@@ -15,13 +15,10 @@ class RoomInfoYellow extends Component {
 
     render() {
         return (
-            <span>
-
-                <CollapsibleHelp text={'(?)'}>
-                Yellow areas are mostly empty. The odd few items that may be found are limited, so when a yellow area has been added to the dungeon sheet the player proceeds to step 4.
-                </CollapsibleHelp>
-
-            </span>
+            <CollapsibleHelp text={'(?)'}>
+                Yellow areas are mostly empty. The odd few items that may be found are limited, so when a yellow area
+                has been added to the dungeon sheet the player proceeds to step 4.
+            </CollapsibleHelp>
         );
     }
 }

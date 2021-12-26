@@ -15,14 +15,12 @@ class RoomInfoBlue extends Component {
 
     render() {
         return (
-            <span>
-                Objective
-                <br/>
-
-                <CollapsibleHelp text={'(?)'}>
-                Blue areas may be important areas in a dungeon that are specific to completing the current quest, and the player should check the quest to see if they are relevant. If they are not then the area is regarded as empty, but still retains its colour for the purpose of searches.
-                </CollapsibleHelp>
-            </span>
+            <CollapsibleHelp text={'(?)'}>
+                Objective. <br/>
+                Blue areas may be important areas in a dungeon that are specific to completing the current quest, and
+                the player should check the quest to see if they are relevant. If they are not then the area is regarded
+                as empty, but still retains its colour for the purpose of searches.
+            </CollapsibleHelp>
         );
     }
 }

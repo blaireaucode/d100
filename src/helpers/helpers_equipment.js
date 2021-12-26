@@ -11,6 +11,7 @@ import armour_table from 'tables/table_a_armour.json';
 import needed_table from 'tables/table_n_needed.json';
 import treasureA_table from 'tables/table_ta_treasure_A.json';
 import parts_table from 'tables/table_p_parts.json';
+import find_table from 'tables/table_f_find.json';
 import {parse_d100_interval} from "./helpers_encounter";
 import update from "immutability-helper";
 import {v4 as uuidv4} from "uuid";
@@ -23,7 +24,8 @@ const tables = {
     armour: armour_table,
     needed: needed_table,
     treasureA: treasureA_table,
-    parts: parts_table
+    parts: parts_table,
+    find: find_table
 }
 
 export function get_item_in_table(table_name, id, copy = true) {

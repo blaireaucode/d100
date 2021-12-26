@@ -20,6 +20,7 @@ import TableTreasureA from "./TableTreasureA";
 import F from "../helpers/F";
 import InputFieldCharacter from "./InputFieldCharacter";
 import TableParts from "./TableParts";
+import TableFind from "./TableFind";
 
 class ScreenTown extends Component {
 
@@ -40,6 +41,7 @@ class ScreenTown extends Component {
         if (this.state.table === 'needed') table = <TableNeeded/>
         if (this.state.table === 'treasureA') table = <TableTreasureA/>
         if (this.state.table === 'parts') table = <TableParts/>
+        if (this.state.table === 'find') table = <TableFind/>
         return (
             <span>
                 <F>💰Gold pieces <C width={'2ch'}/></F>
@@ -56,6 +58,8 @@ class ScreenTown extends Component {
                 <L onClick={() => this.toggle('treasureA')}>Treasure A</L>
                 <C width={'3ch'}/>
                 <L onClick={() => this.toggle('parts')}>Parts</L>
+                <C width={'3ch'}/>
+                <L onClick={() => this.toggle('find')}>Find</L>
                 <C width={'10ch'}/>
                 <CollapsibleHelp text={'(?)'}>
                     <HelpStartingItems/>

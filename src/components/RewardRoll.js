@@ -94,10 +94,10 @@ class RewardRoll extends Component {
     render_result_gp = () => {
         if (this.state.gp === -1) return '';
         return <span className={'normal'}>
-             <C width={'2ch'}/> ➜ <C width={'2ch'}/> {this.state.dice}
-            <C width={'2ch'}/>
-             <L onClick={this.get_gp}>Get {this.state.dice} gold pieces</L>
-        </span>
+                    <C width={'2ch'}/> ➜ <C width={'2ch'}/> {this.state.dice}
+                    <C width={'2ch'}/>
+                    <L onClick={this.get_gp}>Get {this.state.dice} gold pieces</L>
+                </span>
     }
 
     render_reward_gp() {
