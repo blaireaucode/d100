@@ -102,5 +102,309 @@
     "S": "+500gp",
     "F": "-0.5gp",
     "txt": "Kill any 10 monsters 34, or higher on table E – Encounter, their numbers have grown too strong."
+  },
+  {
+    "d100": "25-26",
+    "name": "Staff of light",
+    "txt": "A young wizard has pinned a notice to the fireplace at the local tavern. She asks for a brave Adventurer to find her an aztopaz stone so she can finish her “Staff of Light”. Collect 1 Objective Item.",
+    "enc_mod": -15,
+    "S": "400gp",
+    "F": "-1/2gp,"
+  },
+  {
+    "d100": "27-28",
+    "name": "Dungeon Research",
+    "txt": "Enter the dungeon and Explore until 5 green and 5 red areas have been added to the dungeon sheet.",
+    "enc_mod": -10,
+    "S": "200gp",
+    "F": "-1/2gp,"
+  },
+  {
+    "d100": "29-30",
+    "name": "Survey Mission",
+    "txt": "Enter the dungeon and Explore until any 15 areas have been added to the dungeon sheet.",
+    "enc_mod": -10,
+    "S": "200gp",
+    "F": "-1/2gp,"
+  },
+  {
+    "d100": "31-32",
+    "name": "Medicine hunt",
+    "txt": "A sickness is spreading throughout the realm, Loot 3 parts from monsters 43, or higher on table E – Encounter.",
+    "enc_mod": -5,
+    "S": "200gp",
+    "F": "-1/2gp,"
+  },
+  {
+    "d100": "33-34",
+    "name": "Scouting Mission",
+    "txt": "Enter the dungeon and Explore until any 20 areas have been added to the dungeon sheet.",
+    "enc_mod": -5,
+    "S": "300gp",
+    "F": "-1/2gp,"
+  },
+  {
+    "d100": "35-36",
+    "name": "Explore Mission",
+    "txt": "Enter the dungeon and Explore until any 25 areas have been added to the dungeon sheet.",
+    "enc_mod": -5,
+    "S": "400gp",
+    "F": "-1/2gp,"
+  },
+  {
+    "d100": "37-38",
+    "name": "Dungeon Delve",
+    "txt": "Enter the dungeon and search until a stairs is found. Descend and then Explore until any 10 areas have been added to the lower dungeon sheet (see table G – Geographic 88-90). Stairs are found when rolling stairs on table G – Geographic, or when the first Objective Area is found.",
+    "enc_mod": -5,
+    "S": "600gp",
+    "F": "-1/2gp,"
+  },
+  {
+    "d100": "39-40",
+    "name": "Magic Study",
+    "txt": "A roaming wizard has asked the adventurer to Collect any “Brew of Finer” (or an Objective Item) to further his research.",
+    "enc_mod": 0,
+    "S": "600gp",
+    "F": "-5 skill,"
+  },
+  {
+    "d100": "41-42",
+    "name": "Book of shadow",
+    "txt": "The “Council of Wizards” are asking adventurers to be on the lookout for the “Book of Shadows”, as they have sensed its presence in the area. Enter the dungeon and Collect 1 Objective Item from table TB, or TC.",
+    "enc_mod": 0,
+    "S": "700gp",
+    "F": "-5 skill,"
+  },
+  {
+    "d100": "43-44",
+    "name": "Creatures Amok",
+    "txt": "Several creatures have been running amok in the Kingdom and have taken up refuge in a disused mine. The king has offered a huge reward for the problem to be brought to an end. Kill any 5 monsters 50, or higher on table E – Encounter.",
+    "enc_mod": 0,
+    "S": "800gp",
+    "F": "-5 skill,"
+  },
+  {
+    "d100": "45-46",
+    "name": "Night Terrors",
+    "txt": "“Hallows Night” is drawing near and many of the towns in the realm have been reporting a rising number of undead plaguing the streets at night. A handsome reward has been offered to rid these night terrors from the realm. Kill any 5 monsters marked with a C on table E – Encounter.",
+    "enc_mod": 0,
+    "S": "800gp",
+    "F": "-5 skill,"
+  },
+  {
+    "d100": "47-48",
+    "name": "Plague",
+    "txt": "A plague is spreading though the realm and a renowned healer has come forward announcing he has the cure; but it requires a special ingredient. Loot any uncommon part.",
+    "enc_mod": 0,
+    "S": "800gp",
+    "F": "-5 skill"
+  },
+  {
+    "d100": "49-50",
+    "name": "The Spider Queen",
+    "txt": "For months spiders have been accumulating in greater and greater numbers and it is no great surprise when a local stumbles across the lair of a spider queen. When the first Objective Area is found, it is the “Spider Queen Lair” and the adventurer must Kill monster 66 on table E – Encounter. During combat with the spider queen all escape reaction results are ignored and the queen has +10 HP.",
+    "enc_mod": 0,
+    "S": "800gp +1 REP",
+    "F": "-1 REP -5skill"
+  },
+  {
+    "d100": "51-52",
+    "name": "The baron's wife",
+    "txt": "A local baron has offered a fortune for the safe return of his wife, who has been carried off by a group of giant apes. When the first Objective Area is found, it is where the apes are holding the barons wife and the adventurer must Kill monster 69-70 on table E – Encounters. During combat with the giant apes all escape reaction results are ignored.",
+    "enc_mod": 0,
+    "S": "1000gp +1 REP ",
+    "F": "-1 REP -5skill"
+  },
+  {
+    "d100": "53-54",
+    "name": "Hammer of Antiquity",
+    "txt": "The “Hammer of Antiquity” was broken into 3 pieces and hidden deep in a dungeon. Collect 3 Objective Items from any table (Head/Shaft/Grip) and restore the “Hammer of Antiquity”.",
+    "enc_mod": 0,
+    "S": "1000gp +1 REP",
+    "F": "-1 REP -5skill"
+  },
+  {
+    "d100": "55-56",
+    "name": "Saving the Prince",
+    "txt": "The kingdom is in turmoil because the prince and heir to the throne has been taken hostage by an evil demon. When the first Objective Area is found, it is where the prince is being held captive, and the adventurer must Kill monster 78 on table E – Encounters. During combat with the demon all escape reaction results are ignored.",
+    "enc_mod": 0,
+    "S": "1200gp +1 REP",
+    "F": "-1 REP -5skill"
+  },
+  {
+    "d100": "57-58",
+    "name": "Missing Locals",
+    "txt": "For a few weeks villagers have been going missing and finally the culprit is brought to light. W hen the first Objective Area is found, it is the giant snakes lair and the adventurer must Kill monster 73 on table E – Encounters. During combat with the giant snake all escape reaction results are ignored and the giant snake has +10 HP.",
+    "enc_mod": 5,
+    "S": "1000gp +1 REP",
+    "F": "-1 REP -10 skill"
+  },
+  {
+    "d100": "59-60",
+    "name": "Demons hunters",
+    "txt": "Several demon hunters have gone missing near an old ruin. Kill any 5 monsters marked with a d on table E – Encounter.",
+    "enc_mod": 5,
+    "S": "1350gp",
+    "F": "-10 skill"
+  },
+  {
+    "d100": "61-62",
+    "name": "Mystical Materials",
+    "txt": "A master craftsman requires the adventurer to enter a dungeon and Loot 3 parts from monsters 58, or higher on table E – Encounter.",
+    "enc_mod": 5,
+    "S": "1400gp +1 REP",
+    "F": "-10 skill"
+  },
+  {
+    "d100": "63-64",
+    "name": "Treasure Expedition",
+    "txt": "A local merchant has asked for a treasure that was stolen by a group of monsters to be returned to him. Loot any item from table TA.",
+    "enc_mod": 5,
+    "S": "1500gp",
+    "F": "-10 skill"
+  },
+  {
+    "d100": "65-66",
+    "name": "Wrongful Ritual",
+    "txt": "During a festival some naive townsfolk were coerced into performing a ritual they thought would bring in a good harvest, instead it was a ritual to summon a demon lord. When the ritual was concluded the demon ate all the townsfolk and he is now terrorising the surrounding villages. When the first Objective Area is found the adventurer encounters the demon lord’s minion and must Kill monster 78 on table E – Encounters. When the second Objective Area is found the adventurer has encountered the demon lord and must Kill monster 83 on table E – Encounter. During combat with either the demon or its minion, all escape reaction results are ignored and the demon lord has +10 HP.",
+    "enc_mod": 5,
+    "S": "1500gp +1 REP",
+    "F": "-1 REP -10 skill"
+  },
+  {
+    "d100": "67-68",
+    "name": "Arcane Study",
+    "txt": "An ageing wizard has asked the adventurer to Collect any “Potion of Greater” (or 2 Objective Items).",
+    "enc_mod": 5,
+    "S": "1600gp",
+    "F": "-10 skill"
+  },
+  {
+    "d100": "69-70",
+    "name": "Return of the Crown",
+    "txt": "During a recent battle a couple of mischievous monsters knocked the kings crown from his head and run down the nearest dungeon. The king needs back the crown to avoid any embarrassment. Find an Objective Room (Blue) and roll for two monsters, defeat them both to find the Crown.",
+    "enc_mod": 10,
+    "S": "1000gp +1 REP",
+    "F": "-1 REP -1 STR"
+  },
+  {
+    "d100": "71-72",
+    "name": "Mystic Study",
+    "txt": "A Mage from the council of wizards has requested a Elixir to further his studies. Loot any ELIXIR OF SUPERIOR or an objective item to claim your reward.",
+    "enc_mod": 10,
+    "S": "2000gp",
+    "F": "-1 INT"
+  },
+  {
+    "d100": "73-74",
+    "name": "Wizards Ingredients",
+    "txt": "Obtain 2 Parts from a monsters that is 66 or higher on the encounter table for a legendary wizard.",
+    "enc_mod": 10,
+    "S": "2200gp",
+    "F": "-1 INT"
+  },
+  {
+    "d100": "75-76",
+    "name": "Master Monster",
+    "txt": "Kill 1 Monster that is 66 or higher on the encounter table. It has been encouraging lesser monsters to the area.",
+    "enc_mod": 10,
+    "S": "2500gp",
+    "F": "-1 DEX"
+  },
+  {
+    "d100": "77-78",
+    "name": "Antiquity of Power",
+    "txt": "Lost for centuries, the whereabouts of the “Antiquity of Power” has finally been uncovered. It is now a race to the prize, find any Legendary Item.",
+    "enc_mod": 10,
+    "S": "800gp +1 REP",
+    "F": "-1 REP -1 STR"
+  },
+  {
+    "d100": "79-80",
+    "name": "Relic Expedition",
+    "txt": "A nobleman from one of the 5 distinguished houses, has put up a handsome reward for the safe recovery of an heirloom that has been lost to the family for over 3 generations. A distant relative perished in the dungeon with the item and now he would like it back. Successfully loot any item from Table TB.",
+    "enc_mod": 10,
+    "S": "2800gp",
+    "F": "-1 DEX"
+  },
+  {
+    "d100": "81-82",
+    "name": "The Lich Lord King",
+    "txt": "Many years ago, a noble king was laid to rest and the kingdom mourned the loss. A wizard secured the tomb casting a powerful spell to ensure it would never be opened. However, after many years had passed and the curse had been forgotten a tomb robber managed to break the spell and broke in, and the king rose up as a Lich Lord. This vile creature must now be returned to its grave. When the second Objective Area is found, it will be the lair of the lich king and the adventurer must Kill monster 89 on table E – Encounter. During combat all escape reaction results are ignored and the lich lord has +10 HP.",
+    "enc_mod": 10,
+    "S": "2800gp +1 REP",
+    "F": "-1 REP -1INT"
+  },
+  {
+    "d100": "83-84",
+    "name": "Cool Tidings",
+    "txt": "At this time of year it should be warm and sunny but a recent inhabitant has been effecting the weather. The mornings are cold and frosty and something needs to be done. When the second Objective Area is found it will be the lair of a frost wyrm and the adventurer must Kill monster 93 on table E – Encounter. During combat all escape reaction results are ignored.",
+    "enc_mod": 10,
+    "S": "2900gp +1 REP",
+    "F": "-1 REP -1 STR"
+  },
+  {
+    "d100": "85-86",
+    "name": "Ring of Power",
+    "txt": "Lost for over a century, the fabled Ring of Power would make a great additional to the adventurer’s gear. Collect any Legendary Ring.",
+    "enc_mod": 10,
+    "S": "3000gp +1 REP",
+    "F": "-1 REP -1 DEX"
+  },
+  {
+    "d100": "87-88",
+    "name": "Talisman of the power",
+    "txt": "The talisman was recently lost in a dungeon and now the race is on to recover the treasure. Collect any legendary necklace.",
+    "enc_mod": 10,
+    "S": "3000gp +1 REP",
+    "F": "-1 REP -1 STR"
+  },
+  {
+    "d100": "89-90",
+    "name": "A monster ate my mum!",
+    "txt": "A monster has been rampaging though the realm and eating the inhabitants. When the second Objective Area is found it will be the monster’s lair, roll 1d10+90 on table E – Encounter (do not add the Enc Mod) and Kill the monster. During combat all escape reaction results are ignored.",
+    "enc_mod": 15,
+    "S": "2500gp",
+    "F": "-2DEX"
+  },
+  {
+    "d100": "91-92",
+    "name": "A new Spell",
+    "txt": "A powerful wizard is seeking a reagent for a new resurrection spell and needs a special monster part. Loot any 1 part from a monster that is 83, or higher on table E – Encounter. All monsters 83, or higher on table E – Encounter will not escape combat, and all escape reaction results are ignored.",
+    "enc_mod": 15,
+    "S": "3400gp +1 REP",
+    "F": "-1 REP -2INT"
+  },
+  {
+    "d100": "93-94",
+    "name": "Kingmaker",
+    "txt": "The legendary weapon “Kingmaker”, once held by the first king of men at the “Battle of Evermote\", is rumoured to be in the hands of a foul monster lurking in a dungeon not far from the old battlefield. Collect any legendary weapon.",
+    "enc_mod": 15,
+    "S": "3400gp +1 REP",
+    "F": "-1 REP -2STR"
+  },
+  {
+    "d100": "95-96",
+    "name": "Antiquity Expedition",
+    "txt": "An ancient artefact dating back to a time before kings is rumoured to lay somewhere inside a trap infested dungeon. Each time a green area is found, roll 1d10; if the result is 1-5 the area contains a trap and the player rolls 1d10 on table G – Geographic, if the result is 6-10 the player roll 1d100 on the table G – Geographic. Collect any item 83, or higher on table TC – Treasure C.",
+    "enc_mod": 15,
+    "S": "3800gp",
+    "F": "-3INT"
+  },
+  {
+    "d100": "97-98",
+    "name": "Defeat the Dragon",
+    "txt": "A mighty dragon has been terrorising the kingdom. Kill any monster that is 94, or higher on table E – Encounter. All monsters 94, or higher on table E – Encounter will not escape combat, and all escape reaction results are ignored.",
+    "enc_mod": 20,
+    "S": "4500gp +1 REP",
+    "F": "-1 REP -3STR"
+  },
+  {
+    "d100": "99-100",
+    "name": "Spiritmend",
+    "txt": "The legendary armour “Spiritmend” worn by the elven prince “Glandoran” was torn from his body after receiving the death blow from the dwarven king “Kanrad”; it ended a brutal and devastating war which had lasted hundreds of years. Collect any legendary armour.",
+    "enc_mod": 20,
+    "S": "5000gp +1 REP",
+    "F": "-3REP"
   }
 ]

@@ -23,12 +23,13 @@ class QuestSummary extends Component {
                 <C width={'4ch'}/> {q.d100}
                 <C width={'1ch'}/> {q.name}
                 <p/>
-                <C width={'4ch'}/> Encounter modifier {q.enc_mod}
+                <C width={'4ch'}/> Encounter modifier: {q.enc_mod>0?'+':''}{q.enc_mod}
                 <p/>
                 <C width={'4ch'}/> Success: {q.S}
+                <br/>
                 <C width={'4ch'}/> Failure: {q.F}
                 <p/>
-                <C width={'4ch'}/> {q.txt}
+                <C width={'80ch'}> {q.txt}</C>
             </span>
         );
     }

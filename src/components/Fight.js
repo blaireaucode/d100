@@ -9,7 +9,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {clear_g_fight_action} from "helpers/encounter_helpers"
+import {clear_g_fight_action} from "helpers/helpers_encounter"
 import EncounterFightRound from "./AttackRound";
 import AttackRollEncounterReaction from "./AttackRollEncounterReaction";
 import AttackRoll from "./AttackRoll";
@@ -38,6 +38,7 @@ class Fight extends Component {
         if (e.id === 'none') return '';
         return (
             <Paper elevation={5} className={'encounter'}>
+                <hr color={'#333'} size={1}/>
                 <EncounterFightRound/>
                 <hr color={'#333'} size={1}/>
                 <AttackPlayerInfoAttack/>

@@ -9,8 +9,8 @@
 import quests_table from 'tables/table_q_quests.json'
 import {v4 as uuidv4} from "uuid"
 import update from "immutability-helper"
-import {get_table_element} from "./update_helpers";
-import {new_dungeon} from "./room_helpers";
+import {get_table_element} from "./helpers_update";
+import {new_dungeon} from "./helpers_dungeon";
 
 export function new_quest(id = 'none') {
     const q = get_table_element(quests_table, id);

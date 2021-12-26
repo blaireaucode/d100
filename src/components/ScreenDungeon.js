@@ -14,7 +14,7 @@ import Room from "./Room";
 import Dungeon from "./Dungeon";
 
 
-class ScreenRoom extends Component {
+class ScreenDungeon extends Component {
 
     render() {
         return (
@@ -30,4 +30,4 @@ class ScreenRoom extends Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ScreenRoom)
+export default connect(mapStateToProps, mapDispatchToProps)(ScreenDungeon)

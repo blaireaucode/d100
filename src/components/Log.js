@@ -12,7 +12,7 @@ import {Paper} from "@material-ui/core"
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import {ContentState, Editor, EditorState, RichUtils} from 'draft-js'
 import 'draft-js/dist/Draft.css'
-import {update_dic} from "../helpers/update_helpers";
+import {update_dic} from "../helpers/helpers_update";
 
 
 class Log extends Component {
@@ -40,7 +40,7 @@ class Log extends Component {
     }
 
     toggleInlineStyle(event) {
-        console.log('ici')
+        console.log('toggleInlineStyle')
         event.preventDefault();
         let style = event.currentTarget.getAttribute('data-style');
         this.setState({
@@ -50,6 +50,8 @@ class Log extends Component {
 
 
     handleKeyCommand(command, editorState) {
+        // when type "return"
+        console.log('handleKeyCommand')
         const newState = RichUtils.handleKeyCommand(editorState, command);
         if (newState) {
             this.onChange(newState);
@@ -62,6 +64,8 @@ class Log extends Component {
     render() {
         const q = this.props.game.quest;
         if (q.d100 === 'none') return '';
+        const t = EditorState.createWithContent(ContentState.createFromText(this.props.game.log))
+        console.log('t', t.getCurrentContent().getPlainText());
         return (
             <Paper elevation={5} className={'encounter'}>
                 <Editor

@@ -15,8 +15,8 @@ import L from "../helpers/L";
 import Input from "@material-ui/core/Input";
 import InputFieldCharacter from "./InputFieldCharacter";
 import TestDiceResult from "./TestDiceResult";
-import {clear_if_not_none} from "../helpers/ui_helpers";
-import {create_D100_rolling_dices, getRandomInt, open_dice_ui} from "../helpers/dice_helpers";
+import {clear_if_not_none} from "../helpers/helpers_ui";
+import {create_D100_rolling_dices, getRandomInt, open_dice_ui} from "../helpers/helpers_dice";
 
 class TestBlockEscape extends Component {
 

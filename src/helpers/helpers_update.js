@@ -7,7 +7,7 @@
  */
 
 import update from "immutability-helper";
-import {d100_interval_min_max} from "./encounter_helpers";
+import {d100_interval_min_max} from "./helpers_encounter";
 
 /*
     ONLY update here, no set_game

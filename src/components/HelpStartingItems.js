@@ -11,8 +11,8 @@ import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import L from "../helpers/L"
 import C from "../helpers/C";
-import {create_D100_rolling_dices, getRandomInt, open_dice_ui} from "../helpers/dice_helpers";
-import {get_item_in_table, update_g_add_item} from "../helpers/equipment_helpers";
+import {create_D100_rolling_dices, getRandomInt, open_dice_ui} from "../helpers/helpers_dice";
+import {get_item_in_table, update_g_add_item} from "../helpers/helpers_equipment";
 
 class HelpStartingItems extends Component {
 

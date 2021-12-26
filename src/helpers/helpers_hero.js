@@ -10,11 +10,11 @@ import classes_table from 'tables/classes_table.json'
 import update from "immutability-helper"
 import {v4 as uuidv4} from "uuid"
 import default_game from "./default_game";
-import {new_encounter} from "./encounter_helpers";
-import {new_equipped_items} from "./equipment_helpers";
+import {new_encounter} from "./helpers_encounter";
+import {new_equipped_items} from "./helpers_equipment";
 import table_r_race from "../tables/table_r_race.json";
-import {new_room} from "./room_helpers";
-import {new_quest} from "./quest_helpers";
+import {new_room} from "./helpers_dungeon";
+import {new_quest} from "./helpers_quest";
 
 export function create_new_game() {
     let new_game = JSON.parse(JSON.stringify(default_game))

@@ -9,7 +9,7 @@
 import {createStore} from 'redux'
 import * as at from 'helpers/action_types'
 import * as gr from 'helpers/action_reducers'
-import {create_new_game} from "./character_helpers";
+import {create_new_game} from "./helpers_hero";
 
 const store = setupStore()
 export const store_name = 'd100_save'

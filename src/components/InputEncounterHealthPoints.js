@@ -13,7 +13,7 @@ import F from 'helpers/F'
 import InputFieldEncounter from "./InputFieldEncounter";
 import C from "../helpers/C";
 import L from "../helpers/L";
-import {apply_n_dmg_to_encounter_index} from "../helpers/encounter_helpers";
+import {apply_n_dmg_to_encounter_index} from "../helpers/helpers_encounter";
 
 class FieldEncounterHealthPoints extends Component {
 

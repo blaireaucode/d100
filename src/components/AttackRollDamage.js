@@ -10,10 +10,10 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import L from 'helpers/L'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {create_D6_rolling_dice, getRandomInt, open_dice_ui} from "../helpers/dice_helpers";
-import {update_g_encounter_field} from "../helpers/update_helpers";
-import {compute_dmg, new_attack} from "../helpers/encounter_helpers";
-import {clear_if_not_none} from "../helpers/ui_helpers";
+import {create_D6_rolling_dice, getRandomInt, open_dice_ui} from "../helpers/helpers_dice";
+import {update_g_encounter_field} from "../helpers/helpers_update";
+import {compute_dmg, new_attack} from "../helpers/helpers_encounter";
+import {clear_if_not_none} from "../helpers/helpers_ui";
 import AttackApplyDamage from "./AttackApplyDamage";
 import C from "../helpers/C";
 

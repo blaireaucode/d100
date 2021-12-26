@@ -11,7 +11,7 @@ import {connect} from 'react-redux';
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props';
 import InputFieldHeader from "./InputFieldHeader";
 import ItemTreasure from "./ItemTreasure";
-import {get_items_from_table} from "../helpers/equipment_helpers";
+import {get_items_from_table} from "../helpers/helpers_equipment";
 import TableTitle from "./TableTitle";
 
 class TableTreasureA extends Component {

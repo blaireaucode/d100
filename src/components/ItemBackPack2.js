@@ -11,7 +11,7 @@ import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import InputFieldItem from "./InputFieldItem";
 import Clear from "./Clear";
-import {update_g_remove_item} from "../helpers/equipment_helpers";
+import {update_g_remove_item} from "../helpers/helpers_equipment";
 import InputFieldHeader from "./InputFieldHeader";
 import C from "../helpers/C";
 

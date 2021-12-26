@@ -10,10 +10,10 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import L from 'helpers/L'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {new_quest} from "../helpers/quest_helpers"
-import {create_D100_rolling_dices, getRandomInt, open_dice_ui} from "../helpers/dice_helpers"
-import * as up from "../helpers/update_helpers"
-import {get_table_element} from "../helpers/update_helpers"
+import {new_quest} from "../helpers/helpers_quest"
+import {create_D100_rolling_dices, getRandomInt, open_dice_ui} from "../helpers/helpers_dice"
+import * as up from "../helpers/helpers_update"
+import {get_table_element} from "../helpers/helpers_update"
 import Clear from "./Clear"
 import quests_table from 'tables/table_q_quests.json'
 import {MenuItem, Select} from "@material-ui/core"
@@ -70,7 +70,7 @@ class QuestRoll extends Component {
     }
 
     roll_quest() {
-        const total = getRandomInt(1, 10); // FIXME to change to 100 !
+        const total = getRandomInt(1, 100);
         this.displayed_quest({target: {value: total}});
         const dices = create_D100_rolling_dices(total);
         const g = open_dice_ui(this.props.game, total, dices);

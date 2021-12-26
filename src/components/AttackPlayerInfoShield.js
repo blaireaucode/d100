@@ -10,7 +10,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import C from "../helpers/C";
-import {get_item_at_slot} from "../helpers/equipment_helpers";
+import {get_item_at_slot} from "../helpers/helpers_equipment";
 import CollapsibleHelp from "./CollapsibleHelp";
 import InputFieldItem from "./InputFieldItem";
 

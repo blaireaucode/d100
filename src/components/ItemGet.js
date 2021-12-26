@@ -9,7 +9,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props';
-import {buy_g_item, buy_state_item} from "../helpers/equipment_helpers";
+import {buy_g_item, buy_state_item} from "../helpers/helpers_equipment";
 import L from "../helpers/L";
 import C from "../helpers/C";
 

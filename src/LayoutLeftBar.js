@@ -18,9 +18,9 @@ import {withStyles} from '@material-ui/core/styles'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import L from 'helpers/L'
-import {close_dice_ui, create_D100_rolling_dices, getRandomInt, open_dice_ui} from 'helpers/dice_helpers'
+import {close_dice_ui, create_D100_rolling_dices, getRandomInt, open_dice_ui} from 'helpers/helpers_dice'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {get_img} from "./helpers/room_helpers";
+import {get_img} from "./helpers/helpers_dungeon";
 
 const drawerWidth = 150
 

@@ -11,8 +11,8 @@ import {connect} from 'react-redux'
 import L from 'helpers/L'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import FieldInput from 'components/InputFieldEncounter'
-import {update_encounter_number} from 'helpers/encounter_helpers'
-import {D6, get_dices, open_dice_ui} from 'helpers/dice_helpers'
+import {update_encounter_number} from 'helpers/helpers_encounter'
+import {D6, get_dices, open_dice_ui} from 'helpers/helpers_dice'
 import F from 'helpers/F'
 
 class EncounterNumber extends Component {

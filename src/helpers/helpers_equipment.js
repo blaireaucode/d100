@@ -11,12 +11,12 @@ import armour_table from 'tables/table_a_armour.json';
 import needed_table from 'tables/table_n_needed.json';
 import treasureA_table from 'tables/table_ta_treasure_A.json';
 import parts_table from 'tables/table_p_parts.json';
-import {parse_d100_interval} from "./encounter_helpers";
+import {parse_d100_interval} from "./helpers_encounter";
 import update from "immutability-helper";
 import {v4 as uuidv4} from "uuid";
 import default_item from "./default_item";
 import React from "react";
-import {update_g_characteristic} from "./update_helpers";
+import {update_g_characteristic} from "./helpers_update";
 
 const tables = {
     weapon: weapon_table,

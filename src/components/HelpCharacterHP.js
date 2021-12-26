@@ -10,7 +10,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import L from "../helpers/L";
-import * as up from "../helpers/update_helpers";
+import * as up from "../helpers/helpers_update";
 
 class CharacterHeroPathHelp extends Component {
 

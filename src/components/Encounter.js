@@ -9,7 +9,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {update_g_encounter} from 'helpers/update_helpers'
+import {update_g_encounter} from 'helpers/helpers_update'
 import F from 'helpers/F'
 import {Paper} from "@material-ui/core"
 import InputFieldEncounter from "./InputFieldEncounter";
@@ -47,6 +47,7 @@ class Encounter extends Component {
 
         //console.log('enc', e);
         const p = {width: '4ch', type: 'number', align: 'right'};
+        const aw = (e.ability.length+1)+'ch';
         return (
             <span>
                 <Paper elevation={5} className={'encounter ' + cn}>
@@ -57,7 +58,8 @@ class Encounter extends Component {
                 <F><C width={'2ch'}/>Defence</F> <InputFieldEncounter {...p} field_name={'def'}/>
                 <F><C width={'2ch'}/>Damage Modifier</F> <InputFieldEncounter {...p} field_name={'dmg'}/>
                 <FieldEncounterHealthPoints/><br/>
-                <F width={'8ch'}>Ability</F> <InputFieldEncounter field_name={'ability'} width={'40ch'}/>
+                <F width={'8ch'}>Ability</F>
+                <InputFieldEncounter field_name={'ability'} width={aw}/>
                 <EncounterAbility/>
                 <RewardRoll/>
                 </Paper>

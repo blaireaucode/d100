@@ -12,7 +12,7 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import * as st from 'helpers/store'
 import L from 'helpers/L.js'
 import Save from 'components/Save'
-import {create_new_game} from "../helpers/character_helpers";
+import {create_new_game} from "../helpers/helpers_hero";
 
 class ScreenSystem extends Component {
 

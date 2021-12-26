@@ -10,10 +10,10 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import L from 'helpers/L'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {d100_interval_min_max, new_encounter} from "../helpers/encounter_helpers"
-import {create_D100_rolling_dices, getRandomInt, open_dice_ui} from "../helpers/dice_helpers"
-import * as up from "../helpers/update_helpers";
-import {update_g_encounter} from "../helpers/update_helpers";
+import {d100_interval_min_max, new_encounter} from "../helpers/helpers_encounter"
+import {create_D100_rolling_dices, getRandomInt, open_dice_ui} from "../helpers/helpers_dice"
+import * as up from "../helpers/helpers_update";
+import {update_g_encounter} from "../helpers/helpers_update";
 import Clear from "./Clear";
 import encounters_table from 'tables/table_e_encounter.json'
 import {MenuItem, Select} from "@material-ui/core";

@@ -10,7 +10,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props';
 import ItemTreasure from "./ItemTreasure";
-import {get_items_from_table} from "../helpers/equipment_helpers";
+import {get_items_from_table} from "../helpers/helpers_equipment";
 
 class TableTitle extends Component {
 

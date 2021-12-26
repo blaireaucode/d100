@@ -12,7 +12,7 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import {Select} from "@material-ui/core"
 import weapon_table from "../tables/table_w_weapon.json";
 import L from 'helpers/L';
-import {get_weapon_in_table} from "../helpers/equipment_helpers";
+import {get_weapon_in_table} from "../helpers/helpers_equipment";
 
 class ItemAdd extends Component {
 

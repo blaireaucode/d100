@@ -13,7 +13,7 @@ import {Grid} from "@material-ui/core";
 import RoomImage from "./RoomImage";
 import Clear from "./Clear";
 import update from "immutability-helper";
-import {new_dungeon} from "../helpers/room_helpers";
+import {new_dungeon} from "../helpers/helpers_dungeon";
 
 class Dungeon extends Component {
 

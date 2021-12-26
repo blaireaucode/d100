@@ -9,7 +9,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {get_race} from "../helpers/character_helpers";
+import {get_race} from "../helpers/helpers_hero";
 
 class HelpCharacterHeroPath extends Component {
 

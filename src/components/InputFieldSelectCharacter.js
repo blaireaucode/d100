@@ -9,7 +9,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import * as up from 'helpers/update_helpers'
+import * as up from 'helpers/helpers_update'
 import {MenuItem, Select} from "@material-ui/core"
 
 class InputFieldSelectCharacter extends Component {

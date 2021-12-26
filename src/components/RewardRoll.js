@@ -13,12 +13,12 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import F from "../helpers/F";
 import InputFieldEncounter from "./InputFieldEncounter";
 import C from "../helpers/C";
-import {get_reward_tables, get_total_hp} from "../helpers/encounter_helpers";
+import {get_reward_tables, get_total_hp} from "../helpers/helpers_encounter";
 import {MenuItem, Select} from "@material-ui/core";
-import {create_D100_rolling_dices, getRandomInt, open_dice_ui} from "../helpers/dice_helpers";
-import {get_table_name} from "../helpers/equipment_helpers";
+import {create_D100_rolling_dices, getRandomInt, open_dice_ui} from "../helpers/helpers_dice";
+import {get_table_name} from "../helpers/helpers_equipment";
 import ItemGeneric from "./ItemGeneric";
-import {update_g_characteristic} from "../helpers/update_helpers";
+import {update_g_characteristic} from "../helpers/helpers_update";
 import InputFieldCharacter from "./InputFieldCharacter";
 
 class RewardRoll extends Component {
@@ -32,7 +32,7 @@ class RewardRoll extends Component {
     }
 
     roll_reward() {
-        const rew = this.props.game.encounter.k;
+        //const rew = this.props.game.encounter.k;
         const table = this.state.table;
         if (table === '') return '';
         const total = getRandomInt(1, 100);

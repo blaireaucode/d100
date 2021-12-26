@@ -7,7 +7,7 @@
  */
 
 import update from "immutability-helper"
-import {update_g_options} from 'helpers/update_helpers'
+import {update_g_options} from 'helpers/helpers_update'
 import {DICE_TYPES} from "helpers/DicesAnimation2";
 
 export function getRandomInt(min, max) {

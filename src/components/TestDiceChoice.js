@@ -21,9 +21,9 @@ import {
     test_g_set_dice,
     test_g_set_mod,
     test_g_set_type
-} from "../helpers/dice_helpers";
+} from "../helpers/helpers_dice";
 import TestDiceResult from "./TestDiceResult";
-import {clear_if_not_none} from "../helpers/ui_helpers";
+import {clear_if_not_none} from "../helpers/helpers_ui";
 
 class TestDiceChoice extends Component {
 

@@ -16,12 +16,12 @@
     flex-direction: column;
     justify-content: center;
     font-size: 1rem;
-    color:  var(--fg);
+    color: var(--fg);
 }
 
 .normal {
     font-weight: normal;
-    color:  var(--fg);
+    color: var(--fg);
 }
 
 .field_name {
@@ -125,6 +125,7 @@
 .item_table_odd:hover {
     background-color: #131315;
 }
+
 .item_table_even:hover {
     background-color: #131315;
 }
@@ -320,4 +321,27 @@
     opacity: 1;
 }
 
+/* -------------------------------------------------------------------- */
+/* CK EDITOR */
+/* -------------------------------------------------------------------- */
 
+.ck {
+    border: 0 !important;
+}
+
+.ck-content {
+    background-color: var(--bg) !important;
+}
+
+.ck-toolbar {
+    background-color: var(--bg) !important;
+    color: var(--fg) !important;
+}
+
+.ck-icon {
+    color: var(--fgh) !important;
+}
+
+.ck-button {
+    color: var(--fgh) !important;
+}

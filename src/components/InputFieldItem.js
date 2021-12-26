@@ -10,7 +10,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import Input from '@material-ui/core/Input'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {update_g_item} from "../helpers/equipment_helpers";
+import {update_g_item} from "../helpers/helpers_equipment";
 
 class InputFieldItem extends Component {
 

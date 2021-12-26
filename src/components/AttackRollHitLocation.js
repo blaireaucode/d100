@@ -10,12 +10,12 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import L from 'helpers/L'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {create_D10_rolling_dice, getRandomInt, open_dice_ui} from "../helpers/dice_helpers";
-import * as up from "../helpers/update_helpers";
+import {create_D10_rolling_dice, getRandomInt, open_dice_ui} from "../helpers/helpers_dice";
+import * as up from "../helpers/helpers_update";
 import location_table from "../tables/table_hit_location.json";
 import {MenuItem, Select} from "@material-ui/core";
-import {new_location} from "../helpers/encounter_helpers";
-import {clear_if_not_none} from "../helpers/ui_helpers";
+import {new_location} from "../helpers/helpers_encounter";
+import {clear_if_not_none} from "../helpers/helpers_ui";
 import H from "../helpers/H";
 import C from "../helpers/C";
 

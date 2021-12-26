@@ -20,7 +20,7 @@ import Grid from '@material-ui/core/Grid'
 //import Cached from '@material-ui/icons/Cached'
 // import Button from '@material-ui/core/Button'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {get_dice_ui} from "./helpers/dice_helpers";
+import {get_dice_ui} from "./helpers/helpers_dice";
 
 const styles = theme => ({
     menuButton: {

@@ -9,7 +9,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {close_dice_ui} from 'helpers/dice_helpers'
+import {close_dice_ui} from 'helpers/helpers_dice'
 import DicesAnimation from 'helpers/DicesAnimation2'
 
 class DiceRoller extends Component {

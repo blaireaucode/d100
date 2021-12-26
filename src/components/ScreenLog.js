@@ -9,7 +9,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import Log from "./Log";
+import Log from "./Log4";
 
 class ScreenLog extends Component {
 

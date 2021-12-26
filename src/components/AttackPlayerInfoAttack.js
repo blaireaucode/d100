@@ -11,7 +11,7 @@ import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import C from "../helpers/C";
 import InputFieldCharacter from "./InputFieldCharacter";
-import {get_item_at_slot} from "../helpers/equipment_helpers";
+import {get_item_at_slot} from "../helpers/helpers_equipment";
 import CollapsibleHelp from "./CollapsibleHelp";
 
 class AttackPlayerInfoAttack extends Component {

@@ -12,6 +12,8 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import QuestRoll from "./QuestRoll"
 import Quest from "./Quest"
 import CollapsibleHelp from "./CollapsibleHelp"
+import AddToLog from "./AddToLog";
+import {log_quest} from "../helpers/helpers_log";
 
 class ScreenQuest extends Component {
 
@@ -21,13 +23,11 @@ class ScreenQuest extends Component {
             <div>
                 <Quest/>
                 <p/>
-                &nbsp;
-                <p/>
-                &nbsp;
+                <AddToLog>{log_quest(this.props.game.quest)}</AddToLog>
                 <p/>
                 <hr color={'#333'} size={1}/>
                 <CollapsibleHelp text={'Choose a quest'}>
-                <QuestRoll/>
+                    <QuestRoll/>
                 </CollapsibleHelp>
             </div>
         );

@@ -11,7 +11,7 @@ import {connect} from 'react-redux'
 import Input from '@material-ui/core/Input'
 import Checkbox from '@material-ui/core/Checkbox'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import * as up from 'helpers/update_helpers'
+import * as up from 'helpers/helpers_update'
 
 class InputFieldCharacter extends Component {
 

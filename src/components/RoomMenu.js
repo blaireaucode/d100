@@ -11,7 +11,7 @@ import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import L from "../helpers/L"
 import C from "../helpers/C"
-import {empty_room, rotate_g_dungeon_room, set_g_dungeon_room} from "../helpers/room_helpers"
+import {empty_room, rotate_g_dungeon_room, set_g_dungeon_room} from "../helpers/helpers_dungeon"
 
 class RoomMenu extends Component {
 

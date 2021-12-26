@@ -10,12 +10,12 @@ import encounters_table from 'tables/table_e_encounter.json'
 import reactions_table from 'tables/table_monster_reaction.json'
 import locations_table from 'tables/table_hit_location.json'
 import ability_table from 'tables/table_encounter_ability.json'
-import * as up from "./update_helpers"
-import {get_table_element, update_g_characteristic, update_g_encounter_field, update_g_room} from "./update_helpers"
+import * as up from "./helpers_update"
+import {get_table_element, update_g_characteristic, update_g_encounter_field, update_g_room} from "./helpers_update"
 import update from "immutability-helper"
 import {v4 as uuidv4} from "uuid";
 import H from "./H";
-import {get_item_at_hit_location} from "./equipment_helpers";
+import {get_item_at_hit_location} from "./helpers_equipment";
 
 export function parse_d100_interval(d100, id) {
     const mm = d100_interval_min_max(d100);

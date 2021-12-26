@@ -9,7 +9,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props';
-import {get_ability} from "../helpers/encounter_helpers";
+import {get_ability} from "../helpers/helpers_encounter";
 
 class HelpEncounterAbility extends Component {
 

@@ -9,10 +9,10 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {get_item_at_hit_location, get_item_at_slot, update_g_item} from "../helpers/equipment_helpers";
+import {get_item_at_hit_location, get_item_at_slot, update_g_item} from "../helpers/helpers_equipment";
 import Checkbox from "@material-ui/core/Checkbox";
-import {update_g_encounter_field} from "../helpers/update_helpers";
-import {update_attack_field} from "../helpers/encounter_helpers";
+import {update_g_encounter_field} from "../helpers/helpers_update";
+import {update_attack_field} from "../helpers/helpers_encounter";
 import C from "../helpers/C";
 
 class AttackDefendDamage extends Component {

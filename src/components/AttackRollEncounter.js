@@ -10,11 +10,11 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import L from 'helpers/L'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {create_D100_rolling_dices, getRandomInt, open_dice_ui} from "../helpers/dice_helpers";
-import {update_g_encounter_field} from "../helpers/update_helpers";
-import {new_attack} from "../helpers/encounter_helpers";
+import {create_D100_rolling_dices, getRandomInt, open_dice_ui} from "../helpers/helpers_dice";
+import {update_g_encounter_field} from "../helpers/helpers_update";
+import {new_attack} from "../helpers/helpers_encounter";
 import AttackToggle from "./AttackToggle";
-import {clear_if_not_none} from "../helpers/ui_helpers";
+import {clear_if_not_none} from "../helpers/helpers_ui";
 import C from "../helpers/C";
 import CollapsibleHelp from "./CollapsibleHelp";
 
