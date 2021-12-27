@@ -48,7 +48,6 @@ class TableRoll extends Component {
     };
 
     roll() {
-        console.log('roll state', this.props.state)
         // get value
         const dice = getRandomInt(1, 100);
         const mod = this.props.state.mod;
@@ -104,7 +103,6 @@ class TableRoll extends Component {
     }
 
     render() {
-        console.log('render', this.props.state)
         return (
             <span>
                 {this.render_table()}

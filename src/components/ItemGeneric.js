@@ -9,23 +9,32 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import ItemArmour from "./ItemArmour";
-import ItemWeapon from "./ItemWeapon";
-import ItemNeeded from "./ItemNeeded";
-import ItemTreasure from "./ItemTreasure";
-import ItemPart from "./ItemPart";
-import ItemFind from "./ItemFind";
+import {get_item_in_table, table_item_props} from "../helpers/helpers_equipment";
+import C from "../helpers/C";
+import ItemGet from "./ItemGet";
 
 class ItemGeneric extends Component {
+
+    static defaultProps = {
+        class_name: ''
+    }
+
     render() {
-        const t = this.props.item_type;
-        if (t === 'armour') return <ItemArmour {...this.props} />;
-        if (t === 'weapon') return <ItemWeapon {...this.props} />;
-        if (t === 'needed') return <ItemNeeded {...this.props} />;
-        if (t === 'treasureA') return <ItemTreasure {...this.props} />;
-        if (t === 'parts') return <ItemPart {...this.props} />;
-        if (t === 'find') return <ItemFind {...this.props} />;
-        return 'unknown item type ?';
+        const tn = this.props.table_name;
+        const item = get_item_in_table(tn, this.props.id, false);
+        let attributes = [];
+        const properties = table_item_props[tn];
+        for (const p of properties) {
+            const value = item[p.att];
+            attributes.push(<C width={p.w} key={p.att}>{value}</C>)
+        }
+        return (
+            <div className={this.props.class_name}>
+                {attributes}
+                <ItemGet {...this.props} item_type={tn}/>
+            </div>
+        );
+
     }
 
 }

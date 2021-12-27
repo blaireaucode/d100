@@ -13,13 +13,11 @@ import {get_item_in_table} from "../helpers/helpers_equipment";
 import C from "../helpers/C";
 import ItemGet from "./ItemGet";
 
-class ItemGeneric2 extends Component {
+class ItemSingle extends Component {
     render() {
         const t = this.props.item_type;
-        console.log('generic', t, this.props.id);
         const id = t[0] === 'P' ? t + this.props.id : this.props.id;
         const item = get_item_in_table(t, id, false);
-        console.log('item', item);
         let attributes = [];
         for (const att in item) {
             if (att === 'name') continue;
@@ -27,7 +25,6 @@ class ItemGeneric2 extends Component {
             if (this.props.item_type[0] === 'P' && att === 'd100') continue;
             let t = '';
             let w = item[att].toString().length + 5 + att.length;
-            console.log('att', w, att, item[att].toString());
             if (att !== 'name' && att !== 'detail')
                 t = <span className={'field_name'}>{att}<br/></span>;
             if (att === 'gp') {
@@ -36,7 +33,7 @@ class ItemGeneric2 extends Component {
             }
             w = w + 'ch';
             if (att === 'reroll_market') continue;
-            attributes.push(<span className={'field_color'}>
+            attributes.push(<span className={'field_color'} key={att}>
                                 <C width={w}>{t} {item[att]} &nbsp;</C>
                                 <C width={'1ch'}/>
                             </span>);
@@ -60,4 +57,4 @@ class ItemGeneric2 extends Component {
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ItemGeneric2)
+export default connect(mapStateToProps, mapDispatchToProps)(ItemSingle)

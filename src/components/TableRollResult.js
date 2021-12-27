@@ -11,7 +11,7 @@ import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import C from "../helpers/C";
 import Clear from "./Clear";
-import ItemGeneric2 from "./ItemGeneric2";
+import ItemSingle from "./ItemSingle";
 
 class TableRollResult extends Component {
 
@@ -37,7 +37,7 @@ class TableRollResult extends Component {
                 <Clear onClick={this.clear}/>
                 <p/>
                 <div className={'item_table_roll'}>
-                    <ItemGeneric2
+                    <ItemSingle
                         id={id}
                         item_type={this.props.state.table}
                         buy={false}/>

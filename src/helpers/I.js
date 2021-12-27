@@ -24,6 +24,7 @@ class I extends Component {
             <C width={this.props.width}>
                 <img className={'map-img'}
                      src={get_img(this.props.src)}
+                     alt={this.props.src}
                      width={this.props.img_width}
                      align={'top'}
                 />

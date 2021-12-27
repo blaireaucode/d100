@@ -16,7 +16,7 @@ import InputFieldEncounter from "./InputFieldEncounter";
 import EncounterAbility from "./EncounterAbility";
 import C from "../helpers/C";
 import FieldEncounterHealthPoints from "./InputEncounterHealthPoints";
-import RewardRoll2 from "./RewardRoll2";
+import RewardRoll2 from "./RewardRoll";
 
 class Encounter extends Component {
 

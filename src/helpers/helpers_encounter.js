@@ -65,7 +65,6 @@ export function new_reward(e) {
     r.tables = tables;
     r.table = table;
     r.mod = get_table_mod(table);
-    console.log('r', r);
     return r;
 }
 

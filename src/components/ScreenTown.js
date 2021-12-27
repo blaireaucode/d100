@@ -10,24 +10,27 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import L from "../helpers/L"
-import TableWeapon from "./TableWeapon";
-import TableArmour from "./TableArmour";
 import CollapsibleHelp from "./CollapsibleHelp";
 import C from "../helpers/C";
-import TableNeeded from "./TableNeeded";
 import HelpStartingItems from "./HelpStartingItems";
-import TableTreasureA from "./TableTreasureA";
 import F from "../helpers/F";
 import InputFieldCharacter from "./InputFieldCharacter";
-import TableParts from "./TableParts";
-import TableFind from "./TableFind";
+import TableGeneric from "./TableGeneric";
+import {tables_props} from "../helpers/helpers_equipment";
 
 class ScreenTown extends Component {
+
+    components_tables = {};
 
     constructor(props) {
         super(props);
         this.state = {table: 'none'};
         this.toggle = this.toggle.bind(this);
+        this.components_tables['none'] = '';
+        for (const t in tables_props) {
+            const p = tables_props[t];
+            this.components_tables[p.name] = <TableGeneric key={p.name} table_name={p.name} title={p.title}/>;
+        }
     }
 
     toggle(table) {
@@ -35,13 +38,7 @@ class ScreenTown extends Component {
     }
 
     render() {
-        let table = '';
-        if (this.state.table === 'weapons') table = <TableWeapon/>
-        if (this.state.table === 'armours') table = <TableArmour/>
-        if (this.state.table === 'needed') table = <TableNeeded/>
-        if (this.state.table === 'treasureA') table = <TableTreasureA/>
-        if (this.state.table === 'parts') table = <TableParts/>
-        if (this.state.table === 'find') table = <TableFind/>
+        const table = this.components_tables[this.state.table];
         return (
             <span>
                 <F>💰Gold pieces <C width={'2ch'}/></F>
@@ -49,9 +46,9 @@ class ScreenTown extends Component {
                 <br/>
                 <L onClick={() => this.toggle('none')} className={'clear'}> ✗ </L>
                 <C width={'3ch'}/>
-                <L onClick={() => this.toggle('weapons')}>Weapon</L>
+                <L onClick={() => this.toggle('weapon')}>Weapon</L>
                 <C width={'3ch'}/>
-                <L onClick={() => this.toggle('armours')}>Armour</L>
+                <L onClick={() => this.toggle('armour')}>Armour</L>
                 <C width={'3ch'}/>
                 <L onClick={() => this.toggle('needed')}>Needed</L>
                 <C width={'3ch'}/>

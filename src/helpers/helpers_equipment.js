@@ -18,6 +18,8 @@ import {v4 as uuidv4} from "uuid";
 import default_item from "./default_item";
 import React from "react";
 import {update_g_characteristic} from "./helpers_update";
+import InputFieldHeader from "../components/InputFieldHeader";
+import ItemGeneric from "../components/ItemGeneric";
 
 export const all_tables = {
     weapon: weapon_table,
@@ -26,6 +28,64 @@ export const all_tables = {
     treasureA: treasureA_table,
     parts: parts_table,
     find: find_table
+}
+
+export const tables_props = {
+    weapon: {name: 'weapon', title: 'Table W - Weapons'},
+    armour: {name: 'armour', title: 'Table A - Armours'},
+    needed: {name: 'needed', title: 'Table N - Needed'},
+    treasureA: {name: 'treasureA', title: 'Table TA - Treasure A'},
+    treasureB: {name: 'treasureB', title: 'Table TB - Treasure B'},
+    treasureC: {name: 'treasureC', title: 'Table TC - Treasure C'},
+    parts: {name: 'parts', title: 'Table P - Parts'},
+    find: {name: 'find', title: 'Table F - Find'},
+}
+
+export const table_item_props = {
+    weapon: [
+        {att: 'd100', w: '11ch', h: 'D100'},
+        {att: 'name', w: '25ch', h: 'Name'},
+        {att: 'hands', w: '7ch', h: 'Hands'},
+        {att: 'type', w: '6ch', h: 'Type'},
+        {att: 'dmg', w: '6ch', h: 'dmg'},
+        {att: 'gp', w: '6ch', h: '💰'},
+        {att: 'fix_cost', w: '10ch', h: 'Fix Cost'}
+    ],
+    armour: [
+        {att: 'd100', w: '10ch', h: 'D100'},
+        {att: 'name', w: '32ch', h: 'Name'},
+        {att: 'slot', w: '12ch', h: 'Slot'},
+        {att: 'AS', w: '6ch', h: 'A,S'},
+        {att: 'gp', w: '6ch', h: '💰'},
+        {att: 'fix_cost', w: '10ch', h: 'Fix Cost'}
+    ],
+    needed: [
+        {att: 'd100', w: '6ch', h: 'D100'},
+        {att: 'name', w: '27ch', h: 'Name'},
+        {att: 'detail', w: '68ch', h: 'Detail'},
+        {att: 'gp', w: '8ch', h: '💰'}
+    ],
+    treasureA: [
+        {att: 'd100', w: '8ch', h: 'D100'},
+        {att: 'name', w: '22ch', h: 'Name'},
+        {att: 'detail', w: '72ch', h: 'Detail'},
+        {att: 'gp', w: '8ch', h: '💰'}
+    ],
+    parts: [
+        {att: 'P1', w: '7ch', h: 'P1'},
+        {att: 'P2', w: '7ch', h: 'P2'},
+        {att: 'P3', w: '7ch', h: 'P3'},
+        {att: 'P4', w: '7ch', h: 'P4'},
+        {att: 'name', w: '16ch', h: 'Name'},
+        {att: 'detail', w: '56ch', h: 'Detail'},
+        {att: 'gp', w: '8ch', h: '💰'}
+    ],
+    find: [
+        {att: 'd100', w: '8ch', h: 'D100'},
+        {att: 'time', w: '7ch', h: 'Time'},
+        {att: 'detail', w: '96ch', h: 'Detail'},
+    ]
+
 }
 
 export function new_table_roll() {
@@ -96,6 +156,32 @@ export function get_items_from_table(table_name, Component, id = 'all') {
     }
     return items;
 }
+
+export function get_items_header_from_table(table_name) {
+    const p = table_item_props[table_name];
+    let headers = [];
+    for (const att of p) {
+        headers.push(<InputFieldHeader key={att.h} width={att.w} value={att.h}/>)
+    }
+    return headers;
+}
+
+
+export function get_items_from_table2(table_name) {
+    const table = all_tables[table_name];
+    let i = 0;
+    let items = [];
+    for (let item of table) {
+        let v = item.d100;
+        if (v === 'none') continue;
+        const cn = (i % 2 === 0) ? 'item_table_odd' : 'item_table_even';
+        const op = <ItemGeneric key={v} table_name={table_name} id={v} class_name={cn}/>;
+        items.push(op);
+        i += 1;
+    }
+    return items;
+}
+
 
 export function buy_g_item(game, table_name, id, buy = true) {
     const item = get_item_in_table(table_name, id);
@@ -265,7 +351,6 @@ export function get_table_name(letter) {
     }
     return letter;
 }
-
 
 
 

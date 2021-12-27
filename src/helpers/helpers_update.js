@@ -49,7 +49,6 @@ export function get_table_element(table, id, copy = true) {
     }
     let e = table[i];
     if (copy) e = JSON.parse(JSON.stringify(e));
-    console.log('Get in table', i, id, e);
     return e;
 }
 
