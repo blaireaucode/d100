@@ -19,12 +19,10 @@ import {get_item_in_table} from "../helpers/helpers_equipment";
 class RoomSearch extends Component {
 
     search = (s) => {
-        console.log('state', s)
         s.find = get_item_in_table(s.table, s.total, true);
         const r = this.props.game.room;
         const room = update(r, {search: {$set: s}});
-        let g = update_g_room(this.props.game, room);
-        return g;
+        return update_g_room(this.props.game, room);
     }
 
     clear = () => {
@@ -34,7 +32,6 @@ class RoomSearch extends Component {
         const room = update(r, {search: {$set: s}});
         const g = update_g_room(this.props.game, room);
         this.props.set_game(g);
-        console.log('g', g.room.search)
     }
 
     render() {

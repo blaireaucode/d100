@@ -10,7 +10,7 @@ import rooms_table from 'tables/table_m_mapping.json'
 import {v4 as uuidv4} from "uuid"
 import update from "immutability-helper"
 import {get_table_element} from "./helpers_update";
-import {new_table_roll} from "./helpers_equipment";
+import {new_table_roll} from "./helpers_table";
 
 export function new_room(id = 'none') {
     // get the room

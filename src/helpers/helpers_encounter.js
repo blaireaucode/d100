@@ -15,7 +15,8 @@ import {get_table_element, update_g_characteristic, update_g_encounter_field, up
 import update from "immutability-helper"
 import {v4 as uuidv4} from "uuid";
 import H from "./H";
-import {all_tables, get_item_at_hit_location, get_table_name, new_table_roll} from "./helpers_equipment";
+import {get_item_at_hit_location} from "./helpers_equipment";
+import {all_tables, get_table_name, new_table_roll} from "./helpers_table";
 
 export function parse_d100_interval(d100, id) {
     const mm = d100_interval_min_max(d100);

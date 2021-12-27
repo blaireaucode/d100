@@ -9,7 +9,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {get_item_in_table, table_item_props} from "../helpers/helpers_equipment";
+import {get_item_in_table} from "../helpers/helpers_equipment";
+import {table_item_props} from "../helpers/helpers_table";
 import C from "../helpers/C";
 import ItemGet from "./ItemGet";
 

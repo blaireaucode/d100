@@ -16,11 +16,12 @@ import HelpStartingItems from "./HelpStartingItems";
 import F from "../helpers/F";
 import InputFieldCharacter from "./InputFieldCharacter";
 import TableGeneric from "./TableGeneric";
-import {tables_props} from "../helpers/helpers_equipment";
+import {tables_props} from "../helpers/helpers_table";
 
 class ScreenTown extends Component {
 
     components_tables = {};
+    menus_tables = [];
 
     constructor(props) {
         super(props);
@@ -30,6 +31,11 @@ class ScreenTown extends Component {
         for (const t in tables_props) {
             const p = tables_props[t];
             this.components_tables[p.name] = <TableGeneric key={p.name} table_name={p.name} title={p.title}/>;
+            this.menus_tables.push(
+                <span key={p.name}>
+                    <L onClick={() => this.toggle(p.name)}>{p.short}</L>
+                    <C width={'2ch'}/>
+                </span>);
         }
     }
 
@@ -45,19 +51,9 @@ class ScreenTown extends Component {
                 <InputFieldCharacter type={'number'} width={'7ch'} field_name={'gold_pieces'}/>
                 <br/>
                 <L onClick={() => this.toggle('none')} className={'clear'}> ✗ </L>
-                <C width={'3ch'}/>
-                <L onClick={() => this.toggle('weapon')}>Weapon</L>
-                <C width={'3ch'}/>
-                <L onClick={() => this.toggle('armour')}>Armour</L>
-                <C width={'3ch'}/>
-                <L onClick={() => this.toggle('needed')}>Needed</L>
-                <C width={'3ch'}/>
-                <L onClick={() => this.toggle('treasureA')}>Treasure A</L>
-                <C width={'3ch'}/>
-                <L onClick={() => this.toggle('parts')}>Parts</L>
-                <C width={'3ch'}/>
-                <L onClick={() => this.toggle('find')}>Find</L>
-                <C width={'10ch'}/>
+                <C width={'2ch'}/>
+                {this.menus_tables}
+                <C width={'2ch'}/>
                 <CollapsibleHelp text={'(?)'}>
                     <HelpStartingItems/>
                 </CollapsibleHelp>
