@@ -22,13 +22,13 @@ class ItemNeeded extends Component {
     render() {
         const item = get_item_in_table('needed', this.props.id, false);
         return (
-            <span className={this.props.class_name}>
-                <C width={'8ch'}>{item.d100}</C>
-                <C width={'30ch'}>{item.name}</C>
-                <C width={'65ch'}>{item.detail}</C>
+            <div className={this.props.class_name}>
+                <C width={'6ch'}>{item.d100}</C>
+                <C width={'27ch'}>{item.name}</C>
+                <C width={'50ch'}>{item.detail}</C>
                 <C width={'6ch'}>{item.gp}</C>
                 <ItemGet {...this.props} item_type={'needed'}/>
-            < /span>
+            </div>
         );
     }
 

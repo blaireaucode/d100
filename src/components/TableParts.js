@@ -25,18 +25,18 @@ class TableParts extends Component {
 
     render() {
         return (
-            <span>
+            <div className={'table_item'}>
                 <TableTitle>Table P - Parts</TableTitle>
                 <InputFieldHeader width={'6ch'} value={'P1'}/>
                 <InputFieldHeader width={'6ch'} value={'P2'}/>
                 <InputFieldHeader width={'6ch'} value={'P3'}/>
                 <InputFieldHeader width={'6ch'} value={'P4'}/>
                 <InputFieldHeader width={'16ch'} value={'Name'}/>
-                <InputFieldHeader width={'70ch'} value={'Detail'}/>
+                <InputFieldHeader width={'43ch'} value={'Detail'}/>
                 <InputFieldHeader width={'6ch'} value={'gp'}/>
                 <br/>
                 {this.items}
-            < /span>
+            </div>
         );
     }
 

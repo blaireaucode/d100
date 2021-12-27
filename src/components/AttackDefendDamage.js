@@ -48,8 +48,8 @@ class AttackDefendDamage extends Component {
         const att = e.attack;
         if (att.dmg === 'none') return '';
         if (att.who_attack === 'character') return '';
+        // Is the hero as a shield off hand ?
         let item = get_item_at_slot(this.props.game, 6); // Off hand
-
         if (item !== 'none') {
             if ('AS' in item) {
                 if (item.AS.includes('S')) {
@@ -70,10 +70,11 @@ class AttackDefendDamage extends Component {
                 }
             }
         }
+        // No shield, we may deflect ?
         item = get_item_at_hit_location(this.props.game);
         if (item !== 'none') {
             if (item.item_type === 'armour' || item.item_type === 'weapon')
-                return <span>Deflection available at hit loc (deflect 2 max + 1pip for each)</span>
+                return <span>Deflection available at hit loc (deflect 2 max + 1pip for each) TODO</span>
         }
         return '';
     }

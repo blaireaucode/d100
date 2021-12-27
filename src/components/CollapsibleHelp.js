@@ -11,7 +11,6 @@ import {connect} from 'react-redux';
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props';
 import Collapse from "@kunukn/react-collapse";
 import L from "../helpers/L";
-import C from "../helpers/C";
 
 class CollapsibleHelp extends Component {
 

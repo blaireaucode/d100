@@ -33,7 +33,7 @@ class CharacterMain extends Component {
         return (
             <span>
                 {/* Name etc */}
-                <F>Name</F> <InputFieldCharacter field_name={'name'} width={'20ch'}/>
+                <InputFieldCharacter field_name={'name'} width={'25ch'}/>
                 <F>Hero Path </F> <C width={'1ch'}/>
                 <InputFieldSelectCharacter width={'10ch'}
                                            items={items}

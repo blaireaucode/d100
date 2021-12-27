@@ -25,14 +25,14 @@ class TableFind extends Component {
 
     render() {
         return (
-            <span>
+            <div className={'table_item'}>
                 <TableTitle>Table F - Find</TableTitle>
                 <InputFieldHeader width={'6ch'} value={'D100'}/>
                 <InputFieldHeader width={'6ch'} value={'Time'}/>
-                <InputFieldHeader width={'70ch'} value={'Detail'}/>
+                <InputFieldHeader width={'96ch'} value={'Detail'}/>
                 <br/>
                 {this.items}
-            < /span>
+            </div>
         );
     }
 

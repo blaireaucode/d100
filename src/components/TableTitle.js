@@ -23,11 +23,11 @@ class TableTitle extends Component {
 
     render() {
         return (
-            <span>
+            <span className={'table_title'}>
                 <hr color={'#333'} size={1}/>
                 <b>{this.props.children}</b>
                 <br/>
-            < /span>
+            </span>
         );
     }
 

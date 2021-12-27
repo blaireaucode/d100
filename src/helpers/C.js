@@ -19,7 +19,12 @@ class C extends Component {
 
     render() {
         return (
-            <span style={{display: 'inline-block', width: this.props.width}} className={this.props.className}>
+            <span style={{
+                display: 'inline-block',
+                width: this.props.width,
+                verticalAlign: 'middle'
+            }}
+                  className={this.props.className}>
                 {this.props.children}
             </span>
         );

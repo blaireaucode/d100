@@ -18,6 +18,8 @@ import {add_g_room_to_dungeon, map_dir, new_room, rotate_g_room} from "../helper
 import C from "../helpers/C";
 import {update_g_room} from "../helpers/helpers_update";
 import RoomSearch from "./RoomSearch";
+import TableRoll from "./TableRoll";
+import CollapsibleHelp from "./CollapsibleHelp";
 
 class RoomInfo extends Component {
 
@@ -54,6 +56,12 @@ class RoomInfo extends Component {
         if (dn > 0) {
             d = dn + ' door' + (dn > 1 ? 's' : '') + ': ';
         }
+
+        let mod = 0;
+        if (r.color === 'red') mod = 10;
+        if (r.color === 'green') mod = 5;
+        if (r.color === 'blue') mod = 20;
+
         return (
             <span>
                 <L onClick={this.rotate}>↻</L>

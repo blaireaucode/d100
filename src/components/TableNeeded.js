@@ -25,15 +25,15 @@ class TableNeeded extends Component {
 
     render() {
         return (
-            <span>
+            <div className={'table_item'}>
                 <TableTitle>Table N - Needed</TableTitle>
-                <InputFieldHeader width={'8ch'} value={'Dta100'}/>
-                <InputFieldHeader width={'30ch'} value={'Name'}/>
-                <InputFieldHeader width={'65ch'} value={'Detail'}/>
+                <InputFieldHeader width={'6ch'} value={'D100'}/>
+                <InputFieldHeader width={'27ch'} value={'Name'}/>
+                <InputFieldHeader width={'50ch'} value={'Detail'}/>
                 <InputFieldHeader width={'6ch'} value={'GP'}/>
                 <br/>
                 {this.items}
-            < /span>
+            </div>
         );
     }
 

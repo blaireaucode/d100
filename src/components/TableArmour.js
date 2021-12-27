@@ -13,6 +13,7 @@ import ItemArmour from "./ItemArmour";
 import InputFieldHeader from "./InputFieldHeader";
 import {get_items_from_table} from "../helpers/helpers_equipment";
 import TableTitle from "./TableTitle";
+import C from "../helpers/C";
 
 class TableArmour extends Component {
 
@@ -31,17 +32,18 @@ class TableArmour extends Component {
             this.items = get_items_from_table('armour', ItemArmour, this.props.id);
         }
         return (
-            <span>
+            <div className={'table_item'}>
                 <TableTitle>Table A - Armours</TableTitle>
-                <InputFieldHeader width={'8ch'} value={'D100'}/>
-                <InputFieldHeader width={'25ch'} value={'Name'}/>
-                <InputFieldHeader width={'7ch'} value={'Slot'}/>
-                <InputFieldHeader width={'5ch'} value={'AS'}/>
-                <InputFieldHeader width={'5ch'} value={'GP'}/>
-                <InputFieldHeader width={'8ch'} value={'fix cost'}/>
+                <InputFieldHeader width={'10ch'} value={'D100'}/>
+                <InputFieldHeader width={'32ch'} value={'Name'}/>
+                <InputFieldHeader width={'12ch'} value={'Slot'}/>
+                <InputFieldHeader width={'6ch'} value={'AS'}/>
+                <InputFieldHeader width={'6ch'} value={'GP'}/>
+                <C width={'2ch'}/>
+                <InputFieldHeader width={'10ch'} value={'fix cost'}/>
                 <br/>
                 {this.items}
-            < /span>
+            < /div>
         );
     }
 

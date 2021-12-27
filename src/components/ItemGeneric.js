@@ -14,6 +14,7 @@ import ItemWeapon from "./ItemWeapon";
 import ItemNeeded from "./ItemNeeded";
 import ItemTreasure from "./ItemTreasure";
 import ItemPart from "./ItemPart";
+import ItemFind from "./ItemFind";
 
 class ItemGeneric extends Component {
     render() {
@@ -23,6 +24,7 @@ class ItemGeneric extends Component {
         if (t === 'needed') return <ItemNeeded {...this.props} />;
         if (t === 'treasureA') return <ItemTreasure {...this.props} />;
         if (t === 'parts') return <ItemPart {...this.props} />;
+        if (t === 'find') return <ItemFind {...this.props} />;
         return 'unknown item type ?';
     }
 

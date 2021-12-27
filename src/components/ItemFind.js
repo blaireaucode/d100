@@ -22,12 +22,13 @@ class ItemFind extends Component {
     render() {
         const item = get_item_in_table('find', this.props.id, false);
         return (
-            <span className={this.props.class_name}>
+            <div className={this.props.class_name}>
                 <C width={'6ch'}>{item.d100}</C>
                 <C width={'6ch'}>{item.time}</C>
-                <C width={'70ch'}>{item.detail}</C>
-                <ItemGet {...this.props} item_type={'find'}/>
-            < /span>
+                <C width={'96ch'}>{item.detail}</C>
+                <C width={'1ch'}/>
+                <ItemGet {...this.props} item_type={'find'} buy={false}/>
+            < /div>
         );
     }
 

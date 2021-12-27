@@ -10,6 +10,7 @@ import rooms_table from 'tables/table_m_mapping.json'
 import {v4 as uuidv4} from "uuid"
 import update from "immutability-helper"
 import {get_table_element} from "./helpers_update";
+import {new_table_roll} from "./helpers_equipment";
 
 export function new_room(id = 'none') {
     // get the room
@@ -17,15 +18,15 @@ export function new_room(id = 'none') {
     e["search"] = {};
     if (id === "none") {
         e["id"] = "none";
-        e["doors_direction"] = [];
-        e["rotation"] = 0;
         e["src"] = '';
+        e["doors_direction"] = [];
     } else {
         e["id"] = uuidv4();
-        e["rotation"] = 0;
         e["src"] = require('../images/' + id + '.png').default;
         if (!("doors_direction" in e)) e["doors_direction"] = [];
     }
+    e["rotation"] = 0;
+    e["search"] = new_table_roll();
     return e;
 }
 
@@ -129,8 +130,8 @@ export function add_g_room_to_dungeon(game, direction) {
     return g;
 }
 
-export function get_img() {
-    const img = require('../images/dungeon.png').default;
+export function get_img(name) {
+    const img = require('../images/' + name + '.png').default;
     return img;
 }
 

@@ -15,7 +15,7 @@ import {get_table_element, update_g_characteristic, update_g_encounter_field, up
 import update from "immutability-helper"
 import {v4 as uuidv4} from "uuid";
 import H from "./H";
-import {get_item_at_hit_location} from "./helpers_equipment";
+import {all_tables, get_item_at_hit_location, get_table_name, new_table_roll} from "./helpers_equipment";
 
 export function parse_d100_interval(d100, id) {
     const mm = d100_interval_min_max(d100);
@@ -51,8 +51,35 @@ export function new_encounter(id = 'none') {
     e["attack"] = new_attack();
     e["location"] = new_location();
     e["round"] = 1;
+    e["reward"] = new_reward(e);
     e["initial_hp"] = e["hp"];
     return e;
+}
+
+export function new_reward(e) {
+    let r = new_table_roll();
+    const tablen = get_reward_table_names(e);
+    const table = tablen[0];
+    let tables = {};
+    for (const n of tablen) tables[n] = all_tables[get_table_name(n)];
+    r.tables = tables;
+    r.table = table;
+    r.mod = get_table_mod(table);
+    console.log('r', r);
+    return r;
+}
+
+export function get_table_mod(table) {
+    let mod = 0;
+    if (table.includes('+')) {
+        const i = table.indexOf('+');
+        mod = table.substr(i + 1, table.length);
+    }
+    if (table.includes('-')) {
+        const i = table.indexOf('-');
+        mod = table.substr(i + 1, table.length);
+    }
+    return parseInt(mod);
 }
 
 export function new_reaction(id = 'none') {
@@ -229,10 +256,11 @@ export function get_total_hp(encounter) {
     return total;
 }
 
-export function get_reward_tables(encounter) {
+export function get_reward_table_names(encounter) {
     const rew = encounter.k;
-    const r = rew.replace('Table ', '');
-    return r.split('/');
+    let r = rew.replace('Table ', '');
+    r = r.split('/');
+    return r;
 }
 
 // OLD -------------------------------------------------------

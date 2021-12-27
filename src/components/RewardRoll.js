@@ -13,7 +13,7 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import F from "../helpers/F";
 import InputFieldEncounter from "./InputFieldEncounter";
 import C from "../helpers/C";
-import {get_reward_tables, get_total_hp} from "../helpers/helpers_encounter";
+import {get_reward_table_names, get_total_hp} from "../helpers/helpers_encounter";
 import {MenuItem, Select} from "@material-ui/core";
 import {create_D100_rolling_dices, getRandomInt, open_dice_ui} from "../helpers/helpers_dice";
 import {get_table_name} from "../helpers/helpers_equipment";
@@ -71,6 +71,8 @@ class RewardRoll extends Component {
     }
 
     render() {
+        const rew = this.props.game.encounter.k;
+        if (rew.includes('Nothing')) return '';
         const r = this.render_roll();
         return (
             <span>
@@ -95,7 +97,7 @@ class RewardRoll extends Component {
         if (this.state.gp === -1) return '';
         return <span className={'normal'}>
                     <C width={'2ch'}/> ➜ <C width={'2ch'}/> {this.state.dice}
-                    <C width={'2ch'}/>
+            <C width={'2ch'}/>
                     <L onClick={this.get_gp}>Get {this.state.dice} gold pieces</L>
                 </span>
     }
@@ -120,7 +122,7 @@ class RewardRoll extends Component {
         if (rew.includes('GP')) return this.render_reward_gp();
 
         // get tables from reward (maybe several)
-        const tables = get_reward_tables(e);
+        const tables = get_reward_table_names(e);
         let menuitems = [];
         for (const t of tables) {
             menuitems.push(<MenuItem value={t} key={t} className={'field_input_small_select'}>{t}</MenuItem>);
@@ -139,7 +141,7 @@ class RewardRoll extends Component {
                             type={'txt'}
                             name={'test'}
                             value={v}
-                            style={{width: '8ch', align: 'center'}}
+                            style={{width: '9ch', align: 'center'}}
                             onChange={this.handleChange}>
                             {menuitems}
                     </Select>
@@ -164,11 +166,11 @@ class RewardRoll extends Component {
         const id = this.state.table[0] === 'P' ? (this.state.table + total) : total;
         const it = <ItemGeneric class_name={'field_input_small_header'} id={id} item_type={table_name} buy={false}/>;
         return <span className={'normal'}>
-             <C width={'2ch'}/> ➜ <C width={'2ch'}/> {this.state.dice} {m} {t}
+                <C width={'2ch'}/> ➜ <C width={'2ch'}/> {this.state.dice} {m} {t}
             <p/>
-            <span>
-            {it}
-            </span>
+                <span>
+                {it}
+                </span>
         </span>
     }
 

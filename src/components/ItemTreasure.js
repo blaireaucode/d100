@@ -22,13 +22,13 @@ class ItemTreasure extends Component {
     render() {
         const item = get_item_in_table('treasureA', this.props.id, false);
         return (
-            <span className={this.props.class_name}>
+            <div className={this.props.class_name}>
                 <C width={'8ch'}>{item.d100}</C>
-                <C width={'28ch'}>{item.name}</C>
-                <C width={'70ch'}>{item.detail}</C>
+                <C width={'22ch'}>{item.name}</C>
+                <C width={'52ch'}>{item.detail}</C>
                 <C width={'6ch'}>{item.gp}</C>
                 <ItemGet {...this.props} item_type={'treasureA'}/>
-            < /span>
+            < /div>
         );
     }
 

@@ -16,7 +16,7 @@ import InputFieldEncounter from "./InputFieldEncounter";
 import EncounterAbility from "./EncounterAbility";
 import C from "../helpers/C";
 import FieldEncounterHealthPoints from "./InputEncounterHealthPoints";
-import RewardRoll from "./RewardRoll";
+import RewardRoll2 from "./RewardRoll2";
 
 class Encounter extends Component {
 
@@ -47,7 +47,7 @@ class Encounter extends Component {
 
         //console.log('enc', e);
         const p = {width: '4ch', type: 'number', align: 'right'};
-        const aw = (e.ability.length+1)+'ch';
+        const aw = (e.ability.length + 1) + 'ch';
         return (
             <span>
                 <Paper elevation={5} className={'encounter ' + cn}>
@@ -61,7 +61,8 @@ class Encounter extends Component {
                 <F width={'8ch'}>Ability</F>
                 <InputFieldEncounter field_name={'ability'} width={aw}/>
                 <EncounterAbility/>
-                <RewardRoll/>
+                <F width={'8ch'}>Reward</F> <InputFieldEncounter field_name={'k'} width={'20ch'}/>
+                <RewardRoll2/>
                 </Paper>
                 &nbsp; <p/>
             </span>

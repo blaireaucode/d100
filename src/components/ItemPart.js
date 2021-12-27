@@ -22,16 +22,16 @@ class ItemPart extends Component {
     render() {
         const item = get_item_in_table('parts', this.props.id, false);
         return (
-            <span className={this.props.class_name}>
-                <C width={'6ch'}>{item.P1 === "none" ? "-----" : item.P1}</C>
-                <C width={'6ch'}>{item.P2 === "none" ? "-----" : item.P2}</C>
-                <C width={'6ch'}>{item.P3 === "none" ? "-----" : item.P3}</C>
-                <C width={'6ch'}>{item.P4 === "none" ? "-----" : item.P4}</C>
+            <div className={this.props.class_name}>
+                <C width={'6ch'}>{item.P1 === "none" ? "" : item.P1}</C>
+                <C width={'6ch'}>{item.P2 === "none" ? "" : item.P2}</C>
+                <C width={'6ch'}>{item.P3 === "none" ? "" : item.P3}</C>
+                <C width={'6ch'}>{item.P4 === "none" ? "" : item.P4}</C>
                 <C width={'16ch'}>{item.name}</C>
-                <C width={'70ch'}>{item.detail}</C>
+                <C width={'43ch'}>{item.detail}</C>
                 <C width={'6ch'}>{item.gp}</C>
-                <ItemGet {...this.props} item_type={'parts'}/>
-            < /span>
+                <ItemGet {...this.props} id={'P1'+this.props.id} item_type={'parts'}/>
+            </div>
         );
     }
 

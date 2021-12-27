@@ -39,31 +39,22 @@
     /*font-size: calc(8px + 0.7vmin) !important;*/
 }
 
+.field_color {
+    color: #2982d2 !important;
+}
+
 .field_input_small {
-    /* color: #18b26f!important; */
-    /* color: #3e84f2!important; */
     color: #2982d2 !important;
     padding: 0 !important;
-    /*background-color: rgba(29, 29, 33, 0.47);*/
-    /*max-height: 25px;*/
     max-height: 2ch;
-    /* text-align:left; */
     font-size: 0.85rem !important;
-    /*font-size: calc(5px + 0.7vmin) !important;*/
 }
 
 .field_input_small_header {
-    /* color: #18b26f!important; */
-    /* color: #3e84f2!important; */
-    /*color: #2982d2 !important;*/
     color: #aaa !important;
     padding: 0 !important;
-    /*background-color: rgba(29, 29, 33, 0.47);*/
-    /*max-height: 25px;*/
     max-height: 2ch;
-    /* text-align:left; */
     font-size: 0.85rem !important;
-    /*font-size: calc(5px + 0.7vmin) !important;*/
 }
 
 .field_input_small:hover {
@@ -71,11 +62,26 @@
 }
 
 .item_row {
-
 }
+
+.table_item {
+    max-width: 120ch;
+    font-size: 0.85rem !important;
+}
+
+.table_title {
+    font-size: 1rem !important;
+}
+
 
 .item_row:hover {
     background-color: #131315;
+}
+
+.item_table_roll {
+    max-width: 100ch;
+    color: #aaa !important;
+    font-size: 0.8rem !important;
 }
 
 .field_input_small_select {
@@ -93,6 +99,7 @@
     /* color: #3e84f2!important; */
     color: #aaa !important;
     padding: 0 !important;
+    font-size: 0.85rem !important;
     /* text-align:left; */
     /*font-size: calc(8px + 0.7vmin) !important;*/
 }
@@ -116,27 +123,37 @@
 
 .item_table_odd {
     background: #20222a;
+    padding-bottom: 3px;
+    padding-top: 3px;
 }
 
 .item_table_even {
-
+    padding-bottom: 3px;
+    padding-top: 3px;
 }
 
 .item_table_odd:hover {
-    background-color: #131315;
+    background-color: #131315 !important;
 }
 
 .item_table_even:hover {
-    background-color: #131315;
+    background-color: #131315 !important;
 }
 
+.item_generic {
+    border-color: grey;
+    border-style: solid;
+    border-width: 1px;
+    padding-left: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
 
 .encounter {
     border: 0 solid #777;
     margin-left: 0;
     padding-left: 10px;
-    max-width: 810px;
-    background-color: #1a1b1e !important;
+    max-width: 90ch;
     background-color: #222326 !important;
 }
 
@@ -229,7 +246,7 @@
     overflow-x: auto;
     background-color: #24282f !important;
     background-color: #222326 !important;
-    max-width: 1100px;
+    max-width: 120ch
 }
 
 .collapse-css-transition {
@@ -320,6 +337,7 @@
     background-color: rgba(100, 100, 100, .7);
     opacity: 1;
 }
+
 
 /* -------------------------------------------------------------------- */
 /* CK EDITOR */

@@ -34,12 +34,13 @@ class ItemGet extends Component {
     }
 
     render() {
-        const get = this.props.buy ? 'Buy' : 'Get it';
+        let get = this.props.buy ? 'Buy' : 'Get it';
+        get = <C width={'7ch'}><L onClick={this.buy_item}>{get}</L></C>
+        if (this.state.buy !== '')
+            get = <C className={'field_input'} width={'10ch'}>{this.state.buy}</C>
         return (
-            <span className={this.props.class_name}>
-                <L onClick={this.buy_item}>{get}</L>
-                <C width={'5ch'}/>
-                <C className={'field_input'}>{this.state.buy}</C>
+            <span>
+                {get}
             < /span>
         );
     }

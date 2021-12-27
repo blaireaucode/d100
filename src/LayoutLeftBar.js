@@ -20,7 +20,8 @@ import {connect} from 'react-redux'
 import L from 'helpers/L'
 import {close_dice_ui, create_D100_rolling_dices, getRandomInt, open_dice_ui} from 'helpers/helpers_dice'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {get_img} from "./helpers/helpers_dungeon";
+import C from "./helpers/C";
+import I from "./helpers/I";
 
 const drawerWidth = 150
 
@@ -92,7 +93,6 @@ class LayoutLeftBar extends React.Component {
          */
     }
 
-
     render() {
         const {classes, theme} = this.props;
 
@@ -103,53 +103,44 @@ class LayoutLeftBar extends React.Component {
                 <List>
 
                     <ListItem>
-                        <L onClick={this.roll}>🎲 D100</L> {/*&#127922;*/}
+                        <L onClick={this.roll}><C width={'4ch'}>🎲</C>D100</L> {/*&#127922;*/}
                     </ListItem>
 
                     <ListItem button component={Link} to='/character'>
-                        <ListItemText primary={'Character'}/>
+                        <ListItemText>
+                            <I src={'head'}/>Hero
+                        </ListItemText>
                     </ListItem>
 
                     <ListItem button component={Link} to='/quest'>
-                        <ListItemText primary={'Quest'}/>
+                        <ListItemText>
+                            <I src={'quest'}/>Quest
+                        </ListItemText>
                     </ListItem>
 
                     <ListItem button component={Link} to='/room'>
                         <ListItemText>
-                            <img className={'map-img'}
-                                 src={get_img()}
-                                 alt={'aaa'}
-                                 width={20}
-                                 align={'top'}
-                            /> Dungeon
+                            <I src={'dungeon'} img_width={20}/>Dungeon
                         </ListItemText>
                     </ListItem>
 
                     <ListItem button component={Link} to='/fight'>
-                        <ListItemText>⚔️ Fight</ListItemText>
+                        <ListItemText><C width={'4ch'}>⚔️</C>Fight</ListItemText>
                     </ListItem>
-
-                    {/*<ListItem button component={Link} to='/map'>
-                        <ListItemText primary={'Map'}/> // 🌏
-                    </ListItem>
-
-                    */}
 
                     <ListItem button component={Link} to='/town'>
-                        <ListItemText>⌗ Tables </ListItemText>
+                        <ListItemText><C width={'4ch'}>📜</C>Tables </ListItemText>
                     </ListItem>
 
                     <ListItem button component={Link} to='/log'>
-                        <ListItemText>📜 Log</ListItemText> {/*📓*/}
+                        <ListItemText>
+                            <I src={'book'} img_width={30}/>Log book
+                        </ListItemText> {/*📓*/}
                     </ListItem>
 
                     <ListItem button component={Link} to='/system'>
-                        <ListItemText>⚙️</ListItemText>
+                        <ListItemText><C width={'4ch'}>⚙️</C>Game</ListItemText>
                     </ListItem>
-
-                    {/*<ListItem button component={Link} to='/debug'>
-                        <ListItemText primary={'Debug'}/>
-                    </ListItem>*/}
 
                 </List>
                 <Divider/>

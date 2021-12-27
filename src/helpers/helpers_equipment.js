@@ -19,7 +19,7 @@ import default_item from "./default_item";
 import React from "react";
 import {update_g_characteristic} from "./helpers_update";
 
-const tables = {
+export const all_tables = {
     weapon: weapon_table,
     armour: armour_table,
     needed: needed_table,
@@ -28,8 +28,21 @@ const tables = {
     find: find_table
 }
 
+export function new_table_roll() {
+    return {
+        dice: -1,
+        table: 'find',
+        tables: {find: find_table},
+        mod: 0,
+        total: -1,
+        change_table: true,
+        change_mod: true,
+        item: {}
+    };
+}
+
 export function get_item_in_table(table_name, id, copy = true) {
-    const table = tables[table_name];
+    const table = all_tables[get_table_name(table_name)];
     let found = false;
     let i;
     for (i in table) {
@@ -67,7 +80,7 @@ export function get_item_in_table(table_name, id, copy = true) {
 }
 
 export function get_items_from_table(table_name, Component, id = 'all') {
-    const table = tables[table_name];
+    const table = all_tables[table_name];
     let i = 0;
     let items = [];
     for (let item of table) {
@@ -76,7 +89,7 @@ export function get_items_from_table(table_name, Component, id = 'all') {
         if (id !== 'all' && !parse_d100_interval(v, id)) continue;
         const cn = (i % 2 === 0) ? 'item_table_odd' : 'item_table_even';
         const op = <span key={v}>
-                        <Component id={v} class_name={cn}/><br/>
+                        <Component id={v} class_name={cn}/>
                        </span>;
         items.push(op);
         i += 1;
@@ -95,8 +108,8 @@ export function buy_g_item(game, table_name, id, buy = true) {
 }
 
 export function buy_state_item(t, buy = true) {
-    if (buy) t.setState({buy: 'You just bought it!'});
-    else t.setState({buy: 'Now in your backpack'});
+    if (buy) t.setState({buy: 'Bought it!'});
+    else t.setState({buy: 'In backpack'});
     setTimeout(() => {
         t.setState({buy: ''});
     }, 3000);
@@ -250,7 +263,7 @@ export function get_table_name(letter) {
         if (letter[1] === 'TB') return 'treasureB';
         if (letter[1] === 'TC') return 'treasureC';
     }
-    return 'weapon';
+    return letter;
 }
 
 

@@ -35,13 +35,11 @@ class FieldEncounterHealthPoints extends Component {
     hp_minus(index) {
         const hp = this.props.game.encounter.hp;
         const hps = hp.split('/');
-        console.log('minus', hps, index)
         if (parseInt(hps[index]) === 0) index += 1;
         if (parseInt(hps[index]) === 0) index += 1;
         if (parseInt(hps[index]) === 0) index += 1;
         if (parseInt(hps[index]) === 0) index += 1;
         if (parseInt(hps[index]) === 0) index += 1;
-        console.log('->', index)
         const g = apply_n_dmg_to_encounter_index(this.props.game, 1, index);
         this.props.set_game(g);
     }

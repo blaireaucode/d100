@@ -25,15 +25,15 @@ class TableTreasureA extends Component {
 
     render() {
         return (
-            <span>
+            <div className={'table_item'}>
                 <TableTitle>Table TA - Treasures A</TableTitle>
                 <InputFieldHeader width={'8ch'} value={'D100'}/>
-                <InputFieldHeader width={'28ch'} value={'Name'}/>
-                <InputFieldHeader width={'70ch'} value={'Detail'}/>
+                <InputFieldHeader width={'22ch'} value={'Name'}/>
+                <InputFieldHeader width={'52ch'} value={'Detail'}/>
                 <InputFieldHeader width={'6ch'} value={'gp'}/>
                 <br/>
                 {this.items}
-            < /span>
+            </div>
         );
     }
 

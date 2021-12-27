@@ -25,18 +25,18 @@ class TableWeapon extends Component {
 
     render() {
         return (
-            <span>
+            <div className={'table_item'}>
                 <TableTitle>Table W - Weapons</TableTitle>
-                <InputFieldHeader width={'8ch'} value={'D100'}/>
-                <InputFieldHeader width={'20ch'} value={'Name'}/>
-                <InputFieldHeader width={'6ch'} value={'Hands'}/>
+                <InputFieldHeader width={'10ch'} value={'D100'}/>
+                <InputFieldHeader width={'25ch'} value={'Name'}/>
+                <InputFieldHeader width={'7ch'} value={'Hands'}/>
                 <InputFieldHeader width={'6ch'} value={'Type'}/>
-                <InputFieldHeader width={'5ch'} value={'Dmg'}/>
-                <InputFieldHeader width={'5ch'} value={'GP'}/>
-                <InputFieldHeader width={'8ch'} value={'fix cost'}/>
+                <InputFieldHeader width={'6ch'} value={'Dmg'}/>
+                <InputFieldHeader width={'6ch'} value={'GP'}/>
+                <InputFieldHeader width={'10ch'} value={'fix cost'}/>
                 <br/>
                 {this.items}
-            < /span>
+            < /div>
         );
     }
 
