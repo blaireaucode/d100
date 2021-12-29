@@ -40,6 +40,13 @@ class RoomSearch extends Component {
         if (r.color === 'red') mod = 10;
         if (r.color === 'green') mod = 5;
         if (r.color === 'blue') mod = 20;
+        let another = '';
+        if ('find' in r.search) {
+            /*if (r.search.find.detail.includes('roll')) {
+                another = 'roll again'; // need a this.search2 ?
+            }
+             */
+        }
         return (
             <div>
                 <C width={'28ch'}>You can search once the area. </C>
@@ -67,7 +74,7 @@ class RoomSearch extends Component {
                            state={r.search}
                            change_table={false} change_mod={false}
                            on_roll={this.search}/>
-                <C width={'3ch'}/>
+                {another}
             </div>
         );
     }

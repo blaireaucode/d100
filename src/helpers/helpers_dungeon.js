@@ -27,6 +27,8 @@ export function new_room(id = 'none') {
     }
     e["rotation"] = 0;
     e["search"] = new_table_roll();
+    e["search"].change_table = false;
+    e["search"].change_mod = false;
     return e;
 }
 

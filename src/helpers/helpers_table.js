@@ -10,6 +10,8 @@ import weapon_table from 'tables/table_w_weapon.json';
 import armour_table from 'tables/table_a_armour.json';
 import needed_table from 'tables/table_n_needed.json';
 import treasureA_table from 'tables/table_ta_treasure_A.json';
+import treasureB_table from 'tables/table_tb_treasure_B.json';
+import treasureC_table from 'tables/table_tc_treasure_C.json';
 import parts_table from 'tables/table_p_parts.json';
 import find_table from 'tables/table_f_find.json';
 
@@ -18,6 +20,8 @@ export const all_tables = {
     armour: armour_table,
     needed: needed_table,
     treasureA: treasureA_table,
+    treasureB: treasureB_table,
+    treasureC: treasureC_table,
     parts: parts_table,
     find: find_table
 }
@@ -29,7 +33,7 @@ export const tables_props = {
     treasureA: {name: 'treasureA', title: 'Table TA - Treasure A', short: 'Treasure A'},
     treasureB: {name: 'treasureB', title: 'Table TB - Treasure B', short: 'Treasure B'},
     treasureC: {name: 'treasureC', title: 'Table TC - Treasure C', short: 'Treasure C'},
-    parts: {name: 'parts', title: 'Table P - Parts', short: 'Pars'},
+    parts: {name: 'parts', title: 'Table P - Parts', short: 'Parts'},
     find: {name: 'find', title: 'Table F - Find', short: 'Find'},
 }
 
@@ -58,6 +62,18 @@ export const table_item_props = {
         {att: 'gp', w: '8ch', h: '💰'}
     ],
     treasureA: [
+        {att: 'd100', w: '8ch', h: 'D100'},
+        {att: 'name', w: '22ch', h: 'Name'},
+        {att: 'detail', w: '72ch', h: 'Detail'},
+        {att: 'gp', w: '8ch', h: '💰'}
+    ],
+    treasureB: [
+        {att: 'd100', w: '8ch', h: 'D100'},
+        {att: 'name', w: '22ch', h: 'Name'},
+        {att: 'detail', w: '72ch', h: 'Detail'},
+        {att: 'gp', w: '8ch', h: '💰'}
+    ],
+    treasureC: [
         {att: 'd100', w: '8ch', h: 'D100'},
         {att: 'name', w: '22ch', h: 'Name'},
         {att: 'detail', w: '72ch', h: 'Detail'},

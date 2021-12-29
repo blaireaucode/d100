@@ -39,8 +39,7 @@ class RewardRoll extends Component {
                 <C width={'4ch'}/>
                 <F>Current gold pieces 💰<C width={'1ch'}/></F>
                 <InputFieldCharacter type={'number'} width={'7ch'} field_name={'gold_pieces'}/>
-                </span>
-        );
+                </span>);
     }
 
     render() {

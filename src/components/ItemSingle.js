@@ -14,6 +14,7 @@ import C from "../helpers/C";
 import ItemGet from "./ItemGet";
 
 class ItemSingle extends Component {
+
     render() {
         const t = this.props.item_type;
         const id = t[0] === 'P' ? t + this.props.id : this.props.id;
@@ -43,7 +44,7 @@ class ItemSingle extends Component {
                      </span> : '';
         const detail = 'detail' in item ?
             <span className={'field_color'}>
-                            <C width={'100ch'}>{item['detail']}</C>
+                            <C width={'97ch'}>{item['detail']}</C>
                         </span> : '';
         return (<div className={'item_generic'}>
             {name}<p/>
@@ -51,7 +52,7 @@ class ItemSingle extends Component {
             <p/>
             {attributes}
             <p/>
-            <C width={'15ch'}><ItemGet {...this.props} id={this.props.id} item_type={'parts'}/></C>
+            <C width={'15ch'}><ItemGet {...this.props} id={this.props.id}/></C>
         </div>);
     }
 

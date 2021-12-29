@@ -54,24 +54,6 @@ export function get_item_in_table(table_name, id, copy = true) {
     return table[i];
 }
 
-export function get_items_from_table(table_name, Component, id = 'all') {
-    const table = all_tables[table_name];
-    let i = 0;
-    let items = [];
-    for (let item of table) {
-        let v = item.d100;
-        if (v === 'none') continue;
-        if (id !== 'all' && !parse_d100_interval(v, id)) continue;
-        const cn = (i % 2 === 0) ? 'item_table_odd' : 'item_table_even';
-        const op = <span key={v}>
-                        <Component id={v} class_name={cn}/>
-                       </span>;
-        items.push(op);
-        i += 1;
-    }
-    return items;
-}
-
 export function get_items_header_from_table(table_name) {
     const p = table_item_props[table_name];
     let headers = [];
@@ -115,6 +97,7 @@ export function buy_state_item(t, buy = true) {
 }
 
 export function update_g_add_item(game, item) {
+    item.item_type = get_table_name(item.item_type);
     return update(game, {items: {[item.id]: {$set: item}}});
 }
 

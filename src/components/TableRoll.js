@@ -16,6 +16,7 @@ import L from "../helpers/L";
 import Input from "@material-ui/core/Input";
 import TableRollResult from "./TableRollResult";
 import {get_table_mod} from "../helpers/helpers_encounter";
+import {all_tables} from "../helpers/helpers_table";
 
 class TableRoll extends Component {
 
