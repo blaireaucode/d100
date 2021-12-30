@@ -27,7 +27,7 @@ class TestDiceResult extends Component {
                 result = <span> ➜ &nbsp; {t.dice}<C width={'2ch'}/>
                             <span className={'success'}>Success ! <C width={'4ch'}/>
                              <C width={'25ch'} className={'help'}> {t.dice} is lower or equal to {v} </C>
-                                <br/><C width={'53ch'}/>
+                                <br/><C width={'39ch'}/>
                                 {this.props.help}
                         </span>
                     </span>
@@ -36,7 +36,7 @@ class TestDiceResult extends Component {
                                 <span className={'fail'}>Fail <C width={'1ch'}/>
                                 <span className={'help'}> {t.dice} is greater to {v}
                                 </span>
-                                    <br/><C width={'53ch'}/>
+                                    <br/><C width={'39ch'}/>
                                     {this.props.help}
                         </span>
                 </span>

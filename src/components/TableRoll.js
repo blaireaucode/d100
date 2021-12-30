@@ -6,9 +6,9 @@
  * https://opensource.org/licenses/MIT.
  */
 
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props';
 import {create_D100_rolling_dices, getRandomInt, open_dice_ui} from "../helpers/helpers_dice";
 import C from "../helpers/C";
 import {MenuItem, Select} from "@material-ui/core";
@@ -16,7 +16,6 @@ import L from "../helpers/L";
 import Input from "@material-ui/core/Input";
 import TableRollResult from "./TableRollResult";
 import {get_table_mod} from "../helpers/helpers_encounter";
-import {all_tables} from "../helpers/helpers_table";
 
 class TableRoll extends Component {
 

@@ -16,7 +16,8 @@ import HelpStartingItems from "./HelpStartingItems";
 import F from "../helpers/F";
 import InputFieldCharacter from "./InputFieldCharacter";
 import TableGeneric from "./TableGeneric";
-import {tables_props} from "../helpers/helpers_table";
+import {all_tables, new_table_roll, tables_props} from "../helpers/helpers_table";
+import TableRoll from "./TableRoll";
 
 class ScreenTown extends Component {
 
@@ -25,7 +26,8 @@ class ScreenTown extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {table: 'none'};
+        this.state = {table: 'none', table_roll: new_table_roll()};
+        this.state.table_roll.tables = all_tables;
         this.toggle = this.toggle.bind(this);
         this.components_tables['none'] = '';
         for (const t in tables_props) {
@@ -39,6 +41,12 @@ class ScreenTown extends Component {
         }
     }
 
+    on_table_roll = (state) => {
+        console.log('local on table roll state', state)
+        this.setState({table_roll: state});
+        return this.props.game;
+    }
+
     toggle(table) {
         this.setState({table: table});
     }
@@ -49,7 +57,9 @@ class ScreenTown extends Component {
             <span>
                 <F>💰Gold pieces <C width={'2ch'}/></F>
                 <InputFieldCharacter type={'number'} width={'7ch'} field_name={'gold_pieces'}/>
-                <br/>
+                <p/>
+                <TableRoll state={this.state.table_roll} on_roll={this.on_table_roll}/>
+                <p/>
                 <L onClick={() => this.toggle('none')} className={'clear'}> ✗ </L>
                 <C width={'2ch'}/>
                 {this.menus_tables}

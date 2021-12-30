@@ -6,9 +6,9 @@
  * https://opensource.org/licenses/MIT.
  */
 
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props';
 import InputFieldItem from "./InputFieldItem";
 import Clear from "./Clear";
 import {update_g_remove_item} from "../helpers/helpers_equipment";
@@ -51,7 +51,7 @@ class ItemBackPack2 extends Component {
                 <C width={'2ch'}/>
                 <InputFieldHeader {...p} value={'D100'} width={'5ch'} align={'right'}/>
                 <InputFieldHeader {...p} value={'Type'} width={'11ch'} align={'center'}/>
-                <InputFieldHeader {...p} value={'💰GP'} width={'7ch'} align={'left'}/>
+                <InputFieldHeader {...p} value={'💰 GP'} width={'7ch'} align={'left'}/>
                 <InputFieldHeader {...p} value={'#'} width={'7ch'} align={'center'}/>
                 <InputFieldHeader {...p} value={'Detail'} width={'70ch'} align={'left'}/>
                 <InputFieldHeader {...p} value={'Name'} width={'20ch'} align={'left'}/>

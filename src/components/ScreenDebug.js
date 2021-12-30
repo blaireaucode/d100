@@ -6,11 +6,11 @@
  * https://opensource.org/licenses/MIT.
  */
 
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {Link} from "react-router-dom"
-import {JSONEditor} from "react-json-editor-viewer"
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props';
+import {Link} from "react-router-dom";
+import {JSONEditor} from "react-json-editor-viewer";
 import TableRoll from "./TableRoll";
 import {all_tables, new_table_roll} from "../helpers/helpers_table";
 

@@ -19,7 +19,7 @@ class Room extends Component {
         const r = this.props.game.room;
         if (r.d100 === 'none') return 'Roll or select an area ...';
         return (
-            <Grid container spacing={2} alignItems="top">
+            <Grid container spacing={2}>
                 <Grid item xs={2} style={{maxWidth: "180px"}}>
                     <RoomImage/>
                 </Grid>

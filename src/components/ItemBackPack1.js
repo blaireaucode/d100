@@ -95,8 +95,8 @@ class ItemBackPack1 extends Component {
                 <InputFieldHeader {...p} value={'HP'} width={'3rem'} align={'center'}/>
                 <InputFieldHeader {...p} value={'dmg'} width={'3rem'} align={'center'}/>
                 <InputFieldHeader {...p} value={'A/S'} width={'4rem'} align={'center'}/>
-                <InputFieldHeader {...p} value={'💰GP'} width={'4rem'} align={'left'}/>
-                <InputFieldHeader {...p} value={'💰Fix'} width={'4rem'} align={'left'}/>
+                <InputFieldHeader {...p} value={'💰 GP'} width={'4rem'} align={'left'}/>
+                <InputFieldHeader {...p} value={'💰 Fix'} width={'4rem'} align={'left'}/>
                 <InputFieldHeader {...p} value={'🛠'} width={'3rem'} align={'left'}/>
                 <InputFieldHeader {...p} value={'Name'} align={'left'}/>
             < /span>

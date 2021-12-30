@@ -76,7 +76,7 @@ class TestDice extends Component {
         return (
             <Paper elevation={5} className={'encounter '}>
                 {clear}
-                <C width={'12ch'}>Test  </C>
+                <C width={'13ch'}>Test  </C>
                 <Select className={'field_input'}
                         disableUnderline={true}
                         type={'txt'}
@@ -92,6 +92,7 @@ class TestDice extends Component {
                                      field_name={t.type}
                                      mod={c[t.type + '_items']}
                                      read_only={true}/>
+                <C width={'2ch'}/>
                 <C width={'4ch'}>mod: </C>
                 <Input className={'field_input'}
                        disableUnderline={true}

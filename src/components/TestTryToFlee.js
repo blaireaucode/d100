@@ -54,11 +54,11 @@ class TestTryToFlee extends Component {
         const c = this.props.game.characteristics;
         const t = this.state;
         const clear = clear_if_not_none(this, t.dice === -1 ? 'none' : t.dice);
-        const help = <span className={'help'}>[S: monster remains] [F: remove monster]</span>
+        const help = <span className={'help'}>[S: Remove monster, add to area] [F: -2HP, step 5]</span>
         return (
             <Paper elevation={5} className={'encounter '}>
                 {clear}
-                <C width={'12ch'}>Try to flee</C>
+                <C width={'13ch'}>Try to flee</C>
                 <span className={'field_input'}> Int </span>
                 <C width={'3ch'}/>
                 <InputFieldCharacter width={'4ch'}
@@ -67,6 +67,7 @@ class TestTryToFlee extends Component {
                                      field_name={t.type}
                                      mod={c[t.type + '_items']}
                                      read_only={true}/>
+                <C width={'2ch'}/>
                 <C width={'4ch'}>mod: </C>
                 <Input className={'field_input'}
                        disableUnderline={true}

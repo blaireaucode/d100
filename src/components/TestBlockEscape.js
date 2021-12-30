@@ -26,11 +26,11 @@ class TestBlockEscape extends Component {
         super(props);
         this.clear = this.clear.bind(this);
         this.roll_test = this.roll_test.bind(this);
-        const m = ['Int'];
+        const m = ['Str'];
         for (const it of m)
             this.menuitems.push(<MenuItem value={it.toLowerCase()} key={it.toLowerCase()}
                                           className={'field_input_small_select'}>{it}</MenuItem>);
-        this.state = {type: 'int', mod: -10, dice: -1};
+        this.state = {type: 'str', mod: -10, dice: -1};
     }
 
     clear() {
@@ -54,12 +54,12 @@ class TestBlockEscape extends Component {
         const c = this.props.game.characteristics;
         const t = this.state;
         const clear = clear_if_not_none(this, t.dice === -1 ? 'none' : t.dice);
-        const help = <span className={'help'}>[S: remove monster] [F: -2HP, monster attacks]</span>
+        const help = <span className={'help'}>[S: Monster remains, combat step 4] [F: Remove monster]</span>
         return (
             <Paper elevation={5} className={'encounter '}>
                 {clear}
-                <C width={'12ch'}>Block escape </C>
-                <span className={'field_input'}> Int </span>
+                <C width={'13ch'}>Block escape </C>
+                <span className={'field_input'}> Str </span>
                 <C width={'3ch'}/>
                 <InputFieldCharacter width={'4ch'}
                                      type={'number'}
@@ -67,6 +67,7 @@ class TestBlockEscape extends Component {
                                      field_name={t.type}
                                      mod={c[t.type + '_items']}
                                      read_only={true}/>
+                <C width={'2ch'}/>
                 <C width={'4ch'}>mod: </C>
                 <Input className={'field_input'}
                        disableUnderline={true}
