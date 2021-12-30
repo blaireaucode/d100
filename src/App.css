@@ -109,6 +109,11 @@
     text-align: right !important;
 }
 
+.field_input_broken {
+    text-decoration-line: line-through;
+    color: #807c62 !important;
+}
+
 .fieldLabel {
     font-size: calc(8px + 0.7vmin) !important;
 }

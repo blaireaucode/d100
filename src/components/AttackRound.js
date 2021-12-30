@@ -12,8 +12,7 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import InputFieldEncounter from "./InputFieldEncounter"
 import C from "../helpers/C"
 import L from "../helpers/L"
-import {clear_g_attack} from "../helpers/helpers_encounter"
-import {update_g_encounter_field} from "../helpers/helpers_update"
+import {clear_g_attack, update_g_encounter_field} from "../helpers/helpers_encounter"
 import Clear from "./Clear"
 
 class AttackRound extends Component {

@@ -14,9 +14,8 @@ import RoomInfoYellow from "./RoomInfoYellow"
 import RoomInfoGreen from "./RoomInfoGreen"
 import RoomInfoBlue from "./RoomInfoBlue"
 import L from "../helpers/L"
-import {add_g_room_to_dungeon, map_dir, new_room, rotate_g_room} from "../helpers/helpers_dungeon"
+import {add_g_room_to_dungeon, map_dir, new_room, rotate_g_room, update_g_room} from "../helpers/helpers_dungeon"
 import C from "../helpers/C";
-import {update_g_room} from "../helpers/helpers_update";
 import RoomSearch from "./RoomSearch";
 
 class RoomInfo extends Component {

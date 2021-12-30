@@ -12,11 +12,11 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import F from "../helpers/F";
 import C from "../helpers/C";
 import {create_D100_rolling_dices, getRandomInt, open_dice_ui} from "../helpers/helpers_dice";
-import {update_g_characteristic, update_g_encounter_field} from "../helpers/helpers_update";
+import {update_g_characteristic} from "../helpers/helpers_update";
 import TableRoll from "./TableRoll";
 import L from "../helpers/L";
 import InputFieldCharacter from "./InputFieldCharacter";
-import {get_total_hp} from "../helpers/helpers_encounter";
+import {get_total_hp, update_g_encounter_field} from "../helpers/helpers_encounter";
 
 class RewardRoll extends Component {
 

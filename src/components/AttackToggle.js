@@ -10,8 +10,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import L from 'helpers/L'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {update_g_encounter_field} from "../helpers/helpers_update"
-import {toggle_attack} from "../helpers/helpers_encounter"
+import {toggle_attack, update_g_encounter_field} from "../helpers/helpers_encounter"
 
 class AttackToggle extends Component {
 

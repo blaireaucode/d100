@@ -34,26 +34,31 @@ class InputFieldItem extends Component {
     render() {
         const items = this.props.items === false ? this.props.game.items : this.props.items;
         const fn = this.props.field_name;
+        let cn = this.props.class_name;
         let value = '';
         let ro = this.props.read_only;
-
-        if (this.props.id in items) {
-            const item = items[this.props.id];
-            if (fn in item) {
-                value = item[fn];
-                // special case : hands
-                if (fn === 'hands') {
-                    if (value === 1) value = '|';
-                    else if (value === 2) value = '||';
-                    else value = '';
-                }
+        if (!(this.props.id in items)) return '';
+        const item = items[this.props.id];
+        if (fn in item) {
+            value = item[fn];
+            // special case : hands
+            if (fn === 'hands') {
+                if (value === 1) value = '|';
+                else if (value === 2) value = '||';
+                else value = '';
             }
         }
+
         // special case for the first column in 'equipped items'
         if ((fn === 'd10') && (value > 10)) value = '';
 
+        // damaged
+        if (item['damaged'] === 6) {
+          cn += ' field_input_broken'
+        }
+
         return (
-            <Input className={this.props.class_name}
+            <Input className={cn}
                    disableUnderline={true}
                    type={this.props.type}
                    name={fn}

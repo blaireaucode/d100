@@ -14,7 +14,7 @@ import F from 'helpers/F'
 import CharacterCharacteristicsHelp from "./HelpCharacterCharacteristics"
 import CollapsibleHelp from "./CollapsibleHelp"
 import C from "../helpers/C"
-import InputTrack from "./InputTrack";
+import InputTrack from "./InputXPTrack";
 
 class CharacterMain extends Component {
 

@@ -10,13 +10,13 @@ import encounters_table from 'tables/table_e_encounter.json'
 import reactions_table from 'tables/table_monster_reaction.json'
 import locations_table from 'tables/table_hit_location.json'
 import ability_table from 'tables/table_encounter_ability.json'
-import * as up from "./helpers_update"
-import {get_table_element, update_g_characteristic, update_g_encounter_field, update_g_room} from "./helpers_update"
+import {update_dic, update_g_characteristic} from "./helpers_update"
 import update from "immutability-helper"
 import {v4 as uuidv4} from "uuid";
 import H from "./H";
 import {get_item_at_hit_location} from "./helpers_equipment";
-import {all_tables, get_table_name, new_table_roll} from "./helpers_table";
+import {all_tables, get_table_element, get_table_name, new_table_roll} from "./helpers_table";
+import {update_g_room} from "./helpers_dungeon";
 
 export function parse_d100_interval(d100, id) {
     const mm = d100_interval_min_max(d100);
@@ -184,6 +184,17 @@ export function apply_dmg_to_encounter(game) {
     return apply_n_dmg_to_encounter(game, total);
 }
 
+export function update_g_encounter(game, encounter) {
+    return update(game,
+        {encounter: {$set: encounter}});
+}
+
+export function update_g_encounter_field(game, field_name, value) {
+    const enc = game.encounter;
+    const c = update_dic(enc, field_name, value)
+    return update_g_encounter(game, c)
+}
+
 export function apply_n_dmg_to_encounter(game, n) {
     const e = game.encounter;
     const hps = e.hp.split('/');
@@ -193,7 +204,7 @@ export function apply_n_dmg_to_encounter(game, n) {
         n = Math.max(0, n - parseInt(hp));
     }
     nhps = nhps.join('/');
-    return up.update_g_encounter_field(game, 'hp', nhps);
+    return update_g_encounter_field(game, 'hp', nhps);
 }
 
 export function apply_n_dmg_to_encounter_index(game, n, index) {
@@ -211,7 +222,7 @@ export function apply_n_dmg_to_encounter_index(game, n, index) {
         i++;
     }
     nhps = nhps.join('/');
-    return up.update_g_encounter_field(game, 'hp', nhps);
+    return update_g_encounter_field(game, 'hp', nhps);
 }
 
 export function apply_dmg_to_player(game) {

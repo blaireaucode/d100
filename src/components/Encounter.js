@@ -9,7 +9,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {update_g_encounter} from 'helpers/helpers_update'
 import F from 'helpers/F'
 import {Paper} from "@material-ui/core"
 import InputFieldEncounter from "./InputFieldEncounter";
@@ -17,6 +16,7 @@ import EncounterAbility from "./EncounterAbility";
 import C from "../helpers/C";
 import FieldEncounterHealthPoints from "./InputEncounterHealthPoints";
 import RewardRoll2 from "./RewardRoll";
+import {update_g_encounter} from "../helpers/helpers_encounter";
 
 class Encounter extends Component {
 

@@ -9,12 +9,13 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {get_item_at_hit_location, get_item_at_slot, update_g_item} from "../helpers/helpers_equipment";
-import {compute_dmg, update_attack_field, update_g_encounter_field} from "../helpers/helpers_encounter";
-import AttackDefendDamageShield from "./AttackDefendDamageShield";
-import AttackDefendDamageDeflect from "./AttackDefendDamageDeflect";
+import {get_item_at_slot, update_g_item} from "../helpers/helpers_equipment";
+import Checkbox from "@material-ui/core/Checkbox";
+import {update_attack_field, update_g_encounter_field} from "../helpers/helpers_encounter";
+import C from "../helpers/C";
+import InputItemTrack from "./InputItemTrack";
 
-class AttackDefendDamage extends Component {
+class AttackDefendDamageShield extends Component {
 
     constructor(props) {
         super(props);
@@ -45,29 +46,27 @@ class AttackDefendDamage extends Component {
     render() {
         const e = this.props.game.encounter;
         const att = e.attack;
-        if (att.dmg === 'none') return '';
-        if (att.who_attack === 'character') return '';
-        const r = compute_dmg(this.props.game);
-        console.log('r', r)
-        if (r.total <= 0 && att.deflect === 0) return '';
-        // Is the hero as a shield off hand ?
         let item = get_item_at_slot(this.props.game, 6); // Off hand
-        if (item !== 'none') {
-            if ('AS' in item) {
-                if (item.AS.includes('S')) {
-                    return (<AttackDefendDamageShield id={item.id}/>);
-                }
-            }
-        }
-        // No shield, we may deflect ?
-        item = get_item_at_hit_location(this.props.game);
-        if (item !== 'none') {
-            if (item.item_type === 'armour' || item.item_type === 'weapon') {
-                return (<AttackDefendDamageDeflect id={item.id}/>);
-            }
-        }
-        return '';
+
+        const mod = -parseInt(item.AS.substr(1));
+        return (<span>
+                <C width={'29ch'}/>
+                Use the shield ({mod}) ?
+                <Checkbox
+                    className={'field_input'}
+                    name={'toto'}
+                    checked={att.deflect > 0}
+                    style={{width: '3ch'}}
+                    onChange={this.toggle}
+                />
+                <C width={'4ch'}/>
+                Damaged:
+                <InputItemTrack id={item.id}
+                                items={this.props.game.items}
+                                field_name={'damaged'}/>
+               </span>);
     }
+
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AttackDefendDamage)
+export default connect(mapStateToProps, mapDispatchToProps)(AttackDefendDamageShield)

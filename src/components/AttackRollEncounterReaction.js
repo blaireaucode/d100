@@ -10,9 +10,8 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import L from 'helpers/L'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {new_reaction} from "../helpers/helpers_encounter"
+import {new_reaction, update_g_encounter_field} from "../helpers/helpers_encounter"
 import {create_D10_rolling_dice, getRandomInt, open_dice_ui} from "../helpers/helpers_dice"
-import * as up from "../helpers/helpers_update";
 import reaction_table from 'tables/table_monster_reaction.json'
 import {MenuItem, Select} from "@material-ui/core";
 import {clear_if_not_none} from "../helpers/helpers_ui";
@@ -41,14 +40,14 @@ class AttackRollEncounter extends Component {
 
     clear() {
         const r = new_reaction();
-        const g = up.update_g_encounter_field(this.props.game, 'reaction', r);
+        const g = update_g_encounter_field(this.props.game, 'reaction', r);
         this.props.set_game(g);
         this.setState({current: r.d100});
     }
 
     set_reaction(e) {
         const r = new_reaction(e.target.value);
-        let g = up.update_g_encounter_field(this.props.game, 'reaction', r);
+        let g = update_g_encounter_field(this.props.game, 'reaction', r);
         this.props.set_game(g);
         this.setState({current: r.d100});
     }
@@ -58,7 +57,7 @@ class AttackRollEncounter extends Component {
 
         // encounter
         const e = new_reaction(total);
-        let g = up.update_g_encounter_field(this.props.game, 'reaction', e);
+        let g = update_g_encounter_field(this.props.game, 'reaction', e);
 
         // rolling dice
         const dices = create_D10_rolling_dice(total);

@@ -13,6 +13,7 @@ import C from "../helpers/C";
 import {get_item_at_slot} from "../helpers/helpers_equipment";
 import CollapsibleHelp from "./CollapsibleHelp";
 import InputFieldItem from "./InputFieldItem";
+import InputItemTrack from "./InputItemTrack";
 
 class AttackPlayerInfoShield extends Component {
 
@@ -30,8 +31,7 @@ class AttackPlayerInfoShield extends Component {
                             </C>
                             <C width={'25ch'}>
                                 <C width={'14ch'}>Shield damage:</C>
-                                <InputFieldItem {...p} field_name={'damaged'} type={'number'} width={'8ch'}
-                                                align={'center'}/>
+                                <InputItemTrack {...p} field_name={'damaged'} />
                             </C>
                        </span>
             }

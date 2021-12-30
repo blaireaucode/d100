@@ -13,6 +13,7 @@ import C from "../helpers/C";
 import {get_item_at_hit_location} from "../helpers/helpers_equipment";
 import CollapsibleHelp from "./CollapsibleHelp";
 import InputFieldItem from "./InputFieldItem";
+import InputItemTrack from "./InputItemTrack";
 
 class AttackPlayerInfoArmour extends Component {
 
@@ -31,8 +32,8 @@ class AttackPlayerInfoArmour extends Component {
                     item = <span>
                             <C width={'25ch'}>{armour.name}</C>
                             <C width={'14ch'}>Armour damage:</C>
-                            <InputFieldItem {...p} field_name={'damaged'} type={'number'} width={'8ch'}
-                                            align={'center'}/>
+                            <InputItemTrack {...p} field_name={'damaged'} />
+                            <C width={'3ch'}/>
                             <C width={'4ch'}>AS:</C>
                             <InputFieldItem {...p} field_name={'AS'} width={'4ch'} align={'left'}/>
                         </span>
@@ -48,8 +49,7 @@ class AttackPlayerInfoArmour extends Component {
                     {item}
                 </C>
                 <CollapsibleHelp text={'(?)'}>
-                  Some armour offers protection when an adventurer takes damage. The Armour (A) value shown protects a specific location and is deducted
-from a monsters damage score.
+                  Some armour offers protection when an adventurer takes damage. The Armour (A) value shown protects a specific location and is deducted from a monsters damage score.
                 </CollapsibleHelp>
             </span>
         );

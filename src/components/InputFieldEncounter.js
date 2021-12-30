@@ -10,7 +10,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import Input from '@material-ui/core/Input'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import * as up from 'helpers/helpers_update'
+import {update_g_encounter_field} from "../helpers/helpers_encounter";
 
 class InputFieldEncounter extends Component {
 
@@ -22,7 +22,7 @@ class InputFieldEncounter extends Component {
     }
 
     handleChange = ({target}) => {
-        const g = up.update_g_encounter_field(this.props.game, this.props.field_name, target.value)
+        const g = update_g_encounter_field(this.props.game, this.props.field_name, target.value)
         this.props.set_game(g)
     };
 

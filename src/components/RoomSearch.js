@@ -12,9 +12,9 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import CollapsibleHelp from "./CollapsibleHelp";
 import C from "../helpers/C";
 import update from "immutability-helper";
-import {update_g_room} from "../helpers/helpers_update";
 import TableRoll from "./TableRoll";
 import {get_item_in_table} from "../helpers/helpers_equipment";
+import {update_g_room} from "../helpers/helpers_dungeon";
 
 class RoomSearch extends Component {
 

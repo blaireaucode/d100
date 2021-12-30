@@ -9,7 +9,7 @@
 import quests_table from 'tables/table_q_quests.json'
 import {v4 as uuidv4} from "uuid"
 import update from "immutability-helper"
-import {get_table_element} from "./helpers_update";
+import {get_table_element} from "./helpers_table";
 import {new_dungeon} from "./helpers_dungeon";
 
 export function new_quest(id = 'none') {
@@ -52,3 +52,9 @@ export function rotate_g_quest(game) {
     g = update(g, {quest: {doors_direction: {$set: dd}}});
     return g;
 }
+
+export function update_g_quest(game, quest) {
+    return update(game,
+        {quest: {$set: quest}});
+}
+

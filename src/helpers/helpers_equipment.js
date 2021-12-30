@@ -225,7 +225,7 @@ export function get_item_at_slot(game, slot) {
 export function get_item_at_hit_location(game) {
     const location = game.encounter.location.d100;
     if (location === 'none') return '';
-    return get_item_at_slot(game, location);
+    return get_item_at_slot(game, location-1);
 }
 
 export function is_attack_hit(c, att_type, value) {

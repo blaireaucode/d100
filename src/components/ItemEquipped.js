@@ -13,6 +13,7 @@ import InputFieldItem from "./InputFieldItem";
 import {update_g_equip_item_location, update_g_item} from "../helpers/helpers_equipment";
 import InputFieldHeader from "./InputFieldHeader";
 import L from "../helpers/L";
+import InputItemTrack from "./InputItemTrack";
 
 class ItemEquipped extends Component {
 
@@ -65,7 +66,7 @@ class ItemEquipped extends Component {
                 <InputFieldItem {...p} field_name={'AS'} align={'center'}/>
                 <InputFieldItem {...p} field_name={'gp'} type={'number'} width={'5rem'} align={'center'}/>
                 <InputFieldItem {...p} field_name={'fix_cost'} type={'number'} width={'5rem'} align={'center'}/>
-                <InputFieldItem {...p} field_name={'damaged'} width={'5rem'} type={'number'} align={'center'}/>
+                <InputItemTrack {...p} field_name={'damaged'} />
                 &nbsp;
                 {remove}
             < /span>

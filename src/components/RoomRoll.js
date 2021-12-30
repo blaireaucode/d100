@@ -10,10 +10,8 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import L from 'helpers/L'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {new_room} from "../helpers/helpers_dungeon"
+import {new_room, update_g_room as update_g_room1, update_g_room} from "../helpers/helpers_dungeon"
 import {create_D100_rolling_dices, getRandomInt, open_dice_ui} from "../helpers/helpers_dice"
-import * as up from "../helpers/helpers_update";
-import {update_g_room} from "../helpers/helpers_update";
 import Clear from "./Clear";
 import rooms_table from 'tables/table_m_mapping.json'
 import {MenuItem, Select} from "@material-ui/core";
@@ -64,7 +62,7 @@ class RoomRoll extends Component {
             const id = room.d100.toString();
             if (selected_value === id) {
                 const room = new_room(id);
-                const g = up.update_g_room(this.props.game, room);
+                const g = update_g_room1(this.props.game, room);
                 this.props.set_game(g);
                 this.setState({current: id});
                 return;
@@ -77,7 +75,7 @@ class RoomRoll extends Component {
 
         // room
         const e = new_room(total);
-        let g = up.update_g_room(this.props.game, e);
+        let g = update_g_room1(this.props.game, e);
 
         // rolling dice
         const dices = create_D100_rolling_dices(total);

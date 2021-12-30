@@ -10,10 +10,9 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import L from 'helpers/L'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {new_quest} from "../helpers/helpers_quest"
+import {new_quest, update_g_quest} from "../helpers/helpers_quest"
 import {create_D100_rolling_dices, getRandomInt, open_dice_ui} from "../helpers/helpers_dice"
-import * as up from "../helpers/helpers_update"
-import {get_table_element} from "../helpers/helpers_update"
+import {get_table_element} from "../helpers/helpers_table"
 import Clear from "./Clear"
 import quests_table from 'tables/table_q_quests.json'
 import {MenuItem, Select} from "@material-ui/core"
@@ -59,7 +58,7 @@ class QuestRoll extends Component {
     set_quest() {
         const id = this.state.current;
         const quest = new_quest(id);
-        const g = up.update_g_quest(this.props.game, quest);
+        const g = update_g_quest(this.props.game, quest);
         this.props.set_game(g);
     }
 

@@ -15,6 +15,7 @@ import {update_g_equip_item, update_g_remove_item} from "../helpers/helpers_equi
 import L from 'helpers/L';
 import InputFieldHeader from "./InputFieldHeader";
 import C from "../helpers/C";
+import InputItemTrack from "./InputItemTrack";
 
 class ItemBackPack1 extends Component {
 
@@ -72,6 +73,7 @@ class ItemBackPack1 extends Component {
                 <InputFieldItem {...p} field_name={'gp'} width={'4rem'} type={'number'} align={'center'}/>
                 <InputFieldItem {...p} field_name={'fix_cost'} width={'4rem'} type={'number'} align={'center'}/>
                 <InputFieldItem {...p} field_name={'damaged'} width={'3rem'} type={'number'} align={'center'}/>
+                {/*<InputItemTrack {...p} items={this.props.game.items} field_name={'damaged'} />*/}
                 <InputFieldItem {...p} field_name={'name'} width={220}/>
                 &nbsp;
                 <L onClick={this.equip_item}>{icon}</L>

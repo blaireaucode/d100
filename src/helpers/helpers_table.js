@@ -14,6 +14,7 @@ import treasureB_table from 'tables/table_tb_treasure_B.json';
 import treasureC_table from 'tables/table_tc_treasure_C.json';
 import parts_table from 'tables/table_p_parts.json';
 import find_table from 'tables/table_f_find.json';
+import {d100_interval_min_max} from "./helpers_encounter";
 
 export const all_tables = {
     weapon: weapon_table,
@@ -120,6 +121,30 @@ export function get_table_name(letter) {
         if (letter[1] === 'TC') return 'treasureC';
     }
     return letter;
+}
+
+export function get_table_element(table, id, copy = true) {
+    let found = false;
+    let i;
+    if (id !== 'none') id = parseInt(id);
+    for (i in table) {
+        if (id === table[i].d100) {
+            found = true;
+            break;
+        }
+        const d100 = d100_interval_min_max(table[i].d100);
+        if (id >= d100[0] && id <= d100[1]) {
+            found = true;
+            break;
+        }
+    }
+    if (!found) {
+        console.log('ERROR : cannot find id in table, took the first', id, table[0]);
+        i = 0;
+    }
+    let e = table[i];
+    if (copy) e = JSON.parse(JSON.stringify(e));
+    return e;
 }
 
 

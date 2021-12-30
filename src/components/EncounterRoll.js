@@ -10,10 +10,13 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import L from 'helpers/L'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import {d100_interval_min_max, new_encounter} from "../helpers/helpers_encounter"
+import {
+    d100_interval_min_max,
+    new_encounter,
+    update_g_encounter as update_g_encounter1,
+    update_g_encounter
+} from "../helpers/helpers_encounter"
 import {create_D100_rolling_dices, getRandomInt, open_dice_ui} from "../helpers/helpers_dice"
-import * as up from "../helpers/helpers_update";
-import {update_g_encounter} from "../helpers/helpers_update";
 import Clear from "./Clear";
 import encounters_table from 'tables/table_e_encounter.json'
 import {MenuItem, Select} from "@material-ui/core";
@@ -61,7 +64,7 @@ class EncounterRoll extends Component {
             const emax = d100_interval_min_max(enc.d100)[1];
             if (selected_value === emin || (selected_value >= emin && selected_value <= emax)) {
                 const encounter = new_encounter(emin);
-                const g = up.update_g_encounter(this.props.game, encounter);
+                const g = update_g_encounter1(this.props.game, encounter);
                 this.props.set_game(g);
                 this.setState({current: emin});
                 return;
@@ -76,7 +79,7 @@ class EncounterRoll extends Component {
 
         // encounter
         const e = new_encounter(t);
-        let g = up.update_g_encounter(this.props.game, e);
+        let g = update_g_encounter1(this.props.game, e);
 
         // rolling dice
         const dices = create_D100_rolling_dices(total);

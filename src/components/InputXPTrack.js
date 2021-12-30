@@ -18,7 +18,7 @@ const c_h = <Icon icon="mdi:circle-half-full"/>;
 const c_f = <Icon icon="akar-icons:circle-fill"/>;
 const c_u = <Icon icon="entypo:arrow-with-circle-up"/>;
 
-class InputTrack extends Component {
+class InputXPTrack extends Component {
 
     static defaultProps = {
         width: 80,
@@ -47,10 +47,6 @@ class InputTrack extends Component {
         const c = this.props.game.characteristics;
         const fn = this.props.field_name;
         let value = parseFloat(c[fn]);
-
-        // class name (for style)
-        let align = this.props.align;
-        let cn = this.props.class_name;
 
         // number of tick
         let tics = [];
@@ -82,4 +78,4 @@ class InputTrack extends Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(InputTrack);
+export default connect(mapStateToProps, mapDispatchToProps)(InputXPTrack);

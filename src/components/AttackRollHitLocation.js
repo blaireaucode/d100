@@ -11,10 +11,9 @@ import {connect} from 'react-redux'
 import L from 'helpers/L'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import {create_D10_rolling_dice, getRandomInt, open_dice_ui} from "../helpers/helpers_dice";
-import * as up from "../helpers/helpers_update";
 import location_table from "../tables/table_hit_location.json";
 import {MenuItem, Select} from "@material-ui/core";
-import {new_location} from "../helpers/helpers_encounter";
+import {new_location, update_g_encounter_field} from "../helpers/helpers_encounter";
 import {clear_if_not_none} from "../helpers/helpers_ui";
 import H from "../helpers/H";
 import C from "../helpers/C";
@@ -46,7 +45,7 @@ class AttackRollHitLocation extends Component {
 
     clear() {
         const l = new_location();
-        const g = up.update_g_encounter_field(this.props.game, 'location', l);
+        const g = update_g_encounter_field(this.props.game, 'location', l);
         this.props.set_game(g);
         this.setState({current: l.d100});
     }
@@ -58,7 +57,7 @@ class AttackRollHitLocation extends Component {
             const id = enc.d100
             if (id.toString() === e.target.value.toString()) {
                 const l = new_location(id);
-                const g = up.update_g_encounter_field(this.props.game, 'location', l);
+                const g = update_g_encounter_field(this.props.game, 'location', l);
                 this.props.set_game(g);
                 this.setState({current: id});
                 return;
@@ -71,7 +70,7 @@ class AttackRollHitLocation extends Component {
 
         // encounter
         const l = new_location(total);
-        let g = up.update_g_encounter_field(this.props.game, 'location', l);
+        let g = update_g_encounter_field(this.props.game, 'location', l);
 
         // rolling dice
         const dices = create_D10_rolling_dice(total);
