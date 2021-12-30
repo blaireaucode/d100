@@ -15,7 +15,6 @@ import {update_g_equip_item, update_g_remove_item} from "../helpers/helpers_equi
 import L from 'helpers/L';
 import InputFieldHeader from "./InputFieldHeader";
 import C from "../helpers/C";
-import InputItemTrack from "./InputItemTrack";
 
 class ItemBackPack1 extends Component {
 

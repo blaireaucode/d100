@@ -14,7 +14,7 @@ import {update_dic, update_g_characteristic} from "./helpers_update"
 import update from "immutability-helper"
 import {v4 as uuidv4} from "uuid";
 import H from "./H";
-import {get_item_at_hit_location} from "./helpers_equipment";
+import {get_item_at_hit_location, get_item_at_slot} from "./helpers_equipment";
 import {all_tables, get_table_element, get_table_name, new_table_roll} from "./helpers_table";
 import {update_g_room} from "./helpers_dungeon";
 
@@ -130,6 +130,15 @@ export function compute_dmg(game) {
                 if (armour === '') armour = 0;
             }
         }
+        let sitem = get_item_at_slot(game, 6); // Off hand
+        let shield = '(deflect)';
+        if (sitem !== 'none') {
+            if ('AS' in sitem) {
+                if (sitem.AS.includes('S')) {
+                    shield = '(shield)'
+                }
+            }
+        }
         if (isNaN(armour)) armour = 0;
         let deflect = 0;
         if ('deflect' in att)
@@ -145,8 +154,8 @@ export function compute_dmg(game) {
             {att.dmg} <H>(dice) </H>
             {dm} <H>(location) </H>
             {dgi} <H>(att dmg mod) </H>
-            - {armour} <H>(def dmg mod) </H>
-            - {deflect} <H>(deflect) </H>
+            - {armour} <H>(armour) </H>
+            - {deflect} <H>{shield} </H>
             = {total}
         </span>
     } else {

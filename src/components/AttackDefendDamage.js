@@ -48,7 +48,7 @@ class AttackDefendDamage extends Component {
         if (att.dmg === 'none') return '';
         if (att.who_attack === 'character') return '';
         const r = compute_dmg(this.props.game);
-        console.log('r', r)
+        //console.log('r', r)
         if (r.total <= 0 && att.deflect === 0) return '';
         // Is the hero as a shield off hand ?
         let item = get_item_at_slot(this.props.game, 6); // Off hand

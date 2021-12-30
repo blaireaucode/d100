@@ -28,7 +28,6 @@ import {
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props';
 import C from "./helpers/C";
 import I from "./helpers/I";
-import { Icon } from '@iconify/react';
 
 
 const drawerWidth = 150
@@ -55,10 +54,6 @@ const styles = theme => ({
 });
 
 class LayoutLeftBar extends React.Component {
-
-    constructor(props) {
-        super(props);
-    }
 
     roll100 = () => {
         const dui = this.props.game.options.dice_ui;

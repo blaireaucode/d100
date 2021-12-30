@@ -37,7 +37,7 @@ class AttackDefendDamageDeflect extends Component {
         const e = this.props.game.encounter;
         const att = e.attack;
         const item = get_item_at_hit_location(this.props.game);
-        console.log('item', item, pip);
+        //console.log('item', item, pip);
         let d = 0;
         let m = 1;
         if (pip === 1) {
@@ -92,7 +92,7 @@ class AttackDefendDamageDeflect extends Component {
         //  console.log('dmg', item.damaged, att.deflect);
         if (item.damaged - att.deflect > 4) select2 = '';
         if (item.damaged - att.deflect > 5) select1 = '';
-        const w = item.name.length+'ch';
+        const w = item.name.length + 'ch';
         return (<span>
                 <C width={'20ch'}/>
                 Deflect with <span className={'help'}>
@@ -101,7 +101,7 @@ class AttackDefendDamageDeflect extends Component {
                 <C width={'1ch'}/>
                 <C width={'6ch'}>
                 {select1}
-                {select2}
+                    {select2}
                 </C>
                 <C width={'4ch'}/>
                 Damaged:
