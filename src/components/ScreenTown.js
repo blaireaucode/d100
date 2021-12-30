@@ -6,10 +6,10 @@
  * https://opensource.org/licenses/MIT.
  */
 
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
-import L from "../helpers/L"
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props';
+import L from "../helpers/L";
 import CollapsibleHelp from "./CollapsibleHelp";
 import C from "../helpers/C";
 import HelpStartingItems from "./HelpStartingItems";
@@ -42,7 +42,6 @@ class ScreenTown extends Component {
     }
 
     on_table_roll = (state) => {
-        console.log('local on table roll state', state)
         this.setState({table_roll: state});
         return this.props.game;
     }

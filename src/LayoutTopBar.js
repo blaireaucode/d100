@@ -68,7 +68,8 @@ class LayoutTopBar extends React.Component {
         const dice_ui = get_dice_ui(this.props.game);
         let left = '';
         if (dice_ui.open) {
-            left = 'Dice: ' + dice_ui.total;
+            const d = dice_ui.dices[0].type === 'D6' ? 'D6':'D100';
+            left = ''+d+'  ➜  ' + dice_ui.total;
         }
 
         return (

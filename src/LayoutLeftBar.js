@@ -6,22 +6,30 @@
  * https://opensource.org/licenses/MIT.
  */
 
-import React from 'react'
-import PropTypes from 'prop-types'
-import Divider from '@material-ui/core/Divider'
-import Drawer from '@material-ui/core/Drawer'
-import Hidden from '@material-ui/core/Hidden'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemText from '@material-ui/core/ListItemText'
-import {withStyles} from '@material-ui/core/styles'
-import {Link} from 'react-router-dom'
-import {connect} from 'react-redux'
-import L from 'helpers/L'
-import {close_dice_ui, create_D100_rolling_dices, getRandomInt, open_dice_ui} from 'helpers/helpers_dice'
-import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Divider from '@material-ui/core/Divider';
+import Drawer from '@material-ui/core/Drawer';
+import Hidden from '@material-ui/core/Hidden';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import {withStyles} from '@material-ui/core/styles';
+import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import L from 'helpers/L';
+import {
+    close_dice_ui,
+    create_D100_rolling_dices,
+    create_D6_rolling_dice,
+    getRandomInt,
+    open_dice_ui
+} from 'helpers/helpers_dice';
+import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props';
 import C from "./helpers/C";
 import I from "./helpers/I";
+import { Icon } from '@iconify/react';
+
 
 const drawerWidth = 150
 
@@ -50,10 +58,9 @@ class LayoutLeftBar extends React.Component {
 
     constructor(props) {
         super(props);
-        this.roll = this.roll.bind(this);
     }
 
-    roll() {
+    roll100 = () => {
         const dui = this.props.game.options.dice_ui;
         if (dui.open) {
             const g = close_dice_ui(this.props.game);
@@ -61,6 +68,19 @@ class LayoutLeftBar extends React.Component {
         } else {
             let total = getRandomInt(1, 100);
             const dices = create_D100_rolling_dices(total);
+            const g = open_dice_ui(this.props.game, total, dices);
+            this.props.set_game(g);
+        }
+    }
+
+    roll6 = () => {
+        const dui = this.props.game.options.dice_ui;
+        if (dui.open) {
+            const g = close_dice_ui(this.props.game);
+            this.props.set_game(g);
+        } else {
+            let total = getRandomInt(1, 6);
+            const dices = create_D6_rolling_dice(total);
             const g = open_dice_ui(this.props.game, total, dices);
             this.props.set_game(g);
         }
@@ -103,7 +123,9 @@ class LayoutLeftBar extends React.Component {
                 <List>
 
                     <ListItem>
-                        <L onClick={this.roll}><C width={'4ch'}>🎲</C>D100</L> {/*&#127922;*/}
+                        <L onClick={this.roll100}><C width={'1ch'}/>🎲<br/>D100</L> {/*&#127922;*/}
+                        <C width={'3ch'}/>
+                        <L onClick={this.roll6}>🎲<br/>D6</L> {/*&#127922;*/}
                     </ListItem>
 
                     <ListItem button component={Link} to='/character'>
@@ -126,6 +148,8 @@ class LayoutLeftBar extends React.Component {
 
                     <ListItem button component={Link} to='/fight'>
                         <ListItemText><C width={'4ch'}>⚔️</C>Fight</ListItemText>
+                        {/*<ListItemText><C width={'4ch'}><Icon icon="noto:crossed-swords" />
+                            ️</C>Fight</ListItemText>*/}
                     </ListItem>
 
                     <ListItem button component={Link} to='/town'>

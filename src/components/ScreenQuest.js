@@ -12,7 +12,7 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import QuestRoll from "./QuestRoll"
 import Quest from "./Quest"
 import CollapsibleHelp from "./CollapsibleHelp"
-import AddToLog from "./AddToLog";
+import AddToLog from "./LogAddToLog";
 import {log_quest} from "../helpers/helpers_log";
 
 class ScreenQuest extends Component {

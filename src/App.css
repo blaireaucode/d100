@@ -338,6 +338,15 @@
     opacity: 1;
 }
 
+.track_symbol {
+    color: var(--fge);
+    font-size: 1.7ch!important;
+    vertical-align: -10%;
+}
+
+.track_symbol:hover {
+    color: var(--fglh);
+}
 
 /* -------------------------------------------------------------------- */
 /* CK EDITOR */

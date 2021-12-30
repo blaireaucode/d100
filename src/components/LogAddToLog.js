@@ -13,7 +13,7 @@ import L from "helpers/L"
 import {update_dic} from "../helpers/helpers_update";
 import C from "../helpers/C";
 
-class AddToLog extends Component {
+class LogAddToLog extends Component {
 
     constructor(props) {
         super(props);
@@ -40,4 +40,4 @@ class AddToLog extends Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddToLog)
+export default connect(mapStateToProps, mapDispatchToProps)(LogAddToLog)

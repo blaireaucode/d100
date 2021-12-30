@@ -3,7 +3,7 @@
     "d100": "none",
     "name": "none",
     "detail": "none",
-    "gp": 0
+    "gp": "-"
   },
   {
     "d100": "1-3",
@@ -53,13 +53,13 @@
     "d100": "50-52",
     "name": "finer armour",
     "detail": "Roll on table A – Armour and add “finer” before its name, it gains +0.2 Def.",
-    "gp": 0
+    "gp": "-"
   },
   {
     "d100": "53-55",
     "name": "finer weapon",
     "detail": "Roll on table W – Weapon and add “finer” before its name, add +1 to its Dmg.",
-    "gp": 0
+    "gp": "-"
   },
   {
     "d100": "56-58",
@@ -163,18 +163,18 @@
     "d100": "98",
     "name": "Greater treasure",
     "detail": "A much greater treasure is found, roll on table TB – Treasure B.",
-    "gp": 0
+    "gp": "-"
   },
   {
     "d100": "99",
     "name": "Legendary ring",
     "detail": "Roll on table L for its legend (ring slot) and value.",
-    "gp": 0
+    "gp": "-"
   },
   {
     "d100": "100",
     "name": "Legendary necklace",
     "detail": "Roll on table L for its legend (neck slot) and value.",
-    "gp": 0
+    "gp": "-"
   }
 ]
