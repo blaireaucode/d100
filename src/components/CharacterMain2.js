@@ -22,11 +22,9 @@ class CharacterMain extends Component {
         const p = {width: '4ch', align: 'right', type: 'number'}
         return (
             <span>
-                {/* health etc */}
-
-                <F>Health Points&nbsp;</F>
+                <F width={'12ch'}>Health Points</F>
                 <InputFieldCharacter {...p} field_name={'hp'} width={'4ch'}/>
-                <F>⇒&nbsp;</F>
+                <F width={'3ch'}>⇒</F>
                 <InputFieldCharacter {...p} field_name={'hp'}
                                      mod={c.hp_items} read_only={true}
                                      align={'left'} width={'4ch'}/>
@@ -43,10 +41,7 @@ class CharacterMain extends Component {
 
                 <F>Encounter modifier</F> <InputFieldCharacter {...p} field_name={'encounter_modifier'} width={'5ch'}/>
 
-                <C width={'25ch'}/>
-                <CollapsibleHelp text={'(?)'}>
-                    <CharacterHPHelp/>
-                </CollapsibleHelp>
+                <CollapsibleHelp text={'(?)'}> <CharacterHPHelp/> </CollapsibleHelp>
 
             </span>);
     }

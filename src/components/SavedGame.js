@@ -13,8 +13,9 @@ import L from "../helpers/L"
 import Input from "@material-ui/core/Input"
 import * as st from "../helpers/store"
 import update from "immutability-helper"
+import C from "../helpers/C";
 
-class Save extends Component {
+class SavedGame extends Component {
 
     constructor(props) {
         super(props);
@@ -53,29 +54,28 @@ class Save extends Component {
         const e = !(save.id === this.props.current);
         let ll = <span>
             <L onClick={this.load}>Load</L>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <C width={'3ch'}/>
             <L onClick={this.delete}> ✗ </L>
             </span>
         if (!e) {
-            ll = 'current game'
+            ll = <C width={'9ch'}>current</C>
         }
         return (
             <span>
-                {d.toLocaleString()}
-                &nbsp;&nbsp;
-                <span className={'field_name'}>{save.characteristics.name}</span>
-                &nbsp;&nbsp;
+                <C width={'20ch'}>{d.toLocaleString()}</C>
+                {ll}
+                <C width={'3ch'}/>
+                <C width={'15ch'}>
                 <Input className={'field_input'}
                        disableUnderline={true}
                        name={'name'}
                        value={save.name}
                        onChange={this.rename}
-                />
-                &nbsp;&nbsp;
-                {ll} <br/>
+                /></C>
+                <span className={'field_name'}>({save.characteristics.name})</span>
             </span>
         );
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Save);
+export default connect(mapStateToProps, mapDispatchToProps)(SavedGame);

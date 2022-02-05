@@ -12,7 +12,7 @@ import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props';
 import {Link} from "react-router-dom";
 import {JSONEditor} from "react-json-editor-viewer";
 import TableRoll from "./TableRoll";
-import {all_tables, new_table_roll} from "../helpers/helpers_table";
+import {all_search_tables, new_table_roll} from "../helpers/helpers_table";
 
 
 class ScreenDebug extends Component {
@@ -21,7 +21,7 @@ class ScreenDebug extends Component {
         super(props);
         this.onJsonChange = this.onJsonChange.bind(this);
         this.state = {table_roll: new_table_roll()};
-        this.state.table_roll.tables = all_tables;
+        this.state.table_roll.tables = all_search_tables;
     }
 
     onJsonChange(key, value, parent, data) {

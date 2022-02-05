@@ -13,6 +13,7 @@ import default_game from "./default_game";
 import {new_encounter} from "./helpers_encounter";
 import {new_equipped_items} from "./helpers_equipment";
 import table_r_race from "../tables/table_r_race.json";
+import table_h_hero_path from 'tables/table_h_hero_path.json';
 import {new_room} from "./helpers_dungeon";
 import {new_quest} from "./helpers_quest";
 
@@ -34,6 +35,14 @@ export function get_race(race_name) {
         if (r.race === race_name) race = JSON.parse(JSON.stringify(r));
     }
     return race;
+}
+
+export function get_hero_path(hero_path) {
+    let h = table_h_hero_path[0];
+    for (const r of table_h_hero_path) {
+        if (r.race === hero_path) h = JSON.parse(JSON.stringify(r));
+    }
+    return h;
 }
 
 // OLD -------------------------------------------------------

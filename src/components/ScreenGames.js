@@ -11,10 +11,10 @@ import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import * as st from 'helpers/store'
 import L from 'helpers/L.js'
-import Save from 'components/Save'
+import Save from 'components/SavedGame'
 import {create_new_game} from "../helpers/helpers_hero";
 
-class ScreenSystem extends Component {
+class ScreenGames extends Component {
 
     constructor(props) {
         super(props);
@@ -45,7 +45,10 @@ class ScreenSystem extends Component {
         for (let save in saves) {
             if (save === 'current') continue;
             let s = saves[save];
-            list.push(<Save key={s.id} current={saves.current} update_store={this.update_store} save={s}/>);
+            list.push(<span key={s.id}>
+                        <Save current={saves.current} update_store={this.update_store} save={s}/>
+                        <br/>
+                    </span>);
         }
         return (
             <div>
@@ -59,4 +62,4 @@ class ScreenSystem extends Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ScreenSystem)
+export default connect(mapStateToProps, mapDispatchToProps)(ScreenGames)

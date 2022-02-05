@@ -16,10 +16,10 @@ import HelpStartingItems from "./HelpStartingItems";
 import F from "../helpers/F";
 import InputFieldCharacter from "./InputFieldCharacter";
 import TableGeneric from "./TableGeneric";
-import {all_tables, new_table_roll, tables_props} from "../helpers/helpers_table";
+import {all_search_tables, new_table_roll, tables_props} from "../helpers/helpers_table";
 import TableRoll from "./TableRoll";
 
-class ScreenTown extends Component {
+class ScreenTables extends Component {
 
     components_tables = {};
     menus_tables = [];
@@ -27,7 +27,7 @@ class ScreenTown extends Component {
     constructor(props) {
         super(props);
         this.state = {table: 'none', table_roll: new_table_roll()};
-        this.state.table_roll.tables = all_tables;
+        this.state.table_roll.tables = all_search_tables;
         this.toggle = this.toggle.bind(this);
         this.components_tables['none'] = '';
         for (const t in tables_props) {
@@ -62,10 +62,6 @@ class ScreenTown extends Component {
                 <L onClick={() => this.toggle('none')} className={'clear'}> ✗ </L>
                 <C width={'2ch'}/>
                 {this.menus_tables}
-                <C width={'2ch'}/>
-                <CollapsibleHelp text={'(?)'}>
-                    <HelpStartingItems/>
-                </CollapsibleHelp>
                 <p/>
                 {table}
             </span>
@@ -73,4 +69,4 @@ class ScreenTown extends Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ScreenTown)
+export default connect(mapStateToProps, mapDispatchToProps)(ScreenTables)

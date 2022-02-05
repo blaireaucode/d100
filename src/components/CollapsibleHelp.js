@@ -15,7 +15,8 @@ import L from "../helpers/L";
 class CollapsibleHelp extends Component {
 
     static defaultProps = {
-        text: "help"
+        text: "help",
+        className: 'help-right'
     }
 
     constructor(props) {
@@ -32,12 +33,14 @@ class CollapsibleHelp extends Component {
     render() {
         return (
             <span>
-                <L onClick={this.toggle}>{this.props.text}</L>
-                    <Collapse isOpen={this.state.open}>
-                        <span className={'help collapse-css-transition'}>
-                            {this.props.children}
-                        </span>
-                    </Collapse>
+                <span className={'help-right'}>
+                    <L onClick={this.toggle}>{this.props.text}</L>
+                </span>
+                <Collapse isOpen={this.state.open}>
+                    <span className={'help collapse-css-transition'}>
+                        {this.props.children}
+                    </span>
+                </Collapse>
             </span>
         );
     }

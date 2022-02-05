@@ -15,7 +15,7 @@ import update from "immutability-helper"
 import {v4 as uuidv4} from "uuid";
 import H from "./H";
 import {get_item_at_hit_location, get_item_at_slot} from "./helpers_equipment";
-import {all_tables, get_table_element, get_table_name, new_table_roll} from "./helpers_table";
+import {all_search_tables, get_table_element, get_table_name, new_table_roll} from "./helpers_table";
 import {update_g_room} from "./helpers_dungeon";
 
 export function parse_d100_interval(d100, id) {
@@ -62,7 +62,7 @@ export function new_reward(e) {
     const tablen = get_reward_table_names(e);
     const table = tablen[0];
     let tables = {};
-    for (const n of tablen) tables[n] = all_tables[get_table_name(n)];
+    for (const n of tablen) tables[n] = all_search_tables[get_table_name(n)];
     r.tables = tables;
     r.table = table;
     r.mod = get_table_mod(table);

@@ -36,10 +36,10 @@ class CharacterMain extends Component {
             <span>
                 {/* Main attributes */}
                 <F width={'4ch'}>Str</F> <InputFieldCharacter {...p} field_name={'str'}/>
-                <F>⇒</F> <InputFieldCharacter {...p} field_name={'str'} mod={c.str_items} read_only={true}/>
+                <F width={'3ch'}>⇒</F>
+                <InputFieldCharacter {...p} field_name={'str'} mod={c.str_items} read_only={true}/>
                 <C width={'1ch'}/>
                 <F>XP</F>
-                {/*<InputFieldCharacter {...p} type={'real'} field_name={'str_exp'}/>*/}
                 <InputTrack  {...p} field_name={'str_exp'}/>
 
                 <C width={'3ch'}/>
@@ -49,10 +49,10 @@ class CharacterMain extends Component {
 
                 <p/>
                 <F width={'4ch'}>Dex</F> <InputFieldCharacter {...p} field_name={'dex'}/>
-                <F>⇒</F> <InputFieldCharacter {...p} field_name={'dex'} mod={c.dex_items} read_only={true}/>
+                <F width={'3ch'}>⇒</F>
+                <InputFieldCharacter {...p} field_name={'dex'} mod={c.dex_items} read_only={true}/>
                 <C width={'1ch'}/>
                 <F>XP</F>
-                {/*<InputFieldCharacter {...p} field_name={'dex_exp'}/>*/}
                 <InputTrack  {...p} field_name={'dex_exp'}/>
 
                 <C width={'3ch'}/>
@@ -62,17 +62,17 @@ class CharacterMain extends Component {
 
                 <p/>
                 <F width={'4ch'}>Int</F> <InputFieldCharacter {...p} field_name={'int'}/>
-                <F>⇒</F> <InputFieldCharacter {...p} field_name={'int'} mod={c.int_items} read_only={true}/>
+                <F width={'3ch'}>⇒</F>
+                <InputFieldCharacter {...p} field_name={'int'} mod={c.int_items} read_only={true}/>
                 <C width={'1ch'}/>
                 <F>XP</F>
-                {/*<InputFieldCharacter {...p} field_name={'int_exp'}/>*/}
                 <InputTrack  {...p} field_name={'int_exp'}/>
 
                 <C width={'3ch'}/>
                 <F width={'10ch'}>Spell Caster</F> <InputFieldCharacter type={'bool'} field_name={'spell_caster'}/>
                 <C width={'2ch'}/>
                 <span className={'help'}>Can now use spells from the spell book</span>
-                <C width={'16ch'}/>
+
                 <CollapsibleHelp text={'(?)'}>
                     <CharacterCharacteristicsHelp/>
                 </CollapsibleHelp>

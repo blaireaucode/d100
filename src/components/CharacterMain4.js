@@ -12,6 +12,8 @@ import InputFieldCharacter from "components/InputFieldCharacter"
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import F from 'helpers/F'
 import C from "../helpers/C";
+import CollapsibleHelp from "./CollapsibleHelp";
+import HelpStartingItems from "./HelpStartingItems";
 
 class CharacterMain extends Component {
 
@@ -25,6 +27,10 @@ class CharacterMain extends Component {
                 <C width={'1ch'}/>
                 <F>💰Gold pieces <C width={'2ch'}/></F>
                 <InputFieldCharacter type={'number'} width={'7ch'} field_name={'gold_pieces'}/>
+
+                <CollapsibleHelp text={'(?)'}>
+                    <HelpStartingItems/>
+                </CollapsibleHelp>
             </span>);
     }
 }

@@ -14,10 +14,10 @@ import React from "react";
 import {update_g_characteristic} from "./helpers_update";
 import InputFieldHeader from "../components/InputFieldHeader";
 import ItemGeneric from "../components/ItemGeneric";
-import {all_tables, get_table_name, table_item_props} from "./helpers_table";
+import {all_search_tables, get_table_name, table_item_props} from "./helpers_table";
 
 export function get_item_in_table(table_name, id, copy = true) {
-    const table = all_tables[get_table_name(table_name)];
+    const table = all_search_tables[get_table_name(table_name)];
     let found = false;
     let i;
     for (i in table) {
@@ -64,7 +64,7 @@ export function get_items_header_from_table(table_name) {
 }
 
 export function get_items_from_table2(table_name) {
-    const table = all_tables[table_name];
+    const table = all_search_tables[table_name];
     let i = 0;
     let items = [];
     for (let item of table) {

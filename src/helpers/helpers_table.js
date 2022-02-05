@@ -16,7 +16,7 @@ import parts_table from 'tables/table_p_parts.json';
 import find_table from 'tables/table_f_find.json';
 import {d100_interval_min_max} from "./helpers_encounter";
 
-export const all_tables = {
+export const all_search_tables = {
     weapon: weapon_table,
     armour: armour_table,
     needed: needed_table,

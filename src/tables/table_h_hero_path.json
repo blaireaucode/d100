@@ -1,0 +1,29 @@
+[
+  {
+    "d6": "1-2",
+    "path": "Warrior",
+    "str_mod": "+10",
+    "dex_mod": "-5",
+    "int_mod": "-5",
+    "skill_bonus1": "✪+5 Bravery",
+    "skill_bonus2": "✪+5 Escape"
+  },
+  {
+    "d6": "3-4",
+    "path": "Rogue",
+    "str_mod": "-5",
+    "dex_mod": "+10",
+    "int_mod": "-5",
+    "skill_bonus1": "✪+5 Locks",
+    "skill_bonus2": "✪+5 Traps"
+  },
+  {
+    "d6": "5-6",
+    "path": "Sorcerer",
+    "str_mod": "-5",
+    "dex_mod": "-5",
+    "int_mod": "+10",
+    "skill_bonus1": "✪+5 Magic",
+    "skill_bonus2": "✪+5 Lucky"
+  }
+]

@@ -11,7 +11,7 @@ import {connect} from 'react-redux'
 import {mapDispatchToProps, mapStateToProps} from 'helpers/default_props'
 import * as st from 'helpers/store'
 import L from 'helpers/L.js'
-import Save from 'components/Save'
+import Save from 'components/SavedGame'
 import default_game from "../helpers/default_game";
 
 class ScreenSystem extends Component {

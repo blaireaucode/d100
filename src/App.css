@@ -204,6 +204,9 @@
     font-weight: normal;
 }
 
+.help-right {
+    float:right;
+}
 
 .select {
     /* color: #18b26f!important; */
@@ -345,7 +348,7 @@
 
 .track_symbol {
     color: var(--fge);
-    font-size: 1.7ch!important;
+    font-size: 1.7ch !important;
     vertical-align: -10%;
 }
 
